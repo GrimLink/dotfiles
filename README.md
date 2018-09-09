@@ -7,8 +7,9 @@ _In progress_
 - [ ] Rename to configfiles?
 - [ ] Doc for setup
 - [ ] Add linting files
-    - [ ] Sass-lint
+    - [x] Sass-lint
     - [x] Stylelint
+    - [ ] ESLint
 - [ ] Add bash scripts
 - [ ] Build sh script for install
 - [x] Add .browserslist
