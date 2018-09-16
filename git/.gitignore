@@ -1,0 +1,5 @@
+# System files are ignored via .gitignore_global
+# See https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
+# For more information
+
+node_modules
