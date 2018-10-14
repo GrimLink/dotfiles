@@ -26,6 +26,7 @@
     "vue": "html"
   },
   "files.associations": {
+    ".gitignore_global": "ignore",
     ".browserslistrc": "properties",
     ".stylelintrc": "json",
     ".stylelintignore": "ignore"
