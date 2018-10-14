@@ -6,6 +6,7 @@
   "editor.quickSuggestionsDelay": 30,
   "editor.minimap.showSlider": "always",
   "workbench.startupEditor": "none",
+  "workbench.statusBar.feedback.visible": false,
   "workbench.colorTheme": "Atom Material Theme",
   "workbench.iconTheme": "file-icons",
   "workbench.colorCustomizations": {
