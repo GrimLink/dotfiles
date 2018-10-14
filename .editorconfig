@@ -1,5 +1,6 @@
-# editorconfig.org - unify code styles
-# plugins for text editors: editorconfig.org/#download
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# http://editorconfig.org
 root = true
 
 [*]
@@ -10,9 +11,11 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-# More line size for better readability
-# Most code will be minified via a compiler/bundler
-# max_line_length will not work in all editors
-[*.{less,sass,scss,styl,js,ts,jsx,mjs,md}]
+[*.{md,mdx}]
+indent_size = 4
+trim_trailing_whitespace = false
+max_line_length = 80
+
+[*.{less,sass,scss,styl,stylus,js,ts,jsx,tsx,mjs,vue}]
 indent_size = 4
 max_line_length = 80
