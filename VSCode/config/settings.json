@@ -2,7 +2,8 @@
   // Editor style
   "editor.fontSize": 15,
   "editor.renderWhitespace": "boundary",
-  "editor.wordWrap": "bounded",
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 120],
   "editor.quickSuggestionsDelay": 30,
   "editor.minimap.showSlider": "always",
   "workbench.startupEditor": "none",
@@ -26,10 +27,11 @@
     "vue": "html"
   },
   "files.associations": {
-    ".gitignore_global": "ignore",
     ".browserslistrc": "properties",
     ".stylelintrc": "json",
-    ".stylelintignore": "ignore"
+    ".stylelintignore": "ignore",
+    ".gitignore_global": "ignore",
+    ".gitmodules": "properties"
   },
   // Format
   "files.trimFinalNewlines": true,
@@ -46,4 +48,12 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "svgviewer.enableautopreview": false,
   "workbench.view.alwaysShowHeaderActions": true,
+  "github.hosts": [
+    {
+      "host": "https://github.com",
+      "username": "oauth",
+      "token": "system"
+    }
+  ],
+  "prettier.stylelintIntegration": true
 }
