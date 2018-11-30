@@ -4,7 +4,7 @@
 # The first 3 give the best default support
 # The percentage is the best solution to support browsers that are used
 # The iOS setting makes sure we also get the last 3 version for Safari
-# Run npx browserslist to see what is supporte
+# Run npx browserslist to see what is supported
 
 last 1 version
 > 2%
