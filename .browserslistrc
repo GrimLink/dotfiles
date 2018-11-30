@@ -2,9 +2,9 @@
 # My base setup for any Project
 #
 # The first 3 give the best default support
-# The precantage is the best solotion to support browsers that are used
+# The percentage is the best solution to support browsers that are used
 # The iOS setting makes sure we also get the last 3 version for Safari
-# Run npx browserslist to see what is supported
+# Run npx browserslist to see what is supporte
 
 last 1 version
 > 2%
