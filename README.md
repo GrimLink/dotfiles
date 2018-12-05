@@ -1,10 +1,10 @@
-# dotfiles
+# Dotfiles
 
-_In progress_
+_In progress_ 
 
 ## Setup
 
-**Warning**: If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+**:warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 ### Using Git and the Setup script
 
@@ -24,16 +24,15 @@ Each setup task will first ask if you want to update this piece.
 
 ## TODO
 
-- [ ] Rename to configfiles?
+- [ ] ~~Rename to configfiles?~~
 - [ ] Doc for setup
 - [ ] Add linting files
-  - [x] Sass-lint
   - [x] Stylelint
   - [ ] ESLint
-- [ ] Add bash scripts
+- [x] Add bash scripts
 - [ ] Build sh script for install
 - [x] Add .browserslist
-- [ ] Add config files editors
+- [x] Add config files editors
 
 _More.. maybe?_
 
