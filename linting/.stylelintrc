@@ -1,16 +1,9 @@
 {
   "rules": {
     "at-rule-empty-line-before": ["always", {
-      "except": [
-        "blockless-after-same-name-blockless",
-        "inside-block"
-      ],
+      "except": ["blockless-after-same-name-blockless", "inside-block"],
       "ignore": ["after-comment"],
-      "ignoreAtRules": [
-        "import",
-        "if",
-        "else"
-      ]
+      "ignoreAtRules": ["import", "if", "else"]
     }],
     "at-rule-name-case": "lower",
     "at-rule-name-newline-after": null,
@@ -36,11 +29,8 @@
     "at-rule-semicolon-newline-after": "always",
     "at-rule-semicolon-space-before": "never",
     "block-closing-brace-empty-line-before": "never",
-    "block-closing-brace-newline-after": ["always-multi-line", {
-      "ignoreAtRules": [
-        "if",
-        "else"
-      ]
+    "block-closing-brace-newline-after": [ "always-multi-line", {
+      "ignoreAtRules": ["if", "else"]
     }],
     "block-closing-brace-newline-before": "always-multi-line",
     "block-closing-brace-space-after": null,
@@ -59,10 +49,7 @@
     "color-no-invalid-hex": true,
     "comment-empty-line-before": ["always", {
       "except": ["first-nested"],
-      "ignore": [
-        "after-comment",
-        "stylelint-commands"
-      ]
+      "ignore": ["after-comment", "stylelint-commands"]
     }],
     "comment-no-empty": true,
     "comment-whitespace-inside": "always",
@@ -109,16 +96,13 @@
     "length-zero-no-unit": true,
     "max-empty-lines": 1,
     "max-line-length": [80, {
-      "ignorePattern": ["/https?:\/\/[0-9,a-z]*.*/"],
+      "ignorePattern": ["/https?://[0-9,a-z]*.*/"],
       "severity": "warning"
     }],
-    "max-nesting-depth": 5,
+    "max-nesting-depth": 4,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
-    "media-feature-name-blacklist": [
-      "max-device-width",
-      "max-device-height"
-    ],
+    "media-feature-name-blacklist": ["max-device-width", "max-device-height"],
     "media-feature-name-case": "lower",
     "media-feature-name-no-unknown": true,
     "media-feature-name-no-vendor-prefix": true,
@@ -174,16 +158,12 @@
     "selector-max-compound-selectors": 4,
     "selector-max-empty-lines": 1,
     "selector-max-id": 0,
-    "selector-max-pseudo-class": 3,
     "selector-max-specificity": "0,4,1",
     "selector-max-type": 2,
     "selector-max-universal": 1,
     "selector-nested-pattern": null,
     "selector-no-qualifying-type": [true, {
-      "ignore": [
-        "attribute",
-        "class"
-      ]
+      "ignore": ["attribute", "class"]
     }],
     "selector-no-vendor-prefix": true,
     "selector-pseudo-class-case": "lower",
@@ -196,7 +176,7 @@
     "selector-type-no-unknown": true,
     "shorthand-property-no-redundant-values": true,
     "string-no-newline": true,
-    "string-quotes": null,
+    "string-quotes": "double",
     "time-min-milliseconds": null,
     "unit-case": "lower",
     "unit-no-unknown": true,
