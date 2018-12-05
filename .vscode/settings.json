@@ -1,9 +1,0 @@
-{
-  "files.associations": {
-    ".aliases": "shellscript",
-    ".functions": "shellscript",
-    ".export": "shellscript",
-    ".prompt": "shellscript",
-    ".magento": "shellscript"
-  }
-}
