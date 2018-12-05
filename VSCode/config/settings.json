@@ -48,12 +48,12 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "svgviewer.enableautopreview": false,
   "workbench.view.alwaysShowHeaderActions": true,
+  "prettier.stylelintIntegration": true,
   "github.hosts": [
     {
       "host": "https://github.com",
       "username": "oauth",
       "token": "system"
     }
-  ],
-  "prettier.stylelintIntegration": true
+  ]
 }
