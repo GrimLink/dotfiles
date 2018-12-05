@@ -1,0 +1,115 @@
+default_username=$(whoami)
+
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+	export TERM=gnome-256color
+elif infocmp xterm-256color >/dev/null 2>&1; then
+	export TERM=xterm-256color
+fi
+
+set_prompts() {
+  local black="" blue="" bold="" cyan="" green="" orange="" \
+        purple="" red="" reset="" white="" yellow=""
+
+  local dateCmd=""
+
+  if [ -x /usr/bin/tput ] && tput setaf 1 &> /dev/null; then
+    tput sgr0 # reset colors
+    bold=$(tput bold)
+    reset=$(tput sgr0)
+    # Based on the material colors
+    black=$(tput setaf 0)
+    blue=$(tput setaf 81)
+    cyan=$(tput setaf 097)
+    green=$(tput setaf 114)
+    orange=$(tput setaf 215)
+    purple=$(tput setaf 141)
+    red=$(tput setaf 203)
+    violet=$(tput setaf 206)
+    magenta=$(tput setaf 206)
+    white=$(tput setaf 8)
+    yellow=$(tput setaf 226)
+  else
+    bold=""
+    reset="\e[0m"
+    black="\e[1;30m"
+    blue="\e[1;34m"
+    cyan="\e[1;36m"
+    green="\e[1;32m"
+    orange="\e[1;33m"
+    purple="\e[1;35m"
+    red="\e[1;31m"
+    magenta="\e[1;31m"
+    violet="\e[1;35m"
+    white="\e[1;37m"
+    yellow="\e[1;33m"
+  fi
+
+  # Only show username/host if not default
+  function usernamehost() {
+    # Highlight the user name when logged in as root.
+    if [[ "${USER}" == *"root" ]]; then
+      userStyle="${red}";
+    else
+      userStyle="${orange}";
+    fi;
+
+    userhost=""
+    userhost+="\[${userStyle}\]$USER "
+    userhost+="\[${white}\]at "
+    userhost+="\[${violet}\]$HOSTNAME "
+    userhost+="\[${white}\]in"
+
+    if [ $USER != "$default_username" ]; then echo $userhost ""; fi
+  }
+
+  function prompt_git() {
+    # this is >5x faster than mathias's.
+
+    # check if we're in a git repo. (fast)
+    git rev-parse --is-inside-work-tree &>/dev/null || return
+
+    # check for what branch we're on. (fast)
+    #   if… HEAD isn’t a symbolic ref (typical branch),
+    #   then… get a tracking remote branch or tag
+    #   otherwise… get the short SHA for the latest commit
+    #   lastly just give up.
+    branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+      git describe --all --exact-match HEAD 2> /dev/null || \
+      git rev-parse --short HEAD 2> /dev/null || \
+      echo '(unknown)')";
+
+    ## early exit for Chromium & Blink repo, as the dirty check takes ~5s
+    ## also recommended (via goo.gl/wAVZLa ) : sudo sysctl kern.maxvnodes=$((512*1024))
+    repoUrl=$(git config --get remote.origin.url)
+    if grep -q chromium.googlesource.com <<<$repoUrl; then
+      dirty="*"
+    else
+      # check if it's dirty (slow)
+      #   technique via github.com/git/git/blob/355d4e173/contrib/completion/git-prompt.sh#L472-L475
+      dirty=$(git diff --no-ext-diff --quiet --ignore-submodules --exit-code || echo -e "*")
+      # mathias has a few more checks some may like:
+      # github.com/mathiasbynens/dotfiles/blob/a8bd0d4300/.bash_prompt#L30-L43
+    fi
+
+    [ -n "${s}" ] && s=" [${s}]";
+    echo -e "${1}${branchName}${2}$dirty";
+
+    return
+  }
+
+  PS1="\[\033]0;\W\007\]" # terminal title (set to the current working directory)
+  PS1+="\n"; # newline
+  PS1+="\[$(usernamehost)\]" # username at host
+  PS1+="\[$reset$blue\]\w" # working directory
+  PS1+="\$(prompt_git \" $white\" \"$bold\")" # git repository details
+  PS1+="\n"
+  PS1+="\[$reset$bold$magenta\]❯ \[$reset\]"
+
+  export PS1
+
+  PS2="\[${yellow}\]⚡ \[${reset}\]"
+  export PS2
+}
+
+set_prompts
+unset set_prompts

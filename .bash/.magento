@@ -1,0 +1,34 @@
+alias m1='magerun'
+alias m2='magerun2'
+alias mage='php bin/magento'
+
+alias mage_cache='mage cache:disable layout block_html full_page'
+alias mage_admin='mage config:set admin/security/session_lifetime 86400 &&
+                  mage config:set admin/security/password_lifetime ""'
+
+function mage_locale() {
+  mage config:set general/locale/code ${1:-en_US}
+}
+
+alias mage_setup='mage_cache &&
+                  mage_admin &&
+                  mage_locale &&
+                  mage cache:clean'
+
+# Magento Styles
+alias mage_dev='grunt watch'
+
+function mage_build() {
+  grunt less:$1
+}
+
+function mage_rebuild() {
+  grunt clean:$1 &&
+  grunt exec:$1 &&
+  grunt less:$1
+}
+
+# Snowdog Styles
+alias m2_dev='gulp dev --disableLinting'
+alias m2_build='gulp styles'
+alias m2_rebuild='gulp clean && gulp styles'
