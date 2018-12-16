@@ -1,9 +1,7 @@
 #!/bin/bash
 
-SUCCESS_MESSAGE="\033[0;32m✓ Done\033[0m"
-
 function installCodeExt() {
-  VSCODE_EXT="
+  VSCODE_EXT=(
     EditorConfig.EditorConfig
     Archety.material-icons
     bierner.markdown-preview-github-styles
@@ -24,19 +22,10 @@ function installCodeExt() {
     tobiasalthoff.atom-material-theme
     yzhang.markdown-all-in-one
     felixfbecker.php-intellisense
-  "
+  )
   for EXT in $VSCODE_EXT; do
     code --install-extension $EXT
   done
-}
-
-function rsyncCodeConfig() {
-  rsync -avh --no-perms \
-  "$(dirname "${BASH_SOURCE}")/config/settings.json" \
-  "$(dirname "${BASH_SOURCE}")/config/keybindings.json" \
-  "$(dirname "${BASH_SOURCE}")/config/snippets" \
-  $HOME/Library/Application\ Support/Code/User;
-  echo -e "$SUCCESS_MESSAGE\n"
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -45,20 +34,34 @@ else
   read -p "Install VSCode extensions. Are you sure? (y/n) " -n 1;
   echo "";
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-    installCodeExt;
+    if ! command -v code &> /dev/null; then
+      echo -e "The VSCode command is not installed \nPlease install it to run the setup for VSCode! \nThen re run this setup script or the vscode/setup script\n"
+    else
+      installCodeExt;
+    fi;
   fi;
 fi;
 
+unset installCodeExt;
+
+function rsyncVSCodeConfig() {
+  rsync -avh --no-perms \
+  "$(dirname "${BASH_SOURCE}")/config/settings.json" \
+  "$(dirname "${BASH_SOURCE}")/config/keybindings.json" \
+  "$(dirname "${BASH_SOURCE}")/config/snippets" \
+  $HOME/Library/Application\ Support/Code/User;
+}
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  rsyncCodeConfig;
+  rsyncVSCodeConfig;
 else
   read -p "Update VSCode config files. Are you sure? (y/n) " -n 1;
   echo "";
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-    rsyncCodeConfig;
+    rsyncVSCodeConfig;
   fi;
 fi;
 
-echo -e "Make sure to reboot vsode\n$SUCCESS_MESSAGE"
-unset installCodeExt;
-unset rsyncCodeConfig;
+unset rsyncVSCodeConfig;
+
+echo -e "Make sure to reboot vsode\n"

@@ -30,7 +30,6 @@
     ".browserslistrc": "properties",
     ".stylelintrc": "json",
     ".stylelintignore": "ignore",
-    ".gitignore_global": "ignore",
     ".gitmodules": "properties"
   },
   // Format
