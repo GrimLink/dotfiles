@@ -1,5 +1,4 @@
 # Bash
-![Version](https://img.shields.io/badge/version-v1.0.0-green.svg?style=flat-square)
 
 All files are loaded via the [.bash_profile](https://github.com/GrimLink/dotfiles/blob/master/.bash_profile).
 
