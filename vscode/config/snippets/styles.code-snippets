@@ -1,0 +1,81 @@
+{
+  "pseudo states": {
+    "scope": "css,less,scss",
+    "prefix": ":states",
+    "description": "All main pseudo states",
+    "body": [
+      "&:active,",
+      "&:focus,",
+      "&:hover {\n\t$1\n}"
+    ]
+  },
+  "pseudo states foc/hov": {
+    "scope":  "css,scss,less",
+    "prefix":  ":fochov",
+    "body":  [
+      "&:focus,",
+      "&:hover {\n\t$1\n}"
+    ],
+    "description":  "Base focus pseudo states"
+  },
+  "before & after": {
+    "scope": "css,scss,less",
+    "prefix": "::both",
+    "description":  "Add's both before and after",
+    "body": [
+      "$1::before,",
+      "$1::after {\n\tcontent: \"\";\n}"
+    ]
+  },
+  "Position all": {
+    "scope": "css,less,scss",
+    "prefix": "position-all",
+    "description": "Position with all options",
+    "body": [
+      "position: ${1:absolute}",
+      "top: ${2:0};",
+      "right: ${2:0};",
+      "bottom: ${2:0};",
+      "left: ${2:0};"
+    ]
+  },
+  "bg full": {
+    "scope": "css,less,scss",
+    "prefix": "bg",
+    "description": "bg with all base options",
+    "body": [
+      "background:",
+      "\t${1:transparent}",
+      "\t${2:/* img */}",
+      "\t${3:center/cover}",
+      "\t${4:no-repeat};"
+    ]
+  },
+  "bg image(url)": {
+    "scope": "css,less,scss",
+    "prefix": "bg-img",
+    "description": "bg with image option",
+    "body": "background-image: image(\"$1.webp\", \"$1.jpg\");"
+  },
+  "font full": {
+    "scope": "css,less,scss",
+    "prefix": "font",
+    "description": "font with all options",
+    "body": [
+      "font:",
+      "\t${1:${2:/* style */}",
+      "\t${3:/* variant */}",
+      "\t${4:/* stretch */}}",
+      "\t${5:normal}",
+      "\t${6:1em/1.5}",
+      "\t${7:system-ui, sans-serif};"
+    ]
+  },
+  // Stylelint
+  "Stylelint disable": {
+    "scope": "css,less,scss",
+    "prefix": "!slint",
+    "description": "disable stylelinting",
+    "body": "/* stylelint-disable${1:-next-line} ${2:declaration-no-important} */"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "each": {
+    "prefix": "@each",
+    "description": "each mixin",
+    "body": [
+      ".each-${1:name}(length(${2:@map}));",
+      ".each-${1:name}(@n, @i: 0) when (@i = @n) {",
+      "\t$0",
+      "\t.each-$1((@i - 1)); // iterator",
+      "}"
+    ]
+  },
+  "if": {
+    "prefix": "@if",
+    "description": "if (mixin guard)",
+    "body": "& when (${1:@option = true}) {\n\t$0\n}"
+  }
+}

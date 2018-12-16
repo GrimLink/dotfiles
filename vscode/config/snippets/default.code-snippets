@@ -1,0 +1,11 @@
+{
+  "Copyright": {
+    "scope": "less,scss,javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "!copyright",
+    "description": "Add copyright to a file",
+    "body": [
+      "// ${1:<NAME>} (${3:<SITE>})",
+      "// ${4:Licensed under MIT Open Source}"
+    ]
+  }
+}

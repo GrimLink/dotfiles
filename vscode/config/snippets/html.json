@@ -1,0 +1,23 @@
+{
+  // php in html
+  "php": {
+    "prefix": "php",
+    "description": "php tag",
+    "body": "<?php $1; ?>"
+  },
+  "php echo": {
+    "prefix": "?=",
+    "description": "php echo tag",
+    "body": "<?= $1; ?>"
+  },
+  "php print_r": {
+    "prefix": "?print",
+    "description": "php print",
+    "body": "<pre><?= print_r(${1:$this->item}); ?></pre>"
+  },
+  "php var_dump": {
+    "prefix": "?dump",
+    "description": "php dump",
+    "body": "<pre><?= var_dump(${1:$this->item}); ?></pre>"
+  }
+}
