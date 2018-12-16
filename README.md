@@ -8,7 +8,7 @@ _In progress_
 
 ### Using Git and the Setup script
 
-You can clone the repository wherever you want. (I like to keep it in ~/Projects/dotfiles.
+You can clone the repository wherever you want. (I like to keep it in ~/projects/dotfiles.
 _You can symlink it to `~/dotfiles`_
 
 ```bash
@@ -21,20 +21,6 @@ source setup.sh
 The setup script will pull in the latest version and copy the files to your home folder.
 
 Each setup task will first ask if you want to update this piece.
-
-## TODO
-
-- [ ] ~~Rename to configfiles?~~
-- [ ] Doc for setup
-- [ ] Add linting files
-  - [x] Stylelint
-  - [ ] ESLint
-- [x] Add bash scripts
-- [ ] Build sh script for install
-- [x] Add .browserslist
-- [x] Add config files editors
-
-_More.. maybe?_
 
 ## Insparation and Thanks to…
 
