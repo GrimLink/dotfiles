@@ -1,17 +1,13 @@
 #!/bin/bash
 
 # Create a new directory and enter it
-function mcd() {
-	mkdir -p "$@" && cd "$@"
-}
+function mkd() { mkdir -p "$@" && cd "$@"; }
 
 # Find shorthand
-function f() {
-	find . -name "$1" 2>&1 | grep -v 'Permission denied'
-}
+function f() { find . -name "$1" 2>&1 | grep -v 'Permission denied'; }
 
 # Create a data URI from a file and copy it to the pasteboard
-datauri() {
+function datauri() {
     local mimeType=$(file -b --mime-type "$1")
     if [[ $mimeType == text/* ]]; then
         mimeType="${mimeType};charset=utf-8"

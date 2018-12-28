@@ -1,28 +1,35 @@
 #!/bin/bash
 
-# Google Chrome
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
-
-# Lighthouse (https://github.com/GoogleChrome/lighthouse)
-function audit() {
-  lighthouse $1 --output-path $HOME/Downloads/pwa-report-$(date +%t-%d-%m-%Y).html
-}
+# Each alias & function requires it's App or CLI to be installed.
 
 # Brew
-alias brewery='brew update && brew upgrade && brew cleanup'
+alias brewery="brew update && brew upgrade && brew cleanup"
 
-## Magento
+# Browsers
+function safari() { open -a Safari "$1"; }
+function chrome() { open -a Google\ Chrome "$1"; }
+function canary() { open -a Google\ Chrome\ Canary "$1"; }
+function firefox() { open -a Firefox "$1"; }
+function firefoxDev() { open -a FirefoxDeveloperEdition "$1"; }
+
+# Lighthouse, Always use headless chrome
+alias lighthouse='command lighthouse --chrome-flags="--headless"'
+
+# Tower
+alias tower="gittower"
+
+# Magento
 alias m1="magerun"
 alias m2="magerun2"
 alias mage="php bin/magento"
 
-function mage-setup() {
+# Sets base config for a local dev env
+function mage-dev() {
   mage cache:disable layout block_html full_page
   mage config:set admin/security/session_lifetime 86400
   mage config:set admin/security/password_lifetime ""
-}
-
-function mage-locale() {
-  mage config:set general/locale/code ${1:-en_US}
+  if [ "$1" == "--valet" -o ]; then
+    # Valet default is de_DE
+    mage config:set general/locale/code en_US
+  fi
 }
