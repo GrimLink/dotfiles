@@ -1,30 +1,38 @@
 # Dotfiles
 
-_In progress_ 
+Config's for Bash, Node, Git, OSX, Editors and more.
+
+> :warning: These are my personal settings.
+> Don't run the scripts without understanding what the code does.
 
 ## Setup
 
-**:warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
-
-### Using Git and the Setup script
-
-You can clone the repository wherever you want. (I like to keep it in ~/projects/dotfiles.
-_You can symlink it to `~/dotfiles`_
+You can clone the repository wherever you want.
+I like to keep it in `~/projects/dotfiles`.
 
 ```bash
-git clone git@github.com:GrimLink/dotfiles.git &&
-ln -s ~/Projects/dotfiles ~/dotfiles &&
-cd dotfiles &&
-source setup.sh
+git clone git@github.com:GrimLink/dotfiles.git
 ```
 
-The setup script will pull in the latest version and copy the files to your home folder.
+## Install
 
-Each setup task will first ask if you want to update this piece.
+If it is your first install.
+Run the `install.sh` script.
+You can simply `source` it or make it executable.
+
+```bash
+source ~/projects/dotfiles/install.sh
+```
+
+Follow the steps for each script, that is called via the install script.
+
+
+## Sync
 
 ## Insparation and Thanks to…
 
-- [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) for his setup script (named bootstrap.sh)
-- [Paul Irish](https://github.com/paulirish/dotfiles) for his bash .aliases and .functions
-- Prompt colors inspired on [sindresorhus/pure](https://github.com/sindresorhus/pure)
+- [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+- [paulirish/dotfiles](https://github.com/paulirish/dotfiles)
+- [alrra/dotfiles](https://github.com/alrra/dotfiles)
+- [sindresorhus/pure](https://github.com/sindresorhus/pure)
 - Anyone who contributed a patch or made a helpful suggestion
