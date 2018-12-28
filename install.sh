@@ -17,3 +17,8 @@ source homebrew/brew-cask.sh;
 source homebrew/brew.sh;
 source valet/setup.sh;
 source node/setup.sh;
+
+# Manual apps to get
+# Not possible via brew
+open https://www.google.com/chrome/beta/
+open http://www.mirovideoconverter.com/
