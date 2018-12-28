@@ -1,16 +1,15 @@
-# Shell
-alias r.bash='source ~/.bash_profile'
+#!/bin/bash
 
-# Easier navigation
+alias reload="exec $SHELL -l"
+
+# Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-# Or via number, easier for larger steps
-# If you need more than 5 then you probley need to use cd and renavigate
-alias ..2="cd ../.."
-alias ..3="cd ../../.."
-alias ..4="cd ../../../.."
-alias ..5="cd ../../../../.."
+
+# Directory
+alias md='mkdir -p'
+alias rd='rmdir'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -21,6 +20,7 @@ else # macOS `ls`
   export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
+# List directory contents
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
 
@@ -38,10 +38,6 @@ alias chmox="chmod +x"
 
 # Get today's data
 alias today='date +"%A, %B %-d, %Y, Week: %V"'
-
-# Google Chrome
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -70,6 +66,3 @@ alias desktop-show="defaults write com.apple.finder CreateDesktop -bool true && 
 # Networking
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip-local="ipconfig getifaddr en1"
-
-# Brew
-alias brewery='brew update && brew upgrade && brew cleanup'

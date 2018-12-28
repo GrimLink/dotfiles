@@ -1,6 +1,11 @@
-# Brew Composer Path
+#!/bin/bash
+
+# Add local bin
+export PATH="$PATH:$HOME/bin"
+
+# Add Composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/sbin:$PATH"
 
-# Add Visual Studio Code (code)
-export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# Add Visual Studio Code (code), manually
+export PATH="$PATH:/Applications/Visual\/Studio\/Code.app/Contents/Resources/app/bin"

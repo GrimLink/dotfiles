@@ -10,19 +10,8 @@ This includes:
 - Functions
 - Magento _Aliases/Functions specific to Magento2 and magerun_
 
-_All files are prefixed with bash, similar to prompt_
-
 ## Add custom commands without creating a new fork
 
-If `~/.bash/bash_extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
+If `~/.shell/extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
-My bash_extra includes (for example) the setup for the git config.
-
-```bash
-GIT_AUTHOR_NAME="GrimLink"
-git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="Some@cool.email"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
-```
-
-You could also use bash_extra to override settings, functions and aliases from my dotfiles repository. It’s probably better to fork this repository instead, though.
+You could also use extra to override settings, functions and aliases from my dotfiles repository. It’s probably better to fork this repository instead, though.

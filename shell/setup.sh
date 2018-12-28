@@ -3,7 +3,6 @@
 function rsyncBash() {
   rsync -avh --no-perms \
   "$(dirname "${BASH_SOURCE}")/.bash_profile" \
-  "$(dirname "${BASH_SOURCE}")/.bash_prompt" \
   ~;
 
   if [ ! -d ~/shell ]; then
@@ -11,6 +10,7 @@ function rsyncBash() {
   fi
 
   rsync -avh --no-perms \
+  "$(dirname "${BASH_SOURCE}")/prompt" \
   "$(dirname "${BASH_SOURCE}")/aliases" \
   "$(dirname "${BASH_SOURCE}")/exports" \
   "$(dirname "${BASH_SOURCE}")/functions" \
@@ -30,3 +30,5 @@ if [ "$1" == "--force" -o "$1" == "-f" ]; then
       rsyncBash;
     fi;
 fi;
+
+unset rsyncBash;
