@@ -10,15 +10,15 @@ brew cask install firefox-developer-edition
 brew cask install hyper
 brew cask install sequel-pro
 brew cask install tower
-brew caks install transmit
+brew cask install transmit
 brew cask install vlc
 brew cask install dropbox
 brew cask install boostnote
-## Editor
+## Editors
 brew cask install visual-studio-code
 brew cask install atom
 brew cask install graphiql
-brew caks install postman
+brew csask install postman
 ## Communication
 brew cask install slack
 brew cask install skype

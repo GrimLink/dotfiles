@@ -22,7 +22,7 @@ function rsyncGitConfig() {
     GIT_EMAIL="$(git config --global --get user.email)"
 
     rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.gitconfig" ~;
-    
+
     git config --global user.name "$GIT_NAME"
     git config --global user.email "$GIT_EMAIL"
   else
@@ -30,7 +30,7 @@ function rsyncGitConfig() {
 
     read -p "Git user name: " NAME
     read -p "Git user email: " EMAIL
-    
+
     git config --global user.name $NAME
     git config --global user.email $EMAIL
   fi
