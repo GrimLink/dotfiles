@@ -1,0 +1,51 @@
+{
+  // Editor style
+  "editor.fontSize": 15,
+  "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 120],
+  "editor.quickSuggestionsDelay": 30,
+  "editor.minimap.showSlider": "always",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.colorTheme": "Atom Material Theme",
+  "workbench.iconTheme": "file-icons",
+  "workbench.colorCustomizations": {
+    "[Atom Material Theme]": {
+      "badge.background": "#2196f3",
+      "badge.foreground": "#fff",
+      "activityBarBadge.background": "#2196f3",
+      "activityBarBadge.foreground": "#fff",
+      "editorRuler.foreground": "#ffffff25"
+    }
+  },
+  "breadcrumbs.enabled": true,
+  "zenMode.fullScreen": false,
+  // Languages
+  "emmet.includeLanguages": {
+    "blade.php": "html",
+    "vue": "html"
+  },
+  "files.associations": {
+    ".browserslistrc": "properties",
+    ".stylelintrc": "json",
+    ".stylelintignore": "ignore",
+    ".gitmodules": "properties"
+  },
+  // Format
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "html.format.extraLiners": "",
+  // Linting
+  "php.suggest.basic": false,
+  // Content
+  "material-icons.includeXmlns": true,
+  "material-icons.classList": "icon",
+  "markdown.extension.italic.indicator": "_",
+  "placeholderImages.quoteStyle": "double",
+  // Other
+  "liveServer.settings.donotShowInfoMsg": true,
+  "svgviewer.enableautopreview": false,
+  "workbench.view.alwaysShowHeaderActions": true,
+  "prettier.stylelintIntegration": true
+}

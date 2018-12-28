@@ -1,0 +1,12 @@
+[
+    {
+        "key": "cmd+shift+i",
+        "command": "editor.action.reindentlines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+shift+i",
+        "command": "editor.action.reindentselectedlines",
+        "when": "editorHasSelection && textInputFocus && !editorReadonly"
+    }
+]
