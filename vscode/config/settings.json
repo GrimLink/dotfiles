@@ -33,10 +33,7 @@
     ".gitmodules": "properties"
   },
   // Format
-  "files.trimFinalNewlines": true,
-  "files.insertFinalNewline": true,
   "html.format.extraLiners": "",
-  // Linting
   "php.suggest.basic": false,
   // Content
   "material-icons.includeXmlns": true,
