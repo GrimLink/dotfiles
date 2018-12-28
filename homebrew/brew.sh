@@ -1,16 +1,15 @@
 #!/bin/bash
 
-# Installs all brew dependencies
+# Install it, if not already
 if ! command -v brew &> /dev/null; then
-  # Install it, if not already
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  # Make sure we’re using the latest Homebrew.
+  brew update
+
+  # Upgrade any already-installed formulae.
+  brew upgrade
 fi
-
-# Make sure we’re using the latest Homebrew.
-brew update
-
-# Upgrade any already-installed formulae.
-brew upgrade
 
 # Utils
 brew install php@7.1
