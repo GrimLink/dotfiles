@@ -22,7 +22,7 @@ BASH_SETTINGS=(
   ~/.shell/aliases
   ~/.shell/functions
   ~/.shell/exports
-  ~/.shell/magento
+  ~/.shell/applications
   ~/.shell/extra
 )
 

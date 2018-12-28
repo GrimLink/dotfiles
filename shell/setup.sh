@@ -14,7 +14,7 @@ function rsyncBash() {
   "$(dirname "${BASH_SOURCE}")/aliases" \
   "$(dirname "${BASH_SOURCE}")/exports" \
   "$(dirname "${BASH_SOURCE}")/functions" \
-  "$(dirname "${BASH_SOURCE}")/magento" \
+  "$(dirname "${BASH_SOURCE}")/applications" \
   ~/.shell;
 
   # Load new bash options
