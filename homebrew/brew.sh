@@ -14,6 +14,7 @@ fi
 # Utils
 brew install php@7.1
 brew install php@7.2
+brew install php@7.3
 brew install composer
 brew install node
 brew install yarn
