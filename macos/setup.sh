@@ -12,9 +12,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-source macos/ui_and_ux.sh;
-source macos/accessories.sh;
-source macos/finder.sh;
-source macos/dock.sh;
-source macos/safari.sh;
-source macos/spotlight.sh;
+source $(dirname "${BASH_SOURCE}")/ui-ux;
+source $(dirname "${BASH_SOURCE}")/accessories;
+source $(dirname "${BASH_SOURCE}")/finder;
+source $(dirname "${BASH_SOURCE}")/dock;
+source $(dirname "${BASH_SOURCE}")/safari;
+source $(dirname "${BASH_SOURCE}")/spotlight;

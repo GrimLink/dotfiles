@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get and install
-if ! command -v composer &> /dev/null; then
+if command -v composer &> /dev/null; then
   composer global require weprovide/valet-plus
   valet fix
   valet install --with-mariadb

@@ -1,5 +1,5 @@
 function rsyncHyperConfig() {
-  rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/hyper.js" ~;
+  rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.hyper.js" ~;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

@@ -8,7 +8,7 @@ This includes:
 - Export _export path sets, example brew composer path_
 - Aliases
 - Functions
-- Magento _Aliases/Functions specific to Magento2 and magerun_
+- Applications
 
 ## Add custom commands without creating a new fork
 
