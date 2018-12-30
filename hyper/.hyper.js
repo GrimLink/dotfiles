@@ -3,7 +3,7 @@
 module.exports = {
   config: {
     fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-    fontSize: 13,
+    fontSize: 14,
     cursorColor: "rgba(3, 169, 244, .8)",
     cursorAccentColor: "#000",
     foregroundColor: "#fff",
