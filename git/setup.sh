@@ -7,7 +7,7 @@ function rsyncGitIgnore() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncGitIgnore;
 else
-  read -p "Update GitIgnore files. Are you sure? (y/n) " -n 1;
+  read -p "Update GitIgnore files. Are you sure? (y) " -n 1;
   echo "";
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     rsyncGitIgnore;
@@ -39,7 +39,7 @@ function rsyncGitConfig() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncGitConfig;
 else
-  read -p "Update Git config files. Are you sure? (y/n) " -n 1;
+  read -p "Update Git config files. Are you sure? (y) " -n 1;
   echo "";
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     rsyncGitConfig;

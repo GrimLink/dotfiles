@@ -7,7 +7,7 @@ My setup for Bash, Node, Git, OSX, Editors and more...
 
 ## Setup
 
-You can clone the repository wherever you want.
+You can download or clone the repository wherever you want.
 
 _I like to keep it in `~/dotfiles`._
 
@@ -19,23 +19,26 @@ bash -c "$(curl -LsS https://raw.githubusercontent.com/GrimLink/dotfiles/master/
 
 If it is your first install.
 Run the `install.sh` script.
-You can simply `source` it or make it executable.
 
 ```bash
-source ~/projects/dotfiles/install.sh
+source dotfiles/install.sh
 ```
 
 Follow the steps for each script, that is called via the install script.
 
-_Use the flag `--force` to skip the questions for each config_
+_Use the flag `--force` or `-f` to skip the questions for each config_
 
 ## Sync
 
 `sync.sh` updates the dotfiles and resync the config files.
 
-Unlike the install this does not reinstall apps and other static assest.
+The sync will not re-download apps 
 
-_Use the flag `--force` to skip the questions for each config_
+```bash
+source dotfiles/sync.sh
+```
+
+_Use the flag `--force` or `-f` to skip the questions for each config_
 
 ## Insparation and Thanks to…
 

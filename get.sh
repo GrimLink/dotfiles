@@ -11,7 +11,7 @@ fi
 git clone https://github.com/GrimLink/dotfiles.git dotfiles &&
 cd dotfiles;
 
-read -p "Run install? (y/n) " -n 1;
+read -p "Run install? (y) " -n 1;
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   source install.sh;

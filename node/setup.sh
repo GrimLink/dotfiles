@@ -14,5 +14,6 @@ if command -v node &> /dev/null; then
   npm config set init-author-name "$(git config --global --get user.name)"
   npm config set init-license "MIT"
 else
-  echo -e "NODE is not installed\nPlease first install node to install Node Tools"
+  echo "NODE is not installed";
+  echo "Please first install node to install Node Tools";
 fi

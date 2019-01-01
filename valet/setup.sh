@@ -22,5 +22,6 @@ if command -v composer &> /dev/null; then
   mkdir ~/projects/joomla
   valet park ~/projects/joomla
 else
-  echo -e "Composer is missing, can't install valet"
+  echo "Composer is missing, can't install valet" && /
+  echo "Run the dotfiles/valet/setup.sh, when you're ready"
 fi

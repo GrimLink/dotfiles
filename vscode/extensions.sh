@@ -47,7 +47,7 @@ function installCodeExt() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   installCodeExt;
 else
-  read -p "Install VSCode extensions. Are you sure? (y/n) " -n 1;
+  read -p "Install VSCode extensions. Are you sure? (y) " -n 1;
   echo "";
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     if ! command -v code &> /dev/null; then

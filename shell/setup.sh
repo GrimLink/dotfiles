@@ -24,7 +24,7 @@ function rsyncBash() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     rsyncBash;
   else
-    read -p "Update Bash files? (y/n) " -n 1;
+    read -p "Update Bash files? (y) " -n 1;
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
       rsyncBash;

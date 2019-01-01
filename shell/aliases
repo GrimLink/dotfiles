@@ -3,14 +3,14 @@
 alias reload="exec $SHELL -l"
 
 # Navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # Directory
-alias md='mkdir -p'
-alias rd='rmdir'
-alias rmf='rm -rf'
+alias md="mkdir -p"
+alias rd="rmdir"
+alias rmf="rm -rf"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
