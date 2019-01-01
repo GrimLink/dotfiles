@@ -3,22 +3,38 @@
 # Go to dotfile
 cd "$(dirname "${BASH_SOURCE}")";
 
-# Alway check if xcode-select is there
 if ! command -v xcode-select &> /dev/null; then
-  xcode-select --install
+  xcode-select --install;
+  echo "Please first install xcode before continuing";
+  read -p "Ready? Press any key to continue" -n 1;
+  echo "";
 fi
 
 # If it has the flag `--force` or `-f`.
 # Then don't ask for each task
+
 source macos/setup.sh;
 source shell/setup.sh;
+source bin/setup.sh;
+
 source git/setup.sh;
-source homebrew/brew-cask.sh;
-source homebrew/brew.sh;
-source valet/setup.sh;
+source git/ssh.sh;
+
 source node/setup.sh;
 
+source homebrew/brew-cask.sh;
+source homebrew/brew.sh;
+
+source vscode/extensions.sh;
+source vscode/config.sh;
+
+# Make sure we are using the latest shell env
+exec $SHELL -l;
+
+source valet/setup.sh;
+source valet/magerun.sh;
+
 # Manual apps to get
-# Not possible via brew
+cd ~/Downloads
 open https://www.google.com/chrome/beta/
-open http://www.mirovideoconverter.com/
+curl -sS -O http://getmiro.com/files/MiroVideoConverter.dmg

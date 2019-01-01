@@ -1,0 +1,181 @@
+#!/bin/bash
+
+NAME="$1";
+TYPE="${2}";
+OPTIONS=(
+  'magento'
+  'wordpress'
+  'react'
+  'vue'
+  'html'
+);
+
+DBUSER="root";
+DBPASS="root";
+DBHOST="localhost";
+
+# Check if parent folder is one of the options
+if [[ -z "$TYPE" ]]; then
+  for i in "${OPTIONS[@]}"; do
+    if [[ "$(basename $PWD)" == "${i}" ]]; then
+      TYPE="$(basename $PWD)"
+    fi
+  done
+fi
+
+# Ask for an type if not set
+if [[ -z "$TYPE" ]]; then
+  echo -e "\nOptions are:";
+  for i in "${OPTIONS[@]}"; do
+    echo " - ${i}"
+  done
+  echo "";
+
+  read -p "Project type: " TYPE;
+  echo "";
+fi
+
+createHTML() {
+  touch index.html
+  echo -e "<!DOCTYPE html>" >> index.html
+  echo -e "<head>" >> index.html
+  echo -e "  <title>$NAME</title>" >> index.html
+  echo -e "  <meta charset=\"UTF-8\">" >> index.html
+  echo -e "  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">" >> index.html
+  echo -e "  <meta name=\"application-name\" content=\"${NAME}\">" >> index.html
+  echo -e "  <meta name=\"apple-mobile-web-app-title\" content=\"${NAME}\">" >> index.html
+  echo -e "  <meta name=\"theme-color\" content=\"#fff\">" >> index.html
+  echo -e "</head>\n<body>" >> index.html
+  echo -e "  <div style=\"display: flex; justify-content: center; align-items: center; height: 100vh;font-size: 6rem;\">${NAME}</div>" >> index.html
+  echo -e "</body>\n</html>" >> index.html
+  mkdir public
+  mkdir src
+  touch .gitignore
+  npm init -y > /dev/null
+}
+
+case "$TYPE" in
+  # Magento
+  [mM][aA][gG][eE][nN][tT][oO])
+    if [[ -z "$NAME" ]]; then
+      echo "The Magento install requires a name" &&
+      exit;
+    fi
+    echo "Options are:";
+    echo "  [ ] = Latest"
+    echo "  [1] = 2.3";
+    echo "  [2] = 2.2";
+    read -p "Version: " VERSION;
+    if [[ -z "$VERSION" ]]; then
+      echo "Using latest version";
+    elif [[ "$VERSION" == "1" ]]; then
+      echo "Using latest 2.3";
+      MVERSION="=2.3.*";
+    elif [[ "$VERSION" == "2" ]]; then
+      echo "Using version 2.2";
+      MVERSION="=2.2.*";
+    fi
+    read -p "DB name: ${NAME} or " DBNAME;
+    echo "";
+    if [[ -z "$DBNAME" ]]; then
+      if [[ -n "$NAME" ]]; then
+        DBNAME="${NAME}";
+      else
+        echo "The DBName is required" &&
+        exit;
+      fi
+    fi
+    composer create-project \
+      --repository-url=https://repo.magento.com/ magento/project-community-edition$MVERSION $NAME &&
+    cd $NAME;
+    valet db create $DBNAME;
+    read -p "Firstname: " FIRSTNAME;
+    read -p "Lastname: " LASTNAME;
+    read -p "Admin name: " ADNAME;
+    read -s -p "Admin Password: " ADPASS;
+    echo "";
+    php bin/magento setup:install \
+      --base-url="https://m23alpha.localhost/" \
+      --db-host="$DBHOST" \
+      --db-name="$DBNAME" \
+      --db-user="$DBUSER" \
+      --db-password="$DBPASS" \
+      --admin-firstname="${FIRSTNAME}" \
+      --admin-lastname="${LASTNAME}" \
+      --admin-email="$(git config --global --get user.email)" \
+      --admin-user="${ADNAME}" \
+      --admin-password="${ADPASS}" \
+      --language="en_US" \
+      --currency="EUR" \
+      --timezone="Europe/Amsterdam" \
+      --use-rewrites="1" \
+      --backend-frontname="admin"
+    ;;
+  # Wordpress
+  [wW][oO][rR][dD][pP][rR][eE][sS][sS])
+    if [[ -z "$NAME" ]]; then
+      echo "The WP install requires a name" &&
+      exit;
+    fi
+    read -p "DB name: ${NAME} or " DBNAME;
+    if [[ -z "$DBNAME" ]]; then
+      if [[ -n "$NAME" ]]; then
+        DBNAME="${NAME}";
+      else
+        echo "The DBName is required" &&
+        exit;
+      fi
+    fi
+    DBPREFIX="wp_";
+    mkdir $NAME && cd $NAME &&
+    wp core download &&
+    valet db create $DBNAME &&
+    wp core config \
+      --dbname=$DBNAME \
+      --dbuser=$DBUSER \
+      --dbpass=$DBPASS \
+      --dbhost=$DBHOST \
+      --dbprefix=$DBPREFIX &&
+    read -p "Admin name: " ADNAME;
+    read -s -p "Admin Password: " ADPASS;
+    echo "";
+    wp core install \
+      --url="http://${NAME}.test" \
+      --title="${NAME}" \
+      --admin_user="${ADNAME}" \
+      --admin_password="${ADPASS}" \
+      --admin_email="$(git config --global --get user.email)"
+    ;;
+  # React
+  [rR][eE][aA][cC][tT])
+    if [[ -n "$NAME" ]]; then
+      npx create-react-app $NAME && cd $NAME &&
+      npm start
+    else
+      npx create-react-app . &&
+      npm start
+    fi
+    ;;
+  # Vue
+  [vV][uU][eE])
+    if [[ -n "$NAME" ]]; then
+      vue create $NAME && cd $NAME &&
+      npm run serve
+    else
+      vue create . &&
+      npm run serve
+    fi
+    ;;
+  # HTML (static)
+  [hH][tT][mM][lL])
+    if [[ -n "$NAME" ]]; then
+      mkdir $NAME && cd $NAME &&
+      createHTML
+    else
+      createHTML
+    fi
+    ;;
+  *)
+    echo "No valid option was given";
+    ;;
+esac

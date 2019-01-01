@@ -1,0 +1,11 @@
+#!/bin/bash
+
+GIT_URL="https://raw.githubusercontent.com/GrimLink/dotfiles/master";
+
+# Formating
+curl -sS -O $GIT_URL/.editorconfig
+curl -sS -O $GIT_URL/formating/.prettierrc
+touch .stylelintrc
+echo -e "{\n  \"extends\": \"@fylgja/stylelint-config\"\n}" >> .stylelintrc
+npm i -D stylelint @fylgja/stylelint-config
+# TODO: add ESLint
