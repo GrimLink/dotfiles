@@ -95,7 +95,7 @@ case "$TYPE" in
     read -s -p "Admin Password: " ADPASS;
     echo "";
     php bin/magento setup:install \
-      --base-url="https://m23alpha.localhost/" \
+      --base-url="http://${NAME}.test/" \
       --db-host="$DBHOST" \
       --db-name="$DBNAME" \
       --db-user="$DBUSER" \
