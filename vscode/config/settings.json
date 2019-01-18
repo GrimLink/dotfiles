@@ -19,6 +19,7 @@
       "editorRuler.foreground": "#ffffff25"
     }
   },
+  "workbench.view.alwaysShowHeaderActions": true,
   "breadcrumbs.enabled": true,
   "zenMode.fullScreen": false,
   // Languages
@@ -34,15 +35,16 @@
   },
   // Format
   "html.format.extraLiners": "",
+  "prettier.stylelintIntegration": true,
+  "prettier.eslintIntegration": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  // Linting
   "php.suggest.basic": false,
-  // Content
-  "material-icons.includeXmlns": true,
-  "material-icons.classList": "icon",
   "markdown.extension.italic.indicator": "_",
   "placeholderImages.quoteStyle": "double",
   // Other
   "liveServer.settings.donotShowInfoMsg": true,
-  "svgviewer.enableautopreview": false,
-  "workbench.view.alwaysShowHeaderActions": true,
-  "prettier.stylelintIntegration": true
+  "svgviewer.enableautopreview": false
 }
