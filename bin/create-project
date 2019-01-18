@@ -37,17 +37,33 @@ fi
 
 createHTML() {
   touch index.html
-  echo -e "<!DOCTYPE html>" >> index.html
-  echo -e "<head>" >> index.html
-  echo -e "  <title>$NAME</title>" >> index.html
-  echo -e "  <meta charset=\"UTF-8\">" >> index.html
-  echo -e "  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">" >> index.html
-  echo -e "  <meta name=\"application-name\" content=\"${NAME}\">" >> index.html
-  echo -e "  <meta name=\"apple-mobile-web-app-title\" content=\"${NAME}\">" >> index.html
-  echo -e "  <meta name=\"theme-color\" content=\"#fff\">" >> index.html
-  echo -e "</head>\n<body>" >> index.html
-  echo -e "  <div style=\"display: flex; justify-content: center; align-items: center; height: 100vh;font-size: 6rem;\">${NAME}</div>" >> index.html
-  echo -e "</body>\n</html>" >> index.html
+  echo -e "<!DOCTYPE html>
+<html lang=\"en\">
+  <head>
+    <title>$NAME</title>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">
+    <meta name=\"application-name\" content=\"${NAME}\">
+    <meta name=\"apple-mobile-web-app-title\" content=\"${NAME}\">
+    <meta name=\"theme-color\" content=\"#fff\">
+    <style>
+      body { margin: 0; }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #263238;
+        color: #fffc;
+        font-size: 6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>${NAME}</main>
+  </body>
+</html>" >> index.html
   mkdir public
   mkdir src
   touch .gitignore
