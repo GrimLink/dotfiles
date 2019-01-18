@@ -18,6 +18,9 @@ alias lighthouse='command lighthouse --chrome-flags="--headless"'
 # Tower
 alias tower="gittower"
 
+# Gitkraken
+alias kraken="open -a 'GitKraken' --args -p $(pwd)"
+
 # Magento
 alias m1="magerun"
 alias m2="magerun2"
