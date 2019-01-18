@@ -3,9 +3,7 @@
   "overrides": [
     {
       "files": "*.js",
-      "options": {
-        "singleQuote": true
-      }
+      "options": { "singleQuote": true }
     }
   ]
 }

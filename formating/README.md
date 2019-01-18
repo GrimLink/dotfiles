@@ -25,11 +25,9 @@ And so use a supper small config.
 
 The ESLint for CSS.
 
-This version is the same as [@fylgja/stylelint-config](https://www.npmjs.com/package/@fylgja/stylelint-config)
-And I don't realy use the version in here.
+This version uses the npm pkg [@fylgja/stylelint-config](https://www.npmjs.com/package/@fylgja/stylelint-config).
 
-Instead I `npm install` the fylgja stylelint-config
-And then add a small `.stylelintrc` with the extend to the fylgja stylelint-config.
+So for the full code checkout the git repo.
 
 ```json
 {
@@ -37,7 +35,7 @@ And then add a small `.stylelintrc` with the extend to the fylgja stylelint-conf
 }
 ```
 
-I use the linting mostly via editor plugin.
+_I use the linting mostly via the editor plugin._
 
 **Source**
 * https://stylelint.io/
