@@ -43,6 +43,7 @@ firefox       ${RESET}(open Firefox)${BLUE}
 firefoxDev    ${RESET}(open FirefoxDeveloperEdition)${BLUE}
 lighthouse    ${RESET}(Run Lighthouse but with always as headless chrome)${BLUE}
 tower         ${RESET}(open GitTower)${BLUE}
+kraken        ${RESET}(open GitKraken)${BLUE}
 
 ${RESET}${BOLD}# Homebrew${BLUE}
 brewery       ${RESET}(brew update, upgrade and cleanup)${BLUE}
