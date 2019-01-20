@@ -34,7 +34,7 @@ alias ls="command ls ${colorflag}"
 # Edit
 alias chmox="chmod +x"
 
-# Get today's data
+# Get today's date
 alias today='date +"%A, %B %-d, %Y, Week: %V"'
 
 # Lock the screen (when going AFK)
