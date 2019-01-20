@@ -7,6 +7,7 @@ function mkd() { mkdir -p "$@" && cd "$@"; }
 function f() { find . -name "$1" 2>&1 | grep -v 'Permission denied'; }
 
 # Create a data URI from a file and copy it to the pasteboard
+# TODO: create version without base64
 function datauri() {
     local mimeType=$(file -b --mime-type "$1")
     if [[ $mimeType == text/* ]]; then
