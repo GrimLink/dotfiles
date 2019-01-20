@@ -1,0 +1,48 @@
+#!/bin/bash
+
+GIT_URL="https://raw.githubusercontent.com/GrimLink/dotfiles/master";
+RESET='\033[0m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+
+echo -e "${GREEN}Starting Configuration... ${RESET}"
+
+if [[ ! -e "package.json" ]]; then
+  npm init -y
+fi
+
+# Install
+echo -e "${YELLOW}Creating editorconfig${RESET}"
+curl -sS -O $GIT_URL/.editorconfig
+
+echo -e "${YELLOW}Creating browserslist config${RESET}"
+curl -sS -O $GIT_URL/.browserslistrc
+
+echo -e "${YELLOW}Creating prettier config${RESET}"
+curl -sS -O $GIT_URL/formating/.prettierrc
+
+if [[ ! $TYPE == "none" ]]; then
+  echo -e "${YELLOW}Creating stylelint config${RESET}"
+  curl -sS -O $GIT_URL/formating/.stylelintrc
+
+  echo -e "${YELLOW}Creating ESLint config${RESET}"
+  curl -sS -O $GIT_URL/formating/.eslintrc
+fi
+
+# Install
+if [ "$1" == "--npm" -o "$1" == "-N" ]; then
+  npx install-peerdeps --dev @fylgja/stylelint-config
+  npm i -D eslint prettier
+  npx install-peerdeps --dev eslint-config-airbnb
+  npm i -D eslint-config-prettier eslint-plugin-prettier
+fi;
+
+if [ "$1" == "--editor" -o "$1" == "-E" ]; then
+  npm i -D \
+    @fylgja/stylelint-config \
+    eslint-config-airbnb \
+    eslint-config-prettier \
+    eslint-plugin-prettier
+fi;
+
+echo -e "${GREEN}Done!${RESET}"
