@@ -54,8 +54,8 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 alias diskspace-report="df -P -kHl"
 
 # Show/hide hidden files in Finder
-alias hidden-show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hidden-hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias dot-show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias dot-hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Hide/show all desktop icons (useful when presenting)
 alias desktop-hide="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
