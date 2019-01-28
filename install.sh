@@ -36,5 +36,6 @@ source valet/magerun.sh;
 
 # Manual apps to get
 cd ~/Downloads
+open https://www.fonts.com/web-fonts/google
 open https://www.google.com/chrome/beta/
 curl -sS -O http://getmiro.com/files/MiroVideoConverter.dmg
