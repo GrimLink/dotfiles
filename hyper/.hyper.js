@@ -12,12 +12,16 @@ module.exports = {
     borderColor: "#333",
     padding: "12px 14px",
     bell: false,
-    quickEdit: true
+    quickEdit: true,
+    hypercwd: {
+      initialWorkingDirectory: "~/projects"
+    }
   },
   plugins: [
     "hyper-quit",
     "hyper-material-theme",
     "hyper-statusline",
-    "hyper-hide-title"
+    "hyper-hide-title",
+    "hypercwd"
   ]
 };
