@@ -53,4 +53,6 @@ m1            ${RESET}(Run magerun 1)${BLUE}
 m2            ${RESET}(Run magerun 2)${BLUE}
 mage          ${RESET}(Run magento 2 cli)${BLUE}
 mage-dev      ${RESET}(Set some magento 2 dev config for local use, if the flag --valet is givin it will also set the local to en_US)${BLUE}
-"
+
+${RESET}${BOLD}# Local Bin${BLUE}";
+ls -1 ~/bin;
