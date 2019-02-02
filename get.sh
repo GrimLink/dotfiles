@@ -4,7 +4,7 @@
 if ! command -v xcode-select &> /dev/null; then
   xcode-select --install;
   echo "Please first install xcode before continuing";
-  read -p "Ready? Press any key to continue" -n 1;
+  read -rsn1 -p "When ready, press any key to continue";
   echo "";
 fi
 
