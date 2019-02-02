@@ -15,7 +15,6 @@ APPS=(
   boostnote
   # Editors
   visual-studio-code
-  atom
   graphiql
   postman
   # Communication

@@ -9,11 +9,10 @@ Some other things are also installed via brew but are more part of the ValetPlus
 
 ## Cask
 
-The cask task will install almost all applications via brew.
+The cask task will install almost all applications via brew, that I use.
 
 **This includes;**
 
-* firefox-developer-edition
 * hyper
 * sequel-pro
 * tower
@@ -23,7 +22,6 @@ The cask task will install almost all applications via brew.
 * boostnote
 * **Editors**
   * visual-studio-code
-  * atom
   * graphiql
   * postman
 * **Communication**
@@ -35,6 +33,3 @@ The cask task will install almost all applications via brew.
   * appcleaner
   * keka
   * keepingyouawake
-
-_Chrome is not include._
-_Since the normal version is only part of the brew cask, I use the Beta version_

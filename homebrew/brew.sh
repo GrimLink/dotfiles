@@ -12,13 +12,15 @@ else
 fi
 
 # Utils
-brew install php@7.1
-brew install php@7.2
-brew install php@7.3
+brew install php
 brew install composer
 brew install node
 brew install yarn
 brew install imagemagick --with-webp
+brew tap henkrehorst/php
+brew install valet-php@7.1
+brew install valet-php@7.2
+brew install valet-php@7.3
 
 # Remove outdated versions from the cellar.
 brew cleanup
