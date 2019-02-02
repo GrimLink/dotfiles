@@ -52,12 +52,9 @@ brewery       ${RESET}(brew update, upgrade and cleanup)${BLUE}
 ${RESET}${BOLD}# Artisan${BLUE}
 art           ${RESET}(run artisan cli)${BLUE}
 
-${RESET}${BOLD}# Magento${BLUE}
+${RESET}${BOLD}# Magerun${BLUE}
 m1            ${RESET}(Run magerun 1)${BLUE}
 m2            ${RESET}(Run magerun 2)${BLUE}
-mage          ${RESET}(Run magento 2 cli)${BLUE}
-mage-open     ${RESET}(Open the magento 2 site in you're browser)${BLUE}
-mage-dev      ${RESET}(Set some magento 2 dev config for local use)${BLUE}
 
 ${RESET}${BOLD}# Local Bin${BLUE}";
 ls -1 ~/bin;

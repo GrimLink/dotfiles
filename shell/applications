@@ -27,27 +27,3 @@ alias art="php artisan"
 # Magento
 alias m1="magerun"
 alias m2="magerun2"
-alias mage="php bin/magento"
-
-function mage-open() {
-  STORE=${1:-default};
-  # TODO: create open without magerun
-  # bin/magento config:show web/unsecure/base_url --scope="store" --scope-code="default"
-  URL=$(m2 sys:store:config:base-url:list --format csv | grep $STORE | cut -d',' -f3);
-
-  if [ -z "$URL" ]; then
-    echo "Could not find url for store $STORE!";
-  else
-    echo "Opening url $URL!";
-    open $URL;
-  fi
-}
-
-# Sets base config for a local dev env
-function mage-dev() {
-  mage cache:disable layout block_html full_page;
-  mage config:set admin/security/session_lifetime 86400;
-  mage config:set admin/security/password_lifetime "";
-  # magerun default is de_DE
-  mage config:set general/locale/code en_US;
-}
