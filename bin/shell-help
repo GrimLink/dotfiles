@@ -29,12 +29,11 @@ md            ${RESET}(create folder)${BLUE}
 mkd           ${RESET}(create folder and enter it)${BLUE}
 rd            ${RESET}(remove folder)${BLUE}
 rmf           ${RESET}(remove file/folder forced)${BLUE}
-ls1           ${RESET}(List files in short format in 1 column)${BLUE}
 ll            ${RESET}(List files in long format)${BLUE}
 la            ${RESET}(List all files in long format)${BLUE}
 ld            ${RESET}(List only directories)${BLUE}
 l.            ${RESET}(List only dotfiles)${BLUE}
-chmox         ${RESET}(Make file executable)${BLUE}
+chmox         ${RESET}(Make a file executable)${BLUE}
 f             ${RESET}(Find shorthand)${BLUE}
 
 ${RESET}${BOLD}# Applications${BLUE}
@@ -43,18 +42,22 @@ chrome        ${RESET}(open Google Chrome)${BLUE}
 canary        ${RESET}(open Google Chrome)${BLUE}
 firefox       ${RESET}(open Firefox)${BLUE}
 firefoxDev    ${RESET}(open FirefoxDeveloperEdition)${BLUE}
-lighthouse    ${RESET}(Run Lighthouse but with always as headless chrome)${BLUE}
+lighthouse    ${RESET}(Run Lighthouse but always headless)${BLUE}
 tower         ${RESET}(open GitTower)${BLUE}
 kraken        ${RESET}(open GitKraken)${BLUE}
 
 ${RESET}${BOLD}# Homebrew${BLUE}
 brewery       ${RESET}(brew update, upgrade and cleanup)${BLUE}
 
+${RESET}${BOLD}# Artisan${BLUE}
+art           ${RESET}(run artisan cli)${BLUE}
+
 ${RESET}${BOLD}# Magento${BLUE}
 m1            ${RESET}(Run magerun 1)${BLUE}
 m2            ${RESET}(Run magerun 2)${BLUE}
 mage          ${RESET}(Run magento 2 cli)${BLUE}
-mage-dev      ${RESET}(Set some magento 2 dev config for local use, if the flag --valet is givin it will also set the local to en_US)${BLUE}
+mage-open     ${RESET}(Open the magento 2 site in you're browser)${BLUE}
+mage-dev      ${RESET}(Set some magento 2 dev config for local use)${BLUE}
 
 ${RESET}${BOLD}# Local Bin${BLUE}";
 ls -1 ~/bin;
