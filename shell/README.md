@@ -15,3 +15,8 @@ This includes:
 If `~/.shell/extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
 You could also use extra to override settings, functions and aliases from my dotfiles repository. It’s probably better to fork this repository instead, though.
+
+## Need help or forgot a command
+
+If the bin command shell-help is installed.
+then you can view all commands by running `shell-help`.
