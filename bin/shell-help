@@ -29,9 +29,11 @@ md            ${RESET}(create folder)${BLUE}
 mkd           ${RESET}(create folder and enter it)${BLUE}
 rd            ${RESET}(remove folder)${BLUE}
 rmf           ${RESET}(remove file/folder forced)${BLUE}
-l             ${RESET}(List all files in long format)${BLUE}
-la            ${RESET}(List all files in long format, including dot files)${BLUE}
+ls1           ${RESET}(List files in short format in 1 column)${BLUE}
+ll            ${RESET}(List files in long format)${BLUE}
+la            ${RESET}(List all files in long format)${BLUE}
 ld            ${RESET}(List only directories)${BLUE}
+l.            ${RESET}(List only dotfiles)${BLUE}
 chmox         ${RESET}(Make file executable)${BLUE}
 f             ${RESET}(Find shorthand)${BLUE}
 
