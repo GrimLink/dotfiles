@@ -4,8 +4,8 @@
   "editor.renderWhitespace": "boundary",
   "editor.wordWrap": "on",
   "editor.rulers": [80, 120],
-  "editor.quickSuggestionsDelay": 30,
   "editor.minimap.showSlider": "always",
+  "editor.quickSuggestionsDelay": 30,
   "workbench.startupEditor": "none",
   "workbench.statusBar.feedback.visible": false,
   "workbench.colorTheme": "Atom Material Theme",
@@ -41,10 +41,14 @@
     "editor.formatOnSave": true
   },
   // Linting
-  "php.suggest.basic": false,
+  "php.suggest.basic": false, // For PHP intelliSense
+  "css.validate": false, // For stylelint
+  "less.validate": false, // For stylelint
+  "scss.validate": false, // For stylelint
   "markdown.extension.italic.indicator": "_",
   "placeholderImages.quoteStyle": "double",
   // Other
+  "markdown.extension.toc.levels": "2..6",
   "liveServer.settings.donotShowInfoMsg": true,
   "svgviewer.enableautopreview": false
 }
