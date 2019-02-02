@@ -31,8 +31,8 @@ source vscode/config.sh;
 # Make sure we are using the latest shell env
 exec $SHELL -l;
 
-source valet/setup.sh;
-source valet/magerun.sh;
+source valet-plus/setup.sh;
+source magerun/setup.sh;
 
 # Manual apps to get
 cd ~/Downloads

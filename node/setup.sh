@@ -15,5 +15,5 @@ if command -v node &> /dev/null; then
   npm config set init-license "MIT"
 else
   echo "NODE is not installed";
-  echo "Please first install node to install Node Tools";
+  echo "Please first install node to install Node pks's";
 fi
