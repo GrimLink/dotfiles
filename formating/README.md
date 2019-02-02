@@ -42,7 +42,7 @@ _I use the linting mostly via the editor plugin._
 * https://github.com/shinnn/vscode-stylelint
 * https://github.com/getfylgja/stylelint-config
 
-### sass-lint
+### SASS-lint
 
 **ARCHIVED**
 So I really don't use it anymore
