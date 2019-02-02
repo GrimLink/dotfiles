@@ -13,7 +13,7 @@ fi
 
 # Install
 echo -e "${YELLOW}Creating editorconfig${RESET}"
-curl -sS -O $GIT_URL/.editorconfig
+curl -sS -O $GIT_URL/formating/.editorconfig
 
 echo -e "${YELLOW}Creating browserslist config${RESET}"
 curl -sS -O $GIT_URL/.browserslistrc
