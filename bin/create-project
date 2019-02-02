@@ -7,6 +7,7 @@ OPTIONS=(
   'wordpress'
   'react'
   'vue'
+  'october'
   'html'
 );
 
@@ -72,7 +73,7 @@ createHTML() {
 
 case "$TYPE" in
   # Magento
-  [mM][aA][gG][eE][nN][tT][oO])
+  [mM][aA][gG][eE][nN][tT][oO]|[mM][aA][gG][eE])
     if [[ -z "$NAME" ]]; then
       echo "The Magento install requires a name" &&
       exit;
@@ -128,7 +129,7 @@ case "$TYPE" in
       --backend-frontname="admin"
     ;;
   # Wordpress
-  [wW][oO][rR][dD][pP][rR][eE][sS][sS])
+  [wW][oO][rR][dD][pP][rR][eE][sS][sS]|[wW][pP])
     if [[ -z "$NAME" ]]; then
       echo "The WP install requires a name" &&
       exit;
@@ -181,6 +182,19 @@ case "$TYPE" in
       vue create . &&
       npm run serve
     fi
+    ;;
+  # OctoberCMS
+  [oO][cC][tT][oO][bB][eE][rR]|[oO][cC][tT])
+    if [[ -z "$NAME" ]]; then
+      echo "The OctoberCMS install requires a name" &&
+      exit;
+    fi
+    composer create-project october/october $NAME &&
+    cd $NAME &&
+    echo "First create a datebase for you October";
+    read -rsn1 -p "When ready, press any key to continue";
+    php artisan october:install &&
+    php artisan october:env
     ;;
   # HTML (static)
   [hH][tT][mM][lL])
