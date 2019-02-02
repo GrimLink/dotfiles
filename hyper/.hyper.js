@@ -9,10 +9,13 @@ module.exports = {
     foregroundColor: "#fff",
     backgroundColor: "#000",
     selectionColor: "rgba(255, 255, 255, .3)",
-    borderColor: "#333",
+    borderColor: "#2196f3",
     padding: "12px 14px",
     bell: false,
     quickEdit: true,
+    MaterialTheme: {
+      accentColor: "#2196f3"
+    },
     hypercwd: {
       initialWorkingDirectory: "~/projects"
     }
