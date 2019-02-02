@@ -21,7 +21,6 @@ module.exports = {
     "hyper-quit",
     "hyper-material-theme",
     "hyper-statusline",
-    "hyper-hide-title",
     "hypercwd"
   ]
 };
