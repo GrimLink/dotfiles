@@ -6,8 +6,14 @@ This is just an archive of my old preferences.
 
 ## Install
 
-If you want try these preferrences's.
-First install [Atom](https://atom.io/).
+If you want use these preferrences's.
+First install Atom [from atom.io](https://atom.io/).
+
+Or via Brew
+
+```bash
+brew cask install atom
+```
 
 First boot and run from Atom the apm install cli command.
 
