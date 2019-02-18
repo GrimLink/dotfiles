@@ -7,6 +7,7 @@ BLUE='\033[1;34m'
 
 OPTION=${1}
 PARAM=${2}
+PARAM2=${3}
 
 case "${OPTION}" in
   help)
@@ -58,6 +59,17 @@ case "${OPTION}" in
     echo "setting general locale to en_US";
     php bin/magento config:set general/locale/code en_US;
     ;;
+  new:admin)
+    read -p "First name: " FISRTNAME;
+    read -p "Last name: " LASTNAME;
+    read -ps "Admin Password: " PASS;
+    bin/magento admin:user:create \
+      --admin-user="admin_${FISRTNAME}" \
+      --admin-password="${PASS}" \
+      --admin-email="$(git config --global --get user.email)" \
+      --admin-firstname="${FISRTNAME}" \
+      --admin-lastname="${LASTNAME}";
+      ;;
   *)
     php bin/magento $@
     ;;
