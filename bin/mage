@@ -66,7 +66,7 @@ case "${OPTION}" in
     ;;
   admin)
     read -p "Name: " NAME;
-    read -ps "Password: " PASS;
+    read -sp "Password: " PASS;
     bin/magento admin:user:create \
       --admin-user="admin_${NAME}" \
       --admin-password="${PASS}" \
