@@ -19,11 +19,12 @@ case "${OPTION}" in
     echo -e "${ITALIC}To see those cmd's just run ${BLUE}mage${RESET}"
     ;;
   open)
+    # TODO: make less call via the bin/magento cmd to improve speed
     STORE=${PARAM:-default}
-    ADMIN="$(php bin/magento info:adminuri | cut -d '/' -f2 | tr -d '[:space:]')"
+    ADMIN="$(bin/magento info:adminuri | cut -d '/' -f2 | tr -d '[:space:]')"
 
     # Check if secure flag was given
-    if [[ "$(php bin/magento config:show web/secure/use_in_frontend)" == "1" ]]; then
+    if [[ "$(bin/magento config:show web/secure/use_in_frontend)" == "1" ]]; then
       HTTP="secure"
     else
       HTTP="unsecure"
@@ -31,10 +32,10 @@ case "${OPTION}" in
 
     # Set url to open
     if [[ "$STORE" == "admin" ]]; then
-      URL="$(php bin/magento config:show web/${HTTP}/base_url)${ADMIN}"
+      URL="$(bin/magento config:show web/${HTTP}/base_url)${ADMIN}"
     elif [[ "$STORE" == "default" ]]; then
       # Use fast solution
-      URL="$(php bin/magento config:show web/${HTTP}/base_url)"
+      URL="$(bin/magento config:show web/${HTTP}/base_url)"
     else
       # Use Slow solution via magerun, but able to get store views
       # TODO: create open without magerun
