@@ -26,7 +26,7 @@ ${RESET}${BOLD}# Folder/List${BLUE}
 ...           ${RESET}(same as cd ../..)${BLUE}
 ....          ${RESET}(same as cd ../../..)${BLUE}
 md            ${RESET}(create folder)${BLUE}
-mkd           ${RESET}(create folder and enter it)${BLUE}
+mcd           ${RESET}(create folder and enter it)${BLUE}
 rd            ${RESET}(remove folder)${BLUE}
 rmf           ${RESET}(remove file/folder forced)${BLUE}
 ll            ${RESET}(List files in long format)${BLUE}

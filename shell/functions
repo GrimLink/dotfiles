@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create a new directory and enter it
-function mkd() { mkdir -p "$@" && cd "$@"; }
+function mcd() { mkdir -p "$@" && cd "$@"; }
 
 # Find shorthand
 function f() { find . -name "$1" 2>&1 | grep -v 'Permission denied'; }
