@@ -5,5 +5,5 @@ git init;
 git add .;
 git commit -m 'initial commit of full repository';
 read -p "Git repo URL: " GITURL;
-git remote add origin GITURL &&
+git remote add origin $GITURL &&
 git push -u origin --all;
