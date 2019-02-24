@@ -8,6 +8,7 @@ OPTIONS=(
   'react'
   'vue'
   'october'
+  'jigsaw'
   'html'
 );
 
@@ -195,6 +196,27 @@ case "$TYPE" in
     read -rsn1 -p "When ready, press any key to continue";
     php artisan october:install &&
     php artisan october:env
+    ;;
+  [jJ][iI][gG][sS][aA][wW]|[jJ][iI][gG])
+    echo "Options:";
+    echo "- blog";
+    echo "- docs";
+    echo "(Leave blank for none)";
+    read -p "Starter Template: " TEMPLATE;
+    echo "";
+    if [[ -z "$TEMPLATE" ]]; then
+      INIT="init";
+    else
+      INIT="init ${TEMPLATE}";
+    fi;
+    if [[ -n "$NAME" ]]; then
+      mkdir $NAME && cd $NAME &&
+      composer require tightenco/jigsaw &&
+      ./vendor/bin/jigsaw $INIT
+    else
+      composer require tightenco/jigsaw &&
+      ./vendor/bin/jigsaw $INIT
+    fi;
     ;;
   # HTML (static)
   [hH][tT][mM][lL])
