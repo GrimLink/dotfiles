@@ -72,10 +72,10 @@ case "${OPTION}" in
     read -sp "Password: " PASS;
     echo "";
     bin/magento admin:user:create \
-      --admin-user="admin_${NAME}" \
+      --admin-user="${NAME}" \
       --admin-password="${PASS}" \
       --admin-email="$(git config --global --get user.email)" \
-      --admin-firstname="${NAME}" \
+      --admin-firstname="$(git config --global --get user.name)" \
       --admin-lastname="admin";
       ;;
   *)
