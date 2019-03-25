@@ -54,6 +54,12 @@ case "${OPTION}" in
       open $URL;
     fi
     ;;
+  keys)
+    # check if there is an auth
+    # create new auth and ask for keys
+    # Ask to set a global auth sample
+    echo "TODO: this cmd is not ready";
+    ;;
   config)
     php bin/magento cache:disable layout block_html full_page;
     echo "setting session lifetime 86400";
