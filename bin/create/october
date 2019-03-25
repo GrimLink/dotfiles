@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ -z "$1" ]]; then
+  echo "The OctoberCMS install requires a name" && exit;
+fi
+
+composer create-project october/october $1 &&
+cd $1 &&
+echo "First create a datebase for you October project";
+read -rsn1 -p "When ready, press any key to continue";
+php artisan october:install &&
+php artisan october:env

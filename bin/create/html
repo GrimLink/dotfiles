@@ -1,0 +1,44 @@
+#!/bin/bash
+
+createHTML() {
+  touch index.html
+  echo -e "<!DOCTYPE html>
+<html lang=\"en\">
+  <head>
+    <title>$1</title>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">
+    <meta name=\"application-name\" content=\"${1}\">
+    <meta name=\"apple-mobile-web-app-title\" content=\"${1}\">
+    <meta name=\"theme-color\" content=\"#fff\">
+    <style>
+      body { margin: 0; }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #263238;
+        color: #fffc;
+        font-size: 6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>${1}</main>
+  </body>
+</html>" >> index.html
+  mkdir public
+  mkdir src
+  touch .gitignore
+  npm init -y > /dev/null
+}
+
+if [[ -n "$1" ]]; then
+  mkdir $1 && cd $1 && createHTML;
+else
+  createHTML;
+fi
+
+unset createHTML;

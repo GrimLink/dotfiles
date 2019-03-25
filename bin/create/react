@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -n "$1" ]]; then
+  npx create-react-app $1 &&
+  cd $1 &&
+  npm start;
+else
+  npx create-react-app . &&
+  npm start;
+fi

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+WPNAME="$1"
+DBUSER="root";
+DBPASS="root";
+DBHOST="localhost";
+
+if [[ -z "$WPNAME" ]]; then
+  echo "The WP install requires a name" && exit;
+fi
+
+read -p "DB name: ${WPNAME} or " DBNAME;
+if [[ -z "$DBNAME" ]]; then
+  DBNAME="${WPNAME}";
+fi
+
+mkdir $WPNAME &&
+cd $WPNAME &&
+wp core download &&
+valet db create $DBNAME &&
+wp core config \
+  --dbname=$DBNAME \
+  --dbuser=$DBUSER \
+  --dbpass=$DBPASS \
+  --dbhost=$DBHOST \
+  --dbprefix="wp_" &&
+read -p "Admin name: " ADNAME;
+read -s -p "Admin Password: " ADPASS;
+echo "";
+wp core install \
+  --url="http://${WPNAME}.test" \
+  --title="${WPNAME}" \
+  --admin_user="${ADNAME}" \
+  --admin_password="${ADPASS}" \
+  --admin_email="$(git config --global --get user.email)"

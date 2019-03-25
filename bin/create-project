@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME="$1";
-TYPE="${2}";
+PROJECT_TYPE="${2}";
 OPTIONS=(
   'magento'
   'wordpress'
@@ -12,222 +12,50 @@ OPTIONS=(
   'html'
 );
 
-DBUSER="root";
-DBPASS="root";
-DBHOST="localhost";
-
 # Check if parent folder is one of the options
-if [[ -z "$TYPE" ]]; then
+if [[ -z "$PROJECT_TYPE" ]]; then
   for i in "${OPTIONS[@]}"; do
     if [[ "$(basename $PWD)" == "${i}" ]]; then
-      TYPE="$(basename $PWD)"
+      PROJECT_TYPE="$(basename $PWD)"
     fi
   done
 fi
 
 # Ask for an type if not set
-if [[ -z "$TYPE" ]]; then
-  echo -e "\nOptions are:";
+if [[ -z "$PROJECT_TYPE" ]]; then
+  echo "";
+  echo "Options are:";
   for i in "${OPTIONS[@]}"; do
     echo " - ${i}"
   done
   echo "";
-
-  read -p "Project type: " TYPE;
+  read -p "Project type: " PROJECT_TYPE;
   echo "";
 fi
 
-createHTML() {
-  touch index.html
-  echo -e "<!DOCTYPE html>
-<html lang=\"en\">
-  <head>
-    <title>$NAME</title>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">
-    <meta name=\"application-name\" content=\"${NAME}\">
-    <meta name=\"apple-mobile-web-app-title\" content=\"${NAME}\">
-    <meta name=\"theme-color\" content=\"#fff\">
-    <style>
-      body { margin: 0; }
-      main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #263238;
-        color: #fffc;
-        font-size: 6rem;
-      }
-    </style>
-  </head>
-  <body>
-    <header></header>
-    <main>${NAME}</main>
-  </body>
-</html>" >> index.html
-  mkdir public
-  mkdir src
-  touch .gitignore
-  npm init -y > /dev/null
-}
-
-case "$TYPE" in
-  # Magento
+case "$PROJECT_TYPE" in
   [mM][aA][gG][eE][nN][tT][oO]|[mM][aA][gG][eE])
-    if [[ -z "$NAME" ]]; then
-      echo "The Magento install requires a name" &&
-      exit;
-    fi
-    echo "Options are:";
-    echo "  [ ] = Latest"
-    echo "  [1] = 2.3";
-    echo "  [2] = 2.2";
-    read -p "Version: " VERSION;
-    if [[ -z "$VERSION" ]]; then
-      echo "Using latest version";
-    elif [[ "$VERSION" == "1" ]]; then
-      echo "Using latest 2.3";
-      MVERSION="=2.3.*";
-    elif [[ "$VERSION" == "2" ]]; then
-      echo "Using version 2.2";
-      MVERSION="=2.2.*";
-    fi
-    read -p "DB name: ${NAME} or " DBNAME;
-    echo "";
-    if [[ -z "$DBNAME" ]]; then
-      if [[ -n "$NAME" ]]; then
-        DBNAME="${NAME}";
-      else
-        echo "The DBName is required" &&
-        exit;
-      fi
-    fi
-    composer create-project \
-      --repository-url=https://repo.magento.com/ magento/project-community-edition$MVERSION $NAME &&
-    cd $NAME;
-    valet db create $DBNAME;
-    read -p "Firstname: " FIRSTNAME;
-    read -p "Lastname: " LASTNAME;
-    read -p "Admin name: " ADNAME;
-    read -s -p "Admin Password: " ADPASS;
-    echo "";
-    php bin/magento setup:install \
-      --base-url="http://${NAME}.test/" \
-      --db-host="$DBHOST" \
-      --db-name="$DBNAME" \
-      --db-user="$DBUSER" \
-      --db-password="$DBPASS" \
-      --admin-firstname="${FIRSTNAME}" \
-      --admin-lastname="${LASTNAME}" \
-      --admin-email="$(git config --global --get user.email)" \
-      --admin-user="${ADNAME}" \
-      --admin-password="${ADPASS}" \
-      --language="en_US" \
-      --currency="EUR" \
-      --timezone="Europe/Amsterdam" \
-      --use-rewrites="1" \
-      --backend-frontname="admin"
+    bash $(dirname "${BASH_SOURCE}")/create/magento $@;
     ;;
-  # Wordpress
   [wW][oO][rR][dD][pP][rR][eE][sS][sS]|[wW][pP])
-    if [[ -z "$NAME" ]]; then
-      echo "The WP install requires a name" &&
-      exit;
-    fi
-    read -p "DB name: ${NAME} or " DBNAME;
-    if [[ -z "$DBNAME" ]]; then
-      if [[ -n "$NAME" ]]; then
-        DBNAME="${NAME}";
-      else
-        echo "The DBName is required" &&
-        exit;
-      fi
-    fi
-    DBPREFIX="wp_";
-    mkdir $NAME && cd $NAME &&
-    wp core download &&
-    valet db create $DBNAME &&
-    wp core config \
-      --dbname=$DBNAME \
-      --dbuser=$DBUSER \
-      --dbpass=$DBPASS \
-      --dbhost=$DBHOST \
-      --dbprefix=$DBPREFIX &&
-    read -p "Admin name: " ADNAME;
-    read -s -p "Admin Password: " ADPASS;
-    echo "";
-    wp core install \
-      --url="http://${NAME}.test" \
-      --title="${NAME}" \
-      --admin_user="${ADNAME}" \
-      --admin_password="${ADPASS}" \
-      --admin_email="$(git config --global --get user.email)"
+    bash $(dirname "${BASH_SOURCE}")/create/wordpress $@;
     ;;
-  # React
   [rR][eE][aA][cC][tT])
-    if [[ -n "$NAME" ]]; then
-      npx create-react-app $NAME && cd $NAME &&
-      npm start
-    else
-      npx create-react-app . &&
-      npm start
-    fi
+    bash $(dirname "${BASH_SOURCE}")/create/react $@;
     ;;
-  # Vue
   [vV][uU][eE])
-    if [[ -n "$NAME" ]]; then
-      vue create $NAME && cd $NAME &&
-      npm run serve
-    else
-      vue create . &&
-      npm run serve
-    fi
+    bash $(dirname "${BASH_SOURCE}")/create/vue $@;
     ;;
-  # OctoberCMS
   [oO][cC][tT][oO][bB][eE][rR]|[oO][cC][tT])
-    if [[ -z "$NAME" ]]; then
-      echo "The OctoberCMS install requires a name" &&
-      exit;
-    fi
-    composer create-project october/october $NAME &&
-    cd $NAME &&
-    echo "First create a datebase for you October";
-    read -rsn1 -p "When ready, press any key to continue";
-    php artisan october:install &&
-    php artisan october:env
+    bash $(dirname "${BASH_SOURCE}")/create/october $@;
     ;;
   [jJ][iI][gG][sS][aA][wW]|[jJ][iI][gG])
-    echo "Options:";
-    echo "- blog";
-    echo "- docs";
-    echo "(Leave blank for none)";
-    read -p "Starter Template: " TEMPLATE;
-    echo "";
-    if [[ -z "$TEMPLATE" ]]; then
-      INIT="init";
-    else
-      INIT="init ${TEMPLATE}";
-    fi;
-    if [[ -n "$NAME" ]]; then
-      mkdir $NAME && cd $NAME &&
-      composer require tightenco/jigsaw &&
-      ./vendor/bin/jigsaw $INIT
-    else
-      composer require tightenco/jigsaw &&
-      ./vendor/bin/jigsaw $INIT
-    fi;
+    bash $(dirname "${BASH_SOURCE}")/create/jigsaw $@;
     ;;
-  # HTML (static)
   [hH][tT][mM][lL])
-    if [[ -n "$NAME" ]]; then
-      mkdir $NAME && cd $NAME &&
-      createHTML
-    else
-      createHTML
-    fi
+    bash $(dirname "${BASH_SOURCE}")/create/html $@;
     ;;
   *)
-    echo "No valid option was given";
+    echo "No valid project option was given";
     ;;
 esac
