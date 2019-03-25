@@ -60,9 +60,6 @@ case "${OPTION}" in
     php bin/magento config:set admin/security/session_lifetime 86400;
     echo "setting admin password lifetime ∞";
     php bin/magento config:set admin/security/password_lifetime "";
-    # magerun default is de_DE
-    echo "setting general locale to en_US";
-    php bin/magento config:set general/locale/code en_US;
     ;;
   admin)
     read -p "Name: " NAME;
