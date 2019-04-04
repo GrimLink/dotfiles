@@ -17,6 +17,7 @@ case "${OPTION}" in
   help)
     echo -e "\n${BOLD}Options:${RESET}"
     echo -e "- ${BLUE}open${RESET}    (open store in browser)"
+    echo -e "- ${BLUE}key${RESET}     (create auth.json in root of project)"
     echo -e "- ${BLUE}config${RESET}  (Set common configs for developing)"
     echo -e "- ${BLUE}admin${RESET}   (Creates new admin, with minimal config needed)"
     echo -e "\n${ITALIC}Anything else will run ${BLUE}bin/magento${RESET}"
@@ -58,11 +59,33 @@ case "${OPTION}" in
       open $URL;
     fi
     ;;
-  keys)
-    # check if there is an auth
-    # create new auth and ask for keys
-    # Ask to set a global auth sample
-    echo "TODO: this cmd is not ready";
+  key)
+    if [[ ! -e auth.json ]]; then
+      if [[ -e var/composer_home/auth.json ]]; then
+        echo "Getting auth from var/composer_home" &&
+        cp var/composer_home/auth.json auth.json;
+      else
+        if [[ -e ~/.local-config/magento.auth.json ]]; then
+          cp ~/.local-config/magento.auth.json auth.json;
+        else
+          echo -e "Authentication for (${GREEN}repo.magento.com${RESET}):" &&
+          read -p "  Username: " AUTH_NAME &&
+          read -sp "  Password: " AUTH_PASS &&
+          echo "";
+          cp auth.json.sample auth.json &&
+          sed -i '.bak' -e "s/<public-key>/$AUTH_NAME/g" auth.json
+          sed -i '.bak' -e "s/<private-key>/$AUTH_PASS/g" auth.json
+          rm -f auth.json.bak
+          read -p "Also store key in global file for future use?: (y) " -n 1;
+          echo "";
+          if [[ $REPLY =~ ^[Yy]$ ]]; then
+            mkdir -p ~/.local-config/ && cp -r auth.json ~/.local-config/magento.auth.json;
+          fi
+        fi
+      fi
+    else
+      echo "auth key already set";
+    fi
     ;;
   config)
     php bin/magento cache:disable layout block_html full_page;
