@@ -58,7 +58,7 @@ echo " - Or use your own";
 read URL;
 if [[ -z "$URL" ]]; then
   MAGE_URL="http://${MAGE_NAME}.test/"
-elif [[ "$URL" == "s" -o "$URL" == "secure" ]]; then
+elif [[ "$URL" == "s" ]] || [[ "$URL" == "secure" ]]; then
   MAGE_URL="https://${MAGE_NAME}.test/"
 fi
 
