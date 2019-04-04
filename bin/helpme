@@ -57,4 +57,4 @@ m1            ${RESET}(Run magerun 1)${BLUE}
 m2            ${RESET}(Run magerun 2)${BLUE}
 
 ${RESET}${BOLD}# Local Bin${BLUE}";
-ls -1 ~/bin | grep -v '^d';
+ls -F | grep '*$' | sed 's/*$//g';
