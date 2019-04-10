@@ -22,7 +22,5 @@ else
   fi;
 fi;
 
-source vscode/extensions.sh;
 source vscode/config.sh;
-
 source hyper/setup.sh;
