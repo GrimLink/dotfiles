@@ -5,9 +5,11 @@ function installCodeExt() {
   VSCODE_EXT=(
     cssho.vscode-svgviewer
     mrmlnc.vscode-duplicate
+    CoenraadS.bracket-pair-colorizer
+    deerawan.vscode-faker
     msjsdiag.debugger-for-chrome
     ritwickdey.LiveServer
-    CoenraadS.bracket-pair-colorizer
+    streetsidesoftware.code-spell-checker
     # Theme
     tobiasalthoff.atom-material-theme
     file-icons.file-icons
@@ -18,26 +20,22 @@ function installCodeExt() {
     # Git
     eamodio.gitlens
     GitHub.vscode-pull-request-github
-    # Placeholders
-    deerawan.vscode-faker
-    JakeWilson.vscode-placeholder-images
     # Linting
     EditorConfig.EditorConfig
     shinnn.stylelint
     dbaeumer.vscode-eslint
     esbenp.prettier-vscode
-    # Languages
-    apollographql.vscode-apollo
-    octref.vetur
-    felixfbecker.php-pack
-    fireyy.vscode-language-todo
-    jock.svg
-    # Formatter
-    raynigon.nginx-formatter
     # Syntax
+    apollographql.vscode-apollo
+    jock.svg
     shanoor.vscode-nginx
     mikestead.dotenv
-    mariusschulz.yarn-lock-syntax # personally prefer npm
+    mariusschulz.yarn-lock-syntax
+    # Formatter
+    aaron-bond.better-comments
+    felixfbecker.php-pack
+    octref.vetur
+    raynigon.nginx-formatter
   )
   for i in "${VSCODE_EXT[@]}"; do
     code --install-extension $i
