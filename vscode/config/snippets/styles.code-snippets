@@ -10,18 +10,18 @@
     ]
   },
   "pseudo states foc/hov": {
-    "scope":  "css,scss,less",
-    "prefix":  ":fochov",
-    "body":  [
+    "scope": "css,scss,less",
+    "prefix": ":fochov",
+    "body": [
       "&:focus,",
       "&:hover {\n\t$1\n}"
     ],
-    "description":  "Base focus pseudo states"
+    "description": "Base focus pseudo states"
   },
   "before & after": {
     "scope": "css,scss,less",
-    "prefix": "::both",
-    "description":  "Add's both before and after",
+    "prefix": ":both",
+    "description": "Add's both before and after",
     "body": [
       "$1::before,",
       "$1::after {\n\tcontent: \"\";\n}"
@@ -32,7 +32,7 @@
     "prefix": "position-all",
     "description": "Position with all options",
     "body": [
-      "position: ${1:absolute}",
+      "position: ${1:absolute};",
       "top: ${2:0};",
       "right: ${2:0};",
       "bottom: ${2:0};",
@@ -77,5 +77,18 @@
     "prefix": "!slint",
     "description": "disable stylelinting",
     "body": "$LINE_COMMENT stylelint-disable${1:-next-line} ${2:declaration-no-important}"
+  },
+  // Style Doc
+  "Style Doc Param": {
+    "scope": "css,less,scss",
+    "prefix": "@param-doc",
+    "description": "set Style Doc param",
+    "body": "/// @param {${1|String,Number,Boolean,Array,Content|}} ${2:var()} - ${3:description}"
+  },
+  "Style Doc return": {
+    "scope": "css,less,scss",
+    "prefix": "@return-doc",
+    "description": "set Style Doc return",
+    "body": "/// @return {${1|String,Number,Boolean,Array,Content|}} - ${3:description}"
   }
 }

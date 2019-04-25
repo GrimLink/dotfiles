@@ -1,5 +1,4 @@
 {
-  // Editor style
   "editor.fontSize": 15,
   "editor.renderWhitespace": "boundary",
   "editor.wordWrap": "on",
@@ -16,7 +15,18 @@
       "badge.foreground": "#fff",
       "activityBarBadge.background": "#2196f3",
       "activityBarBadge.foreground": "#fff",
-      "editorRuler.foreground": "#ffffff25"
+      "tab.activeBorder": "#2196f3",
+      "panelTitle.activeBorder": "#2196f3",
+      "listFilterWidget.background": "#2196f360",
+      "list.hoverBackground": "#2196f325",
+      "list.activeSelectionBackground": "#2196f360",
+      "list.activeSelectionForeground": "#dff5f3",
+      "list.dropBackground": "#2196f360",
+      "list.focusBackground": "#2196f334",
+      "list.inactiveFocusBackground": "#2196f360",
+      "editorRuler.foreground": "#fff1",
+      "statusBar.noFolderBackground": "#2196f3",
+      "statusBar.noFolderForeground": "#fff"
     }
   },
   "workbench.view.alwaysShowHeaderActions": true,
@@ -29,6 +39,8 @@
   },
   "files.associations": {
     ".browserslistrc": "properties",
+    ".postcssrc": "json",
+    ".sassrc": "json",
     ".stylelintrc": "json",
     ".stylelintignore": "ignore",
     ".gitmodules": "properties"
@@ -37,8 +49,23 @@
   "html.format.extraLiners": "",
   "prettier.stylelintIntegration": true,
   "prettier.eslintIntegration": true,
+  "[scss]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   // Linting
   "php.suggest.basic": false, // For PHP intelliSense
@@ -46,9 +73,10 @@
   "less.validate": false, // For stylelint
   "scss.validate": false, // For stylelint
   "markdown.extension.italic.indicator": "_",
-  "placeholderImages.quoteStyle": "double",
   // Other
   "markdown.extension.toc.levels": "2..6",
   "liveServer.settings.donotShowInfoMsg": true,
-  "svgviewer.enableautopreview": false
+  "svgviewer.enableautopreview": false,
+  "window.zoomLevel": 0,
+  "cSpell.allowCompoundWords": true
 }

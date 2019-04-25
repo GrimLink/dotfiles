@@ -1,22 +1,4 @@
 {
-  "doc": {
-    "prefix": "doc",
-    "description": "creates scss doc",
-    "body": [
-      "/// @param {${1:var}}",
-      "/// @return $2"
-    ]
-  },
-  "doc param": {
-    "prefix": "param",
-    "description": "creates scss doc param",
-    "body": "/// @param {${1:var}}"
-  },
-  "map get": {
-    "prefix": "map",
-    "description": "Get values from map",
-    "body": "map-get(\\$${1:map}, ${2:key});"
-  },
   "map get (deep)": {
     "prefix": "map-deep",
     "description": "Get values from nested map",

@@ -1,9 +1,8 @@
 {
-  // php in html
   "php": {
     "prefix": "php",
     "description": "php tag",
-    "body": "<?php $1; ?>"
+    "body": "<?php $1 ?>"
   },
   "php echo": {
     "prefix": "?=",

@@ -1,0 +1,54 @@
+{
+  "alias": {
+    "prefix": "alias",
+    "description": "new alias",
+    "body": "alias ${1:name}=\"${2:task}\";"
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if statement",
+    "body": "if [[ $1 ]]; then\n\t$2\nfi"
+  },
+  "elif": {
+    "prefix": "elif",
+    "description": "else if statement",
+    "body": "elif [[ $1 ]]; then\n\t$2"
+  },
+  "if else": {
+    "prefix": "ifelse",
+    "description": "if else statement",
+    "body": "if [[ $1 ]]; then\n\t$2\nelse\n\t$3\nfi"
+  },
+  "case": {
+    "prefix": "case",
+    "description": "case statments",
+    "body": [
+      "case \"${1:cases}\" in",
+      "\t$2)\n\t\t;;",
+      "\t*)\n\t\t;;",
+      "esac"
+    ]
+  },
+  "Remote Sync": {
+    "prefix": "rsync",
+    "description": "sync files to destination",
+    "body": "rsync ${3:-avh --no-perms} \"${1:source}\" ${2:destination};"
+  },
+  "Ask for yes": {
+    "prefix": "if-yes",
+    "description": "Ask for yes",
+    "body": [
+      "read -p \"${1:message} [Yy] \" -n 1;",
+      "echo \"\";",
+      "if [[ \\$REPLY =~ ^[Yy]$ ]]; then\n\t$2\nfi;"
+    ]
+  },
+  "Ask for any key": {
+    "prefix": "if-key",
+    "description": "Ask for any key",
+    "body": [
+      "read -rsn1 -p \"When ready, press any key to continue\";",
+      "echo \"\";"
+    ]
+  }
+}

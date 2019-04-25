@@ -10,9 +10,9 @@
       "}"
     ]
   },
-  "if": {
-    "prefix": "@if",
+  "when": {
+    "prefix": "@when",
     "description": "if (mixin guard)",
-    "body": "& when (${1:@option = true}) {\n\t$0\n}"
+    "body": "& when (${1:@var}) {\n\t$0\n}"
   }
 }
