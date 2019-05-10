@@ -88,11 +88,14 @@ case "${OPTION}" in
     fi
     ;;
   config)
-    php bin/magento cache:disable layout block_html full_page;
+    bin/magento cache:disable layout block_html full_page;
     echo "setting session lifetime 86400";
-    php bin/magento config:set admin/security/session_lifetime 86400;
+    bin/magento config:set admin/security/session_lifetime 86400;
     echo "setting admin password lifetime ∞";
-    php bin/magento config:set admin/security/password_lifetime "";
+    bin/magento config:set admin/security/password_lifetime "";
+    ;;
+  reindex)
+    bin/magento indexer:reindex
     ;;
   admin)
     read -p "Name: " NAME;
@@ -106,6 +109,6 @@ case "${OPTION}" in
       --admin-lastname="admin";
       ;;
   *)
-    php bin/magento $@
+    bin/magento $@
     ;;
 esac
