@@ -7,67 +7,70 @@ DBHOST="localhost";
 
 if [[ -z "$MAGE_NAME" ]]; then
   echo "The Magento install requires a name" &&
-  exit;
+  exit
 fi
 
-echo "Options are:";
+echo "Options are:"
 echo "  [ ] = Latest"
-echo "  [1] = 2.3 (Latest)";
-echo "  [2] = 2.2 (Latest)";
-echo "  [Custom] (Enter your own version)";
-read -p "Version: " VERSION;
+echo "  [1] = 2.3 (Latest)"
+echo "  [2] = 2.2 (Latest)"
+echo "  [Custom] (Enter your own version)"
+read -p "Version: " VERSION
 if [[ -z "$VERSION" ]]; then
   echo "Using latest version";
 elif [[ "$VERSION" == "1" ]]; then
-  echo "Using latest 2.3";
-  MVERSION="=2.3.*";
+  echo "Using latest 2.3"
+  MVERSION="=2.3.*"
 elif [[ "$VERSION" == "2" ]]; then
-  echo "Using version 2.2";
-  MVERSION="=2.2.*";
+  echo "Using version 2.2"
+  MVERSION="=2.2.*"
 else
-  echo "Using version $VERSION";
-  MVERSION="=$VERSION";
+  echo "Using version $VERSION"
+  MVERSION="=$VERSION"
 fi
 
-read -p "DB name: ${MAGE_NAME} or " DBNAME;
-echo "";
+read -p "DB name: ${MAGE_NAME} or " DBNAME
+echo ""
 if [[ -z "$DBNAME" ]]; then
   if [[ -n "$MAGE_NAME" ]]; then
-    DBNAME="${MAGE_NAME}";
+    DBNAME="${MAGE_NAME}"
   else
     echo "The DBName is required" &&
-    exit;
+    exit
   fi
 fi
 
 composer create-project \
   --repository-url=https://repo.magento.com/ magento/project-community-edition$MVERSION $MAGE_NAME &&
-cd $MAGE_NAME;
+cd $MAGE_NAME
 
 if command -v valet &> /dev/null; then
-  valet db create $DBNAME;
+  valet db create $DBNAME
 else
-  echo "First create a datebase for you Magento project";
-  read -rsn1 -p "When ready, press any key to continue";
+  echo "First create a datebase for you Magento project"
+  read -rsn1 -p "When ready, press any key to continue"
 fi
 
-echo "Set project URL";
-echo " - empty = http://${MAGE_NAME}.test/";
-echo " - s or secure = https://${MAGE_NAME}.test/";
-echo " - Or use your own";
-read URL;
+echo "Set project URL"
+echo " - empty = http://${MAGE_NAME}.test/"
+echo " - s or secure = https://${MAGE_NAME}.test/"
+echo " - Or use your own"
+read URL
 if [[ -z "$URL" ]]; then
   MAGE_URL="http://${MAGE_NAME}.test/"
 elif [[ "$URL" == "s" ]] || [[ "$URL" == "secure" ]]; then
   MAGE_URL="https://${MAGE_NAME}.test/"
+  if command -v valet &> /dev/null; then
+    valet secure
+  fi
 fi
 
 FIRSTNAME="$(git config --global --get user.name)";
 LASTNAME="admin";
 ADMIN_EMAIL="$(git config --global --get user.email)"
-read -p "Admin name: " ADMIN_NAME;
-read -s -p "Admin Password: " ADMIN_PASS;
-echo "";
+read -p "Admin name: " ADMIN_NAME
+read -s -p "Admin Password: " ADMIN_PASS
+echo ""
 
 bin/magento setup:install \
   --base-url="$MAGE_URL" \
@@ -85,3 +88,23 @@ bin/magento setup:install \
   --timezone="Europe/Amsterdam" \
   --use-rewrites="1" \
   --backend-frontname="admin"
+
+read -p "Also install sample data? [Yy] " -n 1
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  bin/magento sampledata:deploy
+fi
+
+read -p "Set mode to developer? [Yy] " -n 1
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  bin/magento deploy:mode:set developer
+  bin/magento cache:disable layout block_html full_page
+  bin/magento config:set admin/security/session_lifetime 86400
+  bin/magento config:set admin/security/password_lifetime ""
+else
+  bin/magento deploy:mode:set production
+fi
+
+# Lasty run the setup:upgrade
+bin/magento s:up
