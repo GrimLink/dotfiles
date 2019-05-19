@@ -7,6 +7,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias ..d="cd ~/downloads"
+alias ..p="cd ~/projects"
+
 # Directory
 alias md="mkdir -p"
 alias rd="rmdir"
