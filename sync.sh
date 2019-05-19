@@ -24,3 +24,5 @@ fi
 
 source vscode/config.sh
 source hyper/setup.sh
+
+reload
