@@ -1,7 +1,7 @@
 {
   "Copyright": {
     "scope": "php,css,less,scss,javascript,typescript",
-    "prefix": "copy",
+    "prefix": "#copy",
     "description": "Add copyright to a file",
     "body": [
       "$LINE_COMMENT ${1:<NAME>} (${2:${1:<NAME>}.com})",
@@ -10,7 +10,7 @@
   },
   "copy fylgja": {
     "scope": "php,css,less,scss,javascript,typescript",
-    "prefix": "copy-fylgja",
+    "prefix": "#copy-fylgja",
     "description": "Add fylgja copyright",
     "body": [
       "$LINE_COMMENT Fylgja (getfylgja.com)",

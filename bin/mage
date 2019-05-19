@@ -14,101 +14,98 @@ PARAM=${2}
 PARAM2=${3}
 
 case "${OPTION}" in
-  help)
-    echo -e "\n${BOLD}Options:${RESET}"
-    echo -e "- ${BLUE}open${RESET}    (open store in browser)"
-    echo -e "- ${BLUE}key${RESET}     (create auth.json in root of project)"
-    echo -e "- ${BLUE}config${RESET}  (Set common configs for developing)"
-    echo -e "- ${BLUE}admin${RESET}   (Creates new admin, with minimal config needed)"
-    echo -e "\n${ITALIC}Anything else will run ${BLUE}bin/magento${RESET}"
-    echo -e "${ITALIC}To see those cmd's just run ${BLUE}mage${RESET}"
-    ;;
-  open)
-    STORE=${PARAM:-default}
+help)
+  echo -e "\n${BOLD}Options:${RESET}"
+  echo -e "- ${BLUE}open${RESET}    (open store in browser)"
+  echo -e "- ${BLUE}key${RESET}     (create auth.json in root of project)"
+  echo -e "- ${BLUE}config${RESET}  (Set common configs for developing)"
+  echo -e "- ${BLUE}admin${RESET}   (Creates new admin, with minimal config needed)"
+  echo -e "\n${ITALIC}Anything else will run ${BLUE}bin/magento${RESET}"
+  echo -e "${ITALIC}To see those cmd's just run ${BLUE}mage${RESET}"
+  ;;
+open)
+  STORE=${PARAM:-default}
 
-    if [[ "$(bin/magento config:show web/secure/use_in_frontend)" == "1" ]]; then
-      HTTP="secure"
-    else
-      HTTP="unsecure"
-    fi
+  if [[ "$(bin/magento config:show web/secure/use_in_frontend)" == "1" ]]; then
+    HTTP="secure"
+  else
+    HTTP="unsecure"
+  fi
 
-    # Set url to open
-    if [[ "$STORE" == "admin" ]]; then
-      ADMIN="$(
-        grep frontName app/etc/env.php | tail -1 |
+  # Set url to open
+  if [[ "$STORE" == "admin" ]]; then
+    ADMIN="$(
+      grep frontName app/etc/env.php | tail -1 |
         cut -d ">" -f2 | cut -d "'" -f2
-      )";
-      URL="$(bin/magento config:show web/${HTTP}/base_url)${ADMIN}";
-    elif [[ "$STORE" == "default" ]]; then
-      URL="$(bin/magento config:show web/${HTTP}/base_url)";
-    else
-      # Use solution via magerun, to get store views
-      # TODO: create open without magerun
-      # e.g. --scope="store" --scope-code="default"
-      URL=$(
-        magerun2 sys:store:config:base-url:list --format csv |
+    )"
+    URL="$(bin/magento config:show web/${HTTP}/base_url)${ADMIN}"
+  elif [[ "$STORE" == "default" ]]; then
+    URL="$(bin/magento config:show web/${HTTP}/base_url)"
+  else
+    # Use solution via magerun, to get store views
+    # TODO: create open without magerun
+    # e.g. --scope="store" --scope-code="default"
+    URL=$(
+      magerun2 sys:store:config:base-url:list --format csv |
         grep $STORE | cut -d ',' -f3
-      );
-    fi
+    )
+  fi
 
-    # Open url
-    if [[ -z "$URL" ]]; then
-      echo "Could not find url for store $STORE"
+  # Open url
+  if [[ -z "$URL" ]]; then
+    echo "Could not find url for store $STORE"
+  else
+    echo "Opening url $URL"
+    open $URL
+  fi
+  ;;
+key)
+  if [[ ! -e auth.json ]]; then
+    if [[ -e var/composer_home/auth.json ]]; then
+      echo "Getting auth from var/composer_home" &&
+        cp var/composer_home/auth.json auth.json
     else
-      echo "Opening url $URL";
-      open $URL;
-    fi
-    ;;
-  key)
-    if [[ ! -e auth.json ]]; then
-      if [[ -e var/composer_home/auth.json ]]; then
-        echo "Getting auth from var/composer_home" &&
-        cp var/composer_home/auth.json auth.json;
+      if [[ -e ~/.local-config/magento.auth.json ]]; then
+        cp ~/.local-config/magento.auth.json auth.json
       else
-        if [[ -e ~/.local-config/magento.auth.json ]]; then
-          cp ~/.local-config/magento.auth.json auth.json;
-        else
-          echo -e "Authentication for (${GREEN}repo.magento.com${RESET}):" &&
+        echo -e "Authentication for (${GREEN}repo.magento.com${RESET}):" &&
           read -p "  Username: " AUTH_NAME &&
           read -sp "  Password: " AUTH_PASS &&
-          echo "";
-          cp auth.json.sample auth.json &&
+          echo ""
+        cp auth.json.sample auth.json &&
           sed -i '.bak' -e "s/<public-key>/$AUTH_NAME/g" auth.json
-          sed -i '.bak' -e "s/<private-key>/$AUTH_PASS/g" auth.json
-          rm -f auth.json.bak
-          read -p "Also store key in global file for future use?: (y) " -n 1;
-          echo "";
-          if [[ $REPLY =~ ^[Yy]$ ]]; then
-            mkdir -p ~/.local-config/ && cp -r auth.json ~/.local-config/magento.auth.json;
-          fi
+        sed -i '.bak' -e "s/<private-key>/$AUTH_PASS/g" auth.json
+        rm -f auth.json.bak
+        read -p "Also store key in global file for future use?: (y) " -n 1
+        echo ""
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+          mkdir -p ~/.local-config/ && cp -r auth.json ~/.local-config/magento.auth.json
         fi
       fi
-    else
-      echo "auth key already set";
     fi
-    ;;
-  config)
-    bin/magento cache:disable layout block_html full_page;
-    echo "setting session lifetime 86400";
-    bin/magento config:set admin/security/session_lifetime 86400;
-    echo "setting admin password lifetime ∞";
-    bin/magento config:set admin/security/password_lifetime "";
-    ;;
-  reindex)
-    bin/magento indexer:reindex
-    ;;
-  admin)
-    read -p "Name: " NAME;
-    read -sp "Password: " PASS;
-    echo "";
-    bin/magento admin:user:create \
-      --admin-user="${NAME}" \
-      --admin-password="${PASS}" \
-      --admin-email="$(git config --global --get user.email)" \
-      --admin-firstname="$(git config --global --get user.name)" \
-      --admin-lastname="admin";
-      ;;
-  *)
-    bin/magento $@
-    ;;
+  else
+    echo "auth key already set"
+  fi
+  ;;
+config)
+  bin/magento cache:disable layout block_html full_page
+  echo "setting session lifetime 86400"
+  bin/magento config:set admin/security/session_lifetime 86400
+  echo "setting admin password lifetime ∞"
+  bin/magento config:set admin/security/password_lifetime ""
+  ;;
+admin)
+  read -p "Name: " NAME
+  read -sp "Password: " PASS
+  echo ""
+  bin/magento admin:user:create \
+    --admin-user="${NAME}" \
+    --admin-password="${PASS}" \
+    --admin-email="$(git config --global --get user.email)" \
+    --admin-firstname="$(git config --global --get user.name)" \
+    --admin-lastname="admin"
+  ;;
+*)
+  php bin/magento $@
+  ;;
 esac

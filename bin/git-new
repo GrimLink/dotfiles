@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Create new git ENV and pushes it to a new repo
-git init;
-git add .;
-git commit -m 'initial commit of full repository';
-read -p "Git repo URL: " GITURL;
-git remote add origin $GITURL &&
-git push -u origin --all;
+git init
+git add .
+git commit -m 'initial commit of full repository'
+read -p "Git repo URL: " GITURL
+git remote add origin $GITURL && git push -u origin --all

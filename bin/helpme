@@ -56,5 +56,5 @@ ${RESET}${BOLD}# Magerun${BLUE}
 m1            ${RESET}(Run magerun 1)${BLUE}
 m2            ${RESET}(Run magerun 2)${BLUE}
 
-${RESET}${BOLD}# Local Bin${BLUE}";
-ls -F | grep '*$' | sed 's/*$//g';
+${RESET}${BOLD}# Local Bin${BLUE}"
+ls -F | grep '*$' | sed 's/*$//g'

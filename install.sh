@@ -1,38 +1,38 @@
 #!/bin/bash
 
 # Go to dotfile
-cd "$(dirname "${BASH_SOURCE}")";
+cd "$(dirname "${BASH_SOURCE}")"
 
-if ! command -v xcode-select &> /dev/null; then
-  xcode-select --install;
-  echo "Please first install xcode before continuing";
-  read -p "Ready? Press any key to continue" -n 1;
-  echo "";
+if ! command -v xcode-select &>/dev/null; then
+  xcode-select --install
+  echo "Please first install xcode before continuing"
+  read -p "Ready? Press any key to continue" -n 1
+  echo ""
 fi
 
 # If it has the flag `--force` or `-f`.
 # Then don't ask for each task
 
-source macos/setup.sh;
-source shell/setup.sh;
-source bin/setup.sh;
+source macos/setup.sh
+source shell/setup.sh
+source bin/setup.sh
 
-source git/setup.sh;
-source git/ssh.sh;
+source git/setup.sh
+source git/ssh.sh
 
-source node/setup.sh;
+source node/setup.sh
 
-source homebrew/brew-cask.sh;
-source homebrew/brew.sh;
+source homebrew/brew-cask.sh
+source homebrew/brew.sh
 
-source vscode/extensions.sh;
-source vscode/config.sh;
+source vscode/extensions.sh
+source vscode/config.sh
 
 # Make sure we are using the latest shell env
-exec $SHELL -l;
+exec $SHELL -l
 
-source valet-plus/setup.sh;
-source magerun/setup.sh;
+source valet-plus/setup.sh
+source magerun/setup.sh
 
 # Manual apps to get
 cd ~/Downloads

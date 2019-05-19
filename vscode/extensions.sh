@@ -43,17 +43,17 @@ function installCodeExt() {
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  installCodeExt;
+  installCodeExt
 else
-  read -p "Install VSCode extensions. Are you sure? (y) " -n 1;
-  echo "";
+  read -p "Install VSCode extensions. Are you sure? (y) " -n 1
+  echo ""
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-    if ! command -v code &> /dev/null; then
+    if ! command -v code &>/dev/null; then
       echo -e "The VSCode command is not installed \nPlease install it to run the setup for VSCode! \nThen re run this setup script or the vscode/setup script\n"
     else
-      installCodeExt;
-    fi;
-  fi;
-fi;
+      installCodeExt
+    fi
+  fi
+fi
 
-unset installCodeExt;
+unset installCodeExt
