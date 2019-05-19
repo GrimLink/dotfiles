@@ -94,6 +94,9 @@ config)
   echo "setting admin password lifetime ∞"
   bin/magento config:set admin/security/password_lifetime ""
   ;;
+reindex)
+  bin/magento indexer:reindex
+  ;;
 admin)
   read -p "Name: " NAME
   read -sp "Password: " PASS
