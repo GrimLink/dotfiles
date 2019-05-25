@@ -19,6 +19,7 @@ APPS=(
   postman
   # Communication
   slack
+  discord
   skype
   # Utils
   google-backup-and-sync

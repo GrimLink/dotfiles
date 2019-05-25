@@ -22,8 +22,8 @@ source git/ssh.sh
 
 source node/setup.sh
 
-source homebrew/brew-cask.sh
-source homebrew/brew.sh
+source brew/brew-cask.sh
+source brew/brew.sh
 
 source vscode/extensions.sh
 source vscode/config.sh
