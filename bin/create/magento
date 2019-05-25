@@ -4,6 +4,7 @@ MAGE_NAME="$1"
 DBUSER="root";
 DBPASS="root";
 DBHOST="localhost";
+GITEMAIL="$(git config --global --get user.email)"
 
 if [[ -z "$MAGE_NAME" ]]; then
   echo "The Magento install requires a name" &&
@@ -29,20 +30,31 @@ else
   MVERSION="=$VERSION"
 fi
 
+composer create-project \
+  --repository-url=https://repo.magento.com/ magento/project-community-edition$MVERSION $MAGE_NAME &&
+cd $MAGE_NAME
+
+read -p "DB Host (localhost) or: " DBHOST
+if [[ -z "$DBHOST" ]]; then
+  DBHOST="localhost"
+fi
 read -p "DB name: ${MAGE_NAME} or " DBNAME
 echo ""
 if [[ -z "$DBNAME" ]]; then
   if [[ -n "$MAGE_NAME" ]]; then
     DBNAME="${MAGE_NAME}"
   else
-    echo "The DBName is required" &&
-    exit
+    echo "The DBName is required" && exit
   fi
 fi
-
-composer create-project \
-  --repository-url=https://repo.magento.com/ magento/project-community-edition$MVERSION $MAGE_NAME &&
-cd $MAGE_NAME
+read -p "DB User (root) or: " DBUSER
+if [[ -z "$DBUSER" ]]; then
+  DBUSER="root"
+fi
+read -p "DB Password (root) or: " DBPASS
+if [[ -z "$DBPASS" ]]; then
+  DBPASS="root"
+fi
 
 if command -v valet &> /dev/null; then
   valet db create $DBNAME
@@ -51,43 +63,70 @@ else
   read -rsn1 -p "When ready, press any key to continue"
 fi
 
-echo "Set project URL"
-echo " - empty = http://${MAGE_NAME}.test/"
-echo " - s or secure = https://${MAGE_NAME}.test/"
+echo "Set URL"
+echo " - empty = http://${DBNAME}.test/"
+echo " - s or secure = https://${DBNAME}.test/"
 echo " - Or use your own"
 read URL
 if [[ -z "$URL" ]]; then
-  MAGE_URL="http://${MAGE_NAME}.test/"
+  URL="http://${DBNAME}.test/"
 elif [[ "$URL" == "s" ]] || [[ "$URL" == "secure" ]]; then
-  MAGE_URL="https://${MAGE_NAME}.test/"
+  URL="https://${DBNAME}.test/"
   if command -v valet &> /dev/null; then
     valet secure
   fi
 fi
 
-FIRSTNAME="$(git config --global --get user.name)";
-LASTNAME="admin";
-ADMIN_EMAIL="$(git config --global --get user.email)"
-read -p "Admin name: " ADMIN_NAME
-read -s -p "Admin Password: " ADMIN_PASS
+read -p "Email (${GITEMAIL}) or: " USEREMAIL
+if [[ -z "$USEREMAIL" ]]; then
+  USEREMAIL="$GITEMAIL"
+fi
+read -p "Firstname: " USERFIRST
+read -p "Lastname: " USERLAST
+TOLOWERNAME="$(echo "$USERFIRST" | tr '[:upper:]' '[:lower:]')"
+read -p "User name (admin_${TOLOWERNAME}) or: " USERNAME
+if [[ -z "$USERNAME" ]]; then
+  USERNAME="admin_${TOLOWERNAME}"
+fi
+read -sp "Password (admin123) or: " USERPASS
+if [[ -z "$USERPASS" ]]; then
+  USERPASS="admin123"
+fi
+
+read -sp "Language (en_US) or: " LANG
+if [[ -z "$LANG" ]]; then
+  LANG="en_US"
+fi
+read -sp "Currency (EUR) or: " CUR
+if [[ -z "$CUR" ]]; then
+  CUR="EUR"
+fi
+read -sp "Timezone (Europe/Amsterdam) or: " ZONE
+if [[ -z "$ZONE" ]]; then
+  ZONE="Europe/Amsterdam"
+fi
+read -sp "BackendURL (admin) or: " BACKURL
+if [[ -z "$BACKURL" ]]; then
+  BACKURL="admin"
+fi
 echo ""
 
 bin/magento setup:install \
-  --base-url="$MAGE_URL" \
-  --db-host="$DBHOST" \
-  --db-name="$DBNAME" \
-  --db-user="$DBUSER" \
-  --db-password="$DBPASS" \
-  --admin-firstname="${FIRSTNAME}" \
-  --admin-lastname="${LASTNAME}" \
-  --admin-email="${ADMIN_EMAIL}" \
-  --admin-user="${ADMIN_NAME}" \
-  --admin-password="${ADMIN_PASS}" \
-  --language="en_US" \
-  --currency="EUR" \
-  --timezone="Europe/Amsterdam" \
+  --base-url="${URL}" \
+  --db-host="${DBHOST}" \
+  --db-name="${DBNAME}" \
+  --db-user="${DBUSER}" \
+  --db-password="${DBPASS}" \
+  --admin-firstname="${USERFIRST}" \
+  --admin-lastname="${USERLAST}" \
+  --admin-email="${USEREMAIL}" \
+  --admin-user="${USERNAME}" \
+  --admin-password="${USERPASS}" \
+  --language="${LANG}" \
+  --currency="${CUR}" \
+  --timezone="${ZONE}" \
   --use-rewrites="1" \
-  --backend-frontname="admin"
+  --backend-frontname="${BACKURL}"
 
 read -p "Also install sample data? [Yy] " -n 1
 echo ""
@@ -100,7 +139,9 @@ echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   bin/magento deploy:mode:set developer
   bin/magento cache:disable layout block_html full_page
+  echo "setting session lifetime 86400"
   bin/magento config:set admin/security/session_lifetime 86400
+  echo "setting admin password lifetime ∞"
   bin/magento config:set admin/security/password_lifetime ""
 else
   bin/magento deploy:mode:set production
