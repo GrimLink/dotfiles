@@ -66,18 +66,16 @@ open)
 
 install)
   read -p "DB Host (localhost) or: " DBHOST
-  if [[ -z "$DBHOST" ]]; then
-    DBHOST="localhost"
-  fi
+  echo ""
+  if [[ -z "$DBHOST" ]]; then DBHOST="localhost"; fi
   read -p "DB Name: " DBNAME
+  echo ""
   read -p "DB User (root) or: " DBUSER
-  if [[ -z "$DBUSER" ]]; then
-    DBUSER="root"
-  fi
+  echo ""
+  if [[ -z "$DBUSER" ]]; then DBUSER="root"; fi
   read -p "DB Password (root) or: " DBPASS
-  if [[ -z "$DBPASS" ]]; then
-    DBPASS="root"
-  fi
+  echo ""
+  if [[ -z "$DBPASS" ]]; then DBPASS="root"; fi
   echo "Set URL"
   echo " - empty = http://${DBNAME}.test/"
   echo " - s or secure = https://${DBNAME}.test/"
@@ -87,44 +85,33 @@ install)
     URL="http://${DBNAME}.test/"
   elif [[ "$URL" == "s" ]] || [[ "$URL" == "secure" ]]; then
     URL="https://${DBNAME}.test/"
-    if command -v valet &> /dev/null; then
-      valet secure
-    fi
+    if command -v valet &> /dev/null; then valet secure; fi
   fi
-
   read -p "Email (${GITEMAIL}) or: " USEREMAIL
-  if [[ -z "$USEREMAIL" ]]; then
-    USEREMAIL="$GITEMAIL"
-  fi
+  echo ""
+  if [[ -z "$USEREMAIL" ]]; then USEREMAIL="$GITEMAIL"; fi
   read -p "Firstname: " USERFIRST
+  echo ""
   read -p "Lastname: " USERLAST
   TOLOWERNAME="$(echo "$USERFIRST" | tr '[:upper:]' '[:lower:]')"
   read -p "User name (admin_${TOLOWERNAME}) or: " USERNAME
-  if [[ -z "$USERNAME" ]]; then
-    USERNAME="admin_${TOLOWERNAME}"
-  fi
-  read -sp "Password (admin123) or: " USERPASS
-  if [[ -z "$USERPASS" ]]; then
-    USERPASS="admin123"
-  fi
-
-  read -sp "Language (en_US) or: " LANG
-  if [[ -z "$LANG" ]]; then
-    LANG="en_US"
-  fi
-  read -sp "Currency (EUR) or: " CUR
-  if [[ -z "$CUR" ]]; then
-    CUR="EUR"
-  fi
-  read -sp "Timezone (Europe/Amsterdam) or: " ZONE
-  if [[ -z "$ZONE" ]]; then
-    ZONE="Europe/Amsterdam"
-  fi
-  read -sp "BackendURL (admin) or: " BACKURL
-  if [[ -z "$BACKURL" ]]; then
-    BACKURL="admin"
-  fi
   echo ""
+  if [[ -z "$USERNAME" ]]; then USERNAME="admin_${TOLOWERNAME}"; fi
+  read -sp "Password (admin123) or: " USERPASS
+  echo ""
+  if [[ -z "$USERPASS" ]]; then USERPASS="admin123"; fi
+  read -p "Language (en_US) or: " LANG
+  echo ""
+  if [[ -z "$LANG" ]]; then LANG="en_US"; fi
+  read -p "Currency (EUR) or: " CUR
+  echo ""
+  if [[ -z "$CUR" ]]; then CUR="EUR"; fi
+  read -p "Timezone (Europe/Amsterdam) or: " ZONE
+  echo ""
+  if [[ -z "$ZONE" ]]; then ZONE="Europe/Amsterdam"; fi
+  read -p "BackendURL (admin) or: " BACKURL
+  echo ""
+  if [[ -z "$BACKURL" ]]; then BACKURL="admin"; fi
 
   bin/magento setup:install \
     --base-url="${URL}" \
@@ -187,20 +174,19 @@ reindex)
 
 admin)
   read -p "Email (${GITEMAIL}) or: " USEREMAIL
-  if [[ -z "$USEREMAIL" ]]; then
-    USEREMAIL="$GITEMAIL"
-  fi
+  echo ""
+  if [[ -z "$USEREMAIL" ]]; then USEREMAIL="$GITEMAIL"; fi
   read -p "Firstname: " USERFIRST
+  echo ""
   read -p "Lastname: " USERLAST
+  echo ""
   TOLOWERNAME="$(echo "$USERFIRST" | tr '[:upper:]' '[:lower:]')"
   read -p "User name (admin_${TOLOWERNAME}) or: " USERNAME
-  if [[ -z "$USERNAME" ]]; then
-    USERNAME="admin_${TOLOWERNAME}"
-  fi
+  echo ""
+  if [[ -z "$USERNAME" ]]; then USERNAME="admin_${TOLOWERNAME}"; fi
   read -sp "Password (admin123) or: " USERPASS
-  if [[ -z "$USERPASS" ]]; then
-    USERPASS="admin123"
-  fi
+  echo ""
+  if [[ -z "$USERPASS" ]]; then USERPASS="admin123"; fi
 
   bin/magento admin:user:create \
     --admin-user="${USERNAME}" \
