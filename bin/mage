@@ -18,6 +18,7 @@ PARAM2=${3}
 case "${OPTION}" in
 help)
   echo -e "\n${BOLD}Options:${RESET}"
+  echo -e "- ${BLUE}info${RESET}    (Show base config for store)"
   echo -e "- ${BLUE}open${RESET}    (Open store in browser)"
   echo -e "- ${BLUE}install${RESET} (Install Magento)"
   echo -e "- ${BLUE}key${RESET}     (Create auth.json in root of project)"
@@ -26,6 +27,15 @@ help)
   echo -e "- ${BLUE}admin${RESET}   (Create new admin)"
   echo -e "\n${ITALIC}Anything else will run ${BLUE}bin/magento${RESET}"
   echo -e "${ITALIC}To see those cmd's just run ${BLUE}mage${RESET}"
+  ;;
+
+info)
+  bin/magento config:show web
+  echo -e "Admin URI: $(grep frontName app/etc/env.php | tail -1 | cut -d ">" -f2 | cut -d "'" -f2)"
+  echo -e "dbname: $(grep dbname app/etc/env.php | tail -1 | cut -d ">" -f2 | cut -d "'" -f2)"
+  bin/magento config:show general/locale
+  bin/magento config:show currency
+  bin/magento config:show admin
   ;;
 
 open)
