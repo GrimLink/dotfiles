@@ -39,10 +39,7 @@ open)
 
   # Set url to open
   if [[ "$STORE" == "admin" ]]; then
-    ADMIN="$(
-      grep frontName app/etc/env.php | tail -1 |
-      cut -d ">" -f2 | cut -d "'" -f2
-    )"
+    ADMIN="$(grep frontName app/etc/env.php | tail -1 | cut -d ">" -f2 | cut -d "'" -f2)"
     URL="$(bin/magento config:show web/${HTTP}/base_url)${ADMIN}"
   elif [[ "$STORE" == "default" ]]; then
     URL="$(bin/magento config:show web/${HTTP}/base_url)"
