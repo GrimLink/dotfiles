@@ -35,25 +35,25 @@ fi
 
 case "$PROJECT_TYPE" in
   [mM][aA][gG][eE][nN][tT][oO]|[mM][aA][gG][eE])
-    bash $(dirname "${BASH_SOURCE}")/create/magento $@;
+    bash $(dirname "${BASH_SOURCE}")/create-bin/magento $@;
     ;;
   [wW][oO][rR][dD][pP][rR][eE][sS][sS]|[wW][pP])
-    bash $(dirname "${BASH_SOURCE}")/create/wordpress $@;
+    bash $(dirname "${BASH_SOURCE}")/create-bin/wordpress $@;
     ;;
   [rR][eE][aA][cC][tT])
-    bash $(dirname "${BASH_SOURCE}")/create/react $@;
+    bash $(dirname "${BASH_SOURCE}")/create-bin/react $@;
     ;;
   [vV][uU][eE])
-    bash $(dirname "${BASH_SOURCE}")/create/vue $@;
+    bash $(dirname "${BASH_SOURCE}")/create-bin/vue $@;
     ;;
   [oO][cC][tT][oO][bB][eE][rR]|[oO][cC][tT])
-    bash $(dirname "${BASH_SOURCE}")/create/october $@;
+    bash $(dirname "${BASH_SOURCE}")/create-bin/october $@;
     ;;
   [jJ][iI][gG][sS][aA][wW]|[jJ][iI][gG])
-    bash $(dirname "${BASH_SOURCE}")/create/jigsaw $@;
+    bash $(dirname "${BASH_SOURCE}")/create-bin/jigsaw $@;
     ;;
   [hH][tT][mM][lL])
-    bash $(dirname "${BASH_SOURCE}")/create/html $@;
+    bash $(dirname "${BASH_SOURCE}")/create-bin/html $@;
     ;;
   *)
     echo "No valid project option was given";
