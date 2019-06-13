@@ -1,5 +1,7 @@
 #!/bin/bash
 
+GIT_URL="https://raw.githubusercontent.com/GrimLink/"
+
 if [ ! -d ~/bin ]; then
   mkdir ~/bin
 fi
@@ -17,7 +19,9 @@ function rsyncBin() {
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncBin
-  # TODO: get create-project via composer or other way
+  echo -e "${YELLOW}Getting mage${RESET}"
+  curl -sS -O $GIT_URL/mage/master/mage
+  # TODO: get create-project via some way
   # echo -e "${YELLOW}Getting create-project${RESET}"
   # Composer install
 else
@@ -25,7 +29,11 @@ else
   echo ""
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     rsyncBin
-    GIT_URL_PROJECT
+    echo -e "${YELLOW}Getting mage${RESET}"
+    curl -sS -O $GIT_URL/mage/master/mage
+    # TODO: get create-project via some way
+    # echo -e "${YELLOW}Getting create-project${RESET}"
+    # Composer install
   fi
 fi
 

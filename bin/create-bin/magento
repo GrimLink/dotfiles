@@ -27,10 +27,8 @@ else
 fi
 
 read -p "DB Host (localhost) or: " DBHOST
-echo ""
 if [[ -z "$DBHOST" ]]; then DBHOST="localhost"; fi
 read -p "DB name: ${MAGE_NAME} or " DBNAME
-echo ""
 if [[ -z "$DBNAME" ]]; then
   if [[ -n "$MAGE_NAME" ]]; then
     DBNAME="${MAGE_NAME}"
@@ -40,10 +38,8 @@ if [[ -z "$DBNAME" ]]; then
 fi
 
 read -p "DB User (root) or: " DBUSER
-echo ""
 if [[ -z "$DBUSER" ]]; then DBUSER="root"; fi
 read -p "DB Password (root) or: " DBPASS
-echo ""
 if [[ -z "$DBPASS" ]]; then DBPASS="root"; fi
 
 if command -v valet &> /dev/null; then
@@ -66,31 +62,23 @@ elif [[ "$URL" == "s" ]] || [[ "$URL" == "secure" ]]; then
 fi
 
 read -p "Email (${GITEMAIL}) or: " USEREMAIL
-echo ""
 if [[ -z "$USEREMAIL" ]]; then USEREMAIL="$GITEMAIL"; fi
 read -p "Firstname: " USERFIRST
-echo ""
 read -p "Lastname: " USERLAST
 TOLOWERNAME="$(echo "$USERFIRST" | tr '[:upper:]' '[:lower:]')"
-echo ""
 read -p "User name (admin_${TOLOWERNAME}) or: " USERNAME
-echo ""
 if [[ -z "$USERNAME" ]]; then USERNAME="admin_${TOLOWERNAME}"; fi
 read -sp "Password (admin123) or: " USERPASS
-echo ""
 if [[ -z "$USERPASS" ]]; then USERPASS="admin123"; fi
-read -sp "Language (en_US) or: " LANG
-echo ""
+read -p "Language (en_US) or: " LANG
 if [[ -z "$LANG" ]]; then LANG="en_US"; fi
-read -sp "Currency (EUR) or: " CUR
-echo ""
+read -p "Currency (EUR) or: " CUR
 if [[ -z "$CUR" ]]; then CUR="EUR"; fi
-read -sp "Timezone (Europe/Amsterdam) or: " ZONE
-echo ""
+read -p "Timezone (Europe/Amsterdam) or: " ZONE
 if [[ -z "$ZONE" ]]; then ZONE="Europe/Amsterdam"; fi
-read -sp "BackendURL (admin) or: " BACKURL
-echo ""
+read -p "BackendURL (admin) or: " BACKURL
 if [[ -z "$BACKURL" ]]; then BACKURL="admin"; fi
+echo ""
 
 composer create-project \
   --repository-url=https://repo.magento.com/ magento/project-community-edition$MVERSION $MAGE_NAME &&
@@ -113,13 +101,22 @@ bin/magento setup:install \
   --use-rewrites="1" \
   --backend-frontname="${BACKURL}"
 
-read -p "Also install sample data? [Yy] " -n 1
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then bin/magento sampledata:deploy; fi
+# Get key
+if [[ -e var/composer_home/auth.json ]]; then
+  echo "Getting auth from var/composer_home"
+  cp var/composer_home/auth.json auth.json
+elif [[ -e ~/.composer/auth.json ]]; then
+  echo "Getting auth from ~/.composer"
+  cp ~/.composer/auth.json auth.json
+fi
 
-read -p "Set mode to developer? [Yy] " -n 1
+read -p "Also install sample data? (Y/n) "
 echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[yY]|[yY][eE][sS]$ ]]; then bin/magento sampledata:deploy; fi
+
+read -p "Set mode to developer? (Y/n) "
+echo ""
+if [[ $REPLY =~ ^[yY]|[yY][eE][sS]$ ]]; then
   bin/magento deploy:mode:set developer
   bin/magento cache:disable layout block_html full_page
   echo "setting session lifetime 86400"
