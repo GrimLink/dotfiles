@@ -33,7 +33,6 @@ function installCodeExt() {
     mariusschulz.yarn-lock-syntax
     # Formatter
     aaron-bond.better-comments
-    felixfbecker.php-pack
     octref.vetur
     raynigon.nginx-formatter
   )
