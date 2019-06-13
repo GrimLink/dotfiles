@@ -1,14 +1,39 @@
 # Bash
 
-All files are loaded via the [.bash_profile](https://github.com/GrimLink/dotfiles/blob/master/.bash_profile).
+All files are loaded via the terminal shell of choice.
+In this dotfile this is bash or zsh.
 
-This includes:
-- Extra _See [custom commands section](#add-custom-commands-without-creating-a-new-fork)_
-- Prompt _the feel and look of the Terminal_
-- Export _export path sets, example brew composer path_
-- Aliases
-- Functions
-- Applications
+## Whats in the box
+
+### Export
+
+Default export path sets are set here.
+E.g. local bin, composer.
+
+### Aliases
+
+Set of handy aliases for common commands.
+
+This includes;
+
+* Short navigate `..` instead `cd ..`
+* ls commands
+* system, e.g. ip, show/hide dotfiles.
+* more..
+
+_The `helpme` script will show all possible commands found here_
+
+### Functions
+
+Set of handy aliases for common commands.
+
+This includes;
+
+* ..
+
+### Applications
+
+Same as the aliases and functions but specific for some applications.
 
 ## Add custom commands without creating a new fork
 
