@@ -1,35 +1,66 @@
 #!/bin/bash
 
 WPNAME="$1"
-DBUSER="root";
-DBPASS="root";
-DBHOST="localhost";
+GITEMAIL="$(git config --global --get user.email)"
 
 if [[ -z "$WPNAME" ]]; then
   echo "The WP install requires a name" && exit;
 fi
 
-read -p "DB name: ${WPNAME} or " DBNAME;
+read -p "DB Host (localhost) or: " DBHOST
+if [[ -z "$DBHOST" ]]; then DBHOST="localhost"; fi
+read -p "DB name: ${WPNAME} or " DBNAME
 if [[ -z "$DBNAME" ]]; then
-  DBNAME="${WPNAME}";
+  if [[ -n "$WPNAME" ]]; then
+    DBNAME="${WPNAME}"
+  else
+    echo "The DBName is required" && exit
+  fi
 fi
+
+read -p "DB User (root) or: " DBUSER
+if [[ -z "$DBUSER" ]]; then DBUSER="root"; fi
+read -p "DB Password (root) or: " DBPASS
+if [[ -z "$DBPASS" ]]; then DBPASS="root"; fi
+
+if command -v valet &> /dev/null; then
+  valet db create $DBNAME
+else
+  echo "First create a datebase for you Magento project"
+  read -rsn1 -p "When ready, press any key to continue"
+fi
+
+echo "Set URL"
+echo " - empty = http://${DBNAME}.test/"
+echo " - s or secure = https://${DBNAME}.test/"
+echo " - Or use your own"
+read URL
+if [[ -z "$URL" ]]; then
+  URL="http://${DBNAME}.test/"
+elif [[ "$URL" == "s" ]] || [[ "$URL" == "secure" ]]; then
+  URL="https://${DBNAME}.test/"
+  if command -v valet &> /dev/null; then valet secure; fi
+fi
+
+read -p "Email (${GITEMAIL}) or: " USEREMAIL
+if [[ -z "$USEREMAIL" ]]; then USEREMAIL="$GITEMAIL"; fi
+read -p "Admin name: " ADNAME;
+read -sp "Admin Password: " ADPASS;
+echo "";
 
 mkdir $WPNAME &&
 cd $WPNAME &&
 wp core download &&
-valet db create $DBNAME &&
 wp core config \
   --dbname=$DBNAME \
   --dbuser=$DBUSER \
   --dbpass=$DBPASS \
   --dbhost=$DBHOST \
   --dbprefix="wp_" &&
-read -p "Admin name: " ADNAME;
-read -s -p "Admin Password: " ADPASS;
-echo "";
+
 wp core install \
-  --url="http://${WPNAME}.test" \
+  --url="${URL}" \
   --title="${WPNAME}" \
   --admin_user="${ADNAME}" \
   --admin_password="${ADPASS}" \
-  --admin_email="$(git config --global --get user.email)"
+  --admin_email="${ADEMAIL}"
