@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [[ -n "$1" ]]; then
-  vue create $1 && cd $1 && npm run serve;
-else
-  vue create . && npm run serve;
-fi
