@@ -10,6 +10,29 @@
   "workbench.colorTheme": "Atom Material Theme",
   "workbench.iconTheme": "file-icons",
   "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#fff1",
+    // https://github.com/Tyriar/vscode-snazzy
+    "terminal.background": "#282a36",
+    "terminalCursor.background": "#282a36",
+    "terminalCursor.foreground": "#97979b",
+    "terminal.selectionBackground": "#97979b33",
+    "terminal.foreground": "#eff0eb",
+    "terminal.ansiBlack": "#282a36",
+    "terminal.ansiRed": "#ff5c57",
+    "terminal.ansiGreen": "#5af78e",
+    "terminal.ansiYellow": "#f3f99d",
+    "terminal.ansiBlue": "#57c7ff",
+    "terminal.ansiMagenta": "#ff6ac1",
+    "terminal.ansiCyan": "#9aedfe",
+    "terminal.ansiWhite": "#f1f1f0",
+    "terminal.ansiBrightBlack": "#686868",
+    "terminal.ansiBrightRed": "#ff5c57",
+    "terminal.ansiBrightGreen": "#5af78e",
+    "terminal.ansiBrightYellow": "#f3f99d",
+    "terminal.ansiBrightBlue": "#57c7ff",
+    "terminal.ansiBrightMagenta": "#ff6ac1",
+    "terminal.ansiBrightCyan": "#9aedfe",
+    "terminal.ansiBrightWhite": "#eff0eb",
     "[Atom Material Theme]": {
       "badge.background": "#2196f3",
       "badge.foreground": "#fff",
@@ -24,7 +47,6 @@
       "list.dropBackground": "#2196f360",
       "list.focusBackground": "#2196f334",
       "list.inactiveFocusBackground": "#2196f360",
-      "editorRuler.foreground": "#fff1",
       "statusBar.noFolderBackground": "#2196f3",
       "statusBar.noFolderForeground": "#fff"
     }
@@ -54,15 +76,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -78,5 +97,17 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "svgviewer.enableautopreview": false,
   "window.zoomLevel": 0,
-  "cSpell.allowCompoundWords": true
+  "cSpell.allowCompoundWords": true,
+  "cSpell.userWords": [
+    "Fylgja",
+    "Magento",
+    "URI's",
+    "Zuidam",
+    "mqpacker",
+    "postcss",
+    "unspaced",
+    "var's",
+    "webp",
+    "woff"
+  ]
 }
