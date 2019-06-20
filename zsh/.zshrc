@@ -7,8 +7,8 @@ prompt pure
 # Uses the zsh precmd function hook to set the tab title
 # to the current working directory before each prompt
 function precmd () {
-    window_title="\\033]0;${PWD##*/}\\007"
-    echo -ne "$window_title"
+  window_title="\\033]0;${PWD##*/}\\007"
+  echo -ne "$window_title"
 }
 
 # Load all shell files from the ~/.shell folder
