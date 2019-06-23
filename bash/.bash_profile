@@ -1,19 +1,15 @@
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
-
 # List all matches in case multiple possible completions are possible
 set show-all-if-ambiguous on
-
 # Include filenames beginning with a "." in the filename expansion.
 shopt -s dotglob
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
-
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
-
-# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+# Do not autocomplete hidden files
+# unless the pattern explicitly begins with a dot
 set match-hidden-files off
 
 # Detect which `ls` flavor is in use
@@ -41,11 +37,3 @@ for file in ${LOAD_SETTINGS[@]}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
-
-export NVM_DIR="$HOME/.nvm"
-# Loads nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] &&
-source "/usr/local/opt/nvm/nvm.sh"
-# Load nvm bash_completion
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] &&
-source "/usr/local/opt/nvm/etc/bash_completion"

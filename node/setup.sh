@@ -9,5 +9,4 @@ else
   echo "Skipping Config.. NODE is not installed"
 fi
 
-source $(dirname "${BASH_SOURCE}")/nvm.sh
 source $(dirname "${BASH_SOURCE}")/pkg.sh

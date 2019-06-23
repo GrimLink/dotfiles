@@ -1,4 +1,13 @@
-# Prompt theme
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Add missing Mac cmd key bindings
+bindkey "^[OH" beginning-of-line
+bindkey "^[OF" end-of-line
+
+# Set thene to Prompt theme
 # https://github.com/sindresorhus/pure
 autoload -U promptinit
 promptinit
@@ -24,14 +33,3 @@ for file in ${LOAD_SETTINGS[@]}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
-
-export NVM_DIR="$HOME/.nvm"
-# Loads nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] &&
-. "/usr/local/opt/nvm/nvm.sh"
-# Load nvm bash_completion
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] &&
-. "/usr/local/opt/nvm/etc/bash_completion"
-# Load zsh-syntax-highlighting
-[ -s "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] &&
-. "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

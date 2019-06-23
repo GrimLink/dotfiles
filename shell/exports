@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set VS Code as default code editor
+export EDITOR=code
+
 # Add local bin
 export PATH="$PATH:$HOME/bin"
 
@@ -7,5 +10,8 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/sbin:$PATH"
 
-# Add Visual Studio Code (code), manually
+# Add Visual Studio Code (shell), manually
 export PATH="$PATH:/Applications/Visual\/Studio\/Code.app/Contents/Resources/app/bin"
+
+# Set node version
+export PATH="/usr/local/opt/node@10/bin:$PATH"
