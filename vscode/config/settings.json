@@ -5,6 +5,7 @@
   "editor.rulers": [80, 120],
   "editor.minimap.showSlider": "always",
   "editor.quickSuggestionsDelay": 30,
+  "terminal.integrated.fontSize": 14,
   "workbench.startupEditor": "none",
   "workbench.statusBar.feedback.visible": false,
   "workbench.colorTheme": "Atom Material Theme",
@@ -34,6 +35,7 @@
     "terminal.ansiBrightCyan": "#9aedfe",
     "terminal.ansiBrightWhite": "#eff0eb",
     "[Atom Material Theme]": {
+      "terminal.background": "#232e33",
       "badge.background": "#2196f3",
       "badge.foreground": "#fff",
       "activityBarBadge.background": "#2196f3",
