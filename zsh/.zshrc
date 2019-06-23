@@ -13,6 +13,11 @@ autoload -U promptinit
 promptinit
 prompt pure
 
+# Load zsh-syntax-highlighting
+ZSH_SYNTAX_DIR="/usr/local/share/zsh-syntax-highlighting"
+[ -s "${ZSH_SYNTAX_DIR}/zsh-syntax-highlighting.zsh" ] &&
+. "${ZSH_SYNTAX_DIR}/zsh-syntax-highlighting.zsh"
+
 # Uses the zsh precmd function hook to set the tab title
 # to the current working directory before each prompt
 function precmd () {

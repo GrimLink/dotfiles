@@ -28,9 +28,6 @@ echo 'export NVM_DIR="$HOME/.nvm"
 # Load nvm bash_completion
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] &&
 . "/usr/local/opt/nvm/etc/bash_completion"
-# Load zsh-syntax-highlighting
-[ -s "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] &&
-. "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Automatically switch node versions when a directory has a `.nvmrc` file
 autoload -U add-zsh-hook
