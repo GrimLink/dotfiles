@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_URL="https://raw.githubusercontent.com/GrimLink/"
+GIT_URL="https://raw.githubusercontent.com/GrimLink"
 
 if [ ! -d ~/bin ]; then
   mkdir ~/bin
@@ -12,19 +12,20 @@ function rsyncBin() {
     --exclude "README.md" \
     --exclude "setup.sh" \
     -avh --no-perms \
-    "$(dirname "${BASH_SOURCE}")/." ~/bin
-  # Make all bin files executable
-  find ~/bin -type f -iname "*" -exec chmod +x {} \;
+    "$(dirname "${BASH_SOURCE}")/." ~/bin;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncBin
 
   echo -e "${YELLOW}Getting mage${RESET}"
-  curl -sS -O $GIT_URL/mage/master/mage
+  cd ~/bin && { curl -sS -O "${GIT_URL}/mage/master/mage"; cd -; }
 
   echo -e "${YELLOW}Getting create-project${RESET}"
-  bash -c "$(curl -LsS https://raw.githubusercontent.com/GrimLink/create-project/master/install.sh)"
+  bash -c "$(curl -LsS ${GIT_URL}/create-project/master/install.sh)"
+
+  # Make all bin files executable
+  find ~/bin -type f -iname "*" -exec chmod +x {} \;
 else
   read -p "Update bin files? (y) " -n 1
   echo ""
@@ -32,10 +33,15 @@ else
     rsyncBin
 
     echo -e "${YELLOW}Getting mage${RESET}"
-    curl -sS -O $GIT_URL/mage/master/mage
+    cd ~/bin && { curl -sS -O "${GIT_URL}/mage/master/mage"; cd -; }
 
     echo -e "${YELLOW}Getting create-project${RESET}"
-    bash -c "$(curl -LsS https://raw.githubusercontent.com/GrimLink/create-project/master/install.sh)"
+    bash -c "$(curl -LsS ${GIT_URL}/create-project/master/install.sh)"
+
+    # Make all bin files executable
+    find ~/bin -type f -iname "*" -exec chmod +x {} \;
+
+    cd -
   fi
 fi
 
