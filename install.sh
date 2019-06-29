@@ -26,12 +26,12 @@ source macos/setup.sh
 
 echo "${GREEN}Setting up shell${RESET}"
 source shell/setup.sh
-read -p "Use zsh as shell? (Y/n) " -n 1
+read -p "Use zsh as shell? [Y/n] " -n 1
 echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  source zsh/setup.sh
-else
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
   source bash/setup.sh
+else
+  source zsh/setup.sh
 fi
 
 echo "${GREEN}Setting up Brew${RESET}"
