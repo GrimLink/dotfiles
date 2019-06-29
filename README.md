@@ -47,4 +47,5 @@ _Use the flag `--force` or `-f` to skip the questions for each config_
 - [paulirish/dotfiles](https://github.com/paulirish/dotfiles)
 - [alrra/dotfiles](https://github.com/alrra/dotfiles)
 - [sindresorhus/pure](https://github.com/sindresorhus/pure)
+- [Robert Cooper's Blog article on his zsh setup with hyper](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
 - Anyone who contributed a patch or made a helpful suggestion
