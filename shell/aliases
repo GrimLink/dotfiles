@@ -17,10 +17,19 @@ alias rmf="rm -rf"
 
 # List directory contents
 # Always use color output for `ls`
-alias ll="ls -lF"             # long format
-alias la="ls -laF"            # long format, including dot files
+# Detect which `ls` flavor is in use
+if ls --color >/dev/null 2>&1; then # GNU `ls`
+  LSCOLORFLAG="--color"
+else # macOS `ls`
+  LSCOLORFLAG="-G"
+fi
+
+alias ls="command ls ${LSCOLORFLAG}"
+
+alias ll="ls -lF" # long format
+alias la="ls -laF" # long format, including dot files
 alias ld="ls -lF | grep '^d'" # Directories
-alias l.="ls -ld .*"          # Dotfiles
+alias l.="ls -ld .*" # Dotfiles
 
 # Edit
 alias chmox="chmod +x"
@@ -54,7 +63,7 @@ alias desktop-show="defaults write com.apple.finder CreateDesktop -bool true && 
 
 # Networking
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias ip-local="ipconfig getifaddr en1"
+alias localip="ipconfig getifaddr en1"
 
-# Keys
+# General ssh key
 alias ssh="pbcopy <~/.ssh/id_rsa.pub"
