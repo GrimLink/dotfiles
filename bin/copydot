@@ -1,0 +1,74 @@
+#!/bin/bash
+
+SRC="https://raw.githubusercontent.com/GrimLink/dotfiles/master"
+RESET='\033[0m'
+BOLD='\033[1m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+
+# Functions
+function editorconfig() {
+  echo -e "${YELLOW}Creating editorconfig${RESET}"
+  curl -sS -O $SRC/formating/.editorconfig
+}
+
+function browserslist() {
+  echo -e "${YELLOW}Creating browserslist config${RESET}"
+  curl -sS -O $SRC/.browserslistrc
+}
+
+function prettier() {
+  echo -e "${YELLOW}Creating prettier config${RESET}"
+  curl -sS -O $SRC/formating/.prettierrc
+}
+
+function stylelint() {
+  echo -e "${YELLOW}Creating stylelint config${RESET}"
+  curl -sS -O $SRC/formating/.stylelintrc
+}
+
+function eslint() {
+  echo -e "${YELLOW}Creating ESLint config${RESET}"
+  curl -sS -O $SRC/formating/.eslintrc
+}
+
+# Tasks
+if [[ $1 == "help" ]] || [[ $1 == "-H" ]]; then
+  echo -e "\n${BOLD}Options are:${RESET}
+  - editorconfig
+  - browserslist
+  - prettier
+  - stylelint
+  - eslint
+  - lint (prettier, stylelint, eslint)
+  - config (editorconfig, prettier)
+  - editor (editorconfig, prettier, browserslist)
+  - all
+  - help" && exit
+fi
+
+echo -e "${GREEN}Starting Configuration... ${RESET}"
+
+for i in "${@}"; do case $i in
+  editorconfig ) editorconfig ;;
+  browserslist ) browserslist ;;
+  prettier ) prettier ;;
+  stylelint ) stylelint ;;
+  eslint ) eslint ;;
+  lint ) prettier; stylelint; eslint ;;
+  formating ) editorconfig; prettier ;;
+  config ) editorconfig; prettier; browserslist ;;
+  all )
+    editorconfig
+    browserslist
+    prettier
+    stylelint
+    eslint
+    ;;
+  * )
+    echo "No correct argumants where givin"
+    echo -e "Use ${BOLD}help${RESET} for what commands are aviable"
+    ;;
+esac; done
+
+echo -e "${GREEN}Done!${RESET}"

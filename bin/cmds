@@ -14,7 +14,7 @@ desktop-show  ${RESET}(Show desktop icons)${BLUE}
 desktop-hide  ${RESET}(Hide desktop icons)${BLUE}
 today         ${RESET}(Get today's date)${BLUE}
 ip            ${RESET}(Get network ip address)${BLUE}
-ip-local      ${RESET}(Get local network ip address)${BLUE}
+localip       ${RESET}(Get local network ip address)${BLUE}
 
 ${RESET}${BOLD}# Clean${BLUE}
 emptytrash    ${RESET}(Empty Trash, clear Apple’s System Logs and clear download history from quarantine)${BLUE}
