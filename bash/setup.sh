@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsync -avh --no-perms \
     "$(dirname "${BASH_SOURCE}")/.bash_profile" \
