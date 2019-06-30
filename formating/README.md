@@ -1,8 +1,8 @@
 # Formating
 
-## General
+All my formating and linting default config
 
-### editorconfig
+## editorconfig
 
 Base setup for editors.
 To use the same indent and end of line, between team members.
@@ -10,7 +10,7 @@ To use the same indent and end of line, between team members.
 **Source**
 * http://editorconfig.org
 
-### Prettier
+## Prettier
 
 Well Prettier is a zero config formatter.
 I prefer single quotes for default javascript code.
@@ -19,9 +19,8 @@ And so use a supper small config.
 **Source**
 * https://prettier.io/
 
-## Styles
 
-### Stylelint
+## Stylelint
 
 The ESLint for CSS.
 
@@ -42,7 +41,7 @@ _I use the linting mostly via the editor plugin._
 * https://github.com/shinnn/vscode-stylelint
 * https://github.com/getfylgja/stylelint-config
 
-### SASS-lint
+## SASS-lint
 
 **ARCHIVED**
 So I really don't use it anymore
@@ -50,8 +49,6 @@ So I really don't use it anymore
 **Source**
 * https://github.com/sasstools/sass-lint
 
-## Javascript
+## ESLint
 
-### ESLint
-
-_TODO: Create proper doc_
+I have not used ESLINT much yet in the wild so have nothing to add here (yet)

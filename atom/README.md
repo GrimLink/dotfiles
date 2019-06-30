@@ -6,7 +6,7 @@ This is just an archive of my old preferences.
 
 ## Install
 
-If you want use these preferrences's.
+If you want use these preferences.
 First install Atom [from atom.io](https://atom.io/).
 
 Or via Brew

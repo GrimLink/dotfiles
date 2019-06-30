@@ -1,5 +1,7 @@
 # ValetPlus
 
+Handy installer for valet plus
+
 ## Setup
 
 This script will get and install valet plus.
@@ -8,13 +10,12 @@ And will create a projects folder and [valet park](https://github.com/weprovide/
 
 It will also create some sub dir's for framework specific projects.
 
-* Magento
-* Wordpress
-* Joomla
+* Magento (p)
+* Wordpress (p)
 * React
 * Vue
 
-_And also run valet park here_
+_p: And also run valet park here_
 
 ## Doc
 

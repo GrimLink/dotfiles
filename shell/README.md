@@ -1,7 +1,7 @@
 # Bash
 
 All files are loaded via the terminal shell of choice.
-In this dotfile this is bash or zsh.
+In this dotfile repo this is bash or zsh.
 
 ## Whats in the box
 
@@ -21,15 +21,14 @@ This includes;
 * system, e.g. ip, show/hide dotfiles.
 * more..
 
-_The `helpme` script will show all possible commands found here_
-
 ### Functions
 
 Set of handy aliases for common commands.
 
 This includes;
 
-* ..
+* Create folder and enter it `mcd`
+* finding files/folder `f`
 
 ### Applications
 
@@ -43,5 +42,5 @@ You could also use extra to override settings, functions and aliases from my dot
 
 ## Need help or forgot a command
 
-If the bin command shell-help is installed.
-then you can view all commands by running `shell-help`.
+If the bin command `cmds` is available.
+then you can view all commands by running `cmds`.

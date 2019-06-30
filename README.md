@@ -1,6 +1,7 @@
 # Dotfiles
 
-My setup for Bash, Node, Git, OSX, Editors and more...
+My DEV setup.
+Containing things like the Shell, MacOS config, Valet Plus and more..
 
 > :warning: These are my personal settings.
 > Don't run the scripts without understanding what the code does.
@@ -39,6 +40,10 @@ source dotfiles/sync.sh
 ```
 
 _Use the flag `--force` or `-f` to skip the questions for each config_
+
+## Whats in the box
+
+Each folder contains a readme with details on each config
 
 ## Insparation and Thanks to…
 
