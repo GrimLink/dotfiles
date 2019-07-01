@@ -28,10 +28,10 @@ echo "${GREEN}Setting up shell${RESET}"
 source shell/setup.sh
 read -p "Use zsh as shell? [Y/n] " -n 1
 echo ""
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-  source bash/setup.sh
-else
+if [[ ! $REPLY =~ ^[Nn]$ ]]; then
   source zsh/setup.sh
+else
+  source bash/setup.sh
 fi
 
 echo "${GREEN}Setting up Brew${RESET}"

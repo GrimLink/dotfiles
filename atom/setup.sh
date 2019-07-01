@@ -19,9 +19,9 @@ function rsyncAtomConfig() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncAtomConfig
 else
-  read -p "Update Atom config files. Are you sure? (y) " -n 1
+  read -p "Update Atom config files. Are you sure? [Y/n] " -n 1
   echo ""
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     rsyncAtomConfig
   fi
 fi

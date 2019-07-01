@@ -13,13 +13,18 @@ git pull origin master
 # If it has the flag `--force` or `-f`.
 # Then don't ask for each task
 
-echo -e "${GREEN}Syncing shell config${RESET}"
+echo -e "\n${GREEN}Syncing shell config${RESET}"
 source shell/setup.sh
 source bin/setup.sh
 
-echo -e "${GREEN}Syncing git config${RESET}"
+echo -e "\n${GREEN}Syncing git config${RESET}"
 source git/setup.sh
 
+echo -e "\n${GREEN}Syncing editor config${RESET}"
+source vscode/config.sh
+source hyper/setup.sh
+
+echo -e "\n${GREEN}Starting updater..${RESET}"
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   echo -e "${GREEN}Updating node pkg's${RESET}"
   source node/pkg.sh
@@ -45,12 +50,6 @@ else
     brew cleanup # Remove outdated versions from the cellar.
   fi
 fi
-
-echo -e "${GREEN}Syncing vscode config${RESET}"
-source vscode/config.sh
-
-echo -e "${GREEN}Syncing hyper config${RESET}"
-source hyper/setup.sh
 
 # Reload Shell
 exec $SHELL -l

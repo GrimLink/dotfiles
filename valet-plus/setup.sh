@@ -6,9 +6,9 @@ if command -v composer &>/dev/null; then
     valet fix &&
     valet install --with-mariadb
 
-  read -p "Create project folders & Valet park? (y) " -n 1
+  read -p "Create project folders & Valet park? [Y/n] " -n 1
   echo ""
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     mkdir ~/projects
     valet park ~/projects
 

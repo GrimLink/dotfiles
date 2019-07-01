@@ -16,9 +16,9 @@ function rsyncShell() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncShell
 else
-  read -p "Add shell config files? (Y/n) " -n 1
+  read -p "Add shell config files? [Y/n] " -n 1
   echo ""
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     rsyncShell
   fi
 fi

@@ -6,18 +6,18 @@ function rsyncVSCodeConfig() {
     "$(dirname "${BASH_SOURCE}")/config/keybindings.json" \
     "$(dirname "${BASH_SOURCE}")/config/snippets" \
     $HOME/Library/Application\ Support/Code/User
+
+  echo -e "Make sure to reboot vsode"
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncVSCodeConfig
 else
-  read -p "Update VSCode config files. Are you sure? (y) " -n 1
+  read -p "Update VSCode config files. Are you sure? [Y/n] " -n 1
   echo ""
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     rsyncVSCodeConfig
   fi
 fi
 
 unset rsyncVSCodeConfig
-
-echo -e "Make sure to reboot vsode\n"
