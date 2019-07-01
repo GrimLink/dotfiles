@@ -7,4 +7,4 @@ Some other things are also installed via brew but are more part of the ValetPlus
 
 ## App
 
-The brew will also install almost all applications, that I use.
+Brew will also install almost all applications, that I use.
