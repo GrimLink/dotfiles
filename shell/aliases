@@ -66,4 +66,4 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 
 # General ssh key
-alias ssh="pbcopy <~/.ssh/id_rsa.pub"
+alias copyssh="pbcopy <~/.ssh/id_rsa.pub"
