@@ -13,6 +13,10 @@ that allows you to create a project with minimal effort.
 
 Does all the steps needed to setup a new git project.
 
+## git-upstream
+
+Does all the steps needed to update a forked git project with the original.
+
 ## mage
 
 Alias & helper for bin/magento commands

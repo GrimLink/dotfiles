@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Get latest changes from orginal repo
+
+read -p "Add upstream? (Leave blank for no) " UPSTREAM;
+echo "";
+if [[ -n "$UPSTREAM" ]]; then
+  git remote add upstream $UPSTREAM
+fi;
+
+git fetch upstream
+
+git checkout master
+
+git merge upstream/master
