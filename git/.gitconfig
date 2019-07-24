@@ -28,7 +28,7 @@
 	untracked = cyan
 
 [pretty]
-	custom = "%C(magenta)%h%C(red)%d %C(reset)%ar %C(green)%s %C(blue)(%an)"
+	custom = "%C(magenta)%h%C(red)%d %C(reset)%ad %C(green)%s %C(blue)(%an)"
 
 [help]
 	autocorrect = 1 # Automatically correct typos
@@ -54,7 +54,7 @@
 	s = status -s
 	amend = commit --amend --reuse-message=HEAD
 	ca = !git add -A && git commit -av -m
-	lg = log --graph --pretty=custom --abbrev-commit
+	lg = log --graph --pretty=custom --abbrev-commit --date=short
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
@@ -86,9 +86,9 @@
 	# tags containing commit
 	ft = "!f() { git describe --always --contains $1; }; f"
 	# by source code
-	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	fc = "!f() { git log --pretty=custom --date=short -S$1; }; f"
 	# by commit message
-	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	fm = "!f() { git log --pretty=custom --date=short --grep=$1; }; f"
 
 	# Del all branches that are merged in master and develop
 	cleanup = "!git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
