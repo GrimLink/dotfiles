@@ -7,7 +7,6 @@
   "editor.quickSuggestionsDelay": 30,
   "terminal.integrated.fontSize": 14,
   "workbench.startupEditor": "none",
-  "workbench.statusBar.feedback.visible": false,
   "workbench.colorTheme": "Atom Material Theme",
   "workbench.iconTheme": "file-icons",
   "workbench.colorCustomizations": {
@@ -56,11 +55,11 @@
   "workbench.view.alwaysShowHeaderActions": true,
   "breadcrumbs.enabled": true,
   "zenMode.fullScreen": false,
-  // Languages
   "emmet.includeLanguages": {
     "blade.php": "html",
     "vue": "html"
   },
+  "files.defaultLanguage": "markdown",
   "files.associations": {
     ".browserslistrc": "properties",
     ".postcssrc": "json",
@@ -81,6 +80,9 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
@@ -88,28 +90,28 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  // Linting
-  "php.suggest.basic": false, // For PHP intelliSense
   "css.validate": false, // For stylelint
   "less.validate": false, // For stylelint
   "scss.validate": false, // For stylelint
   "markdown.extension.italic.indicator": "_",
-  // Other
   "markdown.extension.toc.levels": "2..6",
   "liveServer.settings.donotShowInfoMsg": true,
   "svgviewer.enableautopreview": false,
   "window.zoomLevel": 0,
   "cSpell.allowCompoundWords": true,
   "cSpell.userWords": [
-    "Fylgja",
-    "Magento",
-    "URI's",
     "Zuidam",
-    "mqpacker",
+    "Fylgja",
+    "getfylgja",
+    "Magento",
     "postcss",
+    "URI's",
+    "mqpacker",
+    "repo",
     "unspaced",
     "var's",
     "webp",
     "woff"
-  ]
+  ],
+  "git.confirmSync": false
 }
