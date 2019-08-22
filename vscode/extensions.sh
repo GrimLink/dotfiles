@@ -1,40 +1,36 @@
 #!/bin/bash
 
-# code --list-extensions
+# get all extensions via `code --list-extensions`
 function installCodeExt() {
   VSCODE_EXT=(
-    cssho.vscode-svgviewer
-    mrmlnc.vscode-duplicate
-    CoenraadS.bracket-pair-colorizer
-    deerawan.vscode-faker
-    msjsdiag.debugger-for-chrome
-    ritwickdey.LiveServer
-    streetsidesoftware.code-spell-checker
-    # Theme
-    tobiasalthoff.atom-material-theme
-    file-icons.file-icons
-    # Markdown
-    yzhang.markdown-all-in-one
+    aaron-bond.better-comments
+    apollographql.vscode-apollo
     bierner.markdown-emoji
     bierner.markdown-preview-github-styles
-    # Git
-    eamodio.gitlens
-    GitHub.vscode-pull-request-github
-    # Linting
-    EditorConfig.EditorConfig
-    shinnn.stylelint
+    burkeholland.simple-react-snippets
+    CoenraadS.bracket-pair-colorizer
+    cssho.vscode-svgviewer
     dbaeumer.vscode-eslint
+    deerawan.vscode-faker
+    eamodio.gitlens
+    EditorConfig.EditorConfig
     esbenp.prettier-vscode
-    # Syntax
-    apollographql.vscode-apollo
+    file-icons.file-icons
+    GitHub.vscode-pull-request-github
     jock.svg
-    shanoor.vscode-nginx
-    mikestead.dotenv
+    jspolancor.presentationmode
     mariusschulz.yarn-lock-syntax
-    # Formatter
-    aaron-bond.better-comments
+    mikestead.dotenv
+    mrmlnc.vscode-duplicate
+    msjsdiag.debugger-for-chrome
     octref.vetur
     raynigon.nginx-formatter
+    ritwickdey.LiveServer
+    shanoor.vscode-nginx
+    shinnn.stylelint
+    streetsidesoftware.code-spell-checker
+    tobiasalthoff.atom-material-theme
+    yzhang.markdown-all-in-one
   )
   for i in "${VSCODE_EXT[@]}"; do
     code --install-extension $i
