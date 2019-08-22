@@ -7,12 +7,12 @@
   "editor.quickSuggestionsDelay": 30,
   "terminal.integrated.fontSize": 14,
   "workbench.startupEditor": "none",
+  "workbench.view.alwaysShowHeaderActions": false,
   "workbench.colorTheme": "Atom Material Theme",
   "workbench.iconTheme": "file-icons",
   "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#fff1",
+    "editorRuler.foreground": "#fff2",
     // https://github.com/Tyriar/vscode-snazzy
-    "terminal.background": "#282a36",
     "terminalCursor.background": "#282a36",
     "terminalCursor.foreground": "#97979b",
     "terminal.selectionBackground": "#97979b33",
@@ -32,29 +32,8 @@
     "terminal.ansiBrightBlue": "#57c7ff",
     "terminal.ansiBrightMagenta": "#ff6ac1",
     "terminal.ansiBrightCyan": "#9aedfe",
-    "terminal.ansiBrightWhite": "#eff0eb",
-    "[Atom Material Theme]": {
-      "terminal.background": "#232e33",
-      "badge.background": "#2196f3",
-      "badge.foreground": "#fff",
-      "activityBarBadge.background": "#2196f3",
-      "activityBarBadge.foreground": "#fff",
-      "tab.activeBorder": "#2196f3",
-      "panelTitle.activeBorder": "#2196f3",
-      "listFilterWidget.background": "#2196f360",
-      "list.hoverBackground": "#2196f325",
-      "list.activeSelectionBackground": "#2196f360",
-      "list.activeSelectionForeground": "#dff5f3",
-      "list.dropBackground": "#2196f360",
-      "list.focusBackground": "#2196f334",
-      "list.inactiveFocusBackground": "#2196f360",
-      "statusBar.noFolderBackground": "#2196f3",
-      "statusBar.noFolderForeground": "#fff"
-    }
+    "terminal.ansiBrightWhite": "#eff0eb"
   },
-  "workbench.view.alwaysShowHeaderActions": true,
-  "breadcrumbs.enabled": true,
-  "zenMode.fullScreen": false,
   "emmet.includeLanguages": {
     "blade.php": "html",
     "vue": "html"
@@ -68,50 +47,79 @@
     ".stylelintignore": "ignore",
     ".gitmodules": "properties"
   },
+  "breadcrumbs.enabled": true,
+  "window.zoomLevel": 0,
+  "presentationMode.zoomLevel": 3,
+  "zenMode.fullScreen": false,
+  "zenMode.hideTabs": false,
+  "zenMode.hideLineNumbers": false,
+  "git.confirmSync": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "svgviewer.enableautopreview": false,
   // Format
+  "css.validate": false, // For stylelint
+  "less.validate": false, // For stylelint
+  "scss.validate": false, // For stylelint
   "html.format.extraLiners": "",
   "prettier.stylelintIntegration": true,
   "prettier.eslintIntegration": true,
+  "prettier.disableLanguages": [],
+  "vetur.format.enable": false,
+  "vetur.grammar.customBlocks": {
+    "docs": "md",
+    "i18n": "json",
+    "page-query": "graphql",
+    "static-query": "graphql"
+  },
+  "[less]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[scss]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[vue]": {
+    "editor.formatOnSave": true
   },
   "[markdown]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[json]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "css.validate": false, // For stylelint
-  "less.validate": false, // For stylelint
-  "scss.validate": false, // For stylelint
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.toc.levels": "2..6",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "svgviewer.enableautopreview": false,
-  "window.zoomLevel": 0,
+  // Language
+  "cSpell.showStatus": false,
   "cSpell.allowCompoundWords": true,
   "cSpell.userWords": [
-    "Zuidam",
-    "Fylgja",
+    "fylgja",
     "getfylgja",
-    "Magento",
-    "postcss",
-    "URI's",
+    "magento",
     "mqpacker",
+    "postcss",
     "repo",
     "unspaced",
+    "utilkit",
+    "uri's",
     "var's",
+    "vetur",
     "webp",
-    "woff"
-  ],
-  "git.confirmSync": false
+    "woff",
+    "zuidam"
+  ]
 }
