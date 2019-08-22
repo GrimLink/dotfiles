@@ -57,38 +57,11 @@
     "description": "bg with image option",
     "body": "background-image: image(\"$1.webp\", \"$1.jpg\");"
   },
-  "font full": {
-    "scope": "css,less,scss",
-    "prefix": "font",
-    "description": "font with all options",
-    "body": [
-      "font:",
-      "\t${1:${2:/* style */}",
-      "\t${3:/* variant */}",
-      "\t${4:/* stretch */}}",
-      "\t${5:normal}",
-      "\t${6:1em/1.5}",
-      "\t${7:system-ui, sans-serif};"
-    ]
-  },
   // Stylelint
   "Stylelint disable": {
     "scope": "css,less,scss",
     "prefix": "!slint",
     "description": "disable stylelinting",
     "body": "$LINE_COMMENT stylelint-disable${1:-next-line} ${2:declaration-no-important}"
-  },
-  // Style Doc
-  "Style Doc Param": {
-    "scope": "css,less,scss",
-    "prefix": "@param-doc",
-    "description": "set Style Doc param",
-    "body": "/// @param {${1|String,Number,Boolean,Array,Content|}} ${2:var()} - ${3:description}"
-  },
-  "Style Doc return": {
-    "scope": "css,less,scss",
-    "prefix": "@return-doc",
-    "description": "set Style Doc return",
-    "body": "/// @return {${1|String,Number,Boolean,Array,Content|}} - ${3:description}"
   }
 }
