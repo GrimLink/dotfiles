@@ -62,7 +62,6 @@
   "scss.validate": false, // For stylelint
   "html.format.extraLiners": "",
   "prettier.stylelintIntegration": true,
-  "prettier.eslintIntegration": true,
   "prettier.disableLanguages": [],
   "vetur.format.enable": false,
   "vetur.grammar.customBlocks": {
