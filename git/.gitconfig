@@ -51,7 +51,7 @@
 
 [alias]
 	alias = config --get-regexp alias
-	s = status -s
+	s = status -sb
 	amend = commit --amend --reuse-message=HEAD
 	ca = !git add -A && git commit -av -m
 	lg = log --graph --pretty=custom --abbrev-commit --date=short
