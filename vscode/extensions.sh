@@ -4,13 +4,14 @@
 function installCodeExt() {
   VSCODE_EXT=(
     aaron-bond.better-comments
+    alefragnani.project-manager
     apollographql.vscode-apollo
     bierner.markdown-emoji
     bierner.markdown-preview-github-styles
     burkeholland.simple-react-snippets
     CoenraadS.bracket-pair-colorizer
     cssho.vscode-svgviewer
-    dbaeumer.vscode-eslint
+    csstools.postcss
     deerawan.vscode-faker
     eamodio.gitlens
     EditorConfig.EditorConfig
@@ -24,6 +25,7 @@ function installCodeExt() {
     mrmlnc.vscode-duplicate
     msjsdiag.debugger-for-chrome
     octref.vetur
+    pnp.polacode
     raynigon.nginx-formatter
     ritwickdey.LiveServer
     shanoor.vscode-nginx
