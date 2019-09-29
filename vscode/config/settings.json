@@ -1,4 +1,5 @@
 {
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "editor.renderWhitespace": "boundary",
   "editor.wordWrap": "on",
@@ -36,7 +37,11 @@
   },
   "emmet.includeLanguages": {
     "blade.php": "html",
-    "vue": "html"
+    "vue": "html",
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
   },
   "files.defaultLanguage": "markdown",
   "files.associations": {
