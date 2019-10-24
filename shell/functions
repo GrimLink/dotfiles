@@ -9,3 +9,12 @@ function mcd() {
 function f() {
   find . -name "$1" 2>&1 | grep -v 'Permission denied'
 }
+
+function to-webp() {
+  for PHOTO in *.$1
+  do
+    BASE=$(echo $PHOTO | cut -f 1 -d '.')
+    echo $PHOTO $BASE.webp
+	  convert $PHOTO $BASE.webp
+  done
+}
