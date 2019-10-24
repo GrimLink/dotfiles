@@ -5,17 +5,17 @@
     "body": "<?php $1 ?>"
   },
   "php echo": {
-    "prefix": "?=",
+    "prefix": "php-echo",
     "description": "php echo tag",
     "body": "<?= $1; ?>"
   },
   "php print_r": {
-    "prefix": "?print",
+    "prefix": "php-print",
     "description": "php print",
     "body": "<pre><?= print_r(${1:$this->item}); ?></pre>"
   },
   "php var_dump": {
-    "prefix": "?dump",
+    "prefix": "php-dump",
     "description": "php dump",
     "body": "<pre><?= var_dump(${1:$this->item}); ?></pre>"
   }
