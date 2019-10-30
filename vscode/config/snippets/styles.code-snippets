@@ -57,11 +57,10 @@
     "description": "bg with image option",
     "body": "background-image: image(\"$1.webp\", \"$1.jpg\");"
   },
-  // Stylelint
   "Stylelint disable": {
     "scope": "css,less,scss",
     "prefix": "!slint",
-    "description": "disable stylelinting",
+    "description": "Disable linting for rule(s)",
     "body": "$LINE_COMMENT stylelint-disable${1:-next-line} ${2:declaration-no-important}"
   }
 }

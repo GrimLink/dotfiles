@@ -38,7 +38,16 @@
     "prefix": "if-yes",
     "description": "Ask for yes",
     "body": [
-      "read -p \"${1:message} [Yy] \" -n 1;",
+      "read -p \"${1:message} [Y/n] \" -n 1;",
+      "echo \"\";",
+      "if [[ ! \\$REPLY =~ ^[Nn]$ ]]; then\n\t$2\nfi;"
+    ]
+  },
+  "Ask for no": {
+    "prefix": "if-no",
+    "description": "Ask for no",
+    "body": [
+      "read -p \"${1:message} [N/y] \" -n 1;",
       "echo \"\";",
       "if [[ \\$REPLY =~ ^[Yy]$ ]]; then\n\t$2\nfi;"
     ]
