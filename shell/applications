@@ -15,12 +15,6 @@ function firefoxDev() { open -a FirefoxDeveloperEdition "$1"; }
 # Lighthouse, Always use headless chrome
 alias lighthouse='command lighthouse --chrome-flags="--headless"'
 
-# Tower
-alias tower="gittower"
-
-# Gitkraken
-alias kraken="open -a 'GitKraken' --args -p $(pwd)"
-
 # Artisan
 alias art="php artisan"
 
