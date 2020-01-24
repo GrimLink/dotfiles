@@ -9,7 +9,7 @@ fi
 if ! command -v brew &>/dev/null; then
   # Install node & yarn
   brew install yarn
-  brew install node@10 # Get last lts version
+  brew install node@12 # Get last lts version
   # Install php + latest stable 3 henkrehorst/php versions
   brew install php
   brew tap henkrehorst/php
