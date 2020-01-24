@@ -13,7 +13,7 @@ function firefox() { open -a Firefox "$1"; }
 function firefoxDev() { open -a FirefoxDeveloperEdition "$1"; }
 
 # Lighthouse, Always use headless chrome
-alias lighthouse='command lighthouse --chrome-flags="--headless"'
+alias lighthouse='npx lighthouse --chrome-flags="--headless"'
 
 # Artisan
 alias art="php artisan"
