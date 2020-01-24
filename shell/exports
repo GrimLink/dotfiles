@@ -14,4 +14,4 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:/Applications/Visual\/Studio\/Code.app/Contents/Resources/app/bin"
 
 # Set node version
-export PATH="/usr/local/opt/node@10/bin:$PATH"
+export PATH="/usr/local/opt/node@12/bin:$PATH"
