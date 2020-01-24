@@ -3,7 +3,7 @@
 # Setup file for nvm
 # Not sure if I am going to use this
 
-# Probly wil install via curl
+# Probably wil install via curl
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 # Create nvm folder
