@@ -1,7 +1,0 @@
-{
-  "phpcs disable": {
-    "prefix": "!phpcs",
-    "description": "Disable linting for rule(s)",
-    "body": "$LINE_COMMENT phpcs:{$1:ignore|disable|enable} $0"
-  }
-}
