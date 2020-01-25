@@ -19,7 +19,7 @@
   },
   "import index": {
     "scope": "js,jsx,ts,tsx,css,less,scss",
-    "prefix": "@import-index",
+    "prefix": "@index-import",
     "description": "import file with the same folder name",
     "body":[
       "$LINE_COMMENT Imports only!",
