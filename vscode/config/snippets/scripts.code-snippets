@@ -1,8 +1,0 @@
-{
-  "ESLint disable": {
-    "scope": "js,jsx,ts,tsx",
-    "prefix": "!eslint",
-    "description": "Disable linting for rule(s)",
-    "body": "$LINE_COMMENT eslint-disable${1:-next-line} ${2:no-use-before-define}"
-  }
-}
