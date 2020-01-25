@@ -22,7 +22,7 @@ If it is your first install.
 Run the `install.sh` script.
 
 ```bash
-source dotfiles/install.sh
+./dotfiles/install.sh
 ```
 
 Follow the steps for each script, that is called via the install script.
@@ -36,7 +36,7 @@ _Use the flag `--force` or `-f` to skip the questions for each config_
 The sync will not re-download apps 
 
 ```bash
-source dotfiles/sync.sh
+./dotfiles/sync.sh
 ```
 
 _Use the flag `--force` or `-f` to skip the questions for each config_
