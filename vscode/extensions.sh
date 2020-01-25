@@ -21,17 +21,20 @@ function installCodeExt() {
     jock.svg
     jspolancor.presentationmode
     mariusschulz.yarn-lock-syntax
+    maximus136.change-string-case
     mikestead.dotenv
     mrmlnc.vscode-duplicate
     msjsdiag.debugger-for-chrome
     octref.vetur
     pnp.polacode
     raynigon.nginx-formatter
+    redhat.vscode-yaml
     ritwickdey.LiveServer
-    shanoor.vscode-nginx
     shinnn.stylelint
     streetsidesoftware.code-spell-checker
     tobiasalthoff.atom-material-theme
+    vsls-contrib.gistfs
+    william-voyek.vscode-nginx
     yzhang.markdown-all-in-one
   )
   for i in "${VSCODE_EXT[@]}"; do
