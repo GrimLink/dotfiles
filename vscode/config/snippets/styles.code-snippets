@@ -1,27 +1,17 @@
 {
   "pseudo states": {
-    "scope": "css,less,scss",
-    "prefix": ":states",
-    "description": "All main pseudo states",
-    "body": [
-      "&:active,",
-      "&:focus,",
-      "&:hover {\n\t$1\n}"
-    ]
-  },
-  "pseudo states foc/hov": {
     "scope": "css,scss,less",
-    "prefix": ":fochov",
+    "prefix": ":hov",
     "body": [
       "&:focus,",
       "&:hover {\n\t$1\n}"
     ],
     "description": "Base focus pseudo states"
   },
-  "before & after": {
+  "pseudo elements": {
     "scope": "css,scss,less",
     "prefix": ":both",
-    "description": "Add's both before and after",
+    "description": "Adding both before and after",
     "body": [
       "$1::before,",
       "$1::after {\n\tcontent: \"\";\n}"
@@ -39,28 +29,12 @@
       "left: ${2:0};"
     ]
   },
-  "bg full": {
+  "background all": {
     "scope": "css,less,scss",
-    "prefix": "bg",
+    "prefix": "background-all",
     "description": "bg with all base options",
     "body": [
-      "background:",
-      "\t${1:transparent}",
-      "\t${2:/* img */}",
-      "\t${3:center/cover}",
-      "\t${4:no-repeat};"
+      "background: ${1:transparent} ${2:/* img */} ${3:center/contain} ${4:no-repeat};"
     ]
-  },
-  "bg image(url)": {
-    "scope": "css,less,scss",
-    "prefix": "bg-img",
-    "description": "bg with image option",
-    "body": "background-image: image(\"$1.webp\", \"$1.jpg\");"
-  },
-  "Stylelint disable": {
-    "scope": "css,less,scss",
-    "prefix": "!slint",
-    "description": "Disable linting for rule(s)",
-    "body": "$LINE_COMMENT stylelint-disable${1:-next-line} ${2:declaration-no-important}"
   }
 }
