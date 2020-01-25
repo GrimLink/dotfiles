@@ -1,14 +1,15 @@
 {
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Menlo, monospace",
   "editor.fontSize": 15,
   "editor.renderWhitespace": "boundary",
   "editor.wordWrap": "on",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "editor.minimap.showSlider": "always",
-  "editor.quickSuggestionsDelay": 30,
   "terminal.integrated.fontSize": 14,
   "workbench.startupEditor": "none",
-  "workbench.view.alwaysShowHeaderActions": false,
   "workbench.colorTheme": "Atom Material Theme",
   "workbench.iconTheme": "file-icons",
   "workbench.colorCustomizations": {
@@ -52,7 +53,6 @@
     ".stylelintignore": "ignore",
     ".gitmodules": "properties"
   },
-  "breadcrumbs.enabled": true,
   "window.zoomLevel": 0,
   "presentationMode.zoomLevel": 3,
   "zenMode.fullScreen": false,
@@ -66,7 +66,8 @@
   "less.validate": false, // For stylelint
   "scss.validate": false, // For stylelint
   "html.format.extraLiners": "",
-  "prettier.stylelintIntegration": true,
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.toc.levels": "2..6",
   "prettier.disableLanguages": [],
   "vetur.format.enable": false,
   "vetur.grammar.customBlocks": {
@@ -105,25 +106,33 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "markdown.extension.italic.indicator": "_",
-  "markdown.extension.toc.levels": "2..6",
+  "[yaml]": {
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "off"
+  },
   // Language
   "cSpell.showStatus": false,
   "cSpell.allowCompoundWords": true,
   "cSpell.userWords": [
+    "btn's",
     "fylgja",
     "getfylgja",
     "magento",
     "mqpacker",
     "postcss",
+    "rebeccapurple",
     "repo",
+    "rgba",
     "unspaced",
-    "utilkit",
     "uri's",
+    "utilkit",
     "var's",
     "vetur",
     "webp",
     "woff",
     "zuidam"
-  ]
+  ],
+  // Other
+  "polacode.transparentBackground": true,
+  "polacode.target": "snippet"
 }
