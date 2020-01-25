@@ -5,26 +5,22 @@
     "body": "map-get(map-get(\\$${1:map}, ${2:key}), ${3:key});"
   },
   "SassDoc link": {
-    "scope": "scss,sass,less",
-    "prefix": "@sassdoc-link",
+    "prefix": "!sassdoc-link",
     "description": "SassDoc link",
     "body": "/// @link ${1:link}"
   },
   "SassDoc Require": {
-    "scope": "scss,sass,less",
-    "prefix": "@sassdoc-require",
+    "prefix": "!sassdoc-require",
     "description": "SassDoc require",
     "body": "/// @require {${1|Function,Mixin,Variable,Placeholder|}} ${2:item()} - ${3:description}"
   },
   "SassDoc Param": {
-    "scope": "scss,sass,less",
-    "prefix": "@sassdocc-param",
+    "prefix": "!sassdocc-param",
     "description": "SassDoc param",
     "body": "/// @param {${1|String,Number,Color,Boolean,Map,List,Arglist,*|}} ${2:var()} - ${3:description}"
   },
   "SassDoc return": {
-    "scope": "scss,sass,less",
-    "prefix": "@sassdoc-return",
+    "prefix": "!sassdoc-return",
     "description": "SassDoc return",
     "body": "/// @return {${1|String,Number,Color,Boolean,Map,List,Arglist,*|}} - ${3:description}"
   }
