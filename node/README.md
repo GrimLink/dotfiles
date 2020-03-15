@@ -9,11 +9,17 @@ _Since there is no sudo for the setup_
 
 The setup will install;
 
-* [lighthouse](https://github.com/GoogleChrome/lighthouse)
-* [grunt-cli](https://gruntjs.com/using-the-cli)
-* [gulp-cli](https://gulpjs.com/)
-* [@vue/cli](https://cli.vuejs.org/guide/installation.html)
-* [np, A better `npm publish`](https://github.com/sindresorhus/np)
+* Auditing
+  * [lighthouse](https://github.com/GoogleChrome/lighthouse)
+  * [hint]()
+  * [wallace-cli, CSS audint]()
+* Compilers/Bundlers
+  * [gulp-cli](https://gulpjs.com/)
+  * [@vue/cli](https://cli.vuejs.org/guide/installation.html)
+  * [@gridsome/cli]()
+  * [gatsby-cli]()
+* # Node Tools
+  * [np, A better `npm publish`](https://github.com/sindresorhus/np)
 
 And the setup will set the following config
 
@@ -21,5 +27,6 @@ And the setup will set the following config
 Run `npm list --dept` to see more.
 
 Set a defaults for npm init
+
 * Author name base on your git config username
 * License is now by default MIT
