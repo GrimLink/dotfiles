@@ -50,6 +50,7 @@
     ".postcssrc": "json",
     ".sassrc": "json",
     ".stylelintrc": "json",
+    ".svgorc": "json",
     ".stylelintignore": "ignore",
     ".gitmodules": "properties"
   },
