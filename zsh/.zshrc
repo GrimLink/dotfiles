@@ -7,7 +7,7 @@ SAVEHIST=10000
 bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
 
-# Set thene to Prompt theme
+# Set theme to Prompt theme
 # https://github.com/sindresorhus/pure
 autoload -U promptinit; promptinit
 prompt pure
