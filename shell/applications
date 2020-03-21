@@ -5,6 +5,24 @@
 # Brew
 alias brewery="brew update && brew upgrade && brew cleanup"
 
+# Node
+function node-find() {
+  find . -name "node_modules" -type d -prune -print | xargs du -chs
+}
+
+function node-clean() {
+    NODE_MODULES=(`find . -name 'node_modules' -type d -prune`);
+    if [[ ${#NODE_MODULES[@]} -eq 0 ]]; then
+        echo "No node_modules found to remove";
+    else
+        echo "Removing:"
+        for i in "${NODE_MODULES[@]}"; do
+            rm -rf $i
+            echo -e "[\033[1;32m✓\033[0m] ${i}"
+        done;
+    fi
+}
+
 # Browsers
 function safari() { open -a Safari "$1"; }
 function chrome() { open -a Google\ Chrome "$1"; }
@@ -21,3 +39,4 @@ alias art="php artisan"
 # Magento
 alias m1="magerun"
 alias m2="magerun2"
+
