@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "Menlo, monospace",
+  "editor.fontFamily": "Menlo, monospace, 'Courier New', monospace",
   "editor.fontSize": 15,
   "editor.renderWhitespace": "boundary",
   "editor.wordWrap": "on",
@@ -8,6 +8,8 @@
     120
   ],
   "editor.minimap.showSlider": "always",
+  "editor.minimap.maxColumn": 80,
+  "editor.quickSuggestionsDelay": 30,
   "terminal.integrated.fontSize": 14,
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Atom Material Theme",
@@ -105,7 +107,7 @@
   },
   "[json]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
     "editor.formatOnSave": true,
