@@ -6,7 +6,7 @@ if ! command -v brew &>/dev/null; then
 fi
 
 # Run brew install pkg's
-if ! command -v brew &>/dev/null; then
+if command -v brew &>/dev/null; then
   # Install node & yarn
   brew install yarn
   brew install node@12 # Get last lts version
