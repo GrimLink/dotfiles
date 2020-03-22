@@ -28,4 +28,6 @@ if command -v brew &>/dev/null; then
   brew cask install appcleaner
   brew cask install keka
   brew cask install keepingyouawake
+else
+  echo "brew is not installed"
 fi
