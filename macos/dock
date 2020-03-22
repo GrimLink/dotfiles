@@ -21,9 +21,9 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-read -p "Reset Dock icons? (y) " -n 1;
-echo "";
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+read -p "Reset Dock icons? [Y/n] "
+echo ""
+if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
   defaults write com.apple.dock persistent-apps -array
 fi;
 

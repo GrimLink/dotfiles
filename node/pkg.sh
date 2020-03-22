@@ -23,9 +23,9 @@ function installNodeExt() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   installNodeExt
 else
-  read -p "Install Node Global packages. Are you sure? [Y/n] " -n 1
+  read -p "Install Node Global packages. Are you sure? [Y/n] "
   echo ""
-  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+  if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
     if ! command -v node &>/dev/null; then
       echo "Skipping.. NODE is not installed"
     else

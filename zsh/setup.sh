@@ -14,9 +14,9 @@ npm list -g | grep pure-prompt || npm i -g pure-prompt
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.zshrc" ~
 else
-  read -p "Update Zsh config files. Are you sure? [Y/n] " -n 1
+  read -p "Update Zsh config files. Are you sure? [Y/n] "
   echo ""
-  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+  if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
     rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.zshrc" ~
   fi
 fi

@@ -29,9 +29,9 @@ if [ "$1" == "--force" -o "$1" == "-f" ]; then
   echo -e "${GREEN}Updating node pkg's${RESET}"
   source node/pkg.sh
 else
-  read -p "Update npm global pkg's. Are you sure? [N/y] " -n 1
+  read -p "Update npm global pkg's. Are you sure? [y/N] "
   echo ""
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+  if [[ $REPLY =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo -e "${GREEN}Updating node pkg's${RESET}"
     source node/pkg.sh
   fi
@@ -42,9 +42,9 @@ if [ "$1" == "--force" -o "$1" == "-f" ]; then
   brew upgrade # Upgrade any already-installed formulae.
   brew cleanup # Remove outdated versions from the cellar.
 else
-  read -p "Update brew pkg's. Are you sure? [N/y] " -n 1
+  read -p "Update brew pkg's. Are you sure? [y/N] "
   echo ""
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+  if [[ $REPLY =~ ^[yY]|[yY][eE][sS]$ ]]; then
     brew update # Make sure we’re using the latest Homebrew.
     brew upgrade # Upgrade any already-installed formulae.
     brew cleanup # Remove outdated versions from the cellar.

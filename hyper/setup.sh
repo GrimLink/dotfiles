@@ -7,9 +7,9 @@ function rsyncHyperConfig() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncHyperConfig
 else
-  read -p "Update Hyper config files. Are you sure? [Y/n] " -n 1
+  read -p "Update Hyper config files. Are you sure? [Y/n] "
   echo ""
-  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+  if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
     rsyncHyperConfig
   fi
 fi

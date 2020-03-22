@@ -26,9 +26,9 @@ source macos/setup.sh
 
 echo "${GREEN}Setting up shell${RESET}"
 source shell/setup.sh
-read -p "Use zsh as shell? [Y/n] " -n 1
+read -p "Use zsh as shell? [Y/n] "
 echo ""
-if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
   source zsh/setup.sh
 else
   source bash/setup.sh

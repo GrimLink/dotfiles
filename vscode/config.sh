@@ -13,9 +13,9 @@ function rsyncVSCodeConfig() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncVSCodeConfig
 else
-  read -p "Update VSCode config files. Are you sure? [Y/n] " -n 1
+  read -p "Update VSCode config files. Are you sure? [Y/n] "
   echo ""
-  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+  if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
     rsyncVSCodeConfig
   fi
 fi
