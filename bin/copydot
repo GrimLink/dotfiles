@@ -67,7 +67,7 @@ for i in "${@}"; do case $i in
     ;;
   * )
     echo "No correct argumants where givin"
-    echo -e "Use ${BOLD}help${RESET} for what commands are aviable"
+    echo -e "Use ${BOLD}help${RESET} for what commands are available"
     ;;
 esac; done
 
