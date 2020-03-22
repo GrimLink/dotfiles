@@ -23,15 +23,6 @@ Alias & helper for bin/magento commands
 
 [For more info on mage, checkout the git repo.](https://github.com/GrimLink/mage)
 
-## cmds
-
-Helper for when you forget a command in;
-
-* shell/aliases
-* shell/applications
-* shell/functions
-* bin/ (local bin)
-
 ## copydot
 
 Copies formating files to your current folder.
