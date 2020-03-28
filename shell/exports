@@ -11,7 +11,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/sbin:$PATH"
 
 # Add Visual Studio Code (shell), manually
-export PATH="$PATH:/Applications/Visual\/Studio\/Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Set node version
 export PATH="/usr/local/opt/node@12/bin:$PATH"
