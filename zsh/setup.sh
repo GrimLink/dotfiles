@@ -9,7 +9,8 @@ if command -v zsh &>/dev/null; then
 fi
 
 # Get theme
-npm list -g | grep pure-prompt || npm i -g pure-prompt
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.zshrc" ~
