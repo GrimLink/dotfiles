@@ -14,26 +14,26 @@ git pull origin master
 # Then don't ask for each task
 
 echo -e "\n${GREEN}Syncing shell config${RESET}"
-source shell/setup.sh
-source bin/setup.sh
+./shell/setup.sh
+./bin/setup.sh
 
 echo -e "\n${GREEN}Syncing git config${RESET}"
-source git/setup.sh
+./git/setup.sh
 
 echo -e "\n${GREEN}Syncing editor config${RESET}"
-source vscode/config.sh
-source hyper/setup.sh
+./vscode/config.sh
+./hyper/setup.sh
 
 echo -e "\n${GREEN}Starting updater..${RESET}"
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   echo -e "${GREEN}Updating node pkg's${RESET}"
-  source node/pkg.sh
+  ./node/pkg.sh
 else
   read -p "Update npm global pkg's. Are you sure? [y/N] "
   echo ""
   if [[ $REPLY =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo -e "${GREEN}Updating node pkg's${RESET}"
-    source node/pkg.sh
+    ./node/pkg.sh
   fi
 fi
 
