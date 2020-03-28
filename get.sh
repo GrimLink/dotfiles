@@ -13,11 +13,14 @@ else
   echo ""
 fi
 
-git clone https://github.com/GrimLink/dotfiles.git dotfiles &&
-cd dotfiles
+read -p "Install dotfiles in (${HOME}/dotfiles) or " TARGET;
+echo "";
+if [[ -z "$TARGET" ]]; then TARGET="${HOME}/dotfiles"; fi
+git clone https://github.com/GrimLink/dotfiles.git $TARGET &&
+cd $TARGET
 
 read -p "Run install? [y/N] "
 echo ""
 if [[ $REPLY =~ ^[yY]|[yY][eE][sS]$ ]]; then
-  source install.sh
+  ./install.sh
 fi
