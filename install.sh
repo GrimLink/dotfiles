@@ -10,7 +10,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 
 # Make sure if xcode-select is installed
 if xcode-select -p 1>/dev/null; then
- echo -e "${GREEN}xcode-select already installed${RESET}"
+  echo -e "${GREEN}xcode-select already installed${RESET}"
 else
   echo "${GREEN}Installing xcode-select${RESET}"
   xcode-select --install
@@ -22,42 +22,41 @@ fi
 # Then don't ask for each task
 
 echo "${GREEN}Setting up mac defaults${RESET}"
-source macos/setup.sh
+./macos/setup.sh
 
 echo "${GREEN}Setting up shell${RESET}"
-source shell/setup.sh
+./shell/setup.sh
 read -p "Use zsh as shell? [Y/n] "
 echo ""
 if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
-  source zsh/setup.sh
+  ./zsh/setup.sh
 else
-  source bash/setup.sh
+  ./bash/setup.sh
 fi
 
 echo "${GREEN}Setting up Brew${RESET}"
-source brew/brew.sh
+./brew/brew.sh
 
 echo "${GREEN}Setting up Node${RESET}"
-source node/setup.sh
+./node/setup.sh
 
 echo "${GREEN}Setting up git & ssh${RESET}"
-source git/setup.sh
-source git/ssh.sh
+./git/setup.sh
+./git/ssh.sh
 
 echo "${GREEN}Setting up valet+${RESET}"
-source valet-plus/setup.sh
+./valet-plus/setup.sh
 
 echo "${GREEN}Setting up bin tools${RESET}"
-source bin/setup.sh
-source magerun/setup.sh
+./bin/setup.sh
 
 # Make sure we are using the latest shell env
 exec $SHELL -l
 
 echo "${GREEN}Installing apps${RESET}"
-source brew/app.sh
-source vscode/extensions.sh
-source vscode/config.sh
+./brew/app.sh
+./vscode/extensions.sh
+./vscode/config.sh
 
 echo "Almost there"
 echo "These apps require to be installed by hand"

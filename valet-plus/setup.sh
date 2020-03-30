@@ -3,8 +3,8 @@
 # Get and install
 if command -v composer &>/dev/null; then
   composer global require weprovide/valet-plus &&
-    valet fix &&
-    valet install --with-mariadb
+  valet fix &&
+  valet install --with-mariadb
 
   read -p "Create project folders & Valet park? [Y/n] " -n 1
   echo ""
