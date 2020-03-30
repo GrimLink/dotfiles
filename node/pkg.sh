@@ -9,9 +9,6 @@ function installNodeExt() {
     wallace-cli # CSS
     # Compilers/Bundlers
     gulp-cli
-    @vue/cli
-    @gridsome/cli
-    gatsby-cli
     # Node Tools
     np # Better npm publish
   )
