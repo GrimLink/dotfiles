@@ -30,6 +30,9 @@
 [pretty]
 	custom = "%C(magenta)%h%C(red)%d %C(reset)%ad %C(green)%s %C(blue)(%an)"
 
+[tag]
+	sort = -version:refname
+
 [help]
 	autocorrect = 1 # Automatically correct typos
 
