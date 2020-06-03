@@ -1,19 +1,49 @@
 {
+  "cSpell.allowCompoundWords": true,
+  "cSpell.showStatus": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Menlo, monospace, 'Courier New', monospace",
   "editor.fontSize": 15,
-  "editor.renderWhitespace": "boundary",
-  "editor.wordWrap": "on",
-  "editor.rulers": [
-    80,
-    120
-  ],
-  "editor.minimap.showSlider": "always",
+  "editor.formatOnSave": true,
   "editor.minimap.maxColumn": 80,
+  "editor.minimap.showSlider": "always",
   "editor.quickSuggestionsDelay": 30,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "on",
+  "emmet.includeLanguages": {
+    "vue": "html",
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
+  "files.associations": {
+    ".*rc": "json",
+    ".*ignore": "ignore",
+    ".gitmodules": "properties"
+  },
+  "files.defaultLanguage": "markdown",
+  "git.confirmSync": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.toc.levels": "2..6",
+  "polacode.target": "snippet",
+  "polacode.transparentBackground": true,
+  "presentationMode.zoomLevel": 3,
+  "prettier.disableLanguages": [],
+  "projectManager.git.baseFolders": ["$home/projects"],
+  "svgviewer.enableautopreview": false,
   "terminal.integrated.fontSize": 14,
-  "workbench.startupEditor": "none",
+  "vetur.format.enable": false,
+  "vetur.grammar.customBlocks": {
+    "docs": "md",
+    "i18n": "json",
+    "page-query": "graphql",
+    "static-query": "graphql"
+  },
+  "window.zoomLevel": 0,
   "workbench.colorTheme": "Atom Material Theme",
-  "workbench.iconTheme": "file-icons",
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#fff2",
     // https://github.com/Tyriar/vscode-snazzy
@@ -38,104 +68,22 @@
     "terminal.ansiBrightCyan": "#9aedfe",
     "terminal.ansiBrightWhite": "#eff0eb"
   },
-  "emmet.includeLanguages": {
-    "blade.php": "html",
-    "vue": "html",
-    "postcss": "css"
-  },
-  "emmet.syntaxProfiles": {
-    "postcss": "css"
-  },
-  "files.defaultLanguage": "markdown",
-  "files.associations": {
-    ".browserslistrc": "properties",
-    ".postcssrc": "json",
-    ".sassrc": "json",
-    ".stylelintrc": "json",
-    ".svgorc": "json",
-    ".stylelintignore": "ignore",
-    ".gitmodules": "properties"
-  },
-  "window.zoomLevel": 0,
-  "presentationMode.zoomLevel": 3,
+  "workbench.iconTheme": "file-icons",
+  "workbench.startupEditor": "none",
   "zenMode.fullScreen": false,
-  "zenMode.hideTabs": false,
   "zenMode.hideLineNumbers": false,
-  "git.confirmSync": false,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "svgviewer.enableautopreview": false,
-  // Format
+  "html.format.extraLiners": "",
   "css.validate": false, // For stylelint
   "less.validate": false, // For stylelint
   "scss.validate": false, // For stylelint
-  "html.format.extraLiners": "",
-  "markdown.extension.italic.indicator": "_",
-  "markdown.extension.toc.levels": "2..6",
-  "prettier.disableLanguages": [],
-  "vetur.format.enable": false,
-  "vetur.grammar.customBlocks": {
-    "docs": "md",
-    "i18n": "json",
-    "page-query": "graphql",
-    "static-query": "graphql"
-  },
-  "[less]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "javascript.validate.enable": false, // For TS errors bug in JS
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "[vue]": {
-    "editor.formatOnSave": true
-  },
   "[markdown]": {
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
-  "[json]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[yaml]": {
-    "editor.formatOnSave": true,
     "editor.wordWrap": "off"
-  },
-  // Language
-  "cSpell.showStatus": false,
-  "cSpell.allowCompoundWords": true,
-  "cSpell.userWords": [
-    "btn's",
-    "fylgja",
-    "getfylgja",
-    "magento",
-    "mqpacker",
-    "postcss",
-    "rebeccapurple",
-    "repo",
-    "rgba",
-    "unspaced",
-    "uri's",
-    "utilkit",
-    "var's",
-    "vetur",
-    "webp",
-    "woff",
-    "zuidam"
-  ],
-  // Other
-  "polacode.transparentBackground": true,
-  "polacode.target": "snippet"
+  }
 }
