@@ -1,6 +1,7 @@
 {
   "cSpell.allowCompoundWords": true,
   "cSpell.showStatus": false,
+  "cSpell.userWords": ["Fylgja", "Swiper"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Menlo, monospace, 'Courier New', monospace",
   "editor.fontSize": 15,
@@ -9,7 +10,10 @@
   "editor.minimap.showSlider": "always",
   "editor.quickSuggestionsDelay": 30,
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    { "column": 80, "color": "#fff1" },
+    { "column": 120, "color": "#fff2" }
+  ],
   "editor.wordWrap": "on",
   "emmet.includeLanguages": {
     "vue": "html",
@@ -20,6 +24,7 @@
   },
   "files.associations": {
     ".*rc": "json",
+    ".browserslistrc": "properties",
     ".*ignore": "ignore",
     ".gitmodules": "properties"
   },
@@ -44,32 +49,8 @@
   },
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Atom Material Theme",
-  "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#fff2",
-    // https://github.com/Tyriar/vscode-snazzy
-    "terminalCursor.background": "#282a36",
-    "terminalCursor.foreground": "#97979b",
-    "terminal.selectionBackground": "#97979b33",
-    "terminal.foreground": "#eff0eb",
-    "terminal.ansiBlack": "#282a36",
-    "terminal.ansiRed": "#ff5c57",
-    "terminal.ansiGreen": "#5af78e",
-    "terminal.ansiYellow": "#f3f99d",
-    "terminal.ansiBlue": "#57c7ff",
-    "terminal.ansiMagenta": "#ff6ac1",
-    "terminal.ansiCyan": "#9aedfe",
-    "terminal.ansiWhite": "#f1f1f0",
-    "terminal.ansiBrightBlack": "#686868",
-    "terminal.ansiBrightRed": "#ff5c57",
-    "terminal.ansiBrightGreen": "#5af78e",
-    "terminal.ansiBrightYellow": "#f3f99d",
-    "terminal.ansiBrightBlue": "#57c7ff",
-    "terminal.ansiBrightMagenta": "#ff6ac1",
-    "terminal.ansiBrightCyan": "#9aedfe",
-    "terminal.ansiBrightWhite": "#eff0eb"
-  },
   "workbench.iconTheme": "file-icons",
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "newUntitledFile",
   "zenMode.fullScreen": false,
   "zenMode.hideLineNumbers": false,
   "html.format.extraLiners": "",
@@ -83,7 +64,16 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
   "[yaml]": {
     "editor.wordWrap": "off"
+  },
+  "[csv]": {
+    "editor.wordWrap": "off"
+  },
+  "[git-commit]": {
+    "editor.rulers": [{ "column": 50, "color": "#fff2" }]
   }
 }
