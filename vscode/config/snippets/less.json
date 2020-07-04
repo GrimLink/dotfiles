@@ -6,8 +6,8 @@
       ".each-${1:name}(length(${1:@name}));",
       ".each-${1:name}(@n, @i: 0) when (@i <= @n) {",
       "\t${2:@value}: extract(@name, @i);",
-      "\t.each-$1(@n, (@i + 1)); // iterator",
-      "}"
+      "\t${3:prop}: ${2:@value};\n\t",
+      "\t.each-$1(@n, (@i + 1)); // iterator\n}"
     ]
   },
   "when": {
