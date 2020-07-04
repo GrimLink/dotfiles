@@ -1,7 +1,6 @@
 {
   "cSpell.allowCompoundWords": true,
   "cSpell.showStatus": false,
-  "cSpell.userWords": ["Fylgja", "Swiper"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Menlo, monospace, 'Courier New', monospace",
   "editor.fontSize": 15,
@@ -23,10 +22,13 @@
     "postcss": "css"
   },
   "files.associations": {
-    ".*rc": "json",
     ".browserslistrc": "properties",
-    ".*ignore": "ignore",
-    ".gitmodules": "properties"
+    ".gitmodules": "properties",
+    ".postcssrc": "json",
+    ".sassrc": "json",
+    ".stylelintignore": "ignore",
+    ".stylelintrc": "json",
+    ".svgorc": "json"
   },
   "files.defaultLanguage": "markdown",
   "git.confirmSync": false,
