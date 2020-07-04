@@ -23,6 +23,8 @@ if command -v brew &>/dev/null; then
   brew install composer
   # Install image converter
   brew install imagemagick
+  # Install git tools
+  brew install hub
 else
   echo "brew is not installed"
 fi
