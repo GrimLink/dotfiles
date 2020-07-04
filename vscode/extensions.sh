@@ -6,33 +6,36 @@ function installCodeExt() {
     aaron-bond.better-comments
     alefragnani.project-manager
     apollographql.vscode-apollo
-    bierner.markdown-emoji
-    bierner.markdown-preview-github-styles
-    burkeholland.simple-react-snippets
+    bierner.markdown-shiki
+    bmewburn.vscode-intelephense-client
     CoenraadS.bracket-pair-colorizer
     cssho.vscode-svgviewer
     csstools.postcss
     deerawan.vscode-faker
+    denoland.vscode-deno
     eamodio.gitlens
     EditorConfig.EditorConfig
     esbenp.prettier-vscode
     file-icons.file-icons
-    GitHub.vscode-pull-request-github
+    funkyremi.vscode-google-translate
+    jeremyljackson.vs-docblock
     jock.svg
     jspolancor.presentationmode
     mariusschulz.yarn-lock-syntax
     maximus136.change-string-case
     mikestead.dotenv
-    mrmlnc.vscode-duplicate
     msjsdiag.debugger-for-chrome
     octref.vetur
+    onecentlin.laravel-blade
     pnp.polacode
     raynigon.nginx-formatter
     redhat.vscode-yaml
     ritwickdey.LiveServer
     shinnn.stylelint
+    snipsnapdev.snipsnap-vscode
     streetsidesoftware.code-spell-checker
     tobiasalthoff.atom-material-theme
+    Tyriar.sort-lines
     vsls-contrib.gistfs
     william-voyek.vscode-nginx
     yzhang.markdown-all-in-one
