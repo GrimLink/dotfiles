@@ -34,6 +34,9 @@ for file in ${LOAD_SETTINGS[@]}; do
 done
 unset file
 
+# Quick access to the .zshrc file
+alias zshrc='${=EDITOR} $HOME/.zshrc'
+
 # Load zsh-syntax-highlighting
 ZSH_SYNTAX_DIR="/usr/local/share/zsh-syntax-highlighting"
 [ -s "${ZSH_SYNTAX_DIR}/zsh-syntax-highlighting.zsh" ] && . "${ZSH_SYNTAX_DIR}/zsh-syntax-highlighting.zsh"
