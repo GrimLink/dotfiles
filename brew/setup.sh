@@ -13,9 +13,9 @@ if command -v brew &>/dev/null; then
   # Install php + latest stable 3 henkrehorst/php versions
   brew install php
   brew tap henkrehorst/php
-  brew install valet-php@7.1
-  brew install valet-php@7.2
+  brew install valet-php@7.2 # For valet
   brew install valet-php@7.3
+  brew install valet-php@7.4
   # Install javajdk8 (osx needed version) + elasticsearch that needs java
   brew cask install homebrew/cask-versions/adoptopenjdk8
   brew install elasticsearch@5.6
