@@ -23,7 +23,7 @@
     "description": "Enable linting for JS rule(s)",
     "body": "$LINE_COMMENT eslint-enable ${0:no-use-before-define}"
   },
-  "PHPCS": {
+  "phpcs": {
     "scope": "php,html",
     "prefix": "!phpcs",
     "description": "Disable linting for php rule(s)",
