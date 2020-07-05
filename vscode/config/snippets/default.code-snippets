@@ -19,9 +19,9 @@
   },
   "import index": {
     "scope": "js,jsx,ts,tsx,css,less,scss",
-    "prefix": "@index-import",
+    "prefix": "!index-import",
     "description": "import file with the same folder name",
-    "body":[
+    "body": [
       "$LINE_COMMENT Imports only!",
       "$LINE_COMMENT For source maps it is better to load the code in a named file",
       "@import \"${TM_DIRECTORY/^.+\\/(.*)$/$1/}.${1:scss}\";"
@@ -55,7 +55,7 @@
       "\t\"scripts\": {",
       "\t\t\"build\": \"sass ${1:module}.scss ${1:module}.css --no-source-map -s compressed\"",
       "\t}",
-      "}",
+      "}"
     ]
   }
 }

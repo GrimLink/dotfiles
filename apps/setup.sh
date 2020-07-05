@@ -6,12 +6,15 @@ if ! command -v brew &>/dev/null; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+# Via brew cask
 if command -v brew &>/dev/null; then
   brew cask install hyper
   brew cask install tableplus
   brew cask install transmit
+  brew cask install fork
   brew cask install vlc
   brew cask install boostnote
+  brew cask install android-file-transfer
   # Editors
   brew cask install visual-studio-code
   brew cask install graphiql
@@ -28,6 +31,14 @@ if command -v brew &>/dev/null; then
   brew cask install appcleaner
   brew cask install keka
   brew cask install keepingyouawake
+  # browsers
+  brew cask install homebrew/cask-versions/google-chrome-beta
+  brew cask install firefox
 else
   echo "brew is not installed"
 fi
+
+# Directly, requires manual installation afterward
+cd ~/Downloads
+curl -sS -O http://getmiro.com/files/MiroVideoConverter.dmg
+cd -

@@ -14,60 +14,39 @@ if xcode-select -p 1>/dev/null; then
 else
   echo "${GREEN}Installing xcode-select${RESET}"
   xcode-select --install
-  read -p "When Ready, press any key to continue" -n 1
-  echo ""
-fi
-
-# If it has the flag `--force` or `-f`.
-# Then don't ask for each task
-
-echo "${GREEN}Setting up mac defaults${RESET}"
-./macos/setup.sh
-
-echo "${GREEN}Setting up shell${RESET}"
-./shell/setup.sh
-read -p "Use zsh as shell? [Y/n] "
-echo ""
-if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
-  ./zsh/setup.sh
-else
-  ./bash/setup.sh
+  read -p "When Ready, press any key to continue" -n 1 && echo ""
 fi
 
 echo "${GREEN}Setting up Brew${RESET}"
-./brew/brew.sh
+./brew/setup.sh
 
-echo "${GREEN}Setting up Node${RESET}"
-./node/setup.sh
+echo "${GREEN}Setting up mac defaults${RESET}"
+./macos/setup.sh
 
 echo "${GREEN}Setting up git & ssh${RESET}"
 ./git/setup.sh
 ./git/ssh.sh
 
-echo "${GREEN}Setting up valet+${RESET}"
-./valet-plus/setup.sh
+echo "${GREEN}Setting up shell${RESET}"
+./shell/setup.sh
+./zsh/setup.sh
 
 echo "${GREEN}Setting up bin tools${RESET}"
 ./bin/setup.sh
+
+echo "${GREEN}Setting up Node${RESET}"
+./node/setup.sh
+
+echo "${GREEN}Setting up valet+${RESET}"
+./valet-plus/setup.sh
 
 # Make sure we are using the latest shell env
 exec $SHELL -l
 
 echo "${GREEN}Installing apps${RESET}"
-./brew/app.sh
-./vscode/extensions.sh
-./vscode/config.sh
-
-echo "Almost there"
-echo "These apps require to be installed by hand"
-echo " - Chrome Beta: https://www.google.com/chrome/beta/"
-echo " - SkyFonts: https://www.fonts.com/web-fonts/google"
-echo " - Android File Transfer: In ~/Downloads"
-echo " - Miro Video Converter: In ~/Downloads"
-
-cd ~/Downloads
-curl -sS -O https://dl.google.com/dl/androidjumper/mtp/current/AndroidFileTransfer.dmg
-curl -sS -O http://getmiro.com/files/MiroVideoConverter.dmg
+./apps/setup.sh
+./vscode/setup.sh
+./hyper/setup.sh
 
 echo ""
 echo "-----"

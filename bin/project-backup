@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Links
+# https://www.one-tab.com/page/vkC8SOAxT_KEV0ZuWRHA-Q
+# https://github.com/MagePsycho/magento2-db-code-backup-bash-script
+# https://tecadmin.net/advance-bash-script-for-mysql-database-backup/
+# https://grahamrpugh.com/2019/01/15/mysqldump-daily-weekly-monthly.html
+# https://linuxize.com/post/how-to-back-up-and-restore-mysql-databases-with-mysqldump/
+
+# TODO: update create-project with https://gitlab.yireo.com/yireo-tools/dev-setup

@@ -3,7 +3,7 @@
     "scope": "css,less,scss",
     "prefix": "!slint-disable",
     "description": "Disable linting for rule(s)",
-    "body": "$LINE_COMMENT stylelint-disable${1:-next-line|} ${0:declaration-no-important}"
+    "body": "$LINE_COMMENT stylelint-disable${1:-next-line} ${0:declaration-no-important}"
   },
   "Stylelint Enable": {
     "scope": "css,less,scss",
@@ -15,7 +15,7 @@
     "scope": "js,jsx,ts,tsx",
     "prefix": "!eslint-disable",
     "description": "Disable linting for JS rule(s)",
-    "body": "$LINE_COMMENT eslint-disable${1:-next-line|} ${0:no-use-before-define}"
+    "body": "$LINE_COMMENT eslint-disable${1:-next-line} ${0:no-use-before-define}"
   },
   "ESLint Enable": {
     "scope": "js,jsx,ts,tsx",

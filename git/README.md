@@ -5,8 +5,9 @@
 All none personal config setting I like for git.
 
 The `setup.sh` (inside this folder) will ask for some personal settings;
-* Git Username
-* Git Email
+
+- Git Username
+- Git Email
 
 ## Ignore (Global)
 
@@ -20,5 +21,6 @@ For more infomation about this approach see the [git doc](https://help.github.co
 
 The ssh script will setup a new ssh key.
 
-_If you already have one._
-_Don't run this script as it will overide it._
+I prefer to always setup a new key when doing a fresh install.
+
+> :warning: Don't run this script. If you already have one. Since it will overide it.

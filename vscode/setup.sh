@@ -1,6 +1,31 @@
 #!/bin/bash
 
-# get all extensions via `code --list-extensions`
+
+echo "Syncing vscode config.."
+function rsyncVSCodeConfig() {
+  rsync -avh --no-perms \
+    "$(dirname "${BASH_SOURCE}")/config/settings.json" \
+    "$(dirname "${BASH_SOURCE}")/config/keybindings.json" \
+    "$(dirname "${BASH_SOURCE}")/config/snippets" \
+    $HOME/Library/Application\ Support/Code/User
+
+  echo -e "Make sure to reboot vsode"
+}
+
+if [ "$1" == "--force" -o "$1" == "-f" ]; then
+  rsyncVSCodeConfig
+else
+  read -p "Update VSCode config files. Are you sure? [Y/n] "
+  echo ""
+  if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
+    rsyncVSCodeConfig
+  fi
+fi
+
+unset rsyncVSCodeConfig
+
+# To get a list of your installed extensions run: `code --list-extensions`
+echo "Install VSCode extensions.."
 function installCodeExt() {
   VSCODE_EXT=(
     aaron-bond.better-comments
@@ -31,9 +56,9 @@ function installCodeExt() {
     raynigon.nginx-formatter
     redhat.vscode-yaml
     ritwickdey.LiveServer
-    shinnn.stylelint
     snipsnapdev.snipsnap-vscode
     streetsidesoftware.code-spell-checker
+    stylelint.vscode-stylelint
     tobiasalthoff.atom-material-theme
     Tyriar.sort-lines
     vsls-contrib.gistfs
@@ -48,7 +73,7 @@ function installCodeExt() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   installCodeExt
 else
-  read -p "Install VSCode extensions. Are you sure? [Y/n] "
+  read -p "Are you sure? [Y/n] "
   echo ""
   if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
     if ! command -v code &>/dev/null; then
