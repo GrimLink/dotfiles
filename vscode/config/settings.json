@@ -30,6 +30,7 @@
     ".stylelintrc": "json",
     ".svgorc": "json"
   },
+  "files.autoSave": "onWindowChange",
   "files.defaultLanguage": "markdown",
   "git.confirmSync": false,
   "liveServer.settings.donotShowInfoMsg": true,
