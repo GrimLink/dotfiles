@@ -34,6 +34,10 @@ function rsyncGitConfig() {
     git config --global user.name $NAME
     git config --global user.email $EMAIL
   fi
+
+  # Sync gitconfig init template
+  mkdir -p ~/.config/git
+  rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/template" ~/.config/git
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

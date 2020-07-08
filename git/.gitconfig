@@ -52,6 +52,9 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
+[init]
+	templateDir = ~/.config/git/template/
+
 [alias]
 	alias = config --get-regexp alias
 	s = status -sb
