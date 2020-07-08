@@ -38,5 +38,5 @@ unset file
 alias zshrc='${=EDITOR} $HOME/.zshrc'
 
 # Load zsh-syntax-highlighting
-ZSH_SYNTAX_DIR="/usr/local/share/zsh-syntax-highlighting"
-[ -s "${ZSH_SYNTAX_DIR}/zsh-syntax-highlighting.zsh" ] && . "${ZSH_SYNTAX_DIR}/zsh-syntax-highlighting.zsh"
+# I need to be last in this file to work
+[ -s "$HOME/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh" ] && . "$HOME/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh"
