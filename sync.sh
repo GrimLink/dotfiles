@@ -8,7 +8,7 @@ GREEN='\033[1;32m'
 # Go to dotfile
 cd "$(dirname "${BASH_SOURCE}")"
 
-git pull origin master
+git checkout main && git pull origin main
 
 # If it has the flag `--force` or `-f`.
 # Then don't ask for each task
@@ -21,7 +21,7 @@ echo -e "\n${GREEN}Syncing git config${RESET}"
 ./git/setup.sh
 
 echo -e "\n${GREEN}Syncing editor config${RESET}"
-./vscode/config.sh
+./vscode/setup.sh
 ./hyper/setup.sh
 
 echo -e "\n${GREEN}Starting updater..${RESET}"
