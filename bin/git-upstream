@@ -1,15 +1,22 @@
 #!/bin/bash
 
-# Get latest changes from orginal repo
+UPSTREAM="${1}"
+BRANCH="${2}"
 
-read -p "Add upstream? (Leave blank for no) " UPSTREAM;
-echo "";
-if [[ -n "$UPSTREAM" ]]; then
+if [[ -z "$UPSTREAM" ]]; then
+  read -p "Add a upstream url: " UPSTREAM;
+  echo "";
+  if [[ -z "$UPSTREAM" ]]; then exit; fi;
   git remote add upstream $UPSTREAM
-fi;
+fi
+
+# Default to master untill more repo's use main instead
+if [[ -z "$BRANCH" ]]; then
+  read -p "What is the upstream default branch (e.g. main): " BRANCH;
+  echo "";
+  if [[ -z "$BRANCH" ]]; then BRANCH="master"; fi
+fi
 
 git fetch upstream
-
-git checkout master
-
-git merge upstream/master
+git checkout $BRANCH
+git merge upstream/$BRANCH
