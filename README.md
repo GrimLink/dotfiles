@@ -13,7 +13,7 @@ You can download or clone the repository wherever you want.
 _I like to keep it in `~/dotfiles`._
 
 ```bash
-bash -c "$(curl -LsS https://raw.githubusercontent.com/GrimLink/dotfiles/master/get.sh)"
+bash -c "$(curl -LsS https://raw.githubusercontent.com/GrimLink/dotfiles/main/get.sh)"
 ```
 
 ## Install
