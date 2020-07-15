@@ -19,11 +19,11 @@ if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsyncBin
 
   echo -e "${YELLOW}Getting mage${RESET}"
-  curl -sS -O "${GIT_URL}/mage/master/mage" &&
+  curl -sS -O "${GIT_URL}/mage/main/mage" &&
     mv mage ~/bin
 
   echo -e "${YELLOW}Getting create-project${RESET}"
-  bash -c "$(curl -LsS ${GIT_URL}/create-project/master/install.sh)"
+  bash -c "$(curl -LsS ${GIT_URL}/create-project/main/install.sh)"
 
   # Make all bin files executable
   find ~/bin -type f -iname "*" -exec chmod +x {} \;
@@ -34,11 +34,11 @@ else
     rsyncBin
 
     echo -e "${YELLOW}Getting mage${RESET}"
-    curl -sS -O "${GIT_URL}/mage/master/mage" &&
+    curl -sS -O "${GIT_URL}/mage/main/mage" &&
       mv mage ~/bin
 
     echo -e "${YELLOW}Getting create-project${RESET}"
-    bash -c "$(curl -LsS ${GIT_URL}/create-project/master/install.sh)"
+    bash -c "$(curl -LsS ${GIT_URL}/create-project/main/install.sh)"
 
     # Make all bin files executable
     find ~/bin -type f -iname "*" -exec chmod +x {} \;
