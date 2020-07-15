@@ -1,0 +1,30 @@
+#!/bin/bash
+
+TASK="${1}"
+REPO=$(git config remote.origin.url | sed "s/git@\(.*\):\(.*\).git/https:\/\/\1\/\2/")
+
+if [[ $TASK == "--fetch" ]]; then
+  echo "Getting all the latest changes"
+  git fetch --all &&
+  git remote set-head origin -a &&
+  echo "Setting the local branch origin to main"
+  git branch --set-upstream-to origin/main &&
+  echo "Renaming you local branch to main"
+  git branch -m master main
+else
+  echo "Renaming local master to main"
+  git branch -m master main &&
+  git push -u origin main
+  echo -e "\nGo to $REPO"
+  echo -e "and then to the settings"
+  echo -e " - Github:    /settings/branches"
+  echo -e " - Bitbucket: /admin"
+  echo -e " - Gitlab:    /-/settings/repository"
+  echo "And then set the main branch as the default branch"
+  read -rsn1 -p "When ready, press any key to continue";
+  echo "";
+  echo "Deleting the origin master branch"
+  git push origin --delete master &&
+  # Update the upstream remote's HEAD.
+  git remote set-head origin -a
+fi;
