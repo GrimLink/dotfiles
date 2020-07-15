@@ -1,3 +1,40 @@
+[alias]
+	alias = config --get-regexp alias
+	ca = !git add -A && git commit
+	amend = commit --amend --reuse-message=HEAD
+	lg = log --graph --pretty=custom --abbrev-commit --date=short
+	s = status -sb
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	contributors = shortlog --summary --numbered
+	contribs = shortlog --summary --numbered
+
+	# Pull in remote changes for the current repository and all its submodules.
+	pull-all = pull --recurse-submodules
+
+	# Clone a repository including all submodules.
+	clone-all = clone --recursive
+
+	# Remove the old tag with this name and tag the latest commit with it.
+	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+
+	# Diff
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Find
+	# branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+	# tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+	# by source code
+	fc = "!f() { git log --pretty=custom --date=short -S$1; }; f"
+	# by commit message
+	fm = "!f() { git log --pretty=custom --date=short --grep=$1; }; f"
+
 [user]
 
 [core]
@@ -54,63 +91,3 @@
 
 [init]
 	templateDir = ~/.config/git/template/
-
-[alias]
-	alias = config --get-regexp alias
-	s = status -sb
-	amend = commit --amend --reuse-message=HEAD
-	ca = !git add -A && git commit -av -m
-	lg = log --graph --pretty=custom --abbrev-commit --date=short
-	tags = tag -l
-	branches = branch -a
-	remotes = remote -v
-	contributors = shortlog --summary --numbered
-
-	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-
-	# Remove the old tag with this name and tag the latest commit with it.
-	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
-
-	# Interactive rebase with the given number of latest commits
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
-
-	# Pull in remote changes for the current repository and all its submodules
-	pull-all = !"git pull; git submodule foreach git pull origin master"
-	# Clone a repository including all submodules
-	clone-all = clone --recursive
-
-	# Diff
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-
-	# Find
-	# branches containing commit
-	fb = "!f() { git branch -a --contains $1; }; f"
-	# tags containing commit
-	ft = "!f() { git describe --always --contains $1; }; f"
-	# by source code
-	fc = "!f() { git log --pretty=custom --date=short -S$1; }; f"
-	# by commit message
-	fm = "!f() { git log --pretty=custom --date=short --grep=$1; }; f"
-
-	# Del all branches that are merged in master and develop
-	cleanup = "!git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
-
-	# Merge GitHub pull request on top of the current branch or,
-	# if a branch name is specified, on top of the specified branch
-	mpr = "!f() { \
-		declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
-		declare branch=\"${2:-$currentBranch}\"; \
-		if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-			git fetch origin refs/pull/$1/head:pr/$1 && \
-			git checkout -B $branch && \
-			git rebase $branch pr/$1 && \
-			git checkout -B $branch && \
-			git merge pr/$1 && \
-			git branch -D pr/$1 && \
-			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
-		fi \
-	}; f"
