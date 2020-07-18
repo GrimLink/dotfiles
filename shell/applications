@@ -30,6 +30,9 @@ function canary() { open -a Google\ Chrome\ Canary "$1"; }
 function firefox() { open -a Firefox "$1"; }
 function firefoxDev() { open -a FirefoxDeveloperEdition "$1"; }
 
+# Node tools
+alias np="command np --any-branch";
+
 # Lighthouse, Always use headless chrome
 alias lighthouse='command lighthouse --chrome-flags="--headless"'
 
