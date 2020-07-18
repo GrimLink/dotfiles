@@ -3,6 +3,14 @@
 TASK="${1}"
 REPO=$(git config remote.origin.url | sed "s/git@\(.*\):\(.*\).git/https:\/\/\1\/\2/")
 
+if [[ -z "$TASK" ]]; then
+  echo "Enter [yes/y] to Rename the repo to main."
+  echo "Or [no/n] to fetches all changes from a repo that has changed from master to main."
+  read -p "[Y/n] "
+  if [[ REPLY =~ ^[nN]|[nN][oO]$ ]]; then TASK="--fetch";
+  elif [[ REPLY =~ ^[yY]|[yY][eE][sS]$ ]]; then TASK="--set"; fi;
+fi
+
 if [[ $TASK == "--fetch" ]]; then
   echo "Getting all the latest changes"
   git fetch --all &&
