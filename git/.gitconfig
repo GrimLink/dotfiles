@@ -13,7 +13,6 @@
 	recap = lg --all --no-merges --author="$(git config user.email)"
 	stats = shortlog --summary --numbered
 	contributors = stats
-	changelog =
 
 	# Pull in remote changes for the current repository and all its submodules.
 	pull-all = pull --recurse-submodules
