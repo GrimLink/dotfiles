@@ -2,13 +2,18 @@
 	alias = config --get-regexp alias
 	ca = !git add -A && git commit
 	amend = commit --amend --reuse-message=HEAD
-	lg = log --graph --pretty=custom --abbrev-commit --date=short
+	lg = log --date=short --pretty=custom
 	s = status -sb
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-	contributors = shortlog --summary --numbered
-	contribs = shortlog --summary --numbered
+
+	# Usefull checkes on specific tasks
+	overview = lg --all --no-merges --since="2 weeks"
+	recap = lg --all --no-merges --author="$(git config user.email)"
+	stats = shortlog --summary --numbered
+	contributors = stats
+	changelog =
 
 	# Pull in remote changes for the current repository and all its submodules.
 	pull-all = pull --recurse-submodules
@@ -38,12 +43,33 @@
 [user]
 
 [core]
-	excludesfile = ~/.gitignore
-	ignorecase = false
+	excludesFile = ~/.gitignore
+	ignoreCase = false
+	editor = nano
 	# Make `git rebase` safer on macOS
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
-	editor = nano
+	trustcTime = false
+	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeUnicode = false
+
+[pretty]
+	custom = "%C(magenta)%h%C(red)%d %C(reset)%ad %C(green)%s %C(blue)(%an)"
+	# %an = author name
+  # %s  = message
+  # %ad = date
+  # %d  = decorations (branch, heads or tags)
+  # %h  = hash (abbreviated)
+
+[tag]
+	sort = -version:refname
+
+[help]
+	autoCorrect = 1 # Automatically correct typos
+
+[push]
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
 
 [color]
 	ui = auto
@@ -63,15 +89,6 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-
-[pretty]
-	custom = "%C(magenta)%h%C(red)%d %C(reset)%ad %C(green)%s %C(blue)(%an)"
-
-[tag]
-	sort = -version:refname
-
-[help]
-	autocorrect = 1 # Automatically correct typos
 
 [url "git@github.com:"]
 	insteadOf = "gh:"
