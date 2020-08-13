@@ -7,55 +7,5 @@
       "$LINE_COMMENT ${1:<NAME>} (${2:${1:<NAME>}.com})",
       "$LINE_COMMENT Licensed under ${3:MIT Open Source}"
     ]
-  },
-  "Copyright fylgja": {
-    "scope": "php,css,less,scss,javascript,typescript",
-    "prefix": "!copy-fylgja",
-    "description": "Add fylgja copyright",
-    "body": [
-      "$LINE_COMMENT Fylgja (getfylgja.com)",
-      "$LINE_COMMENT Licensed under MIT Open Source"
-    ]
-  },
-  "import index": {
-    "scope": "js,jsx,ts,tsx,css,less,scss",
-    "prefix": "!index-import",
-    "description": "import file with the same folder name",
-    "body": [
-      "$LINE_COMMENT Imports only!",
-      "$LINE_COMMENT For source maps it is better to load the code in a named file",
-      "@import \"${TM_DIRECTORY/^.+\\/(.*)$/$1/}.${1:scss}\";"
-    ]
-  },
-  "npm-init package": {
-    "scope": "json",
-    "prefix": "!init",
-    "description": "add the the setup for an package",
-    "body": [
-      "{",
-      "\t\"name\": \"@fylgja/${1:module}\",",
-      "\t\"version\": \"1.0.0\",",
-      "\t\"description\": \"Fylgja ${1:module} component, include all ${1:module} styles\",",
-      "\t\"homepage\": \"https://getfylgja.com/\",",
-      "\t\"author\": \"Fylgja\",",
-      "\t\"license\": \"MIT\",",
-      "\t\"style\": \"${1:module}.css\",",
-      "\t\"sass\": \"_index.scss\",",
-      "\t\"repository\": {",
-      "\t\t\"type\": \"git\",",
-      "\t\t\"url\": \"https://github.com/fylgja/fylgja\",",
-      "\t\t\"directory\": \"packages/${1:module}\"",
-      "\t},",
-      "\t\"bugs\": \"https://github.com/fylgja/fylgja/issues\",",
-      "\t\"keywords\": [",
-      "\t\t\"fylgja\",",
-      "\t\t\"scss\",",
-      "\t\t\"${1:module}\"",
-      "\t],",
-      "\t\"scripts\": {",
-      "\t\t\"build\": \"sass ${1:module}.scss ${1:module}.css --no-source-map -s compressed\"",
-      "\t}",
-      "}"
-    ]
   }
 }
