@@ -17,11 +17,11 @@
   "SassDoc Param": {
     "prefix": "!sassdocc-param",
     "description": "SassDoc param",
-    "body": "/// @param {${1|String,Number,Color,Boolean,Map,List,Arglist,*|}} ${2:var()} - ${3:description}"
+    "body": "/// @param {${1|String,Number,Color,Boolean,Map,List,Arglist,Mixed|}} ${2:var()} - ${3:description}"
   },
   "SassDoc return": {
     "prefix": "!sassdoc-return",
     "description": "SassDoc return",
-    "body": "/// @return {${1|String,Number,Color,Boolean,Map,List,Arglist,*|}} - ${3:description}"
+    "body": "/// @return {${1|String,Number,Color,Boolean,Map,List,Arglist,Mixed|}} - ${3:description}"
   }
 }
