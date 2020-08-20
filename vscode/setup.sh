@@ -31,10 +31,10 @@ function installCodeExt() {
     aaron-bond.better-comments
     alefragnani.project-manager
     apollographql.vscode-apollo
+    bierner.markdown-emoji
     bierner.markdown-shiki
     bmewburn.vscode-intelephense-client
     CoenraadS.bracket-pair-colorizer
-    cssho.vscode-svgviewer
     csstools.postcss
     deerawan.vscode-faker
     denoland.vscode-deno
@@ -43,6 +43,7 @@ function installCodeExt() {
     esbenp.prettier-vscode
     file-icons.file-icons
     funkyremi.vscode-google-translate
+    hangxingliu.vscode-nginx-conf-hint
     jeremyljackson.vs-docblock
     jock.svg
     jspolancor.presentationmode
@@ -61,7 +62,7 @@ function installCodeExt() {
     stylelint.vscode-stylelint
     tobiasalthoff.atom-material-theme
     Tyriar.sort-lines
-    vsls-contrib.gistfs
+    vitaliymaz.vscode-svg-previewer
     william-voyek.vscode-nginx
     yzhang.markdown-all-in-one
   )
