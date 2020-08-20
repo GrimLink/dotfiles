@@ -1,9 +1,10 @@
 {
   "cSpell.allowCompoundWords": true,
   "cSpell.showStatus": false,
+  "deno.enable": false, // Only enabled for deno projects, mostly using node anyway
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Menlo, monospace, 'Courier New', monospace",
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.minimap.maxColumn": 80,
   "editor.minimap.showSlider": "always",
@@ -41,7 +42,6 @@
   "presentationMode.zoomLevel": 3,
   "prettier.disableLanguages": [],
   "projectManager.git.baseFolders": ["$home/projects"],
-  "svgviewer.enableautopreview": false,
   "terminal.integrated.fontSize": 14,
   "vetur.format.enable": false,
   "vetur.grammar.customBlocks": {
