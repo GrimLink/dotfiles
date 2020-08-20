@@ -41,14 +41,6 @@ _I use the linting mostly via the editor plugin._
 * https://github.com/shinnn/vscode-stylelint
 * https://github.com/getfylgja/stylelint-config
 
-## SASS-lint
-
-**ARCHIVED**
-So I really don't use it anymore
-
-**Source**
-* https://github.com/sasstools/sass-lint
-
 ## ESLint
 
 I have not used ESLINT much yet in the wild so have nothing to add here (yet)
