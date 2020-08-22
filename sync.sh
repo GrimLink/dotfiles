@@ -50,6 +50,3 @@ else
     brew cleanup # Remove outdated versions from the cellar.
   fi
 fi
-
-# Reload Shell
-exec $SHELL -l
