@@ -2,7 +2,7 @@
 
 # Install it, if not already
 if ! command -v brew &>/dev/null; then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Run brew install pkg's
@@ -18,7 +18,7 @@ if command -v brew &>/dev/null; then
   brew install valet-php@7.4
   # Install javajdk8 (osx needed version) + elasticsearch that needs java
   brew cask install homebrew/cask-versions/adoptopenjdk8
-  brew install elasticsearch@5.6
+  brew install elasticsearch
   # Install composer
   brew install composer
   # Install image converter
