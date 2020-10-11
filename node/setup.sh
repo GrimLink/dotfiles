@@ -10,3 +10,4 @@ else
 fi
 
 source $(dirname "${BASH_SOURCE}")/pkg.sh
+source $(dirname "${BASH_SOURCE}")/nvm.sh
