@@ -14,8 +14,13 @@ if xcode-select -p 1>/dev/null; then
 else
   echo "${GREEN}Installing xcode-select${RESET}"
   xcode-select --install
+  echo "Or download it here https://developer.apple.com/download/more/"
   read -p "When Ready, press any key to continue" -n 1 && echo ""
 fi
+
+echo "Make sure the Terminal has Full Disk Access"
+echo "In System Preferences > Security & Privacy > Privacy (Tab)"
+read -p "When Ready, press any key to continue" -n 1 && echo ""
 
 echo "${GREEN}Setting up Brew${RESET}"
 ./brew/setup.sh
@@ -36,12 +41,6 @@ echo "${GREEN}Setting up bin tools${RESET}"
 
 echo "${GREEN}Setting up Node${RESET}"
 ./node/setup.sh
-
-echo "${GREEN}Setting up valet+${RESET}"
-./valet-plus/setup.sh
-
-# Make sure we are using the latest shell env
-exec $SHELL -l
 
 echo "${GREEN}Installing apps${RESET}"
 ./apps/setup.sh

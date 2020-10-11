@@ -7,10 +7,10 @@ GREEN='\033[1;32m'
 if xcode-select -p 1>/dev/null; then
   echo -e "${GREEN}xcode-select already installed${RESET}"
 else
-  echo "Installing xcode-select"
+  echo "${GREEN}Installing xcode-select${RESET}"
   xcode-select --install
-  read -p "When Ready, press any key to continue" -n 1
-  echo ""
+  echo "Or download it here https://developer.apple.com/download/more/"
+  read -p "When Ready, press any key to continue" -n 1 && echo ""
 fi
 
 read -p "Install dotfiles in (${HOME}/dotfiles) or " TARGET;
