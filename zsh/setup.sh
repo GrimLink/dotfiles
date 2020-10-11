@@ -1,20 +1,5 @@
 #!/bin/bash
 
-if command -v zsh &>/dev/null; then
-  # Install it, if not already
-  if ! command -v brew &>/dev/null; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
-
-  if command -v brew &>/dev/null; then
-    brew install zsh
-    # And set zsh as default $SHELL (may require a reboot)
-    chsh -s /usr/local/bin/zsh
-  else
-    echo "Installation of zsh failed, brew is missing"
-  fi
-fi
-
 # Setup install folder for plugins
 mkdir -p "$HOME/.zsh"
 
