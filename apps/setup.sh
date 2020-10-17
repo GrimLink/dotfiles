@@ -38,7 +38,6 @@ else
   echo "brew is not installed"
 fi
 
-# Directly, requires manual installation afterward
-cd ~/Downloads
-curl -sS -O http://getmiro.com/files/MiroVideoConverter.dmg
-cd -
+# Direct dowmloads, requires manual installation
+echo "Opening Manual downloads"
+open http://www.getmiro.com/download/for-osx/
