@@ -3,6 +3,7 @@
 
 echo "Syncing vscode config.."
 function rsyncVSCodeConfig() {
+  # TODO: make sure the folder exists, trows error now when vscode was never opened
   rsync -avh --no-perms \
     "$(dirname "${BASH_SOURCE}")/config/settings.json" \
     "$(dirname "${BASH_SOURCE}")/config/keybindings.json" \

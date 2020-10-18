@@ -1,6 +1,7 @@
 # ValetPlus
 
-Handy installer for valet plus
+Handy installer for Valet+
+For infomation on Valet+ checkout there repo here -> 
 
 ## Setup
 
