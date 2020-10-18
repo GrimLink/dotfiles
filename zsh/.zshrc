@@ -37,6 +37,12 @@ unset file
 # Quick access to the .zshrc file
 alias zshrc='${=EDITOR} $HOME/.zshrc'
 
+# Load nvm
+NVM_COMPLETION=true
+NVM_LAZY_LOAD=true
+NVM_AUTO_USE=true
+[ -s "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh" ] && . "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh"
+
 # Load zsh-syntax-highlighting
 # I need to be last in this file to work
 [ -s "$HOME/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh" ] && . "$HOME/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh"
