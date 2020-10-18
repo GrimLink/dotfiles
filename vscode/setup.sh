@@ -3,7 +3,9 @@
 
 echo "Syncing vscode config.."
 function rsyncVSCodeConfig() {
-  # TODO: make sure the folder exists, trows error now when vscode was never opened
+  # Make sure the folder exists before the rsync
+  mkdir -p $HOME/Library/Application\ Support/Code/User
+  # Get personal config
   rsync -avh --no-perms \
     "$(dirname "${BASH_SOURCE}")/config/settings.json" \
     "$(dirname "${BASH_SOURCE}")/config/keybindings.json" \
