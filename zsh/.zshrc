@@ -38,7 +38,6 @@ unset file
 alias zshrc='${=EDITOR} $HOME/.zshrc'
 
 # Load nvm
-NVM_COMPLETION=true
 NVM_LAZY_LOAD=true
 NVM_AUTO_USE=true
 [ -s "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh" ] && . "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh"
