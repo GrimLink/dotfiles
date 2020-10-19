@@ -23,6 +23,15 @@ bindkey "^[OF" end-of-line       # ⌘ + right arrow
 bindkey $'^[[A' up-line-or-search   # up arrow
 bindkey $'^[[B' down-line-or-search # down arrow
 
+# autocomplete case insensitive
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+
+# list with colors
+zstyle ':completion:*' list-colors ''x
+
+# load completion
+autoload -Uz compinit && compinit
+
 # Set theme to Prompt theme
 # https://github.com/sindresorhus/pure
 fpath+=$HOME/.zsh/pure
