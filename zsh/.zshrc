@@ -59,9 +59,6 @@ for file in ${LOAD_SETTINGS[@]}; do
 done
 unset file
 
-# Quick access to the .zshrc file
-alias zshrc='${=EDITOR} $HOME/.zshrc'
-
 # Load nvm
 NVM_LAZY_LOAD=true
 NVM_AUTO_USE=true
