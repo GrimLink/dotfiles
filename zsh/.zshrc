@@ -1,11 +1,27 @@
 # History
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-# Add missing Mac cmd key bindings
-bindkey "^[OH" beginning-of-line
-bindkey "^[OF" end-of-line
+# Shares history across multiple zsh sessions
+setopt SHARE_HISTORY
+# Expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST
+# Do not store duplications, keep newest
+setopt HIST_IGNORE_ALL_DUPS
+# Ignore duplicates when searching
+setopt HIST_FIND_NO_DUPS
+# Removes blank lines from history
+setopt HIST_REDUCE_BLANKS
+
+# Add missing Mac cmd key bindings.
+bindkey "^[OH" beginning-of-line # ⌘ + left arrow
+bindkey "^[OF" end-of-line       # ⌘ + right arrow
+
+# Move trouch history using the up/down arrow keys
+# Also with a already entered command search
+bindkey $'^[[A' up-line-or-search   # up arrow
+bindkey $'^[[B' down-line-or-search # down arrow
 
 # Set theme to Prompt theme
 # https://github.com/sindresorhus/pure
