@@ -38,9 +38,9 @@ function installCodeExt() {
     bierner.markdown-shiki
     bmewburn.vscode-intelephense-client
     CoenraadS.bracket-pair-colorizer
+    cssho.vscode-svgviewer
     csstools.postcss
     deerawan.vscode-faker
-    denoland.vscode-deno
     eamodio.gitlens
     EditorConfig.EditorConfig
     esbenp.prettier-vscode
@@ -58,14 +58,14 @@ function installCodeExt() {
     onecentlin.laravel-blade
     pnp.polacode
     raynigon.nginx-formatter
+    redhat.vscode-xml
     redhat.vscode-yaml
-    ritwickdey.LiveServer
+    shanoor.vscode-nginx
     snipsnapdev.snipsnap-vscode
     streetsidesoftware.code-spell-checker
     stylelint.vscode-stylelint
     tobiasalthoff.atom-material-theme
     Tyriar.sort-lines
-    vitaliymaz.vscode-svg-previewer
     william-voyek.vscode-nginx
     yzhang.markdown-all-in-one
   )
