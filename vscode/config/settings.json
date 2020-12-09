@@ -13,6 +13,11 @@
     { "column": 80, "color": "#fff1" },
     { "column": 120, "color": "#fff2" }
   ],
+  "editor.tokenColorCustomizations": {
+    "[Atom Material Theme]": {
+      "comments": "#fff8"
+    }
+  },
   "editor.wordWrap": "on",
   "emmet.includeLanguages": {
     "vue": "html",
