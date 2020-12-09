@@ -1,7 +1,6 @@
 {
   "cSpell.allowCompoundWords": true,
   "cSpell.showStatus": false,
-  "deno.enable": false, // Only enabled for deno projects, mostly using node anyway
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Menlo, monospace, 'Courier New', monospace",
   "editor.fontSize": 14,
@@ -34,7 +33,7 @@
   "files.autoSave": "onWindowChange",
   "files.defaultLanguage": "markdown",
   "git.confirmSync": false,
-  "liveServer.settings.donotShowInfoMsg": true,
+  "gitlens.codeLens.enabled": false,
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.toc.levels": "2..6",
   "polacode.target": "snippet",
@@ -42,6 +41,7 @@
   "presentationMode.zoomLevel": 3,
   "prettier.disableLanguages": [],
   "projectManager.git.baseFolders": ["$home/projects"],
+  "snipsnap.silent": true,
   "terminal.integrated.fontSize": 14,
   "vetur.format.enable": false,
   "vetur.grammar.customBlocks": {
@@ -61,6 +61,9 @@
   "less.validate": false, // For stylelint
   "scss.validate": false, // For stylelint
   "javascript.validate.enable": false, // For TS errors bug in JS
+  "xml.validation.enabled": false,
+  "xml.format.preserveAttributeLineBreaks": true,
+  "xml.format.spaceBeforeEmptyCloseTag": false,
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
@@ -68,7 +71,12 @@
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.formatOnSave": false
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
+    "editor.wordWrap": "off"
   },
   "[yaml]": {
     "editor.wordWrap": "off"
