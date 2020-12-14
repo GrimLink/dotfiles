@@ -15,7 +15,7 @@
   ],
   "editor.tokenColorCustomizations": {
     "[Atom Material Theme]": {
-      "comments": "#fff8"
+      "comments": "#607d8b"
     }
   },
   "editor.wordWrap": "on",
