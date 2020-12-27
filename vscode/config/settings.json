@@ -65,7 +65,6 @@
   "css.validate": false, // For stylelint
   "less.validate": false, // For stylelint
   "scss.validate": false, // For stylelint
-  "javascript.validate.enable": false, // For TS errors bug in JS
   "xml.validation.enabled": false,
   "xml.format.preserveAttributeLineBreaks": true,
   "xml.format.spaceBeforeEmptyCloseTag": false,
@@ -84,6 +83,7 @@
     "editor.wordWrap": "off"
   },
   "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.wordWrap": "off"
   },
   "[csv]": {
