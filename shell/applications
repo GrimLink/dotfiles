@@ -40,7 +40,7 @@ alias lighthouse='command lighthouse --chrome-flags="--headless"'
 alias art="php artisan"
 
 # Composer
-alias composer="php -dmemory_limit=-1 `where composer`"
+alias composer="php -dmemory_limit=-1 `which composer`"
 
 # Magento
 alias m1="magerun"
