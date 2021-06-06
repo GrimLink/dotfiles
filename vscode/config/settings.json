@@ -1,6 +1,4 @@
 {
-  "cSpell.allowCompoundWords": true,
-  "cSpell.showStatus": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Menlo, monospace, 'Courier New', monospace",
   "editor.fontSize": 14,
@@ -10,23 +8,33 @@
   "editor.quickSuggestionsDelay": 30,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [
-    { "column": 80, "color": "#fff1" },
-    { "column": 120, "color": "#fff2" }
+    {
+      "column": 80,
+      "color": "#fff1"
+    },
+    {
+      "column": 120,
+      "color": "#fff2"
+    }
   ],
   "editor.tokenColorCustomizations": {
     "[Atom Material Theme]": {
-      "comments": "#607d8b"
+      "comments": "#607d8b" // Give comments a better contrast
     }
   },
   "editor.wordWrap": "on",
   "emmet.includeLanguages": {
     "vue": "html",
+    "njk": "html",
+    "nunjucks": "html",
+    "liquid": "html",
     "postcss": "css"
   },
   "emmet.syntaxProfiles": {
     "postcss": "css"
   },
   "files.associations": {
+    "*.vue": "html",
     ".browserslistrc": "properties",
     ".gitmodules": "properties",
     ".postcssrc": "json",
@@ -41,27 +49,42 @@
   "gitlens.codeLens.enabled": false,
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.toc.levels": "2..6",
-  "polacode.target": "snippet",
-  "polacode.transparentBackground": true,
   "presentationMode.zoomLevel": 3,
-  "prettier.disableLanguages": [],
   "projectManager.git.baseFolders": ["$home/projects"],
+  "redhat.telemetry.enabled": false,
   "snipsnap.silent": true,
   "terminal.integrated.fontSize": 14,
-  "vetur.format.enable": false,
-  "vetur.grammar.customBlocks": {
-    "docs": "md",
-    "i18n": "json",
-    "page-query": "graphql",
-    "static-query": "graphql"
-  },
-  "window.zoomLevel": 0,
   "workbench.colorTheme": "Atom Material Theme",
   "workbench.iconTheme": "file-icons",
   "workbench.startupEditor": "newUntitledFile",
   "zenMode.fullScreen": false,
   "zenMode.hideLineNumbers": false,
+  // Remove visual noise and distractions
+  // @source: https://kittygiraudel.com/snippets/vsc-lite/
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.hover.delay": 500,
+  "explorer.openEditors.visible": 0,
+  "extensions.ignoreRecommendations": true,
+  "keyboard.touchbar.enabled": false,
+  "workbench.enableExperiments": false,
+  // Language settings
   "html.format.extraLiners": "",
+  "html-css-class-completion.HTMLLanguages": [
+    "html",
+    "vue",
+    "razor",
+    "blade",
+    "handlebars",
+    "twig",
+    "njk", // Added until issue is resolved https://github.com/zignd/HTML-CSS-Class-Completion/issues/82
+    "liquid", // Added until issue is resolved https://github.com/zignd/HTML-CSS-Class-Completion/issues/93
+    "django-html",
+    "php",
+    "markdown",
+    "erb",
+    "ejs",
+    "svelte"
+  ],
   "css.validate": false, // For stylelint
   "less.validate": false, // For stylelint
   "scss.validate": false, // For stylelint
@@ -69,7 +92,12 @@
   "xml.format.preserveAttributeLineBreaks": true,
   "xml.format.spaceBeforeEmptyCloseTag": false,
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": false
+  },
+  "[njk]": {
+    "editor.defaultFormatter": "eseom.nunjucks-template",
+    "editor.formatOnSave": false
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
@@ -91,5 +119,18 @@
   },
   "[git-commit]": {
     "editor.rulers": [{ "column": 50, "color": "#fff2" }]
-  }
+  },
+  // Spelling
+  "cSpell.userWords": [
+    "animatable",
+    "avif",
+    "crossebrowser",
+    "eleventy",
+    "Fylgja",
+    "getfylgja",
+    "offcanvas",
+    "rgba",
+    "scrollbars",
+    "Stylelint"
+  ]
 }

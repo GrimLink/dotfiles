@@ -32,9 +32,8 @@ echo "Install VSCode extensions.."
 function installCodeExt() {
   VSCODE_EXT=(
     aaron-bond.better-comments
+    ahmadalli.vscode-nginx-conf
     alefragnani.project-manager
-    apollographql.vscode-apollo
-    bierner.markdown-emoji
     bierner.markdown-shiki
     bmewburn.vscode-intelephense-client
     CoenraadS.bracket-pair-colorizer
@@ -43,10 +42,8 @@ function installCodeExt() {
     eamodio.gitlens
     EditorConfig.EditorConfig
     esbenp.prettier-vscode
+    eseom.nunjucks-template
     file-icons.file-icons
-    funkyremi.vscode-google-translate
-    hangxingliu.vscode-nginx-conf-hint
-    jeremyljackson.vs-docblock
     jock.svg
     jspolancor.presentationmode
     maximus136.change-string-case
@@ -54,10 +51,9 @@ function installCodeExt() {
     ms-vscode-remote.remote-ssh
     ms-vscode-remote.remote-ssh-edit
     msjsdiag.debugger-for-chrome
-    octref.vetur
     onecentlin.laravel-blade
-    pnp.polacode
     raynigon.nginx-formatter
+    redhat.vscode-commons
     redhat.vscode-xml
     redhat.vscode-yaml
     snipsnapdev.snipsnap-vscode
@@ -66,8 +62,10 @@ function installCodeExt() {
     tobiasalthoff.atom-material-theme
     Tyriar.sort-lines
     vitaliymaz.vscode-svg-previewer
+    webben.browserslist
     william-voyek.vscode-nginx
     yzhang.markdown-all-in-one
+    Zignd.html-css-class-completion
   )
   for i in "${VSCODE_EXT[@]}"; do
     code --install-extension $i
