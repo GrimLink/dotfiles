@@ -8,32 +8,31 @@ fi
 
 # Via brew cask
 if command -v brew &>/dev/null; then
-  brew cask install hyper
-  brew cask install tableplus
-  brew cask install transmit
-  brew cask install fork
-  brew cask install vlc
-  brew cask install boostnote
-  brew cask install android-file-transfer
+  brew install --cask hyper
+  brew install --cask tableplus
+  brew install --cask transmit
+  brew install --cask fork
+  brew install --cask vlc
+  brew install --cask boostnote
+  brew install --cask android-file-transfer
   # Editors
-  brew cask install visual-studio-code
-  brew cask install graphiql
-  brew cask install postman
+  brew install --cask visual-studio-code
+  brew install --cask graphiql
+  brew install --cask postman
   # Communication
-  brew cask install slack
-  brew cask install discord
-  brew cask install skype
-  brew cask install whatsapp
+  brew install --cask slack
+  brew install --cask discord
+  brew install --cask signal
+  brew install --cask whatsapp
   # Utils
-  brew cask install dropbox
-  brew cask install google-backup-and-sync
-  brew cask install imageoptim
-  brew cask install appcleaner
-  brew cask install keka
-  brew cask install keepingyouawake
+  brew install --cask google-backup-and-sync
+  brew install --cask imageoptim
+  brew install --cask appcleaner
+  brew install --cask keka
+  brew install --cask keepingyouawake
   # browsers
-  brew cask install homebrew/cask-versions/google-chrome-beta
-  brew cask install firefox
+  brew install --cask homebrew/cask-versions/google-chrome-beta
+  brew install --cask firefox
 else
   echo "brew is not installed"
 fi
@@ -41,3 +40,5 @@ fi
 # Direct dowmloads, requires manual installation
 echo "Opening Manual downloads"
 open http://www.getmiro.com/download/for-osx/
+open https://www.rode.com/software/rode-connect
+open https://us.anker.com/pages/download-software
