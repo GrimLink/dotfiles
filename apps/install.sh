@@ -8,7 +8,6 @@ fi
 
 # Via brew cask
 if command -v brew &>/dev/null; then
-  brew install --cask hyper
   brew install --cask tableplus
   brew install --cask transmit
   brew install --cask fork
@@ -16,7 +15,6 @@ if command -v brew &>/dev/null; then
   brew install --cask boostnote
   brew install --cask android-file-transfer
   # Editors
-  brew install --cask visual-studio-code
   brew install --cask graphiql
   brew install --cask postman
   # Communication
