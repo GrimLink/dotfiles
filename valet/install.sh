@@ -20,6 +20,9 @@ if command -v composer &>/dev/null; then
   valet install --with-mariadb
   # Fix missing root user in mysql
   sudo mysqladmin -u root password
+
+  # Install extra valet tools
+  valet elasticsearch install
 else
   echo "Composer is missing, can't install valet" && exit 1;
 fi
