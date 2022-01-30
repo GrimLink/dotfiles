@@ -11,8 +11,8 @@ module.exports = {
     bell: false,
     quickEdit: true,
     hypercwd: {
-      initialWorkingDirectory: "~/projects"
-    }
+      initialWorkingDirectory: "~/projects",
+    },
   },
-  plugins: ["hyper-quit", "hyper-statusline", "hypercwd", "hyper-snazzy"]
+  plugins: ["hyper-quit", "hypercwd", "hyper-snazzy"],
 };
