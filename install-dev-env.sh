@@ -28,7 +28,7 @@ if command -v brew &>/dev/null; then
 fi
 
 echo "${GREEN}Setting up Valet+${RESET}"
-./valet/setup.sh
+./valet/install.sh
 
 echo "${GREEN}Adding projects folder${RESET}"
 mkdir ~/projects
@@ -36,6 +36,10 @@ mkdir ~/projects/react
 mkdir ~/projects/vue
 mkdir ~/projects/magento
 mkdir ~/projects/wordpress
+mkdir ~/projects/laravel
+
+echo "${GREEN}Setting up Valet+${RESET}"
+./valet/setup.sh
 
 echo ""
 echo "-----"
