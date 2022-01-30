@@ -25,10 +25,10 @@ echo "${GREEN}Setting up Mac defaults${RESET}"
 ./macos/setup.sh
 
 echo "${GREEN}Setting up Brew with some base dev tools${RESET}"
-./brew/setup.sh
+./brew/install.sh
 
 echo "${GREEN}Setting up Node config and tools${RESET}"
-./node/setup.sh
+./node/install.sh
 
 echo "${GREEN}Installing and setting up hyper terminal${RESET}"
 ./hyper/install.sh
