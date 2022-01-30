@@ -23,7 +23,7 @@ if command -v brew &>/dev/null; then
   brew install --cask signal
   brew install --cask whatsapp
   # Utils
-  brew install --cask google-backup-and-sync
+  brew install --cask google-drive
   brew install --cask imageoptim
   brew install --cask appcleaner
   brew install --cask keka
@@ -31,6 +31,7 @@ if command -v brew &>/dev/null; then
   # browsers
   brew install --cask homebrew/cask-versions/google-chrome-beta
   brew install --cask firefox
+  brew install --cask brave-browser
 else
   echo "brew is not installed"
 fi
