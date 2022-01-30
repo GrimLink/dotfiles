@@ -20,22 +20,8 @@ echo -e "\n${GREEN}Syncing shell config${RESET}"
 echo -e "\n${GREEN}Syncing git config${RESET}"
 ./git/setup.sh
 
-echo -e "\n${GREEN}Syncing editor config${RESET}"
-./vscode/setup.sh
+echo -e "\n${GREEN}Syncing hyper config${RESET}"
 ./hyper/setup.sh
-
-echo -e "\n${GREEN}Starting updater..${RESET}"
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  echo -e "${GREEN}Updating node pkg's${RESET}"
-  ./node/pkg.sh
-else
-  read -p "Update npm global pkg's. Are you sure? [y/N] "
-  echo ""
-  if [[ $REPLY =~ ^[yY]|[yY][eE][sS]$ ]]; then
-    echo -e "${GREEN}Updating node pkg's${RESET}"
-    ./node/pkg.sh
-  fi
-fi
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   brew update # Make sure we’re using the latest Homebrew.
