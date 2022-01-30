@@ -26,12 +26,9 @@ function node-clean() {
 # Browsers
 function safari() { open -a Safari "$1"; }
 function chrome() { open -a Google\ Chrome "$1"; }
-function canary() { open -a Google\ Chrome\ Canary "$1"; }
+function chromebeta() { open -a Google\ Chrome\ Beta "$1"; }
 function firefox() { open -a Firefox "$1"; }
-function firefoxDev() { open -a FirefoxDeveloperEdition "$1"; }
-
-# Node tools
-alias np="command np --any-branch";
+function brave() { open -a Brave\ Browser "$1"; }
 
 # Lighthouse, Always use headless chrome
 alias lighthouse='command lighthouse --chrome-flags="--headless"'
