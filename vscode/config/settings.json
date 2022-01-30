@@ -1,7 +1,9 @@
 {
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Menlo, monospace, 'Courier New', monospace",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.minimap.maxColumn": 80,
   "editor.minimap.showSlider": "always",
@@ -52,8 +54,10 @@
   "presentationMode.zoomLevel": 3,
   "projectManager.git.baseFolders": ["$home/projects"],
   "redhat.telemetry.enabled": false,
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
+  "stylelint.snippet": ["css", "less", "postcss", "scss"],
   "snipsnap.silent": true,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 15,
   "workbench.colorTheme": "Atom Material Theme",
   "workbench.iconTheme": "file-icons",
   "workbench.startupEditor": "newUntitledFile",
@@ -69,6 +73,7 @@
   "workbench.enableExperiments": false,
   // Language settings
   "html.format.extraLiners": "",
+  "html-css-class-completion.excludeGlobPattern": "pub",
   "html-css-class-completion.HTMLLanguages": [
     "html",
     "vue",
@@ -91,31 +96,35 @@
   "xml.validation.enabled": false,
   "xml.format.preserveAttributeLineBreaks": true,
   "xml.format.spaceBeforeEmptyCloseTag": false,
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features",
+  "[html][php][njk][svg][less]": {
     "editor.formatOnSave": false
   },
+  "[html][php][njk][xml]": {
+    "editor.linkedEditing": true
+  },
+  "[xml][csv][yaml]": {
+    "editor.wordWrap": "off"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "[njk]": {
-    "editor.defaultFormatter": "eseom.nunjucks-template",
-    "editor.formatOnSave": false
+    "editor.defaultFormatter": "eseom.nunjucks-template"
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
-    "editor.formatOnSave": false
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
   "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml",
-    "editor.wordWrap": "off"
+    "editor.defaultFormatter": "redhat.vscode-xml"
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.wordWrap": "off"
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "[csv]": {
-    "editor.wordWrap": "off"
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
   },
   "[git-commit]": {
     "editor.rulers": [{ "column": 50, "color": "#fff2" }]
@@ -124,13 +133,39 @@
   "cSpell.userWords": [
     "animatable",
     "avif",
+    "codepen",
+    "configurator",
     "crossebrowser",
+    "currentcolor",
     "eleventy",
+    "endforeach",
     "Fylgja",
     "getfylgja",
+    "nums",
     "offcanvas",
     "rgba",
     "scrollbars",
-    "Stylelint"
-  ]
+    "Stylelint",
+    "utilpack"
+  ],
+  "security.workspace.trust.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false,
+    "xml": false
+  },
+  "editor.accessibilitySupport": "off",
+  "git.autofetch": true,
+  "explorer.confirmDelete": false,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.unicodeHighlight.allowedCharacters": {
+    "‘": true,
+    "’": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false
 }

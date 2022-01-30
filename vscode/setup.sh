@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# NOTE: we use vscode for syncing instead of using this file
+# This is just here for legacy reasons
 
 echo "Syncing vscode config.."
 function rsyncVSCodeConfig() {

@@ -28,5 +28,16 @@
     "prefix": "!phpcs",
     "description": "Disable linting for php rule(s)",
     "body": "$LINE_COMMENT phpcs:${2|ignore,disable,enable|} ${1:Generic.Files.LineLength}"
+  },
+  "psalm": {
+    "scope": "php,html",
+    "prefix": "!psalm",
+    "description": "Disable linting for php rule(s)",
+    "body": [
+      "/**",
+      " * @psalm-suppress all",
+      " */"
+    ]
+  },
   }
 }
