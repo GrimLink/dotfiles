@@ -27,6 +27,11 @@ if command -v composer &>/dev/null; then
 
   # Install extra valet tools
   valet elasticsearch install
+
+  # Test if valet is working
+  ping -c1 localhost.test # random test url, can be anything ending with .test
+  ping -c1 localhost.test:9200 # eleasticsearch
+  ping -c1 mailhog.test # mailhog
 else
   echo "Composer is missing, can't install valet" && exit 1;
 fi
