@@ -3,7 +3,7 @@
 # Create default ssh key
 ssh-keygen -o -t rsa -b 4096 -C "$(git config --global --get user.email)" &&
 eval $(ssh-agent) &&
-ssh-add -K ~/.ssh/id_rsa
+ssh-add --apple-use-keychain --apple-load-keychain ~/.ssh/id_rsa
 
 touch ~/.ssh/config &&
 echo "Host *" >>~/.ssh/config &&
