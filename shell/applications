@@ -39,13 +39,27 @@ alias art="php artisan"
 # Shopware
 # alias sw="bin/console"
 function sw() {
+  OPEN_CLI="xdg-open" # Linux
+
+  # OSX
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    OPEN_CLI="open"
+  fi
+
   case "${@}" in
+    "open")
+      URL=$(bin/console system:config:get core.app.shopId.app_url)
+      $OPEN_CLI $URL
+      ;;
     "sample")
       bin/console store:download -p SwagPlatformDemoData
+      bin/console plugin:refresh
+      bin/console cache:clear
       ;;
     *)
       bin/console $@
       ;;
+  esac
 }
 
 # Magento
