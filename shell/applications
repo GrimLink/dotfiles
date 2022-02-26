@@ -39,6 +39,7 @@ alias art="php artisan"
 # Shopware
 # alias sw="bin/console"
 function sw() {
+  STORE=${2}
   OPEN_CLI="xdg-open" # Linux
 
   # OSX
@@ -46,10 +47,22 @@ function sw() {
     OPEN_CLI="open"
   fi
 
+
   case "${@}" in
-    "open")
+    "open"*)
+      ADMIN_URL="/admin"
+      # TODO get url from .env
       URL=$(bin/console system:config:get core.app.shopId.app_url)
-      $OPEN_CLI $URL
+      if [[ "$STORE" == "admin" ]]; then
+        URL="${URL}${ADMIN_URL}"
+        if [[ ! -z $URL ]]; then
+          $OPEN_CLI $URL
+        fi
+      else
+        if [[ ! -z $URL ]]; then
+          $OPEN_CLI $URL
+        fi
+      fi
       ;;
     "sample")
       bin/console store:download -p SwagPlatformDemoData
