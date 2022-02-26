@@ -36,6 +36,17 @@ alias lighthouse='command lighthouse --chrome-flags="--headless"'
 # Artisan
 alias art="php artisan"
 
+# Shopware
+# alias sw="bin/console"
+function sw() {
+  case "${@}" in
+    "sample")
+      bin/console store:download -p SwagPlatformDemoData
+      ;;
+    *)
+      bin/console $@
+      ;;
+}
 
 # Magento
 alias m1="magerun"
