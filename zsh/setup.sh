@@ -22,6 +22,3 @@ else
     rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.zshrc" ~
   fi
 fi
-
-# Unset zsh compinit: insecure directories
-compaudit | xargs chmod g-w

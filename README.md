@@ -12,11 +12,11 @@ You can download or clone the repository wherever you want.
 
 _I like to keep it in `~/dotfiles`._
 
-```bash
+<!-- ```bash
 bash -c "$(curl -LsS https://raw.githubusercontent.com/GrimLink/dotfiles/main/get.sh)"
-```
+``` -->
 
-## Install
+<!-- ## Install
 
 If it is your first install.
 Run the `install.sh` script.
@@ -27,9 +27,9 @@ Run the `install.sh` script.
 
 Follow the steps for each script, that is called via the install script.
 
-_Use the flag `--force` or `-f` to skip the questions for each config_
+_Use the flag `--force` or `-f` to skip the questions for each config_ -->
 
-## Sync
+<!-- ## Sync
 
 `sync.sh` updates the dotfiles and resync the config files.
 
@@ -39,7 +39,7 @@ The sync will not re-download apps
 ./dotfiles/sync.sh
 ```
 
-_Use the flag `--force` or `-f` to skip the questions for each config_
+_Use the flag `--force` or `-f` to skip the questions for each config_ -->
 
 ## Whats in the box
 

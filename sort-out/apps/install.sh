@@ -9,6 +9,8 @@ fi
 # Via brew cask
 if command -v brew &>/dev/null; then
   brew install --cask tableplus
+  brew install --cask visual-studio-code
+  brew install --cask fig
   brew install --cask transmit
   brew install --cask fork
   brew install --cask vlc
