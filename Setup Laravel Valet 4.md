@@ -71,3 +71,9 @@ valet proxy mailhog http://localhost:8025 --secure
 ```bash
 brew install opensearch
 ```
+
+To create an easy domain name use;
+
+```bash
+valet proxy opensearch http://localhost:9200 --secure
+```
