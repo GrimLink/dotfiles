@@ -74,7 +74,3 @@ function sw() {
       ;;
   esac
 }
-
-# Magento
-alias m1="magerun"
-alias m2="magerun2"

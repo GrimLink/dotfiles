@@ -19,8 +19,11 @@ ping -c1 mailhog.test # mailhog
 ## Database
 
 Create in DBngin a mysql 5.7 service; with;
-
-port = 3306
+- name = mysql57
+- port = 3306
+- socket = /tmp/mysql.sock
+- disable log = true
+- auto start = true
 
 To install a database use;
 
@@ -37,8 +40,10 @@ ALTER USER ‘root’@’localhost’ IDENTIFIED BY ‘root’;
 FLUSH PRIVILEGES;
 ```
 
+For MySQL support in the CLi make sure to add the right export path
+
 ```bash
-ln -s /tmp/mysql_3306.sock /tmp/mysql.sock
+export PATH=/Users/Shared/DBngin/mysql/5.7.23/bin:$PATH
 ```
 
 ## php

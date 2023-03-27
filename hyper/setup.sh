@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO check if hyper is installed
+
 function rsyncHyperConfig() {
   rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.hyper.js" ~
 }

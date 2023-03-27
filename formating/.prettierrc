@@ -1,9 +1,0 @@
-{
-  "singleQuote": false,
-  "overrides": [
-    {
-      "files": "*.js",
-      "options": { "singleQuote": true }
-    }
-  ]
-}

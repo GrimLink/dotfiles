@@ -9,9 +9,6 @@ git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 echo "Installing zsh syntax highlighting.."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh/syntax-highlighting"
 
-echo "Instaling zsh nvm.."
-git clone https://github.com/lukechilds/zsh-nvm.git "$HOME/.zsh/nvm"
-
 echo "Syncing zsh config.."
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.zshrc" ~
