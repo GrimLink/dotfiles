@@ -3,6 +3,7 @@
 DEFAULT_NAME=$(git config --global --get user.name);
 
 brew install node
+brew install pnpm
 
 # Setup default config
 if [[ -z "$DEFAULT_NAME" ]]; then

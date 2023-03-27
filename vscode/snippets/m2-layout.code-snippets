@@ -3,7 +3,7 @@
     "scope": "xml",
     "prefix": "magento.layout.page",
     "description": "new xml layout page",
-    "body": "<?xml version=\"1.0\"?>\n<page xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:noNamespaceSchemaLocation=\"urn:magento:framework:View/Layout/etc/page_configuration.xsd\">\n\t$0\n</page>"
+    "body": "<?xml version=\"1.0\"?>\n<page\n\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:noNamespaceSchemaLocation=\"urn:magento:framework:View/Layout/etc/page_configuration.xsd\"\n>\n\t$0\n</page>"
   },
   "M2 Layout Head": {
     "scope": "xml",
@@ -33,7 +33,7 @@
     "scope": "xml",
     "prefix": "magento.layout.block",
     "description": "xml block",
-    "body": "<block class=\"${1:Magento\\Framework\\View\\Element\\Template}\" name=\"$2\" template=\"$3\"/>"
+    "body": "<block name=\"$2\" template=\"$3\"/>"
   },
   "M2 Layout Refrence": {
     "scope": "xml",

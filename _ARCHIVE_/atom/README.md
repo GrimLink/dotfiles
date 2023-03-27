@@ -12,7 +12,7 @@ First install Atom [from atom.io](https://atom.io/).
 Or via Brew
 
 ```bash
-brew cask install atom
+brew install --cask atom
 ```
 
 First boot and run from Atom the apm install cli command.

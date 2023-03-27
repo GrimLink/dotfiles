@@ -11,7 +11,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/sbin:$PATH"
 
 # MySQL
-export PATH=/Users/Shared/DBngin/mysql/5.7.23/bin:$PATH
+# export PATH=/Users/Shared/DBngin/mysql/5.7.23/bin:$PATH
 
 # Add Visual Studio Code (shell), manually
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

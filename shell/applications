@@ -23,18 +23,14 @@ function node-clean() {
     fi
 }
 
-# Browsers
-function safari() { open -a Safari "$1"; }
-function chrome() { open -a Google\ Chrome "$1"; }
-function chromebeta() { open -a Google\ Chrome\ Beta "$1"; }
-function firefox() { open -a Firefox "$1"; }
-function brave() { open -a Brave\ Browser "$1"; }
-
-# Lighthouse, Always use headless chrome
-alias lighthouse='command lighthouse --chrome-flags="--headless"'
+# pnpm
+alias pn=pnpm
 
 # Artisan
 alias art="php artisan"
+
+# Lighthouse, Always use headless chrome
+alias lighthouse='command lighthouse --chrome-flags="--headless"'
 
 # Shopware
 # alias sw="bin/console"
@@ -74,3 +70,10 @@ function sw() {
       ;;
   esac
 }
+
+# Browsers
+function safari() { open -a Safari "$1"; }
+function chrome() { open -a Google\ Chrome "$1"; }
+function chromebeta() { open -a Google\ Chrome\ Beta "$1"; }
+function firefox() { open -a Firefox "$1"; }
+function brave() { open -a Brave\ Browser "$1"; }

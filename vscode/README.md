@@ -1,14 +1,7 @@
 # VSCode
 
-<!-- TODO -->
+I have completely transitioned to using the native sync function for VScode.
 
-## Keyboard shortcuts
-
-## Snippets
-
-## Extensions
-
-### Magento 2
-
-### Laraval
-
+While the following may not reflect my current configuration,
+as I update these files periodically,
+I will only reference certain elements found in my default config.

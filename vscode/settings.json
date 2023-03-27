@@ -1,0 +1,120 @@
+{
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "editor.hover.delay": 500,
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestionsDelay": 30,
+  "editor.wordWrap": "on",
+  "emmet.includeLanguages": {
+    "vue": "html",
+    "njk": "html",
+    "twig": "html",
+    "nunjucks": "html",
+    "liquid": "html",
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": { "postcss": "css" },
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "explorer.decorations.colors": false,
+  "extensions.ignoreRecommendations": true,
+  "files.associations": { "*.twig": "html", ".gitmodules": "properties" },
+  "files.autoSave": "onWindowChange",
+  "git.allowForcePush": true,
+  "git.allowNoVerifyCommit": true,
+  "git.autofetch": true,
+  "github.gitProtocol": "ssh",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.showWelcomeOnInstall": false,
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true,
+  "keyboard.touchbar.enabled": false,
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.toc.updateOnSave": false,
+  "presentationMode.zoomLevel": 3,
+  "security.workspace.trust.enabled": false,
+  "terminal.integrated.fontSize": 15,
+  "window.autoDetectColorScheme": true,
+  "window.commandCenter": true,
+  "workbench.enableExperiments": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+  "workbench.sideBar.location": "right",
+  "workbench.tips.enabled": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "zenMode.fullScreen": false,
+  "php.suggest.basic": false,
+  "css.validate": false, // For stylelint
+  "scss.validate": false, // For stylelint
+  "xml.validation.enabled": false,
+  "xml.format.preserveAttributeLineBreaks": true,
+  "xml.format.spaceBeforeEmptyCloseTag": false,
+  "xml.format.preserveSpace": [
+    "xsl:text",
+    "xsl:comment",
+    "xsl:processing-instruction",
+    "literallayout",
+    "programlisting",
+    "screen",
+    "synopsis",
+    "pre",
+    "xd:pre",
+    "argument"
+  ],
+  "xml.format.maxLineWidth": 120,
+  "css.enabledLanguages": [
+    "html",
+    "php",
+    "astro",
+    "vue",
+    "njk",
+    "twig",
+    "nunjucks",
+    "liquid"
+  ],
+  "cssvar.files": ["./node_modules/fylgja/fylgja-tokens.css"],
+  "cssvar.ignore": [],
+  "somesass.suggestFromUseOnly": true,
+  "somesass.scannerExclude": [".git/**", "./node_modules/**!(@fylgja)"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "trailing",
+  "[html][php][njk][svg][less]": {
+    "editor.formatOnSave": false
+  },
+  "[html][php][njk][xml]": {
+    "editor.linkedEditing": true
+  },
+  "[xml][csv][yaml][plaintext]": {
+    "editor.wordWrap": "off"
+  },
+  "[njk]": {
+    "editor.defaultFormatter": "eseom.nunjucks-template"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  }
+}

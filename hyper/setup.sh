@@ -1,19 +1,9 @@
 #!/bin/bash
 
-# TODO check if hyper is installed
+RESET='\033[0m'
+GREEN='\033[1;32m'
 
-function rsyncHyperConfig() {
-  rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.hyper.js" ~
-}
+function StepSection() { echo -e "${GREEN}$@${RESET}" }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  rsyncHyperConfig
-else
-  read -p "Update Hyper config files. Are you sure? [Y/n] "
-  echo ""
-  if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
-    rsyncHyperConfig
-  fi
-fi
-
-unset rsyncHyperConfig
+StepSection "Syncing hyper config to the local user folder"
+rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.hyper.js" ~

@@ -1,26 +1,19 @@
 #!/bin/bash
 
-function rsyncShell() {
-  if [ ! -d ~/shell ]; then
-    mkdir ~/.shell
-  fi
+RESET='\033[0m'
+GREEN='\033[1;32m'
 
-  rsync -avh --no-perms \
-    "$(dirname "${BASH_SOURCE}")/aliases" \
-    "$(dirname "${BASH_SOURCE}")/exports" \
-    "$(dirname "${BASH_SOURCE}")/functions" \
-    "$(dirname "${BASH_SOURCE}")/applications" \
-    ~/.shell
-}
+function StepSection() { echo -e "${GREEN}$@${RESET}" }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  rsyncShell
-else
-  read -p "Add shell config files? [Y/n] "
-  echo ""
-  if [[ ! $REPLY =~ ^[nN]|[nN][oO]$ ]]; then
-    rsyncShell
-  fi
+# Make sure there is a shell folder
+if [ ! -d ~/.shell ]; then
+  mkdir ~/.shell
 fi
 
-unset rsyncShell
+StepSection "Syncing all shell files to the system shell folder"
+rsync -avh --no-perms \
+  "$(dirname "${BASH_SOURCE}")/aliases" \
+  "$(dirname "${BASH_SOURCE}")/exports" \
+  "$(dirname "${BASH_SOURCE}")/functions" \
+  "$(dirname "${BASH_SOURCE}")/applications" \
+  ~/.shell
