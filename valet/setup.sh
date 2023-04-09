@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Define color codes for output
+RESET='\033[0m'
+RED='\033[1;31m'
+BOLD='\033[1m'
+
 echo "This script will folow you through the steps needed to setup Larvavel valet 4"
 
 # Make sure both brew, php and composer are installed
@@ -46,7 +51,7 @@ echo "Run in tableplus in sql query the following;"
 echo -e "ALTER USER ‘root’@’localhost’ IDENTIFIED BY ‘root’;
 FLUSH PRIVILEGES;"
 
-echo "For MySQL support in the CLi make sure to add the right export path"
+echo "For MySQL support in the CLI make sure to add the right export path"
 
 echo "export PATH=/Users/Shared/DBngin/mysql/5.7.23/bin:\$PATH"
 
@@ -56,6 +61,8 @@ read -rsn1 -p "When ready, press any key to continue";
 echo "";
 
 # Final steps
-bash $(dirname "${BASH_SOURCE}")/proxy.sh;
+if ! bash $(dirname "${BASH_SOURCE}")/proxy.sh; then
+  echo -e "${BOLD}${RED}Error: Failed to configure the Valet proxy settings${RESET}"
+fi
 
 echo "Done"

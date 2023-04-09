@@ -2,5 +2,4 @@
 
 brew install php
 brew install composer
-brew tap nicoverbruggen/homebrew-cask
-brew install --cask phpmon
+brew install nicoverbruggen/tap/phpmon
