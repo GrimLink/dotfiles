@@ -9,8 +9,8 @@
 	remotes = remote -v
 
 	# Usefull checkes on specific tasks
-	overview = lg --all --no-merges --since="2 weeks"
-	recap = lg --all --no-merges --author="$(git config user.email)"
+	overview = lg --all --no-merges --since='2 weeks'
+	recap = !"git lg --all --no-merges --author=$(git config user.email)"
 	stats = shortlog --summary --numbered
 	contributors = stats
 
