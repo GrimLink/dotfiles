@@ -1,27 +1,35 @@
 #!/bin/bash
 
+# Define color codes for output
 RESET='\033[0m'
+RED='\033[1;31m'
 GREEN='\033[1;32m'
+BLUE='\033[1;34m'
+BOLD='\033[1m'
+ITALIC='\033[3m'
 
-function StepSection() { echo -e "${GREEN}$@${RESET}" }
+# Define helper for running each script
+function runAction() {
+  echo -e "\n${GREEN}$1${RESET}"
 
-StepSection "Installing homebrew (https://brew.sh/)"
+  if ! bash $(dirname "${BASH_SOURCE}")/$2.sh; then
+    echo -e "${BOLD}${RED}Error: Failed to configure ${2}${RESET}"
+  fi
+}
+
+if ! xcode-select -p 1>/dev/null; then
+  echo "Installing xcode-select"
+  xcode-select --install
+  echo "Or download it here https://developer.apple.com/download/more/"
+  read -p "When Ready, press any key to continue" -n 1 && echo ""
+fi
+
+echo -e "\n${GREEN}Installing homebrew (https://brew.sh/)${RESET}"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-StepSection "Installing node"
-bash $(dirname "${BASH_SOURCE}")/node.sh;
-
-StepSection "Installing php"
-bash $(dirname "${BASH_SOURCE}")/php.sh;
-
-StepSection "Installing db"
-bash $(dirname "${BASH_SOURCE}")/db.sh;
-
-StepSection "Installing other dev tools"
-bash $(dirname "${BASH_SOURCE}")/dev.sh;
-
-StepSection "Installing code editors"
-bash $(dirname "${BASH_SOURCE}")/editor.sh;
-
-StepSection "Installing apps (browsers, img tools, etc...)"
-bash $(dirname "${BASH_SOURCE}")/app.sh;
+runAction "Installing node" node
+runAction "Installing php" php
+runAction "Installing db" db
+runAction "Installing other dev tools" dev
+runAction "Installing code editors" editor
+runAction "Installing apps (browsers, img tools, etc...)" app

@@ -1,19 +1,32 @@
 #!/bin/bash
 
+# Define color codes for output
 RESET='\033[0m'
-BLUE='\033[1;34m'
+RED='\033[1;31m'
 GREEN='\033[1;32m'
+BLUE='\033[1;34m'
 BOLD='\033[1m'
 ITALIC='\033[3m'
 
-function StepSection() { echo -e "${GREEN}$@${RESET}" }
-function GroupSection() { echo -e "${BLUE}$@${RESET}" }
+# Define helper for running each script
+function runAction() {
+  echo -e "\n${BLUE}$1${RESET}"
 
-GroupSection "Updating git.."
-bash $(dirname "${BASH_SOURCE}")/git/setup.sh;
+  if ! bash $(dirname "${BASH_SOURCE}")/$2.sh; then
+    echo -e "${BOLD}${RED}Error: Failed to configure ${2}${RESET}"
+  fi
+}
 
-GroupSection "Updating hyper.."
-bash $(dirname "${BASH_SOURCE}")/hyper/setup.sh;
+if ! xcode-select -p 1>/dev/null; then
+  echo "Installing xcode-select"
+  xcode-select --install
+  echo "Or download it here https://developer.apple.com/download/more/"
+  read -p "When Ready, press any key to continue" -n 1 && echo ""
+fi
+
+runAction "Updating git config.." git/setup
+runAction "Updating hyper config.." hyper/setup
+runAction "Updating zsh config.." zsh/setup
 
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"
