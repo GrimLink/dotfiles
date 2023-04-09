@@ -1,0 +1,112 @@
+#!/usr/bin/env node
+
+const https = require("https");
+const { createWriteStream } = require("fs");
+
+const SRC = "https://raw.githubusercontent.com/GrimLink/dotfiles/main";
+const RESET = "\x1b[0m";
+const BOLD = "\x1b[1m";
+const GREEN = "\x1b[32m";
+const YELLOW = "\x1b[33m";
+
+const options = [".editorconfig", ".browserslistrc", ".prettierrc"];
+
+// Functions
+function editorconfig() {
+  console.log(`${YELLOW}Creating editorconfig${RESET}`);
+  downloadFile(`${SRC}/formating/.editorconfig`, ".editorconfig");
+}
+
+function browserslist() {
+  console.log(`${YELLOW}Creating browserslist config${RESET}`);
+  downloadFile(`${SRC}/.browserslistrc`, ".browserslistrc");
+}
+
+function prettier() {
+  console.log(`${YELLOW}Creating prettier config${RESET}`);
+  downloadFile(`${SRC}/formating/.prettierrc`, ".prettierrc");
+}
+
+function stylelint() {
+  console.log(`${YELLOW}Creating stylelint config${RESET}`);
+  downloadFile(`${SRC}/formating/.stylelintrc`, ".stylelintrc");
+}
+
+function eslint() {
+  console.log(`${YELLOW}Creating ESLint config${RESET}`);
+  downloadFile(`${SRC}/formating/.eslintrc`, ".eslintrc");
+}
+
+function downloadFile(url, filename) {
+  const file = createWriteStream(filename);
+  https
+    .get(url, (response) => {
+      response.pipe(file).on("finish", file.close);
+    })
+    .on("error", (err) => console.error(`Error downloading ${url}: ${err}`));
+}
+
+// Tasks
+if (process.argv.includes("-h") || process.argv.includes("--help")) {
+  console.log(`
+    Options are:
+    - editorconfig
+    - browserslist
+    - prettier
+    - stylelint
+    - eslint
+    - lint (prettier, stylelint, eslint)
+    - config (editorconfig, prettier)
+    - editor (editorconfig, prettier, browserslist)
+    - all
+    - help`);
+  process.exit();
+}
+
+console.log(`${GREEN}Starting Configuration... ${RESET}`);
+
+const tasks = {
+  editorconfig: editorconfig,
+  browserslist: browserslist,
+  prettier: prettier,
+  stylelint: stylelint,
+  eslint: eslint,
+  lint: () => {
+    prettier();
+    stylelint();
+    eslint();
+  },
+  formatting: () => {
+    editorconfig();
+    prettier();
+  },
+  config: () => {
+    editorconfig();
+    prettier();
+    browserslist();
+  },
+  all: () => {
+    editorconfig();
+    browserslist();
+    prettier();
+    stylelint();
+    eslint();
+  },
+};
+
+const selectedTasks = process.argv.slice(2);
+let done = false;
+
+selectedTasks.forEach((task) => {
+  if (tasks[task]) {
+    tasks[task]();
+    done = true;
+  }
+});
+
+if (done) {
+  console.log(`${GREEN}Done!${RESET}`);
+} else {
+  console.log("No correct arguments were given");
+  console.log(`Use ${BOLD}--help${RESET} for what commands are available`);
+}
