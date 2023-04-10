@@ -16,8 +16,8 @@ brew install --cask appcleaner
 brew install --cask keka
 
 # browsers
-# TODO ask for browsers to use
-brew install --cask homebrew/cask-versions/google-chrome-beta
+brew install --cask google-chrome
+brew install --cask microsoft-edge
 brew install --cask firefox
 brew install --cask brave-browser
 
