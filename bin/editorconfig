@@ -4,40 +4,52 @@ const readline = require("readline");
 const fs = require("fs");
 
 const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout,
+  input: process.stdin,
+  output: process.stdout,
 });
 
 const askQuestion = async (question) => {
-	return new Promise((resolve) => {
-		rl.question(question, (answer) => {
-			resolve(answer.trim());
-		});
-	});
+  return new Promise((resolve) => {
+    rl.question(question, (answer) => {
+      resolve(answer.trim());
+    });
+  });
 };
 
 const isYes = async (question) => {
-	const answer = await askQuestion(`${question}? (Y/n): `);
-	return answer === "" || answer === "y" || answer === "yes";
+  const answer = await askQuestion(`${question}? (Y/n): `);
+  return answer === "" || answer === "y" || answer === "yes";
 };
 
 const askQuestions = async () => {
-	const indentStyle = (await isYes("Use tabs for the indentStyle?"))
-		? "tab"
-		: "space";
-	const isJsProject = await isYes("is this a Javascript based project?");
-	generateEditorConfig({
-		indentStyle,
-		isJsProject,
-	});
+  const indentStyle = (await isYes("Use tabs for the indentStyle?"))
+    ? "tab"
+    : "space";
+  const isJsProject = await isYes("is this a Javascript based project?");
+  const isTsProject = isJsProject
+    ? await isYes("is this a Typescript based project?")
+    : isJsProject;
+  const isScssProject = await isYes("is this a SCSS based project?");
+  generateEditorConfig({
+    indentStyle,
+    isJsProject,
+    isTsProject,
+    isScssProject,
+  });
 };
 askQuestions();
 
-const generateEditorConfig = ({ indentStyle, isJsProject }) => {
-	const editorConfig = `
+const generateEditorConfig = ({
+  indentStyle,
+  isJsProject,
+  isTsProject,
+  isScssProject,
+}) => {
+  const editorConfig = `
 # EditorConfig helps developers define and maintain consistent
 # coding styles between different editors and IDEs
 # http://editorconfig.org
+
 root = true
 
 [*]
@@ -53,26 +65,35 @@ indent_size = 4
 trim_trailing_whitespace = false
 max_line_length = 80
 
-[*.{css,less,sass,scss,js,ts,mjs}]
+[*.${isScssProject ? "{css,scss}" : "css"}]
 indent_size = 4
 max_line_length = 80
 
-[*.${isJsProject ? "{html,vue,jsx,tsx}" : "html"}]
+[*.{${
+    isJsProject
+      ? isTsProject
+        ? "html,js,ts,vue,tsx"
+        : "html,cjs,vue,jsx"
+      : "html"
+  }}]
 indent_size = 4
 max_line_length = 80
 
 ${
-	!isJsProject
-		? ""
-		: `[*.{xml,phtml,php}]
+  isJsProject
+    ? ""
+    : `[*.{xml,phtml,php}]
 indent_size = 4
 max_line_length = 120
+
+[{composer,auth}.json]
+indent_size = 4
 `
 }`;
 
-	fs.writeFile(".editorconfig", editorConfig, (err) => {
-		if (err) throw err;
-		console.log(".editorconfig file created.");
-		rl.close();
-	});
+  fs.writeFile(".editorconfig", editorConfig, (err) => {
+    if (err) throw err;
+    console.log(".editorconfig file created.");
+    rl.close();
+  });
 };
