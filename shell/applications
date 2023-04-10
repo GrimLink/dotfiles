@@ -5,6 +5,20 @@
 # Brew
 alias brewery="brew update && brew upgrade && brew cleanup"
 
+# Valet
+function valet-up() {
+  CONFIG_TRUST_SETTINGS="$HOME/.config/valet/apple-trust-settings"
+  TRUST_SETTINGS="com.apple.trust-settings.admin"
+
+  security authorizationdb read $TRUST_SETTINGS > $CONFIG_TRUST_SETTINGS > /dev/null 2>& 1
+  sudo security authorizationdb write $TRUST_SETTINGS allow > /dev/null 2>& 1
+
+  composer global require laravel/valet
+  valet install
+
+  sudo security authorizationdb write $TRUST_SETTINGS < $CONFIG_TRUST_SETTINGS > /dev/null 2>& 1
+}
+
 # Node
 function node-find() {
   find . -name "node_modules" -type d -prune -print | xargs du -chs
