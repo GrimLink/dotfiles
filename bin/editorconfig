@@ -1,0 +1,78 @@
+#!/usr/bin/env node
+
+const readline = require("readline");
+const fs = require("fs");
+
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+});
+
+const askQuestion = async (question) => {
+	return new Promise((resolve) => {
+		rl.question(question, (answer) => {
+			resolve(answer.trim());
+		});
+	});
+};
+
+const isYes = async (question) => {
+	const answer = await askQuestion(`${question}? (Y/n): `);
+	return answer === "" || answer === "y" || answer === "yes";
+};
+
+const askQuestions = async () => {
+	const indentStyle = (await isYes("Use tabs for the indentStyle?"))
+		? "tab"
+		: "space";
+	const isJsProject = await isYes("is this a Javascript based project?");
+	generateEditorConfig({
+		indentStyle,
+		isJsProject,
+	});
+};
+askQuestions();
+
+const generateEditorConfig = ({ indentStyle, isJsProject }) => {
+	const editorConfig = `
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# http://editorconfig.org
+root = true
+
+[*]
+indent_style = ${indentStyle}
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.${isJsProject ? "{md,mdx}" : "md"}]
+indent_size = 4
+trim_trailing_whitespace = false
+max_line_length = 80
+
+[*.{css,less,sass,scss,js,ts,mjs}]
+indent_size = 4
+max_line_length = 80
+
+[*.${isJsProject ? "{html,vue,jsx,tsx}" : "html"}]
+indent_size = 4
+max_line_length = 80
+
+${
+	!isJsProject
+		? ""
+		: `[*.{xml,phtml,php}]
+indent_size = 4
+max_line_length = 120
+`
+}`;
+
+	fs.writeFile(".editorconfig", editorConfig, (err) => {
+		if (err) throw err;
+		console.log(".editorconfig file created.");
+		rl.close();
+	});
+};
