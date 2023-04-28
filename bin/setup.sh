@@ -19,15 +19,6 @@ rsync \
   -avh --no-perms \
   "$(dirname "${BASH_SOURCE}")/." ~/bin;
 
-StepSection "Install n98-magerun2 (https://github.com/netz98/n98-magerun2)"
-curl -sS -O https://files.magerun.net/n98-magerun2.phar && \
-mv n98-magerun2.phar /usr/local/bin/n98-magerun2 && \
-chmod +x /usr/local/bin/n98-magerun2 && \
-ln -s /usr/local/bin/n98-magerun2 /usr/local/bin/magerun2
-
-StepSection "Install Mage (https://github.com/GrimLink/mage)"
-curl -sS -O "${GIT_BASEURL}/mage/main/mage" && mv mage ~/bin
-
 StepSection "Install create project (https://github.com/GrimLink/create-project)"
 bash -c "$(curl -LsS ${GIT_BASEURL}/create-project/main/install.sh)"
 

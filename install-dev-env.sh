@@ -27,6 +27,7 @@ fi
 runAction "Configuring Hyper.." hyper/setup
 runAction "Configuring NVM.." nvm/install
 runAction "Configuring Valet.." valet/setup
+runAction "Configuring Magento Tools.." magento/setup
 
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"
