@@ -37,6 +37,11 @@ alias chmox="chmod +x"
 # Get today's date
 alias today='date +"%A, %B %-d, %Y, Week: %V"'
 
+# Networking
+alias myip='dig @resolver4.opendns.com myip.opendns.com +short' 
+alias myip4='dig @resolver4.opendns.com myip.opendns.com +short -4'
+alias myip6='dig @resolver1.ipv6-sandbox.opendns.com AAAA myip.opendns.com +short -6'
+
 # Recursively delete `.DS_Store` files
 alias dscleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
