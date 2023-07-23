@@ -1,3 +1,9 @@
+---
+Site: 
+Updated: 2023-07-23
+---
+
+
 # Bin tools
 
 Some shell commands that I have made.
@@ -15,11 +21,9 @@ Alias & helper for bin/magento commands
 
 [For more info on mage, checkout the git repo.](https://github.com/GrimLink/mage)
 
-## copydot
+## editorconfig
 
-Copies formating files to your current folder.
-
-For what it can do run `copydot help`
+Create an editorconfig based on the type of project
 
 ## Git
 
