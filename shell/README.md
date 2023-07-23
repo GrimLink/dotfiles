@@ -1,3 +1,8 @@
+---
+Site: 
+Updated: 2023-07-23
+---
+
 # Bash
 
 All files are loaded via the terminal shell of choice.
@@ -39,8 +44,3 @@ Same as the aliases and functions but specific for some applications.
 If `~/.shell/extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
 You could also use extra to override settings, functions and aliases from my dotfiles repository. It’s probably better to fork this repository instead, though.
-
-## Need help or forgot a command
-
-If the bin command `cmds` is available.
-then you can view all commands by running `cmds`.
