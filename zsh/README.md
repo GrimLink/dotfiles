@@ -2,15 +2,6 @@
 
 This contains all the config I have used for my zsh setup.
 
-## Prompt
-
-This uses the [pure prompt from sindresorhus](https://github.com/sindresorhus/pure).
-
-## Syntax highlighting
-
-I am using the zsh-syntax-highlighting.
-Which looks nice but also really helps me type my command correct.
-
 ## Keybindings
 
 By default on macOS the terminal allows you to use `⌘ + →` to go to the end.

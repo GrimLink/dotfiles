@@ -56,18 +56,3 @@ function precmd () {
 
 # load completion
 autoload -Uz compinit && compinit
-
-# Set theme to Prompt theme
-# https://github.com/sindresorhus/pure
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-autoload -U promptinit; promptinit
-prompt pure
-
-# Load nvm
-NVM_LAZY_LOAD=true
-NVM_AUTO_USE=true
-[ -s "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh" ] && . "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh"
-
-# Load zsh-syntax-highlighting
-# I need to be last in this file to work
-[ -s "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && . "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

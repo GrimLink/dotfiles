@@ -29,7 +29,7 @@ runAction "Configuring bin.." bin/setup
 runAction "Configuring ssh.." git/ssh
 runAction "Configuring git.." git/setup
 runAction "Installing brew.." brew/install
-runAction "Installing zsh.." zsh/install
+runAction "Installing zsh.." zsh/setup
 
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"
