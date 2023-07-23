@@ -1,0 +1,32 @@
+[
+  {
+    "key": "cmd+shift+i",
+    "command": "editor.action.reindentlines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+shift+i",
+    "command": "editor.action.reindentselectedlines",
+    "when": "editorHasSelection && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "svg.showSvg",
+    "when": "editorTextFocus && editorLangId == 'svg'"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "markdown.showPreviewToSide",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  }
+]

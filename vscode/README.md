@@ -1,7 +1,25 @@
+---
+Site: https://code.visualstudio.com/
+Updated: 2023-07-23
+---
+
 # VSCode
 
-I have completely transitioned to using the native sync function for VScode.
+My VSCode settings are synced to the cloud, so I don't keep a local copy.
 
-While the following may not reflect my current configuration,
-as I update these files periodically,
-I will only reference certain elements found in my default config.
+I change my settings too often to keep a reliable backup.
+
+However, I do have a nice backup of all my snippets and keybindings.
+
+## CLI Options
+
+For all options see: https://code.visualstudio.com/docs/editor/command-line
+
+### Install Shell CMD (MacOS)
+
+```sh
+# Add Visual Studio Code (shell), manually
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+```
+
+For full docs see: https://code.visualstudio.com/docs/setup/mac

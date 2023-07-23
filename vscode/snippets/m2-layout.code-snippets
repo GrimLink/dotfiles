@@ -1,0 +1,56 @@
+{
+  "M2 Layout Page": {
+    "scope": "xml",
+    "prefix": "magento.layout.page",
+    "description": "new xml layout page",
+    "body": "<?xml version=\"1.0\"?>\n<page\n\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:noNamespaceSchemaLocation=\"urn:magento:framework:View/Layout/etc/page_configuration.xsd\"\n>\n\t$0\n</page>"
+  },
+  "M2 Layout Head": {
+    "scope": "xml",
+    "prefix": "magento.layout.head",
+    "description": "new xml layout head",
+    "body": "<head>\n\t$0\n</head>"
+  },
+  "M2 Layout Body": {
+    "scope": "xml",
+    "prefix": "magento.layout.body",
+    "description": "new xml layout body",
+    "body": "<body>\n\t$0\n</body>"
+  },
+  "M2 Layout Container": {
+    "scope": "xml",
+    "prefix": "magento.layout.container",
+    "description": "xml container",
+    "body": "<container name=\"$1\" htmlTag=\"$2\" htmlClass=\"$3\">\n\t$0\n</container>"
+  },
+  "M2 Layout Widget Container": {
+    "scope": "xml",
+    "prefix": "magento.layout.widget.container",
+    "description": "xml container",
+    "body": "<container name=\"$1\" label=\"$2\"/>"
+  },
+  "M2 Layout Block": {
+    "scope": "xml",
+    "prefix": "magento.layout.block",
+    "description": "xml block",
+    "body": "<block name=\"$2\" template=\"$3\"/>"
+  },
+  "M2 Layout Refrence": {
+    "scope": "xml",
+    "prefix": "magento.layout.reference",
+    "description": "reference xml block/container",
+    "body": "<reference${1|Block,Container|} name=\"$2\">\n\t$0\n</reference${1|Block,Container|}>"
+  },
+  "M2 Layout Move": {
+    "scope": "xml",
+    "prefix": "magento.xml.layout.move",
+    "description": "move xml block/container",
+    "body": "<move element=\"$1\" destination=\"$2\"/>"
+  },
+  "M2 Layout Remove": {
+    "scope": "xml",
+    "prefix": "magento.xml.layout.remove",
+    "description": "remove xml block/container",
+    "body": "<reference${1|Block,Container|} name=\"$2\" remove=\"true\"/>"
+  }
+}

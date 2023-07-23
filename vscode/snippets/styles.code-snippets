@@ -1,0 +1,32 @@
+{
+  "pseudo states": {
+    "scope": "css,postcss,less,scss",
+    "prefix": ":hov",
+    "body": "&:focus,\n&:hover {\n\t$1\n}",
+    "description": "Base focus pseudo states"
+  },
+  "pseudo elements": {
+    "scope": "css,postcss,less,scss",
+    "prefix": ":both",
+    "description": "Adding both before and after",
+    "body": "$1::before,\n$1::after {\n\tcontent: \"\";\n}"
+  },
+  "Position all": {
+    "scope": "css,postcss,less,scss",
+    "prefix": "position-all",
+    "description": "Position with all options",
+    "body": [
+      "position: ${1:absolute};",
+      "top: ${2:0};",
+      "right: ${2:0};",
+      "bottom: ${2:0};",
+      "left: ${2:0};"
+    ]
+  },
+  "background all": {
+    "scope": "css,postcss,less,scss",
+    "prefix": "background-all",
+    "description": "bg with all base options",
+    "body": "background: ${1:transparent} ${2:/* img */} ${3:center/contain} ${4:no-repeat};"
+  }
+}

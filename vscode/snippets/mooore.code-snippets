@@ -1,0 +1,40 @@
+{
+  "Mooore edit comment": {
+    "scope": "html",
+    "prefix": "mcomment-edit",
+    "description": "Adds Mooore change comment",
+    "body": "<?php /* EDIT ${1|Added,Removed,Replaced|}: ($2) */ ?>"
+  },
+  "Mooore added comment": {
+    "scope": "html",
+    "prefix": "mcomment-added",
+    "description": "Adds Mooore change(s) comment",
+    "body": [
+      "<?php /* BEGIN Added: ($1) */ ?>",
+      "$TM_SELECTED_TEXT",
+      "<?php /* END Added */ ?>"
+    ]
+  },
+  "Mooore removed comment": {
+    "scope": "html",
+    "prefix": "mcomment-removed",
+    "description": "Adds Mooore change(s) comment",
+    "body": [
+      "<?php /* BEGIN Removed: ($1) */ ?>",
+      "$TM_SELECTED_TEXT",
+      "<?php /* END Removed */ ?>"
+    ]
+  },
+  "Mooore replaced comment": {
+    "scope": "html",
+    "prefix": "mcomment-replaced",
+    "description": "Adds Mooore change(s) comment",
+    "body": [
+      "<?php /* BEGIN Replaced * / ?>",
+      "$TM_SELECTED_TEXT",
+      "<?php /* With: ($1) */ ?>",
+      "$2",
+      "<?php /* END Replaced */ ?>"
+    ]
+  }
+}
