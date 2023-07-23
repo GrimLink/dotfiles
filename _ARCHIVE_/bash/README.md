@@ -1,3 +1,8 @@
+---
+Site:
+Updated: 2023-07-23
+---
+
 # Bash
 
 This contains all the config I have used for my bash setup.
