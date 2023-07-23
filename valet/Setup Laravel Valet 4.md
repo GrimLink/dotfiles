@@ -18,6 +18,8 @@ ping -c1 mailhog.test # mailhog
 
 ## Database
 
+<!-- https://sqlpad.io/tutorial/mysql-install-mac/ -->
+
 Create in DBngin a mysql 5.7 service; with;
 - name = mysql57
 - port = 3306
@@ -36,7 +38,7 @@ brew install --cask sequel-ace
 Run in tableplus in sql query the following;
 
 ```sql
-ALTER USER ‘root’@’localhost’ IDENTIFIED BY ‘root’;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 FLUSH PRIVILEGES;
 ```
 
