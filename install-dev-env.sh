@@ -26,6 +26,7 @@ fi
 
 runAction "Configuring Hyper.." hyper/setup
 runAction "Configuring NVM.." nvm/install
+runAction "Installing Valet.." valet/install
 runAction "Configuring Valet.." valet/setup
 runAction "Configuring Magento Tools.." magento/setup
 
