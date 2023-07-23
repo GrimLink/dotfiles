@@ -1,7 +1,7 @@
 ---
 Site: https://laravel.com/docs/valet
 Updated: 2023-07-23
-Requires: [php, composer]
+Requires: [brew, php, composer]
 ---
 
 # Laravel
