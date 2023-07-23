@@ -4,7 +4,9 @@ RESET='\033[0m'
 GREEN='\033[1;32m'
 GIT_BASEURL="https://raw.githubusercontent.com/GrimLink"
 
-function StepSection() { echo -e "${GREEN}$@${RESET}" }
+function StepSection() {
+  echo -e "${GREEN}$@${RESET}"
+}
 
 # Make sure there is a bin folder
 if [ ! -d ~/bin ]; then

@@ -5,8 +5,13 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GIT_EMAIL="$(git config --global --get user.email)"
 
-function StepSection() { echo -e "${GREEN}$@${RESET}" }
-function ErrorSection() { echo -e "${RED}$@${RESET}" }
+function StepSection() {
+    echo -e "${GREEN}$@${RESET}"
+}
+
+function ErrorSection() {
+    echo -e "${RED}$@${RESET}"
+}
 
 if [ -n "$GIT_EMAIL" ]; then
     if [[ ! -f ~/.ssh/id_rsa ]]; then

@@ -5,7 +5,9 @@ GREEN='\033[1;32m'
 GIT_NAME="$(git config --global --get user.name)"
 GIT_EMAIL="$(git config --global --get user.email)"
 
-function StepSection() { echo -e "${GREEN}$@${RESET}" }
+function StepSection() {
+  echo -e "${GREEN}$@${RESET}"
+}
 
 StepSection "Syncing global gitignore to the local user folder"
 rsync -avh --no-perms "$(dirname "${BASH_SOURCE}")/.gitignore" ~

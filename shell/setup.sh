@@ -3,7 +3,9 @@
 RESET='\033[0m'
 GREEN='\033[1;32m'
 
-function StepSection() { echo -e "${GREEN}$@${RESET}" }
+function StepSection() {
+  echo -e "${GREEN}$@${RESET}"
+}
 
 # Make sure there is a shell folder
 if [ ! -d $HOME/.shell ]; then
