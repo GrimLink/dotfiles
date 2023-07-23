@@ -9,6 +9,9 @@ brew install --cask discord
 brew install --cask signal
 brew install --cask whatsapp
 
+# Webcam
+brew install --cask ankerwork
+
 # Utils
 brew install --cask android-file-transfer
 brew install --cask imageoptim
@@ -21,8 +24,6 @@ brew install --cask microsoft-edge
 brew install --cask firefox
 brew install --cask brave-browser
 
-# Direct dowmloads, requires manual installation
+# Direct downloads, requires manual installation
 echo "Opening Manual downloads"
-open http://www.getmiro.com/download/for-osx/
 open https://www.rode.com/software/rode-connect
-open https://us.anker.com/pages/download-software
