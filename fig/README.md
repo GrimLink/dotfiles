@@ -1,6 +1,9 @@
-# Fig CLI
-
+---
 Site: https://fig.io/
+Updated: 2023-07-23
+---
+
+# Fig CLI
 
 Traditionally, I manage my Zsh plugins in the .zshrc file.
 
