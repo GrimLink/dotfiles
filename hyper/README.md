@@ -1,3 +1,8 @@
+---
+Site: https://hyper.is/
+Updated: 2023-07-23
+---
+
 # Hyper
 
 This contains all my personal Hyper settings and preferred extensions.

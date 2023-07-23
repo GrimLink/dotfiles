@@ -6,7 +6,7 @@ module.exports = {
   config: {
     updateChannel: "stable",
     fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-    fontSize: 15,
+    fontSize: 16,
     padding: "12px 14px",
     bell: false,
     quickEdit: true,
