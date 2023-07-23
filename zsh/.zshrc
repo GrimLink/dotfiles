@@ -70,4 +70,4 @@ NVM_AUTO_USE=true
 
 # Load zsh-syntax-highlighting
 # I need to be last in this file to work
-[ -s "$HOME/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh" ] && . "$HOME/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh"
+[ -s "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && . "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
