@@ -1,10 +1,25 @@
 #!/bin/bash
 
+# This is inspired by;
+# - https://github.com/mathiasbynens/dotfiles
+# - https://github.com/alrra/dotfiles
+#
+# But I am only using what I feel, I need to use
+
 RESET='\033[0m'
 GREEN='\033[1;32m'
 
 function StepSection() {
   echo -e "${GREEN}$@${RESET}"
+}
+
+# Define helper for running each script
+function runAction() {
+  echo -e "\n${GREEN}$1${RESET}"
+
+  if ! bash $(dirname "${BASH_SOURCE}")/$2.sh; then
+    echo -e "${BOLD}${RED}Error: Failed to configure ${2}${RESET}"
+  fi
 }
 
 # Close any open System Preferences panes, to prevent them from overriding
@@ -25,7 +40,13 @@ fi
 StepSection "Creating the Developer folder for all you developer projects"
 mkdir -p $HOME/Developer
 
-# TODO set macos settings here
-StepSection "Settings System settings"
-StepSection "Settings Finder settings"
-StepSection "Settings Safari Settings, for development"
+StepSection "Cleaning Dock from all defealt icons"
+defaults write com.apple.dock persistent-apps -array
+
+runAction "Settings System settings" system
+runAction "Settings Finder settings" finder
+runAction "Settings Dock settings" dock
+runAction "Settings Input settings, Trackpad, Mouse, etc.." input
+runAction "Settings App Settings" apps
+runAction "Settings Safari Settings, for development" safari
+runAction "Settings Terminal Settings" terminal

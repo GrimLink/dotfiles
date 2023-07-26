@@ -24,6 +24,7 @@ if ! xcode-select -p 1>/dev/null; then
   read -p "When Ready, press any key to continue" -n 1 && echo ""
 fi
 
+runAction "Configuring mac.." macos/install
 runAction "Configuring shell.." shell/setup
 runAction "Configuring bin.." bin/setup
 runAction "Configuring ssh.." git/ssh
