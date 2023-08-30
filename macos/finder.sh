@@ -6,8 +6,8 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Show Status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Use full POSIX path as window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# Use full POSIX path as window title (I don't like this one, but keeping this, if needed)
+# defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Use list view in all Finder windows by default
 defaults write com.apple.finder FXPreferredViewStyle -string 'Nlsv'
