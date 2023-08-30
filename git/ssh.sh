@@ -28,7 +28,7 @@ if [ -n "$GIT_EMAIL" ]; then
         echo "Host *" >>~/.ssh/config &&
         echo "  AddKeysToAgent yes" >>~/.ssh/config &&
         echo "  UseKeychain yes" >>~/.ssh/config &&
-        echo "  IdentityFile ~/.ssh/id_rsa" >>~/.ssh/config &&
+        echo "  IdentityFile ~/.ssh/id_rsa" >>~/.ssh/config
     fi
 else
     ErrorSection "No git config found! Skipped ssh setup step"
