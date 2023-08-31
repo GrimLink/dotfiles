@@ -24,10 +24,9 @@ if ! xcode-select -p 1>/dev/null; then
   read -p "When Ready, press any key to continue" -n 1 && echo ""
 fi
 
-runAction "Configuring git.." git/setup
-runAction "Configuring ssh.." git/ssh
-runAction "Installing brew.." brew/install
-runAction "Installing zsh.." zsh/setup
+runAction "Configuring mac.." macos/install
+runAction "Configuring shell.." shell/setup
+runAction "Configuring bin.." bin/setup
 
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"

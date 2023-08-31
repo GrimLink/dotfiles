@@ -8,6 +8,9 @@
 	branches = branch -a
 	remotes = remote -v
 
+	# Co-commit (TODO test)
+	# co-commit = !"git commit -m $1 -m 'Co-authored-by: $2'"
+
 	# Usefull checkes on specific tasks
 	overview = lg --all --no-merges --since='2 weeks'
 	recap = !"git lg --all --no-merges --author=$(git config user.email)"
