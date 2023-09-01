@@ -12,9 +12,12 @@ brew install --cask whatsapp
 # Webcam
 brew install --cask ankerwork
 
+# Image editors and tools
+brew install --cask figma
+brew install --cask imageoptim
+
 # Utils
 brew install --cask android-file-transfer
-brew install --cask imageoptim
 brew install --cask appcleaner
 brew install --cask keka
 
