@@ -42,7 +42,8 @@ StepSection "Setting sudo mode for Brew and Valet"
 valet trust
 
 StepSection "Setup Database"
-brew install mysql &&
-brew services start mysql &&
+
+brew install mysql@8.0 && \
+brew services start mysql@8.0 && \
 mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
 

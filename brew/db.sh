@@ -1,10 +1,10 @@
 #!/bin/bash
 
-brew install redis &&
-brew services start redis;
+brew install redis && \
+brew services start redis
 
-brew install opensearch &&
-brew services start opensearch;
+brew install opensearch && \
+brew services start opensearch
 
 # Utilities
 brew install --cask dbngin
