@@ -2,6 +2,7 @@
 
 RESET='\033[0m'
 GREEN='\033[1;32m'
+RED='\033[0;31m'
 
 function StepSection() {
   echo -e "${GREEN}$@${RESET}"
@@ -42,6 +43,15 @@ StepSection "Setting sudo mode for Brew and Valet"
 valet trust
 
 StepSection "Setup Database"
+
+# Check if '/opt/homebrew/var/mysql' excits,
+# may trow installations errors if present
+if [[ -d "/opt/homebrew/var/mysql" ]]; then
+  echo -e "${RED}The folder '/opt/homebrew/var/mysql' is found!${RESET}"
+  echo "Please remove this folder before continuing."
+  read -rsn1 -p "When ready, press any key to continue"
+  echo ""
+fi
 
 brew install mysql@8.0 && \
 brew services start mysql@8.0 && \
