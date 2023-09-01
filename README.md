@@ -1,56 +1,40 @@
-# Dotfiles
+# Dotfiles: Developer's Setup
 
-My DEV setup.
-Containing things like the Shell, MacOS config, Valet Plus and more..
+Welcome to my developer setup dotfiles repository.
 
-> :warning: These are my personal settings.
-> Don't run the scripts without understanding what the code does.
+Here, you'll find a curated collection of configurations and settings tailored to enhance your development environment.
 
-## Setup
+This repository encompasses various aspects, including Shell configurations, MacOS settings, Laravel Valet setup, and more.
 
-You can download or clone the repository wherever you want.
+> :warning: Please exercise caution when using these dotfiles.
+>
+> They are configured to match my personal preferences,
+> and it's crucial to understand the code before executing any scripts to avoid unintended consequences.
 
-_I like to keep it in `~/dotfiles`._
+## Getting Started
 
-<!-- ```bash
-bash -c "$(curl -LsS https://raw.githubusercontent.com/GrimLink/dotfiles/main/get.sh)"
-``` -->
+To get started, you have two options:
 
-<!-- ## Install
+- [Download the repository as a zip archive](https://github.com/GrimLink/dotfiles/archive/refs/heads/main.zip)
+- Clone the repository to your preferred location. I typically use `~/dotfiles`.
 
-If it is your first install.
-Run the `install.sh` script.
+## What's Inside
 
-```bash
-./dotfiles/install.sh
-```
+Each folder within this repository is accompanied by a detailed README file,
+providing insights into the specific configurations and settings it contains.
 
-Follow the steps for each script, that is called via the install script.
+Feel free to explore and adapt them to suit your development needs.
 
-_Use the flag `--force` or `-f` to skip the questions for each config_ -->
+## Inspirations and Acknowledgments
 
-<!-- ## Sync
+I'd like to acknowledge the following individuals and projects that have inspired or contributed to the development of these dotfiles:
 
-`sync.sh` updates the dotfiles and resync the config files.
+- [Mathias Bynens' Dotfiles](https://github.com/mathiasbynens/dotfiles)
+- [Nicolas Gallagher's Dotfiles](https://github.com/necolas/dotfiles)
+- [Paul Irish's Dotfiles](https://github.com/paulirish/dotfiles)
+- [Andreas Larsen's Dotfiles](https://github.com/alrra/dotfiles)
+- [Sindre Sorhus' Pure Prompt](https://github.com/sindresorhus/pure)
+- [Robert Cooper's Blog Article on Zsh Setup with Hyper Terminal](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
+- All the contributors who have provided patches and valuable suggestions.
 
-The sync will not re-download apps 
-
-```bash
-./dotfiles/sync.sh
-```
-
-_Use the flag `--force` or `-f` to skip the questions for each config_ -->
-
-## Whats in the box
-
-Each folder contains a readme with details on each config
-
-## Insparation and Thanks to…
-
-- [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
-- [necolas/dotfiles](https://github.com/necolas/dotfiles)
-- [paulirish/dotfiles](https://github.com/paulirish/dotfiles)
-- [alrra/dotfiles](https://github.com/alrra/dotfiles)
-- [sindresorhus/pure](https://github.com/sindresorhus/pure)
-- [Robert Cooper's Blog article on his zsh setup with hyper](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
-- Anyone who contributed a patch or made a helpful suggestion
+Thank you for exploring my dotfiles. I hope you find them beneficial in enhancing your development environment.
