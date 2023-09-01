@@ -26,6 +26,9 @@ else
   echo "✅ composer"
 fi
 
+# Make sure composer is compatible with Magento 2.4.6
+composer self-update --2.2
+
 # Install step
 StepSection "Installing valet"
 composer global require laravel/valet
