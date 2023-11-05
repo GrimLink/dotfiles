@@ -1,6 +1,6 @@
 ---
 Site: https://developer.adobe.com/open/magento
-Updated: 2023-10-05
+Updated: 2023-11-05
 ---
 
 # Magento2/Mage-OS
