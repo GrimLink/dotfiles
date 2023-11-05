@@ -27,7 +27,7 @@ else
   echo "✅ composer"
 fi
 
-# Make sure composer is compatible with Magento 2.4.6
+# Make sure composer is compatible with Magento2
 composer self-update --2.2
 
 # Install step
@@ -53,7 +53,12 @@ if [[ -d "/opt/homebrew/var/mysql" ]]; then
   echo ""
 fi
 
+# Mysql install version 8.0 for compatiblity with Magento2
 brew install mysql@8.0 && \
+echo 'export PATH="/usr/local/opt/mysql@8.0/bin:$PATH"' >> ~/.shell/extra && \
 brew services start mysql@8.0 && \
+eval "$(/usr/local/opt/mysql@8.0/bin/mysql shellenv)" && \
 mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
 
+# Make sure PHP is compatible with Magento2
+valet use php@8.1
