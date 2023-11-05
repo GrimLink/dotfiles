@@ -27,8 +27,11 @@ fi
 echo -e "\n${GREEN}Installing homebrew (https://brew.sh/)${RESET}"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Add custom bin path if Homebrrew is installed in 'opt'
+if [[ -d /opt/homebrew ]]; then
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 runAction "Installing node" node
 runAction "Installing php" php
