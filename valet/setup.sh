@@ -16,13 +16,13 @@ valet proxy opensearch http://localhost:9200 --secure
 DIR_BASE="$HOME/Developer"
 
 DIR_M2="$DIR_BASE/magento"
-if [ -d "$DIR_M2" ]; then
+if [ ! -d "$DIR_M2" ]; then
   mkdir -p $DIR_M2
   valet park $DIR_M2
 fi
 
 DIR_WP="$DIR_BASE/wordpress"
-if [ -d "$DIR_WP" ]; then
+if [ ! -d "$DIR_WP" ]; then
   mkdir -p $DIR_WP
   valet park $DIR_WP
 fi
