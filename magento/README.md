@@ -7,7 +7,7 @@ Updated: 2023-10-05
 
 This adds some additional tools for [Magento2]/[Mage-OS].
 
-Mainly adding my own script [mage](https://github.com/GrimLink/mage) for what ameg adds please see the repo at 
+Mainly adding my own script [mage](https://github.com/GrimLink/mage), for what mage adds please see the repo at https://github.com/GrimLink/mage
 
 It also adds:
 
