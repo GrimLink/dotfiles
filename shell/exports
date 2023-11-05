@@ -17,5 +17,6 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Homebrew
+export PATH=/opt/homebrew/bin:$PATH
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_UPDATE_REPORT_ONLY_INSTALLED=1
