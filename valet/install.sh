@@ -53,7 +53,7 @@ if [[ -d "/opt/homebrew/var/mysql" ]]; then
   echo ""
 fi
 
-# Mysql install version 8.0 for compatiblity with Magento2
+# Install Mysql v8.0 for compatiblity with Magento2
 brew install mysql@8.0 && \
 echo 'export PATH="/usr/local/opt/mysql@8.0/bin:$PATH"' >> ~/.shell/extra && \
 brew services start mysql@8.0 && \
