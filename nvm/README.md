@@ -7,7 +7,7 @@ Updated: 2023-10-05
 
 This only runs a few setup steps for NVM
 
-Make sure to isntall, using one of the options found at:
+Make sure to install, using one of the options found at:
 
 - [NVM](https://github.com/nvm-sh/nvm#installing-and-updating)
 - [NVM ZSH](https://github.com/lukechilds/zsh-nvm#install)
