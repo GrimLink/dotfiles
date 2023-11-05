@@ -28,7 +28,7 @@ To get started, follow the following steps:
     * brew/install
     * zsh/setup
 5. Restart your system to let all settings take effect
-6. Now you can run the second install script dev-env, using: `./dotfiles/install-system.sh`,
+6. Now you can run the second install script dev-env, using: `./dotfiles/install-dev-env.sh`,
    this will run the following scripts:
     * hyper/setup
     * nvm/install,
