@@ -20,22 +20,22 @@ To get started, follow the following steps:
 3. Make sure your in your root user folder, e.g. `~` or `$HOME`
 4. First run the system script, using: `./dotfiles/install-system.sh`,
    this will run the following scripts:
-    * macos/install
-    * shell/setup
-    * bin/setup
-    * git/setup
-    * git/ssh
-    * brew/install
-    * zsh/setup
+    * [macos/install](./macos/)
+    * [shell/setup](./shell/)
+    * [bin/setup](./bin/)
+    * [git/setup](./git/)
+    * [git/ssh](./git/)
+    * [brew/install](./brew/)
+    * [zsh/setup](./zsh/)
 5. Restart your system to let all settings take effect
 6. Now you can run the second install script dev-env, using: `./dotfiles/install-dev-env.sh`,
    this will run the following scripts:
-    * hyper/setup
-    * nvm/install,
+    * [hyper/setup](./hyper/)
+    * [nvm/install](./nvm/),
       this requires nvm to be installed, I use **fig** for this
-    * valet/install
-    * valet/setup
-    * magento/setup
+    * [valet/install](./valet/)
+    * [valet/setup](./valet/)
+    * [magento/setup](./magento/)
 
 
 ## What's Inside
