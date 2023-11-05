@@ -20,22 +20,22 @@ To get started, follow the following steps:
 3. Make sure your in your root user folder, e.g. `~` or `$HOME`
 4. First run the system script, using: `./dotfiles/install-system.sh`,
    this will run the following scripts:
-    * [macos/install](./macos/)
-    * [shell/setup](./shell/)
-    * [bin/setup](./bin/)
-    * [git/setup](./git/)
-    * [git/ssh](./git/)
-    * [brew/install](./brew/)
-    * [zsh/setup](./zsh/)
+    - [macos/install](./macos/)
+    - [shell/setup](./shell/)
+    - [bin/setup](./bin/)
+    - [git/setup](./git/)
+    - [git/ssh](./git/)
+    - [brew/install](./brew/)
+    - [zsh/setup](./zsh/)
 5. Restart your system to let all settings take effect
 6. Now you can run the second install script dev-env, using: `./dotfiles/install-dev-env.sh`,
    this will run the following scripts:
-    * [hyper/setup](./hyper/)
-    * [nvm/install](./nvm/),
+    - [hyper/setup](./hyper/)
+    - [nvm/install](./nvm/),
       this requires nvm to be installed, I use **fig** for this
-    * [valet/install](./valet/)
-    * [valet/setup](./valet/)
-    * [magento/setup](./magento/)
+    - [valet/install](./valet/)
+    - [valet/setup](./valet/)
+    - [magento/setup](./magento/)
 
 
 ## What's Inside
@@ -49,12 +49,12 @@ Feel free to explore and adapt them to suit your development needs.
 
 I'd like to acknowledge the following individuals and projects that have inspired or contributed to the development of these dotfiles:
 
-* [Mathias Bynens' Dotfiles](https://github.com/mathiasbynens/dotfiles)
-* [Nicolas Gallagher's Dotfiles](https://github.com/necolas/dotfiles)
-* [Paul Irish's Dotfiles](https://github.com/paulirish/dotfiles)
-* [Andreas Larsen's Dotfiles](https://github.com/alrra/dotfiles)
-* [Sindre Sorhus' Pure Prompt](https://github.com/sindresorhus/pure)
-* [Robert Cooper's Blog Article on Zsh Setup with Hyper Terminal](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
-* All the contributors who have provided patches and valuable suggestions.
+- [Mathias Bynens' Dotfiles](https://github.com/mathiasbynens/dotfiles)
+- [Nicolas Gallagher's Dotfiles](https://github.com/necolas/dotfiles)
+- [Paul Irish's Dotfiles](https://github.com/paulirish/dotfiles)
+- [Andreas Larsen's Dotfiles](https://github.com/alrra/dotfiles)
+- [Sindre Sorhus' Pure Prompt](https://github.com/sindresorhus/pure)
+- [Robert Cooper's Blog Article on Zsh Setup with Hyper Terminal](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
+- All the contributors who have provided patches and valuable suggestions.
 
 Thank you for exploring my dotfiles. I hope you find them beneficial in enhancing your development environment.
