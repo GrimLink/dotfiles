@@ -1,9 +1,9 @@
 ---
-Site: https://github.com/magento/magento2
+Site: https://developer.adobe.com/open/magento
 Updated: 2023-10-05
 ---
 
-# [Magento2]/[Mage-OS]
+# Magento2/Mage-OS
 
 This adds some additional tools for [Magento2]/[Mage-OS].
 
