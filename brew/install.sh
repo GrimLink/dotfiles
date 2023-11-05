@@ -31,6 +31,8 @@ echo -e "\n${GREEN}Installing homebrew (https://brew.sh/)${RESET}"
 if [[ -d /opt/homebrew ]]; then
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 runAction "Installing node" node
