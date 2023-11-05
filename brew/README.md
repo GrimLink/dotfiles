@@ -12,3 +12,14 @@ Most tools and apps I use, can be found in this folder, and they are installed u
 I find Homebrew to be a very easy-to-use and reliable package manager. It has a wide range of packages available, and it is constantly being updated with new packages.
 
 I highly recommend Homebrew to anyone who is looking for a way to manage their software on macOS.
+
+## Whats inside
+
+Pease see each file for what is added.
+
+### Dev
+
+Dev also adds framework specific tools for;
+
+- Wordpress
+- Shopware
