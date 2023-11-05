@@ -8,6 +8,16 @@ function StepSection() {
 }
 
 StepSection "Setting nvm defaults"
-mkdir $HOME/.nvm
-nvm alias default system
-nvm install --lts
+
+if ! command -v nvm &> /dev/null; then
+  echo "Let's make sure fig is running"
+  fig source
+fi
+
+if ! command -v nvm &> /dev/null; then
+  echo "NVM is missing please rerun this script, when nvm is installed"
+else
+  mkdir $HOME/.nvm
+  nvm alias default system
+  nvm install --lts
+fi
