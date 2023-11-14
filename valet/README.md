@@ -39,13 +39,13 @@ I chose to set up the database manually, which is the option that is run by the 
 1. Install MySQL with Homebrew:
 
 ```sh
-brew install mysql
+brew install mysql@8.0
 ```
 
 2. Start MySQL:
 
 ```sh
-brew services start mysql
+brew services start mysql@8.0
 ```
 
 3. Set the MySQL password:

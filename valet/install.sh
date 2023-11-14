@@ -57,8 +57,7 @@ fi
 brew install mysql@8.0 && \
 echo 'export PATH="/usr/local/opt/mysql@8.0/bin:$PATH"' >> ~/.shell/extra && \
 brew services start mysql@8.0 && \
-eval "$(/usr/local/opt/mysql@8.0/bin/mysql shellenv)" && \
-mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
+/usr/local/opt/mysql@8.0/bin/mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
 
 # Make sure PHP is compatible with Magento2
 valet use php@8.1
