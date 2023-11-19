@@ -42,6 +42,10 @@ ping -c1 localhost.test
 StepSection "Setting sudo mode for Brew and Valet"
 valet trust
 
+# https://github.com/laravel/valet/discussions/1127#discussioncomment-1748638
+# https://nodejs.org/api/cli.html#node_extra_ca_certsfile
+echo 'export NODE_EXTRA_CA_CERTS="$HOME/.config/valet/CA/LaravelValetCASelfSigned.pem"' >> ~/.shell/extra
+
 StepSection "Setup Database"
 
 # Check if '/opt/homebrew/var/mysql' excits,
