@@ -20,6 +20,8 @@ brew install --cask imageoptim
 brew install --cask android-file-transfer
 brew install --cask appcleaner
 brew install --cask keka
+brew tap localsend/localsend
+brew install localsend
 
 # browsers
 brew install --cask google-chrome
