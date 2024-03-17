@@ -70,7 +70,8 @@ unset file
 # Load nvm
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
-[ -s "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh" ] && . "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh"
+zsh_nvm_path="$HOME/.zsh/nvm/zsh-nvm.plugin.zsh"
+[ -s "$zsh_nvm_path" ] && . "$zsh_nvm_path"
 
 # Load zsh-syntax-highlighting
 # I need to be last in this file to work
