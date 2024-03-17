@@ -10,11 +10,6 @@ function StepSection() {
 StepSection "Setting nvm defaults"
 
 if ! command -v nvm &> /dev/null; then
-  echo "Let's make sure fig is running"
-  fig source
-fi
-
-if ! command -v nvm &> /dev/null; then
   echo "NVM is missing please rerun this script, when nvm is installed"
 else
   mkdir $HOME/.nvm
