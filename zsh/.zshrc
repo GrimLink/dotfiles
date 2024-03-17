@@ -1,3 +1,5 @@
+brew_prefix=$(brew --prefix);
+
 # History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
@@ -44,7 +46,12 @@ function precmd () {
 autoload -Uz compinit && compinit
 
 # Load zsh plugins
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
+fpath+=("$brew_prefix/share/zsh/site-functions")
+
+# Set theme to Prompt theme
+# https://github.com/sindresorhus/pure
+autoload -U promptinit; promptinit
+prompt pure
 
 # Load all shell files from the ~/.shell folder
 LOAD_SETTINGS=(
@@ -67,5 +74,5 @@ export NVM_AUTO_USE=true
 
 # Load zsh-syntax-highlighting
 # I need to be last in this file to work
-zsh_syntax_highlighter_path="/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+zsh_syntax_highlighter_path="$brew_prefix/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [ -s "$zsh_syntax_highlighter_path" ] && . "$zsh_syntax_highlighter_path"
