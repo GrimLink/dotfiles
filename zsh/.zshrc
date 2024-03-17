@@ -33,6 +33,19 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 # list with colors
 zstyle ':completion:*' list-colors ''x
 
+# Uses the zsh precmd function hook to set the tab title
+# to the current working directory before each prompt
+function precmd () {
+  window_title="\\033]0;${PWD##*/}\\007"
+  echo -ne "$window_title"
+}
+
+# Load completion
+autoload -Uz compinit && compinit
+
+# Load zsh plugins
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+
 # Load all shell files from the ~/.shell folder
 LOAD_SETTINGS=(
   ~/.shell/aliases
@@ -47,12 +60,12 @@ for file in ${LOAD_SETTINGS[@]}; do
 done
 unset file
 
-# Uses the zsh precmd function hook to set the tab title
-# to the current working directory before each prompt
-function precmd () {
-  window_title="\\033]0;${PWD##*/}\\007"
-  echo -ne "$window_title"
-}
+# Load nvm
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+[ -s "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh" ] && . "$HOME/.zsh/nvm/zsh-nvm.plugin.zsh"
 
-# load completion
-autoload -Uz compinit && compinit
+# Load zsh-syntax-highlighting
+# I need to be last in this file to work
+zsh_syntax_highlighter_path="/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[ -s "$zsh_syntax_highlighter_path" ] && . "$zsh_syntax_highlighter_path"

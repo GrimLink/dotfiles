@@ -8,7 +8,6 @@ function StepSection() {
 }
 
 StepSection "Setting nvm defaults"
-
 if ! command -v nvm &> /dev/null; then
   echo "NVM is missing please rerun this script, when nvm is installed"
 else
