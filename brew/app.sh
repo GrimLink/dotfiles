@@ -15,6 +15,7 @@ brew install --cask ankerwork
 # Image editors and tools
 brew install --cask figma
 brew install --cask imageoptim
+brew install --cask ray
 
 # Utils
 brew install --cask android-file-transfer
