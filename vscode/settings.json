@@ -1,0 +1,165 @@
+// Snapshot of VS Code settings. Normally synced, but included here for sharing.
+// Last Updated: 2025-02-15
+
+{
+  // Cleanup UI
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "trailing",
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+  "workbench.sideBar.location": "right",
+  "workbench.tips.enabled": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "extensions.ignoreRecommendations": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "liveshare.showInStatusBar": "whileCollaborating",
+
+  // Disable A11Y support,
+  // I use the native device A11Y tools for testing and don't need this also here
+  "editor.accessibilitySupport": "off",
+
+  // Security
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.promptForLocalFileProtocolHandling": false,
+  "settingsSync.ignoredSettings": ["remote.SSH.configFile"],
+  "redhat.telemetry.enabled": false,
+  "remoteHub.commitDirectlyWarning": "off",
+
+  // Appearance
+  "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "material-icon-theme.folders.theme": "classic",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "zenMode.fullScreen": false,
+  "presentationMode.zoomLevel": 3,
+
+  // Autocomplete
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.hover.delay": 1000,
+  "editor.quickSuggestionsDelay": 500,
+  "explorer.openEditors.visible": 1,
+  "cssvar.files": ["./node_modules/@fylgja/**/*.css"],
+  "cssvar.ignore": [],
+  "somesass.scss.completion.suggestFromUseOnly": true,
+  "somesass.sass.completion.suggestFromUseOnly": true,
+
+  // Language Settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveWhenNoErrors": true,
+  "html.format.indentInnerHtml": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "postcss", "scss", "html", "svelte", "astro"],
+  "php.suggest.basic": false,
+  "intelephense.format.enable": true,
+  "emmet.syntaxProfiles": { "postcss": "css" },
+  "emmet.includeLanguages": {
+    "vue": "html",
+    "njk": "html",
+    "twig": "html",
+    "nunjucks": "html",
+    "liquid": "html",
+    "postcss": "css"
+  },
+  "files.associations": {
+    "*.vue": "html",
+    "*.twig": "html",
+    "*.njk": "html",
+    ".valetrc": "gitconfig"
+  },
+  // Fix the weird new default behavior
+  // @source:https://github.com/microsoft/vscode/issues/239834
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
+  "xml.validation.enabled": false,
+  "xml.format.preserveAttributeLineBreaks": true,
+  "xml.format.spaceBeforeEmptyCloseTag": false,
+  "xml.format.preserveSpace": [
+    "xsl:text",
+    "xsl:comment",
+    "xsl:processing-instruction",
+    "literallayout",
+    "programlisting",
+    "screen",
+    "synopsis",
+    "pre",
+    "xd:pre",
+    "argument"
+  ],
+  "xml.format.maxLineWidth": 140,
+  "css.enabledLanguages": [
+    "html",
+    "php",
+    "astro",
+    "vue",
+    "njk",
+    "twig",
+    "nunjucks",
+    "liquid"
+  ],
+  "svelte.ask-to-enable-ts-plugin": false,
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.toc.updateOnSave": false,
+  "[html][php][astro][xml]": {
+    "editor.linkedEditing": true
+  },
+  "[xml][csv][yaml][plaintext]": {
+    "editor.wordWrap": "off"
+  },
+  "[php]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
+    "files.insertFinalNewline": true
+  },
+  "[markdown]": { "editor.defaultFormatter": "yzhang.markdown-all-in-one" },
+  "[svg]": { "editor.defaultFormatter": "jock.svg" },
+  "[astro]": { "editor.defaultFormatter": "astro-build.astro-vscode" },
+
+  // Terminal
+  "terminal.integrated.fontSize": 15,
+
+  // Git
+  "diffEditor.ignoreTrimWhitespace": true,
+  "git.allowForcePush": true,
+  "git.allowNoVerifyCommit": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "github.gitProtocol": "ssh",
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": true,
+
+  // Translations
+  "cSpell.suggestionMenuType": "quickFix",
+  "cSpell.allowCompoundWords": true,
+  "cSpell.userWords": [
+    "addto",
+    "astro",
+    "configurator",
+    "Fylgja",
+    "Hyva",
+    "Hyvä",
+    "hyvaicons",
+    "Magento",
+    "oklch",
+    "phpcs",
+    "rebeccapurple",
+    "Skus",
+    "uenc",
+    "unminified"
+  ]
+}
