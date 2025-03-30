@@ -24,7 +24,7 @@ if ! xcode-select -p 1>/dev/null; then
   read -p "When Ready, press any key to continue" -n 1 && echo ""
 fi
 
-runAction "Configuring Hyper.." hyper/setup
+runAction "Configuring ghostty.." ghostty/setup
 runAction "Configuring NVM.." nvm/install
 runAction "Installing Valet.." valet/install
 runAction "Configuring Valet.." valet/setup

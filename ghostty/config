@@ -1,0 +1,17 @@
+# For all settings see: https://ghostty.org/docs/config
+
+theme = Snazzy Soft
+
+window-colorspace = display-p3
+window-padding-y = 12
+window-padding-x = 14
+
+font-family = "Menlo"
+font-size = 16
+font-thicken = true
+
+working-directory = /Users/grimlink/Developer
+quit-after-last-window-closed = true
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
