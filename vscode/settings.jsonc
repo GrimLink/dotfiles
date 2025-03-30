@@ -1,19 +1,21 @@
 // Snapshot of VS Code settings. Normally synced, but included here for sharing.
-// Last Updated: 2025-02-15
+// Last Updated: 2025-03-30
 
 {
   // Cleanup UI
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "trailing",
+  "editor.snippetSuggestions": "top",
+  "workbench.activityBar.location": "top",
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.sideBar.location": "right",
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "none",
+  "workbench.editor.showTabs": "none",
   "extensions.ignoreRecommendations": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "liveshare.showInStatusBar": "whileCollaborating",
 
   // Disable A11Y support,
   // I use the native device A11Y tools for testing and don't need this also here
@@ -28,15 +30,10 @@
 
   // Appearance
   "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 16,
-  "material-icon-theme.folders.theme": "classic",
+  "editor.fontSize": 18,
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "GitHub Dark Default",
-  "window.autoDetectColorScheme": true,
-  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
-  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
-  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "material-icon-theme.folders.theme": "classic",
   "zenMode.fullScreen": false,
   "presentationMode.zoomLevel": 3,
 
@@ -132,6 +129,7 @@
 
   // Terminal
   "terminal.integrated.fontSize": 15,
+  "terminal.integrated.suggest.enabled": true,
 
   // Git
   "diffEditor.ignoreTrimWhitespace": true,
@@ -143,9 +141,17 @@
   "git.blame.editorDecoration.enabled": true,
   "git.blame.statusBarItem.enabled": true,
 
+  // Screenshots
+  "codesnap.transparentBackground": true,
+  "codesnap.shutterAction": "copy",
+  "codesnap.boxShadow": "none",
+
   // Translations
   "cSpell.suggestionMenuType": "quickFix",
   "cSpell.allowCompoundWords": true,
+  "cSpell.enabledFileTypes": {
+    "svg": false
+  },
   "cSpell.userWords": [
     "addto",
     "astro",

@@ -1,0 +1,25 @@
+// Snapshot of VS Code keybinding. Normally synced, but included here for sharing.
+// Last Updated: 2025-03-30
+
+[
+  {
+    "key": "cmd+shift+i",
+    "command": "editor.action.reindentlines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+shift+i",
+    "command": "editor.action.reindentselectedlines",
+    "when": "editorHasSelection && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  }
+]

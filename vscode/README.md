@@ -1,6 +1,6 @@
 ---
 Site: https://code.visualstudio.com/
-Updated: 2023-07-23
+Updated: 2025-03-30
 ---
 
 # VSCode
