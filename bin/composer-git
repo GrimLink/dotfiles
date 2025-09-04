@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+GIT_URL=$1
+COMPOSER_NAME=$2
+
+if [[ -z $COMPOSER_NAME ]]; then
+  echo "No Git URL passed as argument!"
+  exit 1;
+fi
+
+if [[ -z $COMPOSER_NAME ]]; then
+  COMPOSER_NAME=$(sed 's/.*:\(.*\)\.git/\1/' <<< "$GIT_URL")
+fi
+
+composer config repositories.$COMPOSER_NAME git $GIT_URL &&
+composer require $COMPOSER_NAME --prefer-source
