@@ -24,5 +24,5 @@ mv n98-magerun2.phar $HOME/bin/n98-magerun2 && \
 chmod +x $HOME/bin/n98-magerun2 && \
 ln -s $HOME/bin/n98-magerun2 $HOME/bin/magerun2
 
-StepSection "Install mage2tv cache-clean (https://github.com/mage2tv/magento-cache-clean)"
+StepSection "Install Mage-OS cache-clean (https://github.com/mage-os/magento-cache-clean)"
 composer global require mage-os/magento-cache-clean
