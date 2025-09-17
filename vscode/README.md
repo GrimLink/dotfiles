@@ -1,6 +1,6 @@
 ---
 Site: https://code.visualstudio.com/
-Updated: 2025-03-30
+Updated: 2025-09-17
 ---
 
 # VSCode
@@ -10,6 +10,12 @@ My VSCode settings are synced to the cloud, so I don't keep a local copy.
 I change my settings too often to keep a reliable backup.
 
 However, I do have a nice backup of all my snippets and keybindings.
+
+## Install
+
+```sh
+brew install --cask visual-studio-code
+```
 
 ## CLI Options
 

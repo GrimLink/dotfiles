@@ -7,6 +7,12 @@ Updated: 2025-03-30
 
 This contains all my personal Ghostty settings.
 
+## Install
+
+```sh
+brew install --cask ghostty
+```
+
 ## Setup
 
 The setup will sync the Ghostty settings folder.

@@ -7,6 +7,12 @@ Updated: 2025-09-17
 
 This contains all my personal Wezterm settings.
 
+## Install
+
+```sh
+brew install --cask wezterm
+```
+
 ## Setup
 
 The setup will sync the Wezterm settings to the root directory.

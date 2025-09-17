@@ -7,6 +7,12 @@ Updated: 2023-07-23
 
 This contains all my personal Hyper settings and preferred extensions.
 
+## Install
+
+```sh
+brew install --cask hyper
+```
+
 ## Setup
 
 The setup will sync the hyper settings folder to the root directory.
