@@ -25,7 +25,7 @@ if ! xcode-select -p 1>/dev/null; then
 fi
 
 runAction "Updating git config.." git/setup
-runAction "Updating hyper config.." hyper/setup
+runAction "Updating ghostty config.." ghostty/setup
 runAction "Updating zsh config.." zsh/setup
 
 echo ""

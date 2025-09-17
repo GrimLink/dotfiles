@@ -7,6 +7,9 @@ function StepSection() {
   echo -e "${GREEN}$@${RESET}"
 }
 
+# Remove the default terminal message
+touch .hushlogin
+
 # Make sure there is a shell folder
 if [ ! -d $HOME/.shell ]; then
   mkdir $HOME/.shell
