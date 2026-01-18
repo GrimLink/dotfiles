@@ -15,4 +15,4 @@ fi
 npm config set depth 0
 npm config set init-author-name "${NAME}"
 npm config set init-license "MIT"
-npm config set tag-version-prefix ""
+echo "tag-version-prefix=" > ~/.npmrc
