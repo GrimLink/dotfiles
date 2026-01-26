@@ -1,0 +1,105 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent_ui_font_size": 18.0,
+  "agent_buffer_font_size": 18.0,
+  "icon_theme": {
+    "mode": "system",
+    "light": "Material Icon Theme",
+    "dark": "Bearded Icon Theme"
+  },
+  "agent": {
+    "default_width": 450.0,
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "notification_panel": {
+    "default_width": 450.0,
+    "dock": "left"
+  },
+  "colorize_brackets": true,
+  "collaboration_panel": {
+    "default_width": 450.0,
+    "dock": "left"
+  },
+  "outline_panel": {
+    "default_width": 450.0,
+    "dock": "right"
+  },
+  "git_panel": {
+    "default_width": 450.0,
+    "dock": "right"
+  },
+  "project_panel": {
+    "default_width": 450.0,
+    "dock": "right"
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "title_bar": {
+    "show_menus": true,
+    "show_branch_icon": true
+  },
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "terminal": {
+    "dock": "bottom",
+    "font_size": 15.0
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    },
+  },
+  "base_keymap": "VSCode",
+  "minimap": {
+    "show": "never"
+  },
+  "hover_popover_delay": 1000,
+  "autosave": "on_window_change",
+  "file_types": {
+    "tailwindcss": ["**/tailwind/**/*.css"],
+    "json": ["*.tokens"],
+    "html": ["*.vue", "*.twig", "*.njk"],
+    "PHP": ["*.phtml"]
+  },
+  "show_whitespaces": "trailing",
+  "soft_wrap": "editor_width",
+  "ui_font_size": 20.0,
+  "buffer_font_size": 18.0,
+  "theme": {
+    "mode": "system",
+    "light": "GitHub Light",
+    "dark": "GitHub Dark Dimmed"
+  },
+  "languages": {
+    "PHP": {
+      "language_servers": ["intelephense", "phpcs", "!phpactor"]
+    },
+  },
+  "auto_install_extensions": {
+    // Languages
+    "astro": true,
+    "html": true,
+    "php": true,
+    // Syntax (linter / formater)
+    "editorconfig": true,
+    "phpcs": true,
+    // Editor
+    "emmet": true,
+    "github-theme": true,
+    "material-icon-theme": true
+  },
+  "features": {
+    "edit_prediction_provider": "none"
+  }
+}
