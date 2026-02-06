@@ -1,17 +1,28 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
   {
     "bindings": {
       "ctrl-alt-cmd-shift-s": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "right" }
-      ]
-    }
-  }
+        { "direction": "right" },
+      ],
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-cmd-shift-p": "settings_profile_selector::Toggle",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-cmd-b": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-b": "workspace::ToggleRightDock",
+    },
+  },
 ]
