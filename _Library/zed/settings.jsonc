@@ -1,105 +1,102 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "agent_ui_font_size": 18.0,
-  "agent_buffer_font_size": 18.0,
+  "theme": {
+    "mode": "system",
+    "light": "GitHub Light Tritanopia",
+    "dark": "GitHub Dark Dimmed",
+  },
   "icon_theme": {
     "mode": "system",
-    "light": "Material Icon Theme",
-    "dark": "Bearded Icon Theme"
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
   },
-  "agent": {
-    "default_width": 450.0,
-    "favorite_models": [],
-    "model_parameters": []
-  },
-  "notification_panel": {
-    "default_width": 450.0,
-    "dock": "left"
-  },
-  "colorize_brackets": true,
-  "collaboration_panel": {
-    "default_width": 450.0,
-    "dock": "left"
-  },
-  "outline_panel": {
-    "default_width": 450.0,
-    "dock": "right"
-  },
-  "git_panel": {
-    "default_width": 450.0,
-    "dock": "right"
-  },
-  "project_panel": {
-    "default_width": 450.0,
-    "dock": "right"
-  },
+  "buffer_font_size": 17.0,
+  "ui_font_size": 19.0,
+  "ui_font_family": ".SystemUIFont",
+  "agent_ui_font_size": 17.0,
+  "agent_buffer_font_size": 17.0,
+  "base_keymap": "VSCode",
+  "title_bar": { "show_branch_icon": true },
   "tabs": {
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
   },
-  "title_bar": {
-    "show_menus": true,
-    "show_branch_icon": true
-  },
-  "edit_predictions": {
-    "mode": "subtle"
-  },
-  "terminal": {
-    "dock": "bottom",
-    "font_size": 15.0
-  },
-  "git": {
-    "inline_blame": {
-      "enabled": true
+  "agent": {
+    "default_width": 500.0,
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash-lite",
     },
   },
-  "base_keymap": "VSCode",
-  "minimap": {
-    "show": "never"
+  "collaboration_panel": { "dock": "right" },
+  "git_panel": {
+    "dock": "right",
+    "default_width": 500.0,
+    "tree_view": true,
   },
-  "hover_popover_delay": 1000,
+  "outline_panel": { "dock": "right" },
+  "project_panel": {
+    "default_width": 500.0,
+    "dock": "right",
+  },
+  "colorize_brackets": true,
+  "show_whitespaces": "trailing",
+  "soft_wrap": "editor_width",
   "autosave": "on_window_change",
+  "lsp": {
+    "snippet-completion-server": {
+      "settings": {
+        "feature_paths": true,
+      },
+    },
+    "phpcs": {
+      "settings": {
+        "standard": "PSR4",
+      },
+    },
+  },
+  "languages": {
+    "PHP": {
+      "language_servers": ["intelephense", "phpcs", "!phpactor"],
+      "format_on_save": "off",
+    },
+    "CSS": {
+      "language_servers": [
+        "tailwindcss-intellisense-css",
+        "!vscode-css-language-server",
+      ],
+    },
+  },
   "file_types": {
     "tailwindcss": ["**/tailwind/**/*.css"],
     "json": ["*.tokens"],
     "html": ["*.vue", "*.twig", "*.njk"],
-    "PHP": ["*.phtml"]
+    "xml": ["*.svg"],
+    "css": ["*.less"],
   },
-  "show_whitespaces": "trailing",
-  "soft_wrap": "editor_width",
-  "ui_font_size": 20.0,
-  "buffer_font_size": 18.0,
-  "theme": {
-    "mode": "system",
-    "light": "GitHub Light",
-    "dark": "GitHub Dark Dimmed"
+  // AI
+  "edit_predictions": {
+    "mode": "subtle",
   },
-  "languages": {
-    "PHP": {
-      "language_servers": ["intelephense", "phpcs", "!phpactor"]
+  "profiles": {
+    "presentation": {
+      "agent_ui_font_size": 28.0,
+      "agent_buffer_font_size": 28.0,
+      "buffer_font_size": 28.0,
     },
   },
   "auto_install_extensions": {
     // Languages
-    "astro": true,
     "html": true,
     "php": true,
+    "xml": true,
+    "astro": true,
+    "rainbow-csv": true,
     // Syntax (linter / formater)
     "editorconfig": true,
     "phpcs": true,
     // Editor
     "emmet": true,
     "github-theme": true,
-    "material-icon-theme": true
+    "material-icon-theme": true,
   },
-  "features": {
-    "edit_prediction_provider": "none"
-  }
 }
