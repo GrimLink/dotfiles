@@ -64,4 +64,4 @@ brew services start mysql@8.0 && \
 /usr/local/opt/mysql@8.0/bin/mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
 
 # Make sure PHP is compatible with Magento2
-valet use php@8.1
+valet use php@8.2
