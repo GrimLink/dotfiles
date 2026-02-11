@@ -17,6 +17,7 @@ trim_trailing_whitespace = false
 
 [*.{json,yml,yaml}]
 indent_style = space
-
-[*.{yml,yaml}]
 indent_size = 2
+
+[*.{phtml,xml}]
+max_line_length = 120
