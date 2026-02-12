@@ -26,9 +26,3 @@ if [ ! -d "$DIR_WP" ]; then
   mkdir -p $DIR_WP
   valet park $DIR_WP
 fi
-
-DIR_SHOP="$DIR_BASE/shopware"
-if [ ! -d "$DIR_WP" ]; then
-  mkdir -p $DIR_WP
-  valet park $DIR_WP
-fi
