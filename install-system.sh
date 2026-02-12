@@ -31,6 +31,8 @@ runAction "Configuring git.." git/setup
 runAction "Configuring ssh.." git/ssh
 runAction "Installing brew.." brew/install
 runAction "Installing zsh.." zsh/setup
+runAction "Installing ghostty.." ghostty/setup
+runAction "Installing zed.." zed/setup
 
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"
