@@ -25,6 +25,7 @@ if ! xcode-select -p 1>/dev/null; then
 fi
 
 runAction "Configuring ghostty.." ghostty/setup
+runAction "Configuring zed.." zed/setup
 runAction "Configuring NVM.." nvm/install
 runAction "Installing Valet.." valet/install
 runAction "Configuring Valet.." valet/setup

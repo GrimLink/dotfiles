@@ -31,6 +31,8 @@ To get started, follow the following steps:
 6. Now you can run the second install script dev-env, using: `./dotfiles/install-dev-env.sh`,
    this will run the following scripts:
     - [hyper/setup](./hyper/)
+    - [ghostty/setup](./ghostty/)
+    - [zed/setup](./zed/)
     - [nvm/install](./nvm/),
       this requires nvm to be installed, I use **fig** for this
     - [valet/install](./valet/)
