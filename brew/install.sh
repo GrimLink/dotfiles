@@ -41,4 +41,5 @@ runAction "Installing db" db
 runAction "Installing zsh" zsh
 runAction "Installing other dev tools" dev
 runAction "Installing code editors" editor
+runAction "Installing Ai Tools" ai
 runAction "Installing apps (browsers, img tools, etc...)" app
