@@ -97,6 +97,6 @@
     // Editor
     "emmet": true,
     "github-theme": true,
-    "material-icon-theme": true,
+    "catppuccin-icons": true,
   },
 }
