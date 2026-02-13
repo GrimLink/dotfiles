@@ -13,7 +13,7 @@ brew install --cask whatsapp
 brew install --cask ankerwork
 
 # Image editors and tools
-brew install --cask figma
+# brew install --cask figma
 brew install --cask imageoptim
 brew install --cask ray
 
@@ -21,15 +21,13 @@ brew install --cask ray
 brew install --cask android-file-transfer
 brew install --cask appcleaner
 brew install --cask keka
+brew install --cask raycast
 brew tap localsend/localsend
 brew install localsend
 
 # browsers
 brew install --cask google-chrome
-brew install --cask microsoft-edge
 brew install --cask firefox
-brew install --cask brave-browser
+# brew install --cask microsoft-edge
+# brew install --cask brave-browser
 
-# Direct downloads, requires manual installation
-echo "Opening Manual downloads"
-open https://www.rode.com/software/rode-connect

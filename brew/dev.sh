@@ -13,5 +13,5 @@ brew install mailhog
 # ```
 
 # Frameworks specific tools
-brew install wp-cli
-brew install FriendsOfShopware/tap/shopware-cli
+# brew install wp-cli
+# brew install FriendsOfShopware/tap/shopware-cli
