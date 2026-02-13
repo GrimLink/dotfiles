@@ -16,10 +16,3 @@ I highly recommend Homebrew to anyone who is looking for a way to manage their s
 ## Whats inside
 
 Pease see each file for what is added.
-
-### Dev
-
-Dev also adds framework specific tools for;
-
-- Wordpress
-- Shopware
