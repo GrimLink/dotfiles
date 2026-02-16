@@ -27,6 +27,13 @@
       "model": "gemini-2.5-flash-lite",
     },
   },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": false,
+      "remote": false,
+      "settings": {},
+    },
+  },
   "collaboration_panel": { "dock": "right" },
   "git_panel": {
     "dock": "right",
@@ -37,6 +44,9 @@
   "project_panel": {
     "default_width": 500.0,
     "dock": "right",
+  },
+  "terminal": {
+    "working_directory": "current_file_directory",
   },
   "colorize_brackets": true,
   "show_whitespaces": "trailing",
@@ -65,6 +75,12 @@
         "!vscode-css-language-server",
       ],
     },
+    "XML": {
+      "preferred_line_length": 120,
+    },
+    "YAML": {
+      "format_on_save": "off",
+    },
   },
   "file_types": {
     "tailwindcss": ["**/tailwind/**/*.css"],
@@ -73,6 +89,17 @@
     "xml": ["*.svg"],
     "css": ["*.less"],
   },
+  "file_scan_exclusions": [
+    // "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+  ],
   // AI
   "edit_predictions": {
     "mode": "subtle",
