@@ -33,8 +33,7 @@ To get started, follow the following steps:
     - [hyper/setup](./hyper/)
     - [ghostty/setup](./ghostty/)
     - [zed/setup](./zed/)
-    - [nvm/install](./nvm/),
-      this requires nvm to be installed, I use **fig** for this
+    - [nvm/install](./nvm/)
     - [valet/install](./valet/)
     - [valet/setup](./valet/)
     - [magento/setup](./magento/)
