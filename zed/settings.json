@@ -1,4 +1,12 @@
 {
+  "agent_servers": {
+    "gemini": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
   "theme": {
     "mode": "system",
     "light": "GitHub Light Tritanopia",
@@ -26,6 +34,10 @@
       "provider": "google",
       "model": "gemini-2.5-flash-lite",
     },
+    "commit_message_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-haiku",
+    },
   },
   "context_servers": {
     "mcp-server-context7": {
@@ -44,9 +56,6 @@
   "project_panel": {
     "default_width": 500.0,
     "dock": "right",
-  },
-  "terminal": {
-    "working_directory": "current_file_directory",
   },
   "colorize_brackets": true,
   "show_whitespaces": "trailing",
@@ -85,9 +94,9 @@
   "file_types": {
     "tailwindcss": ["**/tailwind/**/*.css"],
     "json": ["*.tokens"],
-    "html": ["*.vue", "*.twig", "*.njk"],
-    "xml": ["*.svg"],
-    "css": ["*.less"],
+    "HTML": ["*.vue", "*.twig", "*.njk"],
+    "XML": ["*.svg"],
+    "Markdown": ["llm.txt"],
   },
   "file_scan_exclusions": [
     // "**/.git",
