@@ -25,19 +25,26 @@ if ! xcode-select -p 1>/dev/null; then
 fi
 
 runAction "Configuring mac.." macos/install
-runAction "Configuring shell.." shell/setup
 runAction "Configuring bin.." bin/setup
+runAction "Configuring shell.." shell/setup
+
+runAction "Installing brew.." brew/install
+
 runAction "Configuring git.." git/setup
 runAction "Configuring ssh.." git/ssh
-runAction "Installing brew.." brew/install
-runAction "Installing zsh.." zsh/install
 runAction "Installing git tools.." git/install
-runAction "Installing Zed.." zed/install
-runAction "Installing Ghostty.." ghostty/install
-runAction "Installing Claude.." claude/install
-runAction "Installing Gemini.." gemini/install
+
+runAction "Installing zsh.." zsh/install
 runAction "Configuring zsh.." zsh/setup
+
+runAction "Installing Ghostty.." ghostty/install
+
+runAction "Installing Zed.." zed/install
+
+runAction "Installing Claude.." claude/install
 runAction "Configuring Claude.." claude/setup
+
+runAction "Installing Gemini.." gemini/install
 runAction "Configuring Gemini.." gemini/setup
 
 echo ""

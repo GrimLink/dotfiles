@@ -29,6 +29,7 @@ runAction "Configuring zed.." zed/setup
 runAction "Configuring NVM.." nvm/install
 runAction "Installing Valet.." valet/install
 runAction "Configuring Valet.." valet/setup
+runAction "Installing Magento Tools.." magento/install
 runAction "Configuring Magento Tools.." magento/setup
 
 echo ""
