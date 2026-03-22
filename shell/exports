@@ -6,11 +6,6 @@ export EDITOR=code
 # Add local bin
 export PATH="$PATH:$HOME/bin"
 
-# Add Composer
-export PATH="$HOME/.composer/vendor/bin:$PATH" # MacOS old path
-export PATH="$HOME/.config/composer/vendor/bin:$PATH" # MacOS 26 and newer
-export PATH="/usr/local/sbin:$PATH"
-
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_UPDATE_REPORT_ONLY_INSTALLED=1
