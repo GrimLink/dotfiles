@@ -24,3 +24,9 @@ The ssh script will setup a new ssh key.
 I prefer to always setup a new key when doing a fresh install.
 
 > :warning: Don't run this script. If you already have one. Since it will overide it.
+
+## Prefered GUI
+
+```sh
+brew install --cask fork
+```

@@ -2,6 +2,13 @@
 
 This contains all the config I have used for my zsh setup.
 
+## Install
+
+```sh
+brew install pure
+brew install zsh-syntax-highlighting
+```
+
 ## Keybindings
 
 By default on macOS the terminal allows you to use `⌘ + →` to go to the end.
