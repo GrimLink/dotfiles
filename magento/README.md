@@ -1,6 +1,6 @@
 ---
 Site: https://developer.adobe.com/open/magento
-Updated: 2023-11-05
+Updated: 2026-03-22
 ---
 
 # Magento2/Mage-OS
@@ -18,3 +18,20 @@ It also adds:
 
 [Mage-OS]: https://mage-os.org/
 [Magento2]: https://github.com/magento/magento2
+
+## Install
+
+The `install.sh` script sets up all required services for Magento2 development.
+
+It installs and starts the following:
+
+- Mailhog (mail catcher)
+- Redis (cache)
+- Opensearch (search engine)
+
+It also configures Valet with the following (requires Valet to be installed):
+
+- Sets the default PHP version to `php@8.4`
+- Adds a proxy for Mailhog at `mailhog.test`
+- Adds a proxy for Opensearch at `opensearch.test`
+- Creates and parks `~/Developer/magento` as the default project folder
