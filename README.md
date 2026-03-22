@@ -51,11 +51,10 @@ Feel free to explore and adapt them to suit your development needs.
 I'd like to acknowledge the following individuals and projects that have inspired or contributed to the development of these dotfiles:
 
 - [Mathias Bynens' Dotfiles](https://github.com/mathiasbynens/dotfiles)
-- [Nicolas Gallagher's Dotfiles](https://github.com/necolas/dotfiles)
 - [Paul Irish's Dotfiles](https://github.com/paulirish/dotfiles)
 - [Andreas Larsen's Dotfiles](https://github.com/alrra/dotfiles)
+- [Freek Van der Herten's Dotfiles](https://github.com/freekmurze/dotfiles)
 - [Sindre Sorhus' Pure Prompt](https://github.com/sindresorhus/pure)
-- [Robert Cooper's Blog Article on Zsh Setup with Hyper Terminal](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
 - All the contributors who have provided patches and valuable suggestions.
 
 Thank you for exploring my dotfiles. I hope you find them beneficial in enhancing your development environment.
