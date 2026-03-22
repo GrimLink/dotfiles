@@ -4,6 +4,8 @@ RESET='\033[0m'
 GREEN='\033[1;32m'
 RED='\033[0;31m'
 
+BREW_PREFIX=$(brew --prefix)
+
 function StepSection() {
   echo -e "${GREEN}$@${RESET}"
 }
@@ -47,21 +49,17 @@ valet trust
 echo 'export NODE_EXTRA_CA_CERTS="$HOME/.config/valet/CA/LaravelValetCASelfSigned.pem"' >> ~/.shell/extra
 
 StepSection "Setup Database"
-
 # Check if '/opt/homebrew/var/mysql' excits,
 # may trow installations errors if present
-if [[ -d "/opt/homebrew/var/mysql" ]]; then
-  echo -e "${RED}The folder '/opt/homebrew/var/mysql' is found!${RESET}"
+if [[ -d "$BREW_PREFIX/var/mysql" ]]; then
+  echo -e "${RED}The folder '$BREW_PREFIX/var/mysql' is found!${RESET}"
   echo "Please remove this folder before continuing."
   read -rsn1 -p "When ready, press any key to continue"
   echo ""
 fi
 
-# Install Mysql v8.0 for compatiblity with Magento2
-brew install mysql@8.0 && \
-echo 'export PATH="/usr/local/opt/mysql@8.0/bin:$PATH"' >> ~/.shell/extra && \
-brew services start mysql@8.0 && \
-/usr/local/opt/mysql@8.0/bin/mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
-
-# Make sure PHP is compatible with Magento2
-valet use php@8.2
+# Install Mysql v8.4 (LTS)
+brew install mysql@8.4 && \
+echo "export PATH=\"$BREW_PREFIX/opt/mysql@8.4/bin:\$PATH\"" >> ~/.shell/extra && \
+brew services start mysql@8.4 && \
+$BREW_PREFIX/opt/mysql@8.4/bin/mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"

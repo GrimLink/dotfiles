@@ -28,6 +28,5 @@ fi
 
 runAction "Installing node" node
 runAction "Installing php" php
-runAction "Installing db" db
 runAction "Installing other dev tools" dev
 runAction "Installing apps (browsers, img tools, etc...)" app
