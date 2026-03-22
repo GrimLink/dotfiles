@@ -31,6 +31,8 @@ runAction "Configuring git.." git/setup
 runAction "Configuring ssh.." git/ssh
 runAction "Installing brew.." brew/install
 runAction "Installing zsh.." zsh/setup
+runAction "Configuring Claude.." claude/setup
+runAction "Configuring Gemini.." gemini/setup
 
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"
