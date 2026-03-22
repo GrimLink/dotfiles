@@ -1,12 +1,5 @@
 {
-  "agent_servers": {
-    "gemini": {
-      "type": "registry",
-    },
-    "claude-acp": {
-      "type": "registry",
-    },
-  },
+  // Themes
   "theme": {
     "mode": "system",
     "light": "GitHub Light Tritanopia",
@@ -17,26 +10,69 @@
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha",
   },
-  "buffer_font_size": 17.0,
-  "ui_font_size": 19.0,
+
+  // Fonts
   "ui_font_family": ".SystemUIFont",
+  "ui_font_size": 19.0,
+  "buffer_font_size": 17.0,
   "agent_ui_font_size": 17.0,
   "agent_buffer_font_size": 17.0,
-  "base_keymap": "VSCode",
-  "title_bar": { "show_branch_icon": true },
+
+  // Titlebar
+  "title_bar": {
+    "show_branch_icon": true,
+  },
+
+  // Editor
+  "colorize_brackets": true,
+  "show_whitespaces": "trailing",
+  "soft_wrap": "editor_width",
+
+  // Editor Toolbar
+  "toolbar": {
+    "quick_actions": true,
+    "selections_menu": false,
+  },
+
+  // Editor Tabs
   "tabs": {
     "file_icons": true,
     "git_status": true,
   },
+
+  // Edit Predictions
+  "edit_predictions": {
+    "mode": "subtle",
+  },
+
+  // Project Panel
+  "project_panel": {
+    "dock": "right",
+    "default_width": 500.0,
+  },
+
+  // Agent Panel
   "agent": {
     "default_width": 500.0,
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.5-flash-lite",
+      "model": "gemini-3-flash-preview",
+    },
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
     },
     "commit_message_model": {
-      "provider": "anthropic",
-      "model": "claude-3-5-haiku",
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5",
+    },
+  },
+  "agent_servers": {
+    "gemini": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "type": "registry",
     },
   },
   "context_servers": {
@@ -46,27 +82,48 @@
       "settings": {},
     },
   },
-  "collaboration_panel": { "dock": "right" },
+
+  // Git Panel
   "git_panel": {
     "dock": "right",
     "default_width": 500.0,
     "tree_view": true,
   },
-  "outline_panel": { "dock": "right" },
-  "project_panel": {
-    "default_width": 500.0,
-    "dock": "right",
+
+  // Debugger
+  "debugger": {
+    "button": false,
   },
-  "colorize_brackets": true,
-  "show_whitespaces": "trailing",
-  "soft_wrap": "editor_width",
+
+  // Outline Panel
+  "outline_panel": {
+    "button": false,
+    "dock": "right",
+    "default_width": 500.0,
+  },
+
+  // Collaboration Panel
+  "collaboration_panel": {
+    "dock": "right",
+    "default_width": 500.0,
+  },
+
+  // Notification Panel
+  "notification_panel": {
+    "default_width": 500.0,
+  },
+
+  // General
+  "base_keymap": "VSCode",
   "autosave": "on_window_change",
-  "lsp": {
-    "snippet-completion-server": {
-      "settings": {
-        "feature_paths": true,
-      },
+  "profiles": {
+    "presentation": {
+      "agent_ui_font_size": 28.0,
+      "agent_buffer_font_size": 28.0,
+      "buffer_font_size": 28.0,
     },
+  },
+  "lsp": {
     "phpcs": {
       "settings": {
         "standard": "PSR4",
@@ -109,30 +166,21 @@
     "**/.classpath",
     "**/.settings",
   ],
-  // AI
-  "edit_predictions": {
-    "mode": "subtle",
-  },
-  "profiles": {
-    "presentation": {
-      "agent_ui_font_size": 28.0,
-      "agent_buffer_font_size": 28.0,
-      "buffer_font_size": 28.0,
-    },
-  },
   "auto_install_extensions": {
+    // Themes
+    "github-theme": true,
+    "catppuccin-icons": true,
     // Languages
     "html": true,
     "php": true,
+    "scss": true,
     "xml": true,
     "astro": true,
     "rainbow-csv": true,
-    // Syntax (linter / formater)
+    "comment": true,
     "editorconfig": true,
+    // Languages Servers
     "phpcs": true,
-    // Editor
     "emmet": true,
-    "github-theme": true,
-    "catppuccin-icons": true,
   },
 }
