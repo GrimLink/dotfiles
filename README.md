@@ -21,21 +21,29 @@ To get started, follow the following steps:
 4. First run the system script, using: `./dotfiles/install-system.sh`,
    this will run the following scripts:
     - [macos/install](./macos/)
-    - [shell/setup](./shell/)
     - [bin/setup](./bin/)
+    - [shell/setup](./shell/)
+    - [brew/install](./brew/)
     - [git/setup](./git/)
     - [git/ssh](./git/)
-    - [brew/install](./brew/)
+    - [git/install](./git/)
+    - [zsh/install](./zsh/)
     - [zsh/setup](./zsh/)
+    - [ghostty/install](./ghostty/)
+    - [zed/install](./zed/)
+    - [claude/install](./claude/)
+    - [claude/setup](./claude/)
+    - [gemini/install](./gemini/)
+    - [gemini/setup](./gemini/)
 5. Restart your system to let all settings take effect
 6. Now you can run the second install script dev-env, using: `./dotfiles/install-dev-env.sh`,
    this will run the following scripts:
-    - [hyper/setup](./hyper/)
     - [ghostty/setup](./ghostty/)
     - [zed/setup](./zed/)
     - [nvm/install](./nvm/)
     - [valet/install](./valet/)
     - [valet/setup](./valet/)
+    - [magento/install](./magento/)
     - [magento/setup](./magento/)
 
 
