@@ -7,4 +7,5 @@ brew install pnpm
 npm config set depth 0
 npm config set init-author-name "GrimLink"
 npm config set init-license "MIT"
+npm config set init-type "module"
 echo "tag-version-prefix=" > ~/.npmrc
