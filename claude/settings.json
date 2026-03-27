@@ -40,7 +40,8 @@
       "Bash(tr:*)",
       "Bash(open:*)",
       "WebSearch",
-      "WebFetch"
+      "WebFetch",
+      "mcp__chrome-devtools__*"
     ]
   }
 }
