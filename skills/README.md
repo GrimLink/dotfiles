@@ -4,13 +4,13 @@ Updated: 2026-03-27
 
 # Skills
 
-My personal global skills for Claude Code, synced to `~/.claude/skills/`.
+My personal global AI skills, shared across Claude Code and Gemini CLI.
 
 Each skill lives in its own folder containing a `SKILL.md` file, which defines the skill name, trigger description, and prompt body.
 
-## Install
+Skills are synced to `~/.agents/skills/` as the primary location. Claude Code reads from `~/.claude/skills/`, which is symlinked to `~/.agents/skills/`. Gemini CLI reads from `~/.agents/skills/` natively.
 
-Run `setup.sh` to sync all skills to `~/.claude/skills/`:
+## Install
 
 ```sh
 ./skills/setup.sh
