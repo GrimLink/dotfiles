@@ -30,7 +30,7 @@ runAction "Configuring ghostty.." ghostty/setup
 runAction "Installing Zed.." zed/install
 runAction "Configuring zed.." zed/setup
 
-runAction "Configuring NVM.." nvm/install
+runAction "Configuring NVM.." node/nvm
 
 runAction "Installing Valet.." valet/install
 runAction "Configuring Valet.." valet/setup
