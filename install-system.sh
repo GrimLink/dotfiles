@@ -41,10 +41,6 @@ runAction "Installing rust.." rust/install
 runAction "Installing zsh.." zsh/install
 runAction "Configuring zsh.." zsh/setup
 
-runAction "Installing Ghostty.." ghostty/install
-
-runAction "Installing Zed.." zed/install
-
 runAction "Installing Claude.." claude/install
 runAction "Configuring Claude.." claude/setup
 

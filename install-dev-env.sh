@@ -24,11 +24,17 @@ if ! xcode-select -p 1>/dev/null; then
   read -p "When Ready, press any key to continue" -n 1 && echo ""
 fi
 
+runAction "Installing Ghostty.." ghostty/install
 runAction "Configuring ghostty.." ghostty/setup
+
+runAction "Installing Zed.." zed/install
 runAction "Configuring zed.." zed/setup
+
 runAction "Configuring NVM.." nvm/install
+
 runAction "Installing Valet.." valet/install
 runAction "Configuring Valet.." valet/setup
+
 runAction "Installing Magento Tools.." magento/install
 runAction "Configuring Magento Tools.." magento/setup
 
