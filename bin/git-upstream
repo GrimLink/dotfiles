@@ -1,22 +1,20 @@
 #!/bin/bash
 
-UPSTREAM="${1}"
-BRANCH="${2}"
+URL="${1}"
+NAME="${2}"
 
-if [[ -z "$UPSTREAM" ]]; then
-  read -p "Add a upstream url: " UPSTREAM;
-  echo "";
-  if [[ -z "$UPSTREAM" ]]; then exit; fi;
-  git remote add upstream $UPSTREAM
+if [[ -z "$URL" ]]; then
+  read -p "Remote url: " URL
+  echo ""
+  if [[ -z "$URL" ]]; then exit; fi
 fi
 
-# Default to master untill more repo's use main instead
-if [[ -z "$BRANCH" ]]; then
-  read -p "What is the upstream default branch (e.g. main): " BRANCH;
-  echo "";
-  if [[ -z "$BRANCH" ]]; then BRANCH="master"; fi
+if [[ -z "$NAME" ]]; then
+  DEFAULT_NAME=$(echo "$URL" | awk -F'/' '{print $(NF-1)}')
+  read -p "Remote name [$DEFAULT_NAME]: " NAME
+  echo ""
+  NAME="${NAME:-$DEFAULT_NAME}"
+  if [[ -z "$NAME" ]]; then exit; fi
 fi
 
-git fetch upstream
-git checkout $BRANCH
-git merge upstream/$BRANCH
+git remote add "$NAME" "$URL"
