@@ -1,6 +1,6 @@
 ---
 Site: 
-Updated: 2023-11-05
+Updated: 2026-03-30
 ---
 
 # Bash
@@ -28,16 +28,16 @@ This includes;
 
 ### Functions
 
-Set of handy aliases for common commands.
+Set of handy functions for common tasks.
 
 This includes;
 
+* Navigate up multiple directories `..`
 * Create folder and enter it `mcd`
-* finding files/folder `f`
-
-### Applications
-
-Same as the aliases and functions but specific for some applications.
+* Find files/folders `f`
+* Convert images to `.webp` with `to-webp`
+* NVM auto-switch via `load-nvmrc` (reads `.nvmrc` on directory change)
+* Node utilities: `node-find`, `node-clean`
 
 ## Add custom commands without creating a new fork
 
