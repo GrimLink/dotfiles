@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
-
-# And include the parameter for ZSH
-export HISTORY_IGNORE="(ls|cd|cd -|pwd|exit|date|* --help)"
-
 # Set Zed as default code editor
 export EDITOR="zed -w"
 export VISUAL="zed -w"

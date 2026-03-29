@@ -4,6 +4,7 @@ brew_prefix=$(brew --prefix);
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+HISTORY_IGNORE="(ls|cd|cd -|pwd|exit|date|* --help)"
 
 # Shares history across multiple zsh sessions
 setopt SHARE_HISTORY
