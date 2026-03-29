@@ -39,6 +39,7 @@
       "Bash(cut:*)",
       "Bash(tr:*)",
       "Bash(open:*)",
+      "Bash(defaults:*)",
       "WebSearch",
       "WebFetch",
       "mcp__chrome-devtools__*"

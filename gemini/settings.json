@@ -51,6 +51,7 @@
       "run_shell_command(cut)",
       "run_shell_command(tr)",
       "run_shell_command(open)",
+      "run_shell_command(defaults)",
       "google_web_search",
       "web_fetch",
       "mcp_chrome_devtools_*"
