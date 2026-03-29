@@ -16,22 +16,9 @@ Syncs all bin scripts to `~/bin/`.
 ./bin/setup.sh
 ```
 
-## create-project
+## add-editorconfig
 
-My power house bin script,
-that allows you to create a project with minimal effort.
-
-[For more info on create-project, checkout the git repo.](https://github.com/GrimLink/create-project)
-
-## mage
-
-Alias & helper for bin/magento commands
-
-[For more info on mage, checkout the git repo.](https://github.com/GrimLink/mage)
-
-## editorconfig
-
-Create an editorconfig based on the type of project
+Creates an editorconfig based on the type of project.
 
 ## Git
 
@@ -41,24 +28,17 @@ So instead of `git-new` you can also run `git new`.
 
 ### New `git-new`
 
-Does all the steps needed to setup a new git project.
+Initialises a new git repo, commits all files, and pushes to a remote origin.
 
-### Upstream `git-upsteam`
+```sh
+git new <url>
+```
 
-Does all the steps needed to update a forked git project with the original.
+### Upstream `git-upstream`
 
-This script has 2 params which both are semi required.
-If not filled in the script will ask for it.
+Adds a named remote for a forked or related repository. The name defaults to the username or organisation from the URL.
 
-### To Main `git-to-main`
+```sh
+git upstream <url> [name]
+```
 
-Converts a repo default branch from master to main.
-
-Or fetches all changes from a repo that has changed from master to main.
-
-For converting simply run this command in your repo and follow the steps.
-
-To fetch run this command with the flag `--fetch`.
-
-> :warning: make sure you can run this.
-> Since this script will remove your master branch!
