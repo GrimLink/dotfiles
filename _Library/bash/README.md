@@ -1,6 +1,6 @@
 ---
 Site:
-Updated: 2023-07-23
+Updated: 2026-03-30
 ---
 
 # Bash
@@ -25,7 +25,6 @@ Also has a git checker build in.
 
 ## Shell
 
-The shell options,
-like aliases are are found under [the shell folder](../README,md).
+Shell files like aliases and functions are loaded from the [shell folder](../shell/README.md) using a glob loop, sourcing all extension-less files automatically.
 
 These options are not bound to which shell you are using.

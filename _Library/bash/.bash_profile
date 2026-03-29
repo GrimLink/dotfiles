@@ -12,17 +12,11 @@ shopt -s cdspell
 # unless the pattern explicitly begins with a dot
 set match-hidden-files off
 
-# Load all shell files from the ~/.shell folder
-LOAD_SETTINGS=(
-  ~/.bash_prompt
-  ~/.shell/aliases
-  ~/.shell/functions
-  ~/.shell/exports
-  ~/.shell/applications
-  ~/.shell/extra
-)
+# Load bash prompt
+[ -r ~/.bash_prompt ] && source ~/.bash_prompt
 
-for file in ${LOAD_SETTINGS[@]}; do
-  [ -r "$file" ] && source "$file"
+# Load all shell files from the ~/.shell folder
+for file in ~/.shell/*; do
+  [[ -f "$file" && "$file" != *.* ]] && source "$file"
 done
 unset file
