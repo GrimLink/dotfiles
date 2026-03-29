@@ -14,6 +14,11 @@ StepSection "Syncing skills to ~/.agents/skills"
 mkdir -p ~/.agents/skills
 rsync "${RSYNC_ARGS[@]}" "$SKILLS_DIR/." ~/.agents/skills
 
+StepSection "Fetching external skills"
+mkdir -p ~/.agents/skills/fylgja
+curl -fsSL "https://raw.githubusercontent.com/fylgja/fylgja/refs/heads/main/ai-skill/SKILL.md" \
+  -o ~/.agents/skills/fylgja/SKILL.md
+
 if [ -d ~/.claude ] && [ ! -L ~/.claude/skills ]; then
   StepSection "Linking ~/.claude/skills -> ~/.agents/skills"
   rm -rf ~/.claude/skills

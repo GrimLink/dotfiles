@@ -18,14 +18,22 @@ Skills are synced to `~/.agents/skills/` as the primary location. Claude Code re
 
 ## Skills
 
-### grill-me
+### a11y-audit
 
-Interviews you relentlessly about a plan or design, walking through every branch of the decision tree one question at a time.
+Audits a web page for accessibility issues using the browser MCP. Reports findings grouped by severity with element selectors and fixes. Requires the Chrome DevTools MCP to be configured.
 
 ### git-review
 
 Reviews code changes for bugs, code quality, security, performance, and correctness. Fetches GitHub PRs via `gh` if a URL or PR number is provided, or asks for the diff directly when the source is unavailable.
 
-### a11y-audit
+### grill-me
 
-Audits a web page for accessibility issues using the browser MCP. Reports findings grouped by severity with element selectors and fixes. Requires the Chrome DevTools MCP to be configured.
+Interviews you relentlessly about a plan or design, walking through every branch of the decision tree one question at a time.
+
+### fylgja
+
+Guidance on using the Fylgja CSS library. Fetched from source during `setup.sh`. Author: [fylgja/fylgja](https://github.com/fylgja/fylgja/blob/main/ai-skill/SKILL.md).
+
+### ray-skill
+
+Debugging with the [Ray](https://myray.app) desktop app by Spatie. Covers the full HTTP API for sending logs, tables, colors, labels, timing, and more. Author: Spatie.
