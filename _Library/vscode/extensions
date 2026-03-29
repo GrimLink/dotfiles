@@ -1,0 +1,85 @@
+# AI
+github.copilot
+github.copilot-chat
+google.geminicodeassist
+
+# Git
+github.vscode-pull-request-github
+github.remotehub
+ms-vscode.remote-repositories
+sidneys1.gitconfig
+spacek33z.vscode-open-in-gitfork
+
+# Remote
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode.remote-explorer
+ms-vsliveshare.vsliveshare
+
+# PHP
+bmewburn.vscode-intelephense-client
+devsense.composer-php-vscode
+mehedidracula.php-namespace-resolver
+obliviousharmony.vscode-php-codesniffer
+onecentlin.laravel-blade
+
+# CSS
+bradlc.vscode-tailwindcss
+jacobcassidy.css-nesting-syntax-highlighting
+phoenisx.cssvar
+somewhatstationery.some-sass
+stylelint.vscode-stylelint
+webben.browserslist
+
+# JavaScript / TypeScript
+esbenp.prettier-vscode
+meganrogge.template-string-converter
+yoavbls.pretty-ts-errors
+
+# Frameworks
+astro-build.astro-vscode
+svelte.svelte-vscode
+graphql.vscode-graphql
+graphql.vscode-graphql-syntax
+
+# HTML
+ecmel.vscode-html-css
+ms-vscode.live-server
+
+# Markdown
+bierner.github-markdown-preview
+bierner.markdown-checkbox
+bierner.markdown-emoji
+bierner.markdown-footnotes
+bierner.markdown-mermaid
+bierner.markdown-preview-github-styles
+bierner.markdown-yaml-preamble
+yzhang.markdown-all-in-one
+
+# Config / Data
+ahmadalli.vscode-nginx-conf
+mikestead.dotenv
+mrmlnc.vscode-apache
+redhat.vscode-commons
+redhat.vscode-xml
+redhat.vscode-yaml
+tamasfe.even-better-toml
+william-voyek.vscode-nginx
+
+# SVG
+jock.svg
+vitaliymaz.vscode-svg-previewer
+
+# Utils
+aaron-bond.better-comments
+adpyke.codesnap
+cardinal90.multi-cursor-case-preserve
+deerawan.vscode-faker
+editorconfig.editorconfig
+jspolancor.presentationmode
+mechatroner.rainbow-csv
+pkief.material-icon-theme
+rangav.vscode-thunder-client
+streetsidesoftware.code-spell-checker
+tyriar.sort-lines
+github.github-vscode-theme
