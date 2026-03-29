@@ -27,6 +27,9 @@
   "colorize_brackets": true,
   "show_whitespaces": "trailing",
   "soft_wrap": "editor_width",
+  "inlay_hints": {
+    "enabled": true,
+  },
 
   // Editor Toolbar
   "toolbar": {
@@ -88,6 +91,8 @@
     "dock": "right",
     "default_width": 500.0,
     "tree_view": true,
+    "file_icons": true,
+    "folder_icons": true,
   },
 
   // Debugger
@@ -149,11 +154,12 @@
     },
   },
   "file_types": {
-    "tailwindcss": ["**/tailwind/**/*.css"],
-    "json": ["*.tokens"],
+    "JSON": ["*.tokens"],
     "HTML": ["*.vue", "*.twig", "*.njk"],
+    "CSS": ["*.less"],
     "XML": ["*.svg"],
     "Markdown": ["llm.txt"],
+    "Shell": ["Brewfile"],
   },
   "file_scan_exclusions": [
     // "**/.git",
