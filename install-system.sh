@@ -41,14 +41,6 @@ runAction "Installing rust.." rust/install
 runAction "Installing zsh.." zsh/install
 runAction "Configuring zsh.." zsh/setup
 
-runAction "Installing Claude.." claude/install
-runAction "Configuring Claude.." claude/setup
-
-runAction "Installing Gemini.." gemini/install
-runAction "Configuring Gemini.." gemini/setup
-
-runAction "Installing Skills.." skills/setup
-
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"
 echo ""

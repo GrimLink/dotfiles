@@ -30,6 +30,14 @@ runAction "Configuring ghostty.." ghostty/setup
 runAction "Installing Zed.." zed/install
 runAction "Configuring zed.." zed/setup
 
+runAction "Installing Claude.." claude/install
+runAction "Configuring Claude.." claude/setup
+
+runAction "Installing Gemini.." gemini/install
+runAction "Configuring Gemini.." gemini/setup
+
+runAction "Installing Skills.." skills/setup
+
 runAction "Configuring NVM.." node/nvm
 
 runAction "Installing Valet.." valet/install
