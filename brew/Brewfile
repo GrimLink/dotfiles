@@ -1,0 +1,38 @@
+# Dev tools
+brew "gh"
+brew "imagemagick"
+brew "bat"
+
+# Databases
+cask "tableplus"
+cask "sequel-ace"
+
+# Browsers
+cask "google-chrome"
+cask "firefox"
+
+# Communication
+cask "slack"
+cask "discord"
+cask "signal"
+cask "whatsapp"
+
+# Image editors and tools
+# cask "figma"
+cask "imageoptim"
+cask "ray"
+
+# Utils
+cask "android-file-transfer"
+cask "appcleaner"
+cask "keka"
+cask "raycast"
+cask "vlc"
+cask "transmit"
+
+# File sharing
+tap "localsend/localsend"
+brew "localsend"
+
+# Webcam
+cask "ankerwork"
