@@ -1,6 +1,6 @@
 ---
 Site: https://zed.dev/
-Updated: 2026-01-26
+Updated: 2026-03-29
 ---
 
 # Zed

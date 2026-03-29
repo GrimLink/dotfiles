@@ -1,5 +1,5 @@
 ---
-Updated: 2026-03-27
+Updated: 2026-03-29
 ---
 
 # Skills
@@ -28,12 +28,12 @@ Reviews code changes for bugs, code quality, security, performance, and correctn
 
 ### grill-me
 
-Interviews you relentlessly about a plan or design, walking through every branch of the decision tree one question at a time.
+Interviews you relentlessly about a plan or design, walking through every branch of the decision tree one question at a time. Inspired by [Matt Pocock](https://github.com/mattpocock).
 
 ### fylgja
 
-Guidance on using the Fylgja CSS library. Fetched from source during `setup.sh`. Author: [fylgja/fylgja](https://github.com/fylgja/fylgja/blob/main/ai-skill/SKILL.md).
+Guidance on using the Fylgja CSS. Fetched from source during `setup.sh`. Author: [Fylgja CSS](https://github.com/fylgja/fylgja).
 
 ### ray-skill
 
-Debugging with the [Ray](https://myray.app) desktop app by Spatie. Covers the full HTTP API for sending logs, tables, colors, labels, timing, and more. Author: Spatie.
+Debugging with the [Ray](https://myray.app) desktop app by Spatie. Covers the full HTTP API for sending logs, tables, colors, labels, timing, and more. Inspired by [Freek Van der Herten](https://github.com/freekmurze).

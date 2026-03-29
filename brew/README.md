@@ -1,6 +1,6 @@
 ---
 Site: https://brew.sh/
-Updated: 2023-07-23
+Updated: 2026-03-29
 ---
 
 # Homebrew

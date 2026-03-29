@@ -1,6 +1,6 @@
 ---
 Site: https://developers.google.com/gemini-code-assist
-Updated: 2026-03-22
+Updated: 2026-03-29
 ---
 
 # Gemini CLI
