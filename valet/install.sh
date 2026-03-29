@@ -5,6 +5,8 @@ GREEN='\033[1;32m'
 RED='\033[0;31m'
 
 BREW_PREFIX=$(brew --prefix)
+SHELL_RC="$HOME/.bashrc"
+[ -f "$HOME/.zshrc" ] && SHELL_RC="$HOME/.zshrc"
 
 function StepSection() {
   echo -e "${GREEN}$@${RESET}"
@@ -46,7 +48,7 @@ valet trust
 
 # https://github.com/laravel/valet/discussions/1127#discussioncomment-1748638
 # https://nodejs.org/api/cli.html#node_extra_ca_certsfile
-echo 'export NODE_EXTRA_CA_CERTS="$HOME/.config/valet/CA/LaravelValetCASelfSigned.pem"' >> ~/.shell/extra
+echo 'export NODE_EXTRA_CA_CERTS="$HOME/.config/valet/CA/LaravelValetCASelfSigned.pem"' >> "$SHELL_RC"
 
 StepSection "Setup Database"
 # Check if '/opt/homebrew/var/mysql' excits,
@@ -60,6 +62,6 @@ fi
 
 # Install Mysql v8.4 (LTS)
 brew install mysql@8.4 && \
-echo "export PATH=\"$BREW_PREFIX/opt/mysql@8.4/bin:\$PATH\"" >> ~/.shell/extra && \
+echo "export PATH=\"$BREW_PREFIX/opt/mysql@8.4/bin:\$PATH\"" >> "$SHELL_RC" && \
 brew services start mysql@8.4 && \
 $BREW_PREFIX/opt/mysql@8.4/bin/mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
