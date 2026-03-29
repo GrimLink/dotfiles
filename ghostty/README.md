@@ -17,7 +17,11 @@ This also creates `~/.hushlogin` if not present, suppressing the "Last login" me
 
 ## Setup
 
-The setup will sync the Ghostty settings folder.
+Syncs the Ghostty settings folder.
+
+```sh
+./ghostty/setup.sh
+```
 
 _Ghostty may need to be reloaded to add all changes._
 

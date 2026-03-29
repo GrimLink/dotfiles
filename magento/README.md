@@ -21,17 +21,16 @@ It also adds:
 
 ## Install
 
-The `install.sh` script sets up all required services for Magento2 development.
+Sets up all required services for Magento2 development. Installs and starts Mailhog, Redis, and Opensearch, and configures Valet with PHP 8.4, proxies, and the default project folder.
 
-It installs and starts the following:
+```sh
+./magento/install.sh
+```
 
-- Mailhog (mail catcher)
-- Redis (cache)
-- Opensearch (search engine)
+## Setup
 
-It also configures Valet with the following (requires Valet to be installed):
+Installs the CLI tools: `mage`, `n98-magerun2`, and `magento-cache-clean`.
 
-- Sets the default PHP version to `php@8.4`
-- Adds a proxy for Mailhog at `mailhog.test`
-- Adds a proxy for Opensearch at `opensearch.test`
-- Creates and parks `~/Developer/magento` as the default project folder
+```sh
+./magento/setup.sh
+```

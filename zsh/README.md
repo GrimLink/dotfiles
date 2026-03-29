@@ -4,9 +4,18 @@ This contains all the config I have used for my zsh setup.
 
 ## Install
 
+Installs the Pure prompt theme and zsh-syntax-highlighting.
+
 ```sh
-brew install pure
-brew install zsh-syntax-highlighting
+./zsh/install.sh
+```
+
+## Setup
+
+Syncs `.zshrc` to `~/.zshrc`.
+
+```sh
+./zsh/setup.sh
 ```
 
 ## Keybindings

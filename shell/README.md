@@ -3,10 +3,18 @@ Site:
 Updated: 2026-03-30
 ---
 
-# Bash
+# Shell
 
 All files are loaded via the terminal shell of choice.
 In this dotfile repo this is bash or zsh.
+
+## Setup
+
+Syncs shell files (`aliases`, `exports`, `functions`) to `~/.shell/`.
+
+```sh
+./shell/setup.sh
+```
 
 ## Whats in the box
 

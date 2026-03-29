@@ -9,8 +9,18 @@ This contains all my personal Gemini CLI settings.
 
 ## Install
 
+Installs Gemini CLI and configures the Chrome DevTools MCP.
+
 ```sh
-brew install gemini-cli
+./gemini/install.sh
+```
+
+## Setup
+
+Syncs settings and `GEMINI.md` to `~/.gemini/`.
+
+```sh
+./gemini/setup.sh
 ```
 
 ## Settings

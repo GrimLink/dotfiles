@@ -10,24 +10,16 @@ Laravel is my preferred way to set up a development environment on a local machi
 
 ## Install
 
-First, make sure you have completed the installation steps in install-system.sh to install PHP and Composer.
-
-Then, run the following commands to install Valet and trust the local domain:
+Requires PHP and Composer to be installed first (via `install-system.sh`). Installs Valet, trusts the local domain, and sets up MySQL 8.4 (LTS) with the root password set to `root`.
 
 ```sh
-composer global require laravel/valet
-valet install
-valet trust
+./valet/install.sh
 ```
 
-To test that everything is working, run the following command:
+## Setup
+
+Syncs Valet configuration files.
 
 ```sh
-ping -c1 localhost.test
+./valet/setup.sh
 ```
-
-_This will ping the local domain and should return a 404 page._
-
-## Database
-
-The install script also sets up MySQL 8.4 (LTS), with the root password set to `root`.

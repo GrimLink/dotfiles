@@ -10,7 +10,15 @@ This contains all my personal Zed settings.
 ## Install
 
 ```sh
-brew install --cask zed
+./zed/install.sh
+```
+
+## Setup
+
+Syncs Zed settings to `~/.config/zed/`.
+
+```sh
+./zed/setup.sh
 ```
 
 ## CLI Options

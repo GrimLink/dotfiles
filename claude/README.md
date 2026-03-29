@@ -9,8 +9,18 @@ This contains all my personal Claude Code settings.
 
 ## Install
 
+Installs Claude Code and configures the Chrome DevTools MCP.
+
 ```sh
-brew install --cask claude-code
+./claude/install.sh
+```
+
+## Setup
+
+Syncs settings and `CLAUDE.md` to `~/.claude/`.
+
+```sh
+./claude/setup.sh
 ```
 
 ## Settings

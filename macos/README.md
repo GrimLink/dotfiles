@@ -2,9 +2,13 @@
 
 This contains all my personal macOS settings and preferrens.
 
-## Setup
+## Install
 
-The setup will set the macOS settings.
+Applies all macOS system, Finder, Dock, input, and app settings.
+
+```sh
+./macos/install.sh
+```
 
 _Some settings require a reboot_
 
