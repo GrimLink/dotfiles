@@ -1,6 +1,7 @@
 # Dev tools
 brew "gh"
 brew "imagemagick"
+brew "ripgrep"
 brew "bat"
 
 # Databases
@@ -18,9 +19,9 @@ cask "signal"
 cask "whatsapp"
 
 # Image editors and tools
-# cask "figma"
 cask "imageoptim"
 cask "ray"
+# cask "figma"
 
 # Utils
 cask "android-file-transfer"
