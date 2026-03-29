@@ -3,10 +3,8 @@
 alias reload="exec $SHELL -l"
 
 # Navigation
-alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-
 alias ..d="cd ~/Downloads"
 alias ..p="cd ~/Developer"
 
@@ -38,15 +36,21 @@ alias chmox="chmod +x"
 alias today='date +"%A, %B %-d, %Y, Week: %V"'
 
 # Networking
-alias myip='dig @resolver4.opendns.com myip.opendns.com +short' 
+alias myip='dig @resolver4.opendns.com myip.opendns.com +short'
 alias myip4='dig @resolver4.opendns.com myip.opendns.com +short -4'
 alias myip6='dig @resolver1.ipv6-sandbox.opendns.com AAAA myip.opendns.com +short -6'
 
 # Recursively delete `.DS_Store` files
 alias dscleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
+# Clean up LaunchServices to remove duplicates in the "Open With" menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # General ssh key
 alias copyssh="pbcopy <~/.ssh/id_rsa.pub"
+
+# Brew
+alias brewery="brew update && brew upgrade && brew cleanup"
+
+# Artisan
+alias art="php artisan"

@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Navigate up multiple directories
+function ..() {
+  local times=${1:-1}
+  local path=""
+  for ((i=0; i<times; i++)); do
+    path="../$path"
+  done
+  cd "$path"
+}
+
 # Create a new directory and enter it
 function mcd() {
   mkdir -p "$@" && cd "$@"
