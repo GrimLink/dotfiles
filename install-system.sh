@@ -34,6 +34,10 @@ runAction "Configuring git.." git/setup
 runAction "Configuring ssh.." git/ssh
 runAction "Installing git tools.." git/install
 
+runAction "Installing node.." node/install
+runAction "Installing php.." php/install
+runAction "Installing rust.." rust/install
+
 runAction "Installing zsh.." zsh/install
 runAction "Configuring zsh.." zsh/setup
 
@@ -46,6 +50,8 @@ runAction "Configuring Claude.." claude/setup
 
 runAction "Installing Gemini.." gemini/install
 runAction "Configuring Gemini.." gemini/setup
+
+runAction "Installing Skills.." skills/setup
 
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"
