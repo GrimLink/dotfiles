@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Set VS Code as default code editor
-export EDITOR=code
+# Set Zed as default code editor
+export EDITOR="zed -w"
+export VISUAL="zed -w"
 
 # Add local bin
 export PATH="$PATH:$HOME/bin"
