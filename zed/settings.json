@@ -27,9 +27,6 @@
   "colorize_brackets": true,
   "show_whitespaces": "trailing",
   "soft_wrap": "editor_width",
-  "inlay_hints": {
-    "enabled": true,
-  },
 
   // Editor Toolbar
   "toolbar": {
