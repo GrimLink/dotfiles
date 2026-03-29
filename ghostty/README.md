@@ -1,6 +1,6 @@
 ---
 Site: https://ghostty.org/
-Updated: 2025-03-30
+Updated: 2026-03-30
 ---
 
 # Ghostty
@@ -10,8 +10,10 @@ This contains all my personal Ghostty settings.
 ## Install
 
 ```sh
-brew install --cask ghostty
+./ghostty/install.sh
 ```
+
+This also creates `~/.hushlogin` if not present, suppressing the "Last login" message in new terminal sessions.
 
 ## Setup
 
