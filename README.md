@@ -2,7 +2,8 @@
 
 My personal developer setup for macOS, covering shell configuration, git, Laravel Valet, and more.
 
-> :warning: These dotfiles are configured to match my personal preferences.
+> [!WARNING]
+> These dotfiles are configured to match my personal preferences.
 > Understand the code before running any scripts.
 
 ## Getting Started
@@ -13,7 +14,6 @@ My personal developer setup for macOS, covering shell configuration, git, Larave
 4. Run `./dotfiles/install-system.sh`
 5. Restart your system to let all settings take effect
 6. Run `./dotfiles/install-dev-env.sh`
-
 
 ## What's Inside
 
@@ -31,10 +31,10 @@ Feel free to explore and adapt them to suit your development needs.
 - [Ghostty](https://ghostty.org) terminal
 - [Zed](https://zed.dev) editor
 - [Fork](https://git-fork.com) git client
-- [Claude Code](https://claude.ai/claude-code) and [Gemini CLI](https://developers.google.com/gemini-code-assist)
 
 ### install-dev-env.sh
 
+- [Claude Code](https://claude.ai/claude-code) and [Gemini CLI](https://developers.google.com/gemini-code-assist)
 - [NVM](https://github.com/nvm-sh/nvm) for Node version management
 - [Laravel Valet](https://laravel.com/docs/valet) with MySQL 8.4
 - [Magento2](https://developer.adobe.com/open/magento) tools (Mailhog, Redis, Opensearch, n98-magerun2, mage)
@@ -51,6 +51,7 @@ Configurations kept for historical reference only. These tools are no longer act
 
 I'd like to acknowledge the following individuals and projects that have inspired or contributed to the development of these dotfiles:
 
+- [Ruud van Zuidam](https://github.com/allrude)
 - [Mathias Bynens' Dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [Paul Irish's Dotfiles](https://github.com/paulirish/dotfiles)
 - [Andreas Larsen's Dotfiles](https://github.com/alrra/dotfiles)
