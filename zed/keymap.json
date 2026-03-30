@@ -25,4 +25,29 @@
       "cmd-b": "workspace::ToggleRightDock",
     },
   },
+  {
+    "context": "Editor && extension == md",
+    "bindings": {
+      "cmd-shift-b": [
+        "editor::InsertSnippet",
+        { "name": "Markdown bold", "language": "markdown" },
+      ],
+      "cmd-shift-i": [
+        "editor::InsertSnippet",
+        { "name": "Markdown italic", "language": "markdown" },
+      ],
+      "cmd-shift-s": [
+        "editor::InsertSnippet",
+        { "name": "Markdown strikethrough", "language": "markdown" },
+      ],
+      "cmd-shift-l": [
+        "editor::InsertSnippet",
+        { "name": "Markdown link", "language": "markdown" },
+      ],
+      "cmd-shift-p": [
+        "editor::InsertSnippet",
+        { "name": "Markdown image", "language": "markdown" },
+      ],
+    },
+  },
 ]

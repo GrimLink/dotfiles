@@ -1,0 +1,42 @@
+{
+  "php tag": {
+    "prefix": "php",
+    "body": ["<?php $1 ?>"]
+  },
+  "php echo": {
+    "prefix": "<?=",
+    "body": ["<?= $1 ?>"]
+  },
+  "php if": {
+    "prefix": "if.php",
+    "body": ["<?php if ($1): ?>", "$0", "<?php endif; ?>"]
+  },
+  "php foreach": {
+    "prefix": "foreach.php",
+    "body": [
+      "<?php foreach (\\$${1:items} as \\$${2:item}): ?>",
+      "\t$0",
+      "<?php endforeach; ?>"
+    ]
+  },
+  "php dump": {
+    "prefix": "php.dump",
+    "body": ["<pre><?= var_dump($1); ?></pre>"]
+  },
+  "Spatie Ray": {
+    "prefix": "ray",
+    "body": ["ray($1);"]
+  },
+  "Spatie Ray - Pause": {
+    "prefix": "ray.pause",
+    "body": ["ray()->pause();"]
+  },
+  "Spatie Ray - Measure": {
+    "prefix": "ray.measure",
+    "body": ["ray()->measure($1);"]
+  },
+  "Spatie Ray - DB Queries": {
+    "prefix": "ray.db",
+    "body": ["ray()->showQueries();"]
+  }
+}

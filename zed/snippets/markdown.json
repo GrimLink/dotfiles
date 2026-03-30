@@ -1,0 +1,52 @@
+{
+  "Markdown bold": {
+    "prefix": "bold",
+    "description": "Bold text",
+    "body": ["**${1:bold}**"]
+  },
+  "Markdown italic": {
+    "prefix": "italic",
+    "description": "Italic text",
+    "body": ["_${1:italic}_"]
+  },
+  "Markdown strikethrough": {
+    "prefix": "strikethrough",
+    "description": "Strikethrough text",
+    "body": ["~~${1:strike}~~"]
+  },
+  "Markdown link": {
+    "prefix": "link",
+    "description": "Markdown link",
+    "body": ["[${1:text}](${2:url})"]
+  },
+  "Markdown image": {
+    "prefix": "img",
+    "description": "Markdown image",
+    "body": ["![${1:alt}](${2:src})"]
+  },
+  "Markdown checklist": {
+    "prefix": "checklist",
+    "description": "Markdown checklist",
+    "body": ["- [${1: }] $0"]
+  },
+  "GitHub markdown tip alert": {
+    "prefix": "gh-tip",
+    "description": "A GitHub flavored tip alert",
+    "body": ["> [!TIP]", "> ${1:text}"]
+  },
+  "GitHub markdown important alert": {
+    "prefix": "gh-important",
+    "description": "A GitHub flavored important alert",
+    "body": ["> [!IMPORTANT]", "> ${1:text}"]
+  },
+  "GitHub markdown warning alert": {
+    "prefix": "gh-warning",
+    "description": "A GitHub flavored warning alert",
+    "body": ["> [!WARNING]", "> ${1:text}"]
+  },
+  "GitHub markdown caution alert": {
+    "prefix": "gh-caution",
+    "description": "A GitHub flavored caution alert",
+    "body": ["> [!CAUTION]", "> ${1:text}"]
+  }
+}

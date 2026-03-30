@@ -12,3 +12,9 @@ rsync -avh --no-perms \
   "$(dirname "${BASH_SOURCE}")/settings.json" \
   "$(dirname "${BASH_SOURCE}")/keymap.json" \
   $HOME/.config/zed
+
+StepSection "Syncing Zed snippets"
+mkdir -p $HOME/.config/zed/snippets
+rsync -avh --no-perms \
+  "$(dirname "${BASH_SOURCE}")/snippets/." \
+  $HOME/.config/zed/snippets

@@ -1,0 +1,7 @@
+{
+  "background": {
+    "prefix": "background",
+    "description": "Short hand background",
+    "body": "background: ${1:transparent} ${2:/* img */} ${3:center/contain} ${4:no-repeat};"
+  }
+}
