@@ -55,6 +55,13 @@
       "google_web_search",
       "web_fetch",
       "mcp_chrome_devtools_*"
-    ]
+    ],
+    "mcpServers": {
+      "chrome-devtools": {
+        "command": "npx",
+        "args": ["chrome-devtools-mcp@latest"]
+      }
+    },
+    "disabledMcpjsonServers": ["chrome-devtools"]
   }
 }

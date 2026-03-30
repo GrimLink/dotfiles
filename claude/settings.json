@@ -44,5 +44,6 @@
       "WebFetch",
       "mcp__chrome-devtools__*"
     ]
-  }
+  },
+  "disabledMcpjsonServers": ["chrome-devtools"]
 }
