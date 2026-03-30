@@ -28,17 +28,13 @@
   {
     "context": "Editor && extension == md",
     "bindings": {
-      "cmd-shift-b": [
+      "cmd-b": [
         "editor::InsertSnippet",
         { "name": "Markdown bold", "language": "markdown" },
       ],
-      "cmd-shift-i": [
+      "cmd-i": [
         "editor::InsertSnippet",
         { "name": "Markdown italic", "language": "markdown" },
-      ],
-      "cmd-shift-s": [
-        "editor::InsertSnippet",
-        { "name": "Markdown strikethrough", "language": "markdown" },
       ],
     },
   },
