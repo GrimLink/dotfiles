@@ -56,7 +56,7 @@ prompt pure
 
 # Load all shell files from the ~/.shell folder
 for file in ~/.shell/*; do
-  [[ -f "$file" && "$file" != *.* ]] && source "$file"
+  [[ -f "$file" && "${file##*/}" != *.* ]] && source "$file"
 done
 unset file
 
