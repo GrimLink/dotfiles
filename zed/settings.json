@@ -76,6 +76,13 @@
     },
   },
   "context_servers": {
+    "chrome-devtools-mcp-zed": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "extra_args": ["--slim"],
+      },
+    },
     "mcp-server-context7": {
       "enabled": false,
       "remote": false,

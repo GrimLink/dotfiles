@@ -59,9 +59,8 @@
     "mcpServers": {
       "chrome-devtools": {
         "command": "npx",
-        "args": ["chrome-devtools-mcp@latest"]
+        "args": ["chrome-devtools-mcp@latest", "--slim"]
       }
-    },
-    "disabledMcpjsonServers": ["chrome-devtools"]
+    }
   }
 }
