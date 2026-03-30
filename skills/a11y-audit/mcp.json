@@ -1,0 +1,15 @@
+{
+  "chrome-devtools-a11y": {
+    "command": "npx",
+    "args": ["-y", "chrome-devtools-mcp@latest"],
+    "includeTools": [
+      "navigate_page",
+      "take_screenshot",
+      "take_snapshot",
+      "list_console_messages",
+      "evaluate_script",
+      "press_key",
+      "close_page"
+    ]
+  }
+}
