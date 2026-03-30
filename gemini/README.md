@@ -9,7 +9,7 @@ This contains all my personal Gemini CLI settings.
 
 ## Install
 
-Installs Gemini CLI and configures the Chrome DevTools MCP.
+Installs Gemini CLI and configures the Chrome DevTools MCP with `--slim` for a smaller token footprint, with tools loaded on demand instead of all at once.
 
 ```sh
 ./gemini/install.sh

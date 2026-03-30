@@ -13,6 +13,8 @@ This contains all my personal Zed settings.
 ./zed/install.sh
 ```
 
+> The Chrome DevTools MCP is configured with `--slim` for a smaller token footprint, with tools loaded on demand instead of all at once. Requires the `chrome-devtools-mcp-zed` extension to be installed separately as it is not included by default.
+
 ## Setup
 
 Syncs Zed settings to `~/.config/zed/`.

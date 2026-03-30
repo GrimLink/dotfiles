@@ -9,7 +9,7 @@ This contains all my personal Claude Code settings.
 
 ## Install
 
-Installs Claude Code and configures the Chrome DevTools MCP.
+Installs Claude Code and configures the Chrome DevTools MCP with `--slim` for a smaller token footprint, with tools loaded on demand instead of all at once.
 
 ```sh
 ./claude/install.sh
