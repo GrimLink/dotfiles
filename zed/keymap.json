@@ -40,14 +40,6 @@
         "editor::InsertSnippet",
         { "name": "Markdown strikethrough", "language": "markdown" },
       ],
-      "cmd-shift-l": [
-        "editor::InsertSnippet",
-        { "name": "Markdown link", "language": "markdown" },
-      ],
-      "cmd-shift-p": [
-        "editor::InsertSnippet",
-        { "name": "Markdown image", "language": "markdown" },
-      ],
     },
   },
 ]
