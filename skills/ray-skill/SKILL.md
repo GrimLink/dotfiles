@@ -1,11 +1,17 @@
 ---
 name: ray-skill
-description: Use when user says "send to Ray," "show in Ray," "debug in Ray," "log to Ray," "display in Ray," or wants to visualize data, debug output, or show diagrams in the Ray desktop application.
+description: "Send variables, debug output, HTML, tables, and diagrams to Spatie's Ray desktop application via its HTTP API. Use when the user says 'send to Ray,' 'show in Ray,' 'debug in Ray,' 'log to Ray,' 'display in Ray,' or wants to visualize data or inspect values in Ray."
 ---
 
 # Ray Skill
 
 Ray is Spatie's desktop debugging application. Send data via HTTP POST to its local server — this is what `ray()` does under the hood.
+
+## Workflow
+
+1. **Check availability**: `GET http://localhost:23517/_availability_check` — Ray responds with 404 when running. If connection refused, Ray is not open.
+2. **Send payload**: POST a JSON request with one or more payloads (see Request Format below).
+3. **Apply modifiers** (optional): Reuse the same `uuid` to add color, label, or size to an existing entry.
 
 ## Connection
 
@@ -13,8 +19,6 @@ Ray is Spatie's desktop debugging application. Send data via HTTP POST to its lo
 | ------- | ----------- | ---------- |
 | Host    | `localhost` | `RAY_HOST` |
 | Port    | `23517`     | `RAY_PORT` |
-
-Availability check: `GET http://localhost:23517/_availability_check` — Ray responds with 404 when running.
 
 ## Request Format
 
@@ -39,7 +43,7 @@ Headers: `Content-Type: application/json`, `User-Agent: Ray 1.0`
 }
 ```
 
-Reuse the same `uuid` to apply modifiers (color, label, size) to an existing entry. Every payload requires the same `origin` object.
+Every payload requires the same `origin` object.
 
 ## Payload Types
 
