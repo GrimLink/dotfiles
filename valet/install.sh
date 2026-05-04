@@ -31,9 +31,6 @@ else
   echo "✅ composer"
 fi
 
-# Make sure composer is compatible with Magento2
-composer self-update --2.2
-
 # Install step
 StepSection "Installing valet"
 composer global require laravel/valet
