@@ -62,3 +62,14 @@ brew install mysql@8.4 && \
 echo "export PATH=\"$BREW_PREFIX/opt/mysql@8.4/bin:\$PATH\"" >> "$SHELL_RC" && \
 brew services start mysql@8.4 && \
 $BREW_PREFIX/opt/mysql@8.4/bin/mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
+
+StepSection "Setup Mailpit"
+brew install mailpit
+brew services start mailpit
+
+# Set common proxy settings
+echo "Setting proxy for http://localhost:8025 to mailpit.test"
+valet proxy mailpit http://localhost:8025 --secure
+
+StepSection "Running additional setup"
+./valet/setup.sh

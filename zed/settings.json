@@ -147,7 +147,7 @@
     "CSS": ["*.less"],
     "XML": ["*.svg"],
     "Markdown": ["llm.txt"],
-    "Shell Script": ["Brewfile"],
+    "Shell Script": ["Brewfile", "*.ini"],
   },
   "file_scan_exclusions": [
     // "**/.git",

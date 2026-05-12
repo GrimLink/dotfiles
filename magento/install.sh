@@ -8,10 +8,6 @@ function StepSection() {
   echo -e "${GREEN}$@${RESET}"
 }
 
-# TODO Replace with Mailpit
-StepSection "Setup Mailhog"
-brew install mailhog
-
 StepSection "Setup Redis"
 brew install redis && \
 brew services start redis
