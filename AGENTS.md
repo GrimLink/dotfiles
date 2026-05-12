@@ -14,4 +14,4 @@
 - Use 'shell/functions' for custom shell functions.
 
 ## Safety
-- Never execute 'install-system.sh', 'install-dev-env.sh', or any 'install.sh' within tool directories autonomously, as they perform wide-reaching system changes.
+- Never execute 'install-system.sh', 'install-dev-env.sh', or any 'install.sh' or 'setup.sh' within tool directories autonomously, as they perform wide-reaching system changes.
