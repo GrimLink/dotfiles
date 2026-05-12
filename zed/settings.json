@@ -20,7 +20,7 @@
 
   // Titlebar
   "title_bar": {
-    "show_branch_icon": true,
+    "show_branch_status_icon": true,
   },
 
   // Editor
@@ -47,12 +47,18 @@
 
   // Project Panel
   "project_panel": {
-    "dock": "right",
     "default_width": 500.0,
+  },
+
+  // Outline Panel
+  "outline_panel": {
+    "button": false,
   },
 
   // Agent Panel
   "agent": {
+    "dock": "right",
+    "sidebar_side": "right",
     "default_width": 500.0,
     "default_model": {
       "provider": "google",
@@ -92,34 +98,10 @@
 
   // Git Panel
   "git_panel": {
-    "dock": "right",
     "default_width": 500.0,
     "tree_view": true,
     "file_icons": true,
     "folder_icons": true,
-  },
-
-  // Debugger
-  "debugger": {
-    "button": false,
-  },
-
-  // Outline Panel
-  "outline_panel": {
-    "button": false,
-    "dock": "right",
-    "default_width": 500.0,
-  },
-
-  // Collaboration Panel
-  "collaboration_panel": {
-    "dock": "right",
-    "default_width": 500.0,
-  },
-
-  // Notification Panel
-  "notification_panel": {
-    "default_width": 500.0,
   },
 
   // General
@@ -127,9 +109,11 @@
   "autosave": "on_window_change",
   "profiles": {
     "presentation": {
-      "agent_ui_font_size": 28.0,
-      "agent_buffer_font_size": 28.0,
-      "buffer_font_size": 28.0,
+      "settings": {
+        "agent_ui_font_size": 28.0,
+        "agent_buffer_font_size": 28.0,
+        "buffer_font_size": 28.0,
+      },
     },
   },
   "lsp": {
