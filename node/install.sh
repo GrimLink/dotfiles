@@ -8,4 +8,5 @@ npm config set depth 0
 npm config set init-author-name "GrimLink"
 npm config set init-license "MIT"
 npm config set init-type "module"
+npm config set min-release-age 1
 echo "tag-version-prefix=" > ~/.npmrc
