@@ -1,4 +1,5 @@
 # Dev tools
+brew "jq"
 brew "gh"
 brew "imagemagick"
 brew "ripgrep"
