@@ -1,6 +1,6 @@
 ---
 name: a11y-audit
-description: Run an accessibility audit on a web page using a browser. Use when the user wants to check, test, or audit accessibility (a11y) on a URL or the current page.
+description: "Run a WCAG accessibility audit on a web page — checks heading hierarchy, landmark regions, color contrast, ARIA attributes, keyboard navigation, and screen reader compatibility. Use when the user wants to check, test, or audit accessibility (a11y) on a URL or the current page."
 ---
 
 Use the browser (via the Chrome/Playwright MCP) to audit the page for accessibility issues. Follow the steps below in order.

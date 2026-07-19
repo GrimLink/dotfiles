@@ -9,3 +9,6 @@ Never use dashes (— or -) as punctuation in documentation or README files. Rep
 For questions about GitHub, use the gh tool
 Never mention Gemini CLI in PR descriptions, PR comments, or issue comments
 Do not include a "Test plan" section in PR descriptions
+
+## Magento 2
+When performing actions that require bin/magento, prefer using the mage script instead.

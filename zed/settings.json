@@ -117,6 +117,22 @@
     },
   },
   "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "php": "html",
+          "blade": "html"
+        },
+        "experimental": {
+          "classRegex": [
+            "class=\"([^\"]*)\"",
+            "class='([^']*)'",
+            "class=\\\"([^\\\"]*)\\\"",
+            "@class\\(\\[([^\\]]*)\\]\\)"
+          ]
+        }
+      }
+    },
     "phpcs": {
       "settings": {
         "standard": "PSR4",
@@ -147,7 +163,7 @@
     "CSS": ["*.less"],
     "XML": ["*.svg"],
     "Markdown": ["llm.txt"],
-    "Shell Script": ["Brewfile", "*.ini"],
+    "Shell Script": ["Brewfile"],
   },
   "file_scan_exclusions": [
     // "**/.git",

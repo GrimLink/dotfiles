@@ -1,6 +1,6 @@
 ---
 Site: https://laravel.com/docs/valet
-Updated: 2026-03-29
+Updated: 2026-05-12
 Requires: [brew, php, composer]
 ---
 
