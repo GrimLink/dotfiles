@@ -1,4 +1,8 @@
 {
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline-command.sh"
+  },
   "permissions": {
     "defaultMode": "acceptEdits",
     "allow": [
@@ -15,6 +19,7 @@
       "Bash(docker-compose:*)",
       "Bash(make:*)",
       "Bash(sed:*)",
+      "Bash(perl:*)",
       "Bash(cat:*)",
       "Bash(ls:*)",
       "Bash(grep:*)",
