@@ -20,7 +20,7 @@ Skills are synced to `~/.agents/skills/` as the primary location. Claude Code re
 
 ### a11y-audit
 
-Audits a web page for accessibility issues using the browser MCP. Reports findings grouped by severity with element selectors and fixes. Requires the Chrome DevTools MCP to be configured.
+Audits a web page against WCAG 2.2 Level AA using the Chrome DevTools MCP. Runs axe-core first, then the manual checks automation cannot make, including the WCAG 2.2 additions. Reports findings grouped by severity with element selectors and fixes. Requires the Chrome DevTools MCP with its full tool set, not `--slim`.
 
 ### git-review
 

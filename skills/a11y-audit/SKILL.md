@@ -1,70 +1,140 @@
 ---
 name: a11y-audit
-description: "Run a WCAG accessibility audit on a web page — checks heading hierarchy, landmark regions, color contrast, ARIA attributes, keyboard navigation, and screen reader compatibility. Use when the user wants to check, test, or audit accessibility (a11y) on a URL or the current page."
+description: "Run a WCAG accessibility audit on a web page. Checks heading hierarchy, landmark regions, colour contrast, ARIA attributes, keyboard navigation, target size and the WCAG 2.2 additions. Use when the user wants to check, test, or audit accessibility (a11y) on a URL or the current page."
 ---
 
-Use the browser (via the Chrome/Playwright MCP) to audit the page for accessibility issues. Follow the steps below in order.
+Audit the page with the Chrome DevTools MCP. Work through the steps in order.
 
-## 1. Navigate and baseline
+If the user did not name a target, assume **WCAG 2.2 Level AA** and say so in the report.
 
-1. Navigate to the page with `navigate_page`
-2. Run `list_console_messages` with `types: ["issue"]` and `includePreservedMessages: true` to catch native Chrome accessibility issues (missing labels, invalid ARIA, low contrast)
+If the Chrome DevTools MCP tools are not available, stop and tell the user to install it rather than substituting a scripted browser. Hand-rolled probes are where false positives come from:
+
+```sh
+claude mcp add chrome-devtools --scope user -- npx -y chrome-devtools-mcp@latest
+```
+
+## 1. Baseline
+
+1. `navigate_page` to the URL.
+2. `list_console_messages` with `types: ["issue"]` and `includePreservedMessages: true` for Chrome's own accessibility issues.
+3. Run axe-core through `evaluate_script`. This is the cheapest high-value pass and catches most mechanical failures:
+
+```js
+await import('https://cdn.jsdelivr.net/npm/axe-core@4/axe.min.js');
+const r = await axe.run(document, {
+  runOnly: { type: 'tag', values: ['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa'] },
+  rules: { 'target-size': { enabled: true } },
+});
+return { violations: r.violations, incomplete: r.incomplete };
+```
+
+`target-size` (SC 2.5.8) is **disabled by default** in axe and must be switched on explicitly. Report `incomplete` separately from `violations`: those are "needs review", not failures, and they are where the real findings usually hide.
+
+Repeat for each page type that matters (home, listing, detail, form, checkout). One page is not an audit.
 
 ## 2. Structure and semantics
 
-1. Run `take_snapshot` to capture the accessibility tree
-2. Check heading hierarchy (h1 > h2 > h3, no skipped levels)
-3. Verify landmark regions are present (main, nav, header, footer)
-4. Check page `<title>` is present and free of typos
-5. Compare snapshot order against a `take_screenshot` to confirm DOM order matches visual reading order
+1. `take_snapshot` for the accessibility tree.
+2. Heading hierarchy: one `h1`, no skipped levels, no empty headings.
+3. Landmarks present (`main`, `nav`, `header`, `footer`) and each repeated landmark uniquely named.
+4. `<title>` present, descriptive, free of typos.
+5. `html[lang]` set.
+6. Compare snapshot order against `take_screenshot` to confirm DOM order matches visual reading order.
+7. Resolve every `aria-labelledby` and `aria-describedby` target. A dangling or empty reference leaves the element unnamed and axe only reports it as incomplete.
 
-## 3. Labels, images, and forms
+## 3. Labels, images, forms
 
-Using the snapshot:
+From the snapshot, confirm buttons and links have a non-empty accessible name, and that images have meaningful `alt` (or `alt=""` when decorative).
 
-- Buttons and links must have an accessible name (not empty)
-- Images must have meaningful `alt` text, decorative images use `alt=""`
-- Form inputs must have associated labels — verify with `evaluate_script`:
-  ```js
-  [...document.querySelectorAll('input, select, textarea')]
-    .filter(el => !el.labels?.length && !el.getAttribute('aria-label') && !el.getAttribute('aria-labelledby'))
-    .map(el => el.outerHTML)
-  ```
+Read names from the **accessibility tree**, not by hand-assembling attributes. A control can be named by a nested `role="img"` with `aria-label`, by an `<svg><title>`, or by `aria-labelledby`. Reconstructing that yourself produces phantom "unnamed control" findings.
 
-## 4. Keyboard navigation
-
-1. Press `Tab` and take a snapshot — locate the focused element in the tree
-2. Continue tabbing through key interactive elements to verify logical focus order
-3. If a modal or dialog is present, verify focus is trapped inside it
-4. Take a `take_screenshot` to confirm focus indicator is visible
-
-## 5. Color contrast
-
-Check `list_console_messages` output for "Low Contrast" issues first. If the environment does not report them, use `evaluate_script` to check a specific element manually:
+Check `autocomplete` on every field (SC 1.3.5, and SC 3.3.8 for credentials):
 
 ```js
-const el = document.querySelector('SELECTOR');
-const style = getComputedStyle(el);
-[style.color, style.backgroundColor]
+return [...document.querySelectorAll('input,select,textarea')]
+  .filter(el => el.type !== 'hidden')
+  .map(el => ({
+    name: el.name, type: el.type,
+    labelled: !!(el.labels?.length || el.getAttribute('aria-label') || el.getAttribute('aria-labelledby')),
+    autocomplete: el.getAttribute('autocomplete'),
+  }));
 ```
+
+`autocomplete="off"` on username or password fields fails SC 3.3.8. Generic labels such as "Form field" fail SC 3.3.2.
+
+## 4. Keyboard and focus
+
+Drive the keyboard with the MCP's own `click` and `press_key`. **Never open a menu or dialog with `element.click()` inside `evaluate_script`.** A synthetic click does not focus the trigger, so the component captures `document.body` as the element to restore, and the page appears to lose focus on close when it does not. That is a bug in the test, not the page.
+
+1. Tab through and confirm focus order is logical and the indicator is visible (`take_screenshot`).
+2. Confirm no keyboard traps, and that Escape closes overlays and returns focus to the trigger.
+3. For dialogs, check what kind it is before judging it:
+
+```js
+const d = document.querySelector('dialog');
+return { modal: d?.matches(':modal'), open: d?.open };
+```
+
+A native `<dialog>` opened with `showModal()` already provides focus trapping, background inertness and top-layer placement. Do **not** report missing `aria-modal` or a missing `inert` attribute for one. Adding `aria-modal` there is redundant and discouraged. Check the accessibility tree for `modal: true` and for the dialog's name, which is the part that genuinely does get missed.
+
+## 5. Colour contrast
+
+Trust axe's `color-contrast` result first. When resolving a value yourself, **never parse the string returned by `getComputedStyle`**. Modern themes use `oklch()` and `color-mix()`, which are returned verbatim, and reading the numbers out of them as RGB produces nonsense ratios. Resolve through a canvas instead:
+
+```js
+const toRGB = (css) => {
+  const c = document.createElement('canvas'); c.width = c.height = 1;
+  const x = c.getContext('2d', { willReadFrequently: true });
+  x.clearRect(0,0,1,1); x.fillStyle = css; x.fillRect(0,0,1,1);
+  const d = x.getImageData(0,0,1,1).data;
+  return [d[0], d[1], d[2], d[3]/255];
+};
+const lum = (r,g,b) => { const s=[r,g,b].map(v=>{v/=255; return v<=0.03928? v/12.92 : ((v+0.055)/1.055)**2.4;}); return 0.2126*s[0]+0.7152*s[1]+0.0722*s[2]; };
+const ratio = (a,b) => (Math.max(lum(...a),lum(...b))+0.05)/(Math.min(lum(...a),lum(...b))+0.05);
+```
+
+Composite semi-transparent backgrounds against what is actually behind them. For text over a photo, sample the image's darkest and lightest pixels and check the worst case.
+
+Also check SC 1.4.11 Non-text Contrast at 3:1, which axe does not cover at all: form control borders, focus rings, icon-only buttons and toggle states.
 
 ## 6. ARIA
 
-Using the snapshot, verify:
+- No roles duplicating native semantics (`<button role="button">`).
+- No `aria-label` or `aria-labelledby` on a generic `<div>` or `<span>`, where naming is prohibited and the name is discarded.
+- No `aria-hidden` on focusable elements.
+- Before flagging an `aria-live` region as noisy, check `aria-atomic` and `aria-relevant` and whether anything announceable actually changes. With both unset, only added nodes and text changes announce, never the whole region, and a CSS scroll-snap carousel changes `scrollLeft` rather than the DOM. Confirm with a `MutationObserver` over a real interaction before reporting.
 
-- No ARIA roles that duplicate native semantics (e.g., `<button role="button">`)
-- No `aria-label` on elements that already have visible text
-- No invalid role values or misuse of `aria-hidden` on focusable elements
+## 7. WCAG 2.2 additions
+
+Automation covers almost none of these. Check each explicitly and say which passed.
+
+| Criterion | Level | How to check |
+| --- | --- | --- |
+| 2.4.11 Focus Not Obscured (Min) | AA | Tab while scrolled and confirm no sticky or fixed element covers the focused control |
+| 2.5.7 Dragging Movements | AA | Every drag action has a single-pointer alternative |
+| 2.5.8 Target Size (Min) | AA | 24x24 CSS px, or the spacing exception below |
+| 3.2.6 Consistent Help | A | Help or contact mechanism in the same relative order on every page |
+| 3.3.7 Redundant Entry | A | No information asked for twice in one process |
+| 3.3.8 Accessible Authentication (Min) | AA | Password managers can fill: `autocomplete` set, paste not blocked |
+
+For SC 2.5.8, a target under 24x24 still passes if a 24px diameter circle centred on it intersects no other target's circle. Measure centre-to-centre distance before reporting, since most undersized targets pass this way. Note when the margin is thin so it does not regress later.
+
+Check reflow (SC 1.4.10) and resize (SC 1.4.4) with `resize_page` to 320px wide and confirm no horizontal page scroll. An internally scrolling carousel is allowed.
+
+## 8. Verify before reporting
+
+Re-test every finding by a second, different method before it goes in the report. A DOM attribute reading is not evidence of runtime behaviour. Most false positives come from inferring behaviour from static markup rather than observing it.
+
+State what you did not test. No screen reader, no authenticated pages, no alternative themes.
+
+Close the page with `close_page` when done.
 
 ## Report
 
-Group findings by severity:
+Group by severity: **Critical** (blocks access), **Serious** (significantly impairs), **Moderate** (confusion or extra effort), **Minor**.
 
-- **Critical** — blocks access entirely
-- **Serious** — significantly impairs access
-- **Moderate** — causes confusion or extra effort
-- **Minor** — small improvements, including typos in visible or `<title>` text
+For each issue give the criterion and level, the selector or element, the measured evidence, and the fix. Mark anything that passes under WCAG 2.1 but fails under 2.2 explicitly, since that is the usual reason for a re-audit.
 
-For each issue: element or selector, what is wrong, and the fix.
+List what was verified as passing too. A bare list of failures tells the reader nothing about coverage.
 
-When the audit is complete, close the page with `close_page`.
+Keep it to the findings. Audit process narration belongs in the conversation, not the report.
