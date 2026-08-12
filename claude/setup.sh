@@ -13,5 +13,9 @@ rsync \
   --exclude ".DS_Store" \
   --exclude "README.md" \
   --exclude "setup.sh" \
+  --exclude "install.sh" \
   -avh --no-perms \
   "$(dirname "${BASH_SOURCE}")/." ~/.claude;
+
+# Drop the copy left behind before install.sh was excluded
+rm -f ~/.claude/install.sh
