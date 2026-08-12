@@ -85,9 +85,7 @@
     "chrome-devtools-mcp-zed": {
       "enabled": true,
       "remote": false,
-      "settings": {
-        "extra_args": ["--slim"],
-      },
+      "settings": {},
     },
     "mcp-server-context7": {
       "enabled": false,

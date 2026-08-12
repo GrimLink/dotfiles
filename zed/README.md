@@ -13,7 +13,7 @@ This contains all my personal Zed settings.
 ./zed/install.sh
 ```
 
-> The Chrome DevTools MCP is configured with `--slim` for a smaller token footprint, with tools loaded on demand instead of all at once. Requires the `chrome-devtools-mcp-zed` extension to be installed separately as it is not included by default.
+> The Chrome DevTools MCP runs with its full tool set. `--slim` exposes only three tools and drops `take_snapshot` and `list_console_messages`, which the `a11y-audit` skill depends on. Requires the `chrome-devtools-mcp-zed` extension to be installed separately as it is not included by default.
 
 ## Setup
 
