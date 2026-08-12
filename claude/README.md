@@ -9,7 +9,11 @@ This contains all my personal Claude Code settings.
 
 ## Install
 
-Installs Claude Code and configures the Chrome DevTools MCP with `--slim` for a smaller token footprint, with tools loaded on demand instead of all at once.
+Installs Claude Code and registers the Chrome DevTools MCP at user scope.
+
+MCP servers cannot be declared in `settings.json`. It has no `mcpServers` key and ignores one silently. They live in `~/.claude.json` and are registered with `claude mcp add`, which is why this sits in `install.sh` rather than the synced settings.
+
+The server runs with its full tool set. `--slim` exposes only three tools and drops `take_snapshot` and `list_console_messages`, which the `a11y-audit` skill depends on. Tool schemas load on demand regardless, so the token saving was smaller than it looked.
 
 ```sh
 ./claude/install.sh

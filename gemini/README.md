@@ -9,7 +9,7 @@ This contains all my personal Gemini CLI settings.
 
 ## Install
 
-Installs Gemini CLI and configures the Chrome DevTools MCP with `--slim` for a smaller token footprint, with tools loaded on demand instead of all at once.
+Installs Gemini CLI and configures the Chrome DevTools MCP with its full tool set. `--slim` exposes only three tools and drops `take_snapshot` and `list_console_messages`, which the `a11y-audit` skill depends on.
 
 ```sh
 ./gemini/install.sh

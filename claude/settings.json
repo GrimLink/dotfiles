@@ -49,11 +49,5 @@
       "WebFetch",
       "mcp__chrome-devtools__*"
     ]
-  },
-  "mcpServers": {
-    "chrome-devtools": {
-      "command": "npx",
-      "args": ["chrome-devtools-mcp@latest", "--slim"]
-    }
   }
 }
