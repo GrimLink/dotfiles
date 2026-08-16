@@ -1,9 +1,14 @@
 ---
 Site: https://developers.google.com/gemini-code-assist
-Updated: 2026-03-29
+Updated: 2026-08-16
 ---
 
 # Gemini CLI
+
+> [!WARNING]
+> Archived. On June 18 Google [announced the transition of Gemini CLI to Antigravity CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/),
+> which dropped support for Google One and free tier users.
+> These settings are kept for reference only and are no longer part of `install-dev-env.sh` or `sync-settings.sh`.
 
 This contains all my personal Gemini CLI settings.
 
@@ -12,7 +17,7 @@ This contains all my personal Gemini CLI settings.
 Installs Gemini CLI and configures the Chrome DevTools MCP with its full tool set. `--slim` exposes only three tools and drops `take_snapshot` and `list_console_messages`, which the `a11y-audit` skill depends on.
 
 ```sh
-./gemini/install.sh
+./_Archive/gemini/install.sh
 ```
 
 ## Setup
@@ -20,7 +25,7 @@ Installs Gemini CLI and configures the Chrome DevTools MCP with its full tool se
 Syncs settings and `GEMINI.md` to `~/.gemini/`.
 
 ```sh
-./gemini/setup.sh
+./_Archive/gemini/setup.sh
 ```
 
 ## Settings
