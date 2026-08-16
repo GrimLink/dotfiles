@@ -29,28 +29,6 @@ function to-webp() {
   done
 }
 
-# NVM: Auto-switch node version based on .nvmrc
-function load-nvmrc() {
-  ! command -v nvm &>/dev/null && return
-
-  local nvmrc_path
-  nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-
 # Node
 function node-find() {
   find . -name "node_modules" -type d -prune -print | xargs du -chs

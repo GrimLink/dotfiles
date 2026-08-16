@@ -7,28 +7,19 @@ Audit the page with the Chrome DevTools MCP. Work through the steps in order.
 
 If the user did not name a target, assume **WCAG 2.2 Level AA** and say so in the report.
 
-If the Chrome DevTools MCP tools are not available, stop and tell the user to install it rather than substituting a scripted browser. Hand-rolled probes are where false positives come from:
+If the Chrome DevTools MCP tools are not available, stop and tell the user to install it rather than substituting a scripted browser. Hand-rolled probes are where false positives come from.
 
-```sh
-claude mcp add chrome-devtools --scope user -- npx -y chrome-devtools-mcp@latest
-```
+The server is [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp), launched with `npx -y chrome-devtools-mcp@latest`. Registration differs per agent, so point the user at their own MCP configuration rather than naming a command.
+
+Register it with its full tool set. `--slim` exposes three tools and drops `take_snapshot` and `list_console_messages`, which this skill depends on.
 
 ## 1. Baseline
 
 1. `navigate_page` to the URL.
 2. `list_console_messages` with `types: ["issue"]` and `includePreservedMessages: true` for Chrome's own accessibility issues.
-3. Run axe-core through `evaluate_script`. This is the cheapest high-value pass and catches most mechanical failures:
+3. Run `scripts/axe-run.js` through `evaluate_script`. This is the cheapest high-value pass and catches most mechanical failures.
 
-```js
-await import('https://cdn.jsdelivr.net/npm/axe-core@4/axe.min.js');
-const r = await axe.run(document, {
-  runOnly: { type: 'tag', values: ['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa'] },
-  rules: { 'target-size': { enabled: true } },
-});
-return { violations: r.violations, incomplete: r.incomplete };
-```
-
-`target-size` (SC 2.5.8) is **disabled by default** in axe and must be switched on explicitly. Report `incomplete` separately from `violations`: those are "needs review", not failures, and they are where the real findings usually hide.
+Report `incomplete` separately from `violations`: those are "needs review", not failures, and they are where the real findings usually hide.
 
 Repeat for each page type that matters (home, listing, detail, form, checkout). One page is not an audit.
 
@@ -48,17 +39,7 @@ From the snapshot, confirm buttons and links have a non-empty accessible name, a
 
 Read names from the **accessibility tree**, not by hand-assembling attributes. A control can be named by a nested `role="img"` with `aria-label`, by an `<svg><title>`, or by `aria-labelledby`. Reconstructing that yourself produces phantom "unnamed control" findings.
 
-Check `autocomplete` on every field (SC 1.3.5, and SC 3.3.8 for credentials):
-
-```js
-return [...document.querySelectorAll('input,select,textarea')]
-  .filter(el => el.type !== 'hidden')
-  .map(el => ({
-    name: el.name, type: el.type,
-    labelled: !!(el.labels?.length || el.getAttribute('aria-label') || el.getAttribute('aria-labelledby')),
-    autocomplete: el.getAttribute('autocomplete'),
-  }));
-```
+Check `autocomplete` on every field (SC 1.3.5, and SC 3.3.8 for credentials) with `scripts/form-fields.js`.
 
 `autocomplete="off"` on username or password fields fails SC 3.3.8. Generic labels such as "Form field" fail SC 3.3.2.
 
@@ -79,19 +60,7 @@ A native `<dialog>` opened with `showModal()` already provides focus trapping, b
 
 ## 5. Colour contrast
 
-Trust axe's `color-contrast` result first. When resolving a value yourself, **never parse the string returned by `getComputedStyle`**. Modern themes use `oklch()` and `color-mix()`, which are returned verbatim, and reading the numbers out of them as RGB produces nonsense ratios. Resolve through a canvas instead:
-
-```js
-const toRGB = (css) => {
-  const c = document.createElement('canvas'); c.width = c.height = 1;
-  const x = c.getContext('2d', { willReadFrequently: true });
-  x.clearRect(0,0,1,1); x.fillStyle = css; x.fillRect(0,0,1,1);
-  const d = x.getImageData(0,0,1,1).data;
-  return [d[0], d[1], d[2], d[3]/255];
-};
-const lum = (r,g,b) => { const s=[r,g,b].map(v=>{v/=255; return v<=0.03928? v/12.92 : ((v+0.055)/1.055)**2.4;}); return 0.2126*s[0]+0.7152*s[1]+0.0722*s[2]; };
-const ratio = (a,b) => (Math.max(lum(...a),lum(...b))+0.05)/(Math.min(lum(...a),lum(...b))+0.05);
-```
+Trust axe's `color-contrast` result first. When resolving a value yourself, **never parse the string returned by `getComputedStyle`**. Modern themes use `oklch()` and `color-mix()`, which are returned verbatim, and reading the numbers out of them as RGB produces nonsense ratios. Use `scripts/contrast.js`, which resolves through a canvas instead.
 
 Composite semi-transparent backgrounds against what is actually behind them. For text over a photo, sample the image's darkest and lightest pixels and check the worst case.
 

@@ -195,6 +195,9 @@
     "scss": true,
     "xml": true,
     "astro": true,
+    "svelte": true,
+    "ini": true,
+    "toml": true,
     "rainbow-csv": true,
     "comment": true,
     "editorconfig": true,
@@ -203,5 +206,9 @@
     "emmet": true,
     // Snippets
     "magento2-snippets": true,
+    // Git
+    "git-firefly": true,
+    // Context servers
+    "chrome-devtools-mcp-zed": true,
   },
 }

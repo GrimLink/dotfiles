@@ -6,9 +6,8 @@ SHELL_RC="$HOME/.bashrc"
 brew install php
 brew install composer
 
-# Set COMPOSER_HOME and PATH based on the installed version
-COMPOSER_HOME_PATH=$(composer config --global home 2>/dev/null)
-if [ -n "$COMPOSER_HOME_PATH" ]; then
-  echo "export COMPOSER_HOME=\"$COMPOSER_HOME_PATH\"" >> "$SHELL_RC"
-  echo "export PATH=\"$COMPOSER_HOME_PATH/vendor/bin:\$PATH\"" >> "$SHELL_RC"
+# Check if there is a `$HOME/.composer` path else add this path as a symlink
+# This needed for older Magento 2 projects
+if [ ! -d "$HOME/.composer" ]; then
+	ln -s ~/.config/composer ~/.composer
 fi

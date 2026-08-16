@@ -21,7 +21,7 @@ StepSection "Adding nvm auto-switch hook to .zshrc"
 if [ -f "$HOME/.zshrc" ]; then
   cat >> "$HOME/.zshrc" << 'EOF'
 
-# Register nvm auto-switch hook (load-nvmrc defined in ~/.shell/functions)
+# Register nvm auto-switch hook (load-nvmrc defined in ~/.shell/nvm)
 autoload -U add-zsh-hook
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc

@@ -20,4 +20,5 @@ rsync -avh --no-perms \
   "$(dirname "${BASH_SOURCE}")/aliases" \
   "$(dirname "${BASH_SOURCE}")/exports" \
   "$(dirname "${BASH_SOURCE}")/functions" \
+  "$(dirname "${BASH_SOURCE}")/nvm" \
   $HOME/.shell

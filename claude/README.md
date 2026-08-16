@@ -1,6 +1,6 @@
 ---
 Site: https://claude.ai/claude-code
-Updated: 2026-03-29
+Updated: 2026-08-16
 ---
 
 # Claude
@@ -13,7 +13,7 @@ Installs Claude Code and registers the Chrome DevTools MCP at user scope.
 
 MCP servers cannot be declared in `settings.json`. It has no `mcpServers` key and ignores one silently. They live in `~/.claude.json` and are registered with `claude mcp add`, which is why this sits in `install.sh` rather than the synced settings.
 
-The server runs with its full tool set. `--slim` exposes only three tools and drops `take_snapshot` and `list_console_messages`, which the `a11y-audit` skill depends on. Tool schemas load on demand regardless, so the token saving was smaller than it looked.
+It is registered with its full tool set, not `--slim`. Tool schemas load on demand either way, so the token saving was smaller than it looked. The skills that need the dropped tools say so themselves.
 
 ```sh
 ./claude/install.sh
@@ -21,11 +21,13 @@ The server runs with its full tool set. `--slim` exposes only three tools and dr
 
 ## Setup
 
-Syncs settings and `CLAUDE.md` to `~/.claude/`.
+Syncs settings to `~/.claude/`, then links the shared agent config into place.
 
 ```sh
 ./claude/setup.sh
 ```
+
+Run [agents](../agents/README.md) first, since the links point at `~/.agents/`.
 
 ## Settings
 
@@ -33,8 +35,13 @@ Global Claude Code settings synced to `~/.claude/settings.json`.
 
 Contains default permissions and behavior preferences.
 
-## CLAUDE.md
+## Instructions and skills
 
-Global instructions for Claude Code, synced to `~/.claude/CLAUDE.md`.
+Neither lives here. Both are tool agnostic, so they sit in
+[agents](../agents/README.md) and are symlinked in:
 
-Defines coding standards, preferences, and project-specific guidelines.
+- `~/.claude/CLAUDE.md` points at `~/.agents/AGENTS.md`
+- `~/.claude/skills` points at `~/.agents/skills`
+
+Editing either one through the symlink edits the shared copy, which is the
+intent. Run `./agents/setup.sh` to push repo changes out.

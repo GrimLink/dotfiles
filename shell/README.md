@@ -10,7 +10,7 @@ In this dotfile repo this is bash or zsh.
 
 ## Setup
 
-Syncs shell files (`aliases`, `exports`, `functions`) to `~/.shell/`.
+Syncs shell files (`aliases`, `exports`, `functions`, `nvm`) to `~/.shell/`.
 
 ```sh
 ./shell/setup.sh
@@ -44,8 +44,13 @@ This includes;
 * Create folder and enter it `mcd`
 * Find files/folders `f`
 * Convert images to `.webp` with `to-webp`
-* NVM auto-switch via `load-nvmrc` (reads `.nvmrc` on directory change)
 * Node utilities: `node-find`, `node-clean`
+
+### NVM
+
+`load-nvmrc` reads `.nvmrc` on directory change and switches node version.
+Kept separate from the other functions because `node/nvm.sh` registers the
+`chpwd` hook that calls it.
 
 ## Files from other modules
 

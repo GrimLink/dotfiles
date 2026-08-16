@@ -30,10 +30,11 @@ runAction "Configuring ghostty.." ghostty/setup
 runAction "Installing Zed.." zed/install
 runAction "Configuring zed.." zed/setup
 
+# Agents runs first, Claude symlinks into ~/.agents
+runAction "Configuring Agents.." agents/setup
+
 runAction "Installing Claude.." claude/install
 runAction "Configuring Claude.." claude/setup
-
-runAction "Installing Skills.." skills/setup
 
 runAction "Configuring NVM.." node/nvm
 

@@ -9,6 +9,7 @@ function StepSection() {
 
 StepSection "Syncing Claude settings to ~/.claude"
 
+mkdir -p ~/.claude
 rsync \
   --exclude ".DS_Store" \
   --exclude "README.md" \
@@ -17,5 +18,12 @@ rsync \
   -avh --no-perms \
   "$(dirname "${BASH_SOURCE}")/." ~/.claude;
 
-# Drop the copy left behind before install.sh was excluded
-rm -f ~/.claude/install.sh
+StepSection "Linking Claude to the shared agent config"
+
+# Instructions and skills live in ~/.agents so every agent reads the same copy
+ln -sfn ~/.agents/AGENTS.md ~/.claude/CLAUDE.md
+
+if [ ! -L ~/.claude/skills ]; then
+  rm -rf ~/.claude/skills
+  ln -s ~/.agents/skills ~/.claude/skills
+fi

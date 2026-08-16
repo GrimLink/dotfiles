@@ -60,12 +60,6 @@ for file in ~/.shell/*; do
 done
 unset file
 
-# Load nvm
-export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
-zsh_nvm_path="$HOME/.zsh-nvm/zsh-nvm.plugin.zsh"
-[ -s "$zsh_nvm_path" ] && . "$zsh_nvm_path"
-
 # Load zsh-syntax-highlighting
 # I need to be last in this file to work
 zsh_syntax_highlighter_path="$brew_prefix/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
