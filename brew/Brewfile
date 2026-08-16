@@ -1,4 +1,5 @@
 # Dev tools
+brew "apfel"
 brew "jq"
 brew "gh"
 brew "imagemagick"

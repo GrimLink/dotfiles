@@ -1,6 +1,6 @@
 ---
 Site: 
-Updated: 2026-03-30
+Updated: 2026-08-16
 ---
 
 # Shell
@@ -46,6 +46,13 @@ This includes;
 * Convert images to `.webp` with `to-webp`
 * NVM auto-switch via `load-nvmrc` (reads `.nvmrc` on directory change)
 * Node utilities: `node-find`, `node-clean`
+
+## Files from other modules
+
+`.zshrc` sources every extensionless file in `~/.shell/`, not just the ones
+synced here. A tool module can drop its own shortcuts in by syncing a `shell`
+file to `~/.shell/<module>` from its own `setup.sh`, which keeps that module
+self-contained.
 
 ## Add custom commands without creating a new fork
 

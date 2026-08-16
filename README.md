@@ -34,7 +34,7 @@ Feel free to explore and adapt them to suit your development needs.
 
 ### install-dev-env.sh
 
-- [Claude Code](https://claude.ai/claude-code) and [Gemini CLI](https://developers.google.com/gemini-code-assist)
+- [Claude Code](https://claude.ai/claude-code)
 - [NVM](https://github.com/nvm-sh/nvm) for Node version management
 - [Laravel Valet](https://laravel.com/docs/valet) with MySQL 8.4
 - [Magento2](https://developer.adobe.com/open/magento) tools (Mailhog, Redis, Opensearch, n98-magerun2, mage)

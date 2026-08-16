@@ -54,3 +54,6 @@ alias brewery="brew update && brew upgrade && brew cleanup"
 
 # Artisan
 alias art="php artisan"
+
+# On-device AI chat, exit with Ctrl+D
+alias ai="apfel --chat"

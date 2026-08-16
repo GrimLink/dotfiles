@@ -28,7 +28,6 @@ runAction "Updating git config.." git/setup
 runAction "Updating ghostty config.." ghostty/setup
 runAction "Updating zsh config.." zsh/setup
 runAction "Updating Claude config.." claude/setup
-runAction "Updating Gemini config.." gemini/setup
 runAction "Updating Zed config.." zed/setup
 
 echo ""

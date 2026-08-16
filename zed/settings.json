@@ -20,6 +20,7 @@
 
   // Titlebar
   "title_bar": {
+    "show_menus": false,
     "show_branch_status_icon": true,
   },
 
@@ -61,24 +62,24 @@
     "sidebar_side": "right",
     "default_width": 500.0,
     "default_model": {
-      "provider": "google",
-      "model": "gemini-3-flash-preview",
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-5",
     },
     "inline_assistant_model": {
       "provider": "google",
       "model": "gemini-3-flash-preview",
     },
     "commit_message_model": {
-      "provider": "copilot_chat",
-      "model": "claude-haiku-4.5",
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
     },
   },
   "agent_servers": {
-    "gemini": {
-      "type": "registry",
-    },
     "claude-acp": {
       "type": "registry",
+      "default_config_options": {
+        "mode": "auto",
+      },
     },
   },
   "context_servers": {
@@ -101,10 +102,19 @@
     "file_icons": true,
     "folder_icons": true,
   },
+  "git": {
+    "inline_blame": {
+      "location": "status_bar",
+    },
+  },
 
   // General
   "base_keymap": "VSCode",
   "autosave": "on_window_change",
+  "cli_default_open_behavior": "new_window",
+  "calls": {
+    "mute_on_join": true,
+  },
   "profiles": {
     "presentation": {
       "settings": {
@@ -140,9 +150,9 @@
   "languages": {
     "PHP": {
       "language_servers": ["intelephense", "phpcs", "!phpactor"],
-      "format_on_save": "off",
     },
     "CSS": {
+      "format_on_save": "on",
       "language_servers": [
         "tailwindcss-intellisense-css",
         "!vscode-css-language-server",
@@ -151,8 +161,8 @@
     "XML": {
       "preferred_line_length": 120,
     },
-    "YAML": {
-      "format_on_save": "off",
+    "Astro": {
+      "format_on_save": "on",
     },
   },
   "file_types": {
@@ -160,8 +170,9 @@
     "HTML": ["*.vue", "*.twig", "*.njk"],
     "CSS": ["*.less"],
     "XML": ["*.svg"],
-    "Markdown": ["llm.txt"],
+    "Markdown": ["llms.txt"],
     "Shell Script": ["Brewfile"],
+    "Git Ignore": ["*.gitignore"],
   },
   "file_scan_exclusions": [
     // "**/.git",
@@ -190,5 +201,7 @@
     // Languages Servers
     "phpcs": true,
     "emmet": true,
+    // Snippets
+    "magento2-snippets": true,
   },
 }

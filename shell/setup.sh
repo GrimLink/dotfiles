@@ -8,7 +8,7 @@ function StepSection() {
 }
 
 # Remove the default terminal message
-touch .hushlogin
+touch $HOME/.hushlogin
 
 # Make sure there is a shell folder
 if [ ! -d $HOME/.shell ]; then
