@@ -2,9 +2,7 @@
 
 RESET='\033[0m'
 GREEN='\033[1;32m'
-RED='\033[0;31m'
 
-BREW_PREFIX=$(brew --prefix)
 SHELL_RC="$HOME/.bashrc"
 [ -f "$HOME/.zshrc" ] && SHELL_RC="$HOME/.zshrc"
 
@@ -47,21 +45,8 @@ valet trust
 # https://nodejs.org/api/cli.html#node_extra_ca_certsfile
 echo 'export NODE_EXTRA_CA_CERTS="$HOME/.config/valet/CA/LaravelValetCASelfSigned.pem"' >> "$SHELL_RC"
 
-StepSection "Setup Database"
-# Check if '/opt/homebrew/var/mysql' excits,
-# may trow installations errors if present
-if [[ -d "$BREW_PREFIX/var/mysql" ]]; then
-  echo -e "${RED}The folder '$BREW_PREFIX/var/mysql' is found!${RESET}"
-  echo "Please remove this folder before continuing."
-  read -rsn1 -p "When ready, press any key to continue"
-  echo ""
-fi
-
-# Install Mysql v8.4 (LTS)
-brew install mysql@8.4 && \
-echo "export PATH=\"$BREW_PREFIX/opt/mysql@8.4/bin:\$PATH\"" >> "$SHELL_RC" && \
-brew services start mysql@8.4 && \
-$BREW_PREFIX/opt/mysql@8.4/bin/mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';FLUSH PRIVILEGES;"
+StepSection "Running database setup"
+./valet/database.sh
 
 StepSection "Setup Mailpit"
 brew install mailpit
