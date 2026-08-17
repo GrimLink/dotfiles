@@ -1,0 +1,22 @@
+{
+  "Magento slider slide": {
+    "prefix": "magento.slide",
+    "description": "Slider slide as a Text block with CDATA markup",
+    "body": [
+      "<block class=\"Magento\\Framework\\View\\Element\\Text\" name=\"${1:demo_slider}.slide.${2:1}\">",
+      "\t<arguments>",
+      "\t\t<argument name=\"text\" xsi:type=\"string\"><![CDATA[",
+      "\t\t\t<article id=\"${1}-item-${2}\" class=\"flex flex-col gap-3\">",
+      "\t\t\t\t<img src=\"${3:https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=600&fit=crop&q=80}\"",
+      "\t\t\t\t\talt=\"${4:Wrist watch on a white surface}\" width=\"${5:800}\" height=\"${6:600}\" loading=\"lazy\"",
+      "\t\t\t\t\tclass=\"aspect-[4/3] w-full rounded object-cover\">",
+      "\t\t\t\t<h4 class=\"text-lg font-medium\">${7:Slide title}</h4>",
+      "\t\t\t\t<p class=\"text-sm\">${8:Slide description.}</p>",
+      "\t\t\t</article>",
+      "\t\t]]></argument>",
+      "\t</arguments>",
+      "</block>",
+      "$0"
+    ]
+  }
+}
