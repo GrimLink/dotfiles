@@ -39,7 +39,6 @@ runAction "Installing php.." php/install
 runAction "Installing rust.." rust/install
 
 runAction "Installing zsh.." zsh/install
-runAction "Configuring zsh.." zsh/setup
 
 echo ""
 echo -e "${BOLD}Done${RESET} 🎉"
