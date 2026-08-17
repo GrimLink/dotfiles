@@ -2,16 +2,26 @@
 
 alias reload="exec $SHELL -l"
 
-# Navigation
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ..d="cd ~/Downloads"
 alias ..p="cd ~/Developer"
+alias ..dot="cd ~/dotfiles"
 
-# Directory
-alias md="mkdir -p"
-alias rd="rmdir"
+alias ..rc="open ~/.zshrc"
+
 alias rmf="rm -rf"
+
+alias chmox="chmod +x"
+
+# General ssh key
+alias copyssh="pbcopy <~/.ssh/id_rsa.pub"
+
+# Brew
+alias brewery="brew update && brew upgrade && brew cleanup"
+
+# Artisan
+alias art="php artisan"
 
 # List directory contents
 # Always use color output for `ls`
@@ -23,14 +33,18 @@ else # macOS `ls`
 fi
 
 alias ls="command ls ${LSCOLORFLAG}"
-
 alias ll="ls -lF" # long format
 alias la="ls -laF" # long format, including dot files
-alias ld="ls -lF | grep '^d'" # Directories
-alias l.="ls -ld .*" # Dotfiles
 
-# Edit
-alias chmox="chmod +x"
+# Beter cat
+if command -v bat &> /dev/null; then
+    alias cat="bat --style=plain"
+fi
+
+# Beter grep
+if command -v rg &> /dev/null; then
+    alias grep="rg"
+fi
 
 # Get today's date
 alias today='date +"%A, %B %-d, %Y, Week: %V"'
@@ -45,15 +59,3 @@ alias dscleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Clean up LaunchServices to remove duplicates in the "Open With" menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-# General ssh key
-alias copyssh="pbcopy <~/.ssh/id_rsa.pub"
-
-# Brew
-alias brewery="brew update && brew upgrade && brew cleanup"
-
-# Artisan
-alias art="php artisan"
-
-# On-device AI chat, exit with Ctrl+D
-alias ai="apfel --chat"
