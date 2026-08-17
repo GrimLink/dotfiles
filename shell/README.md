@@ -1,6 +1,6 @@
 ---
 Site: 
-Updated: 2026-08-16
+Updated: 2026-08-17
 ---
 
 # Shell
@@ -41,7 +41,7 @@ Set of handy functions for common tasks.
 This includes;
 
 * Navigate up multiple directories `..`
-* Create folder and enter it `mcd`
+* Create folder and enter it `mkcd`
 * Find files/folders `f`
 * Convert images to `.webp` with `to-webp`
 * Node utilities: `node-find`, `node-clean`

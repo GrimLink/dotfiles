@@ -11,8 +11,8 @@ function ..() {
 }
 
 # Create a new directory and enter it
-function mcd() {
-  mkdir -p "$@" && cd "$@"
+function mkcd() {
+  mkdir -p "$@" && cd "${@: -1}"
 }
 
 # Find shorthand
