@@ -2,6 +2,7 @@
 brew "apfel"
 brew "jq"
 brew "gh"
+brew "glab"
 brew "imagemagick"
 brew "ripgrep"
 brew "bat"
