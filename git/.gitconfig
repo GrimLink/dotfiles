@@ -8,8 +8,8 @@
 	branches = branch -a
 	remotes = remote -v
 
-	# Co-commit (TODO test)
-	# co-commit = !"git commit -m $1 -m 'Co-authored-by: $2'"
+	# Throw away every local change, tracked and untracked
+	nah = !git reset --hard && git clean -df
 
 	# Usefull checkes on specific tasks
 	overview = lg --all --no-merges --since='2 weeks'
@@ -58,10 +58,10 @@
 [pretty]
 	custom = "%C(magenta)%h%C(red)%d %C(reset)%ad %C(green)%s %C(blue)(%an)"
 	# %an = author name
-  # %s  = message
-  # %ad = date
-  # %d  = decorations (branch, heads or tags)
-  # %h  = hash (abbreviated)
+    # %s  = message
+    # %ad = date
+    # %d  = decorations (branch, heads or tags)
+    # %h  = hash (abbreviated)
 
 [tag]
 	sort = -version:refname
