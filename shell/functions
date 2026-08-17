@@ -11,7 +11,7 @@ function ..() {
 }
 
 # Create a new directory and enter it
-function mkcd() {
+function md() {
   mkdir -p "$@" && cd "${@: -1}"
 }
 
