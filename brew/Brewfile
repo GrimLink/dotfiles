@@ -34,8 +34,8 @@ cask "vlc"
 cask "transmit"
 
 # File sharing
-tap "localsend/localsend"
-brew "localsend"
+tap "localsend/localsend", trusted: { casks: ["localsend"] }
+cask "localsend"
 
 # Webcam
 cask "ankerwork"
