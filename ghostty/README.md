@@ -1,6 +1,6 @@
 ---
 Site: https://ghostty.org/
-Updated: 2026-03-30
+Updated: 2026-08-17
 ---
 
 # Ghostty
@@ -17,11 +17,15 @@ This also creates `~/.hushlogin` if not present, suppressing the "Last login" me
 
 ## Setup
 
-Syncs the Ghostty settings folder.
+Syncs `config.ghostty` to the Ghostty settings folder.
 
 ```sh
 ./ghostty/setup.sh
 ```
+
+The file was called `config` before Ghostty 1.2.3. Both names still work, but
+Ghostty loads `config` after `config.ghostty`, so a leftover would override the
+synced settings. Setup removes it.
 
 _Ghostty may need to be reloaded to add all changes._
 
