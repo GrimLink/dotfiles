@@ -34,7 +34,7 @@ bindkey $'^[[B' down-line-or-search # down arrow
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
 # list with colors
-zstyle ':completion:*' list-colors ''x
+zstyle ':completion:*' list-colors ''
 
 # Uses the zsh precmd function hook to set the tab title
 # to the current working directory before each prompt
