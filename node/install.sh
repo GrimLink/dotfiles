@@ -3,6 +3,11 @@
 brew install node
 brew install pnpm
 
+# Trust first, Homebrew refuses to load a formula from a non official tap
+# until it is. The qualified name taps nubjs/tap on the way in.
+brew trust --formula nubjs/tap/nub
+brew install nubjs/tap/nub
+
 # Setup default config
 npm config set depth 0
 npm config set init-author-name "GrimLink"
