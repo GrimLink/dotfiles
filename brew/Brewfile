@@ -32,7 +32,6 @@ cask "appcleaner"
 cask "keka"
 cask "raycast"
 cask "vlc"
-cask "transmit"
 
 # File sharing
 tap "localsend/localsend", trusted: { casks: ["localsend"] }
