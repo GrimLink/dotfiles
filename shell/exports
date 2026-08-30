@@ -8,5 +8,4 @@ export VISUAL="zed -w"
 export PATH="$PATH:$HOME/bin"
 
 # Homebrew
-export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_UPDATE_REPORT_ONLY_INSTALLED=1
