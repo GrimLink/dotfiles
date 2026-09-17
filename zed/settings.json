@@ -78,7 +78,7 @@
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
-        "mode": "bypassPermissions",
+        "mode": "auto",
       },
       "type": "registry",
     },
