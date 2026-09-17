@@ -28,6 +28,7 @@
   "colorize_brackets": true,
   "show_whitespaces": "trailing",
   "soft_wrap": "editor_width",
+  "format_on_save": "on",
 
   // Editor Toolbar
   "toolbar": {
@@ -76,10 +77,13 @@
   },
   "agent_servers": {
     "claude-acp": {
-      "type": "registry",
       "default_config_options": {
-        "mode": "auto",
+        "mode": "bypassPermissions",
       },
+      "type": "registry",
+    },
+    "antigravity-acp": {
+      "type": "registry",
     },
   },
   "context_servers": {
@@ -100,12 +104,17 @@
     "default_width": 500.0,
     "tree_view": true,
     "file_icons": true,
-    "folder_icons": true,
   },
   "git": {
     "inline_blame": {
       "location": "status_bar",
     },
+  },
+
+  // Markdown
+  "markdown_preview": {
+    "max_width": 980.0,
+    "open_markdown_files_in_preview": true,
   },
 
   // General
@@ -121,6 +130,9 @@
         "agent_ui_font_size": 28.0,
         "agent_buffer_font_size": 28.0,
         "buffer_font_size": 28.0,
+        "markdown_preview": {
+          "font_size": 28.0,
+        },
       },
     },
   },
@@ -129,17 +141,17 @@
       "settings": {
         "includeLanguages": {
           "php": "html",
-          "blade": "html"
+          "blade": "html",
         },
         "experimental": {
           "classRegex": [
             "class=\"([^\"]*)\"",
             "class='([^']*)'",
             "class=\\\"([^\\\"]*)\\\"",
-            "@class\\(\\[([^\\]]*)\\]\\)"
-          ]
-        }
-      }
+            "@class\\(\\[([^\\]]*)\\]\\)",
+          ],
+        },
+      },
     },
     "phpcs": {
       "settings": {
@@ -150,9 +162,9 @@
   "languages": {
     "PHP": {
       "language_servers": ["intelephense", "phpcs", "!phpactor"],
+      "format_on_save": "off",
     },
     "CSS": {
-      "format_on_save": "on",
       "language_servers": [
         "tailwindcss-intellisense-css",
         "!vscode-css-language-server",
@@ -160,13 +172,14 @@
     },
     "XML": {
       "preferred_line_length": 120,
+      "format_on_save": "off",
     },
-    "Astro": {
-      "format_on_save": "on",
+    "Markdown": {
+      "format_on_save": "off",
     },
   },
   "file_types": {
-    "JSON": ["*.tokens"],
+    "JSON": ["*.tokens", "composer.lock"],
     "HTML": ["*.vue", "*.twig", "*.njk"],
     "CSS": ["*.less"],
     "XML": ["*.svg"],
