@@ -4,7 +4,7 @@
     "command": "sh ~/.claude/statusline-command.sh"
   },
   "permissions": {
-    "defaultMode": "acceptEdits",
+    "defaultMode": "auto",
     "allow": [
       "Bash(gh:*)",
       "Bash(curl:*)",
@@ -50,6 +50,7 @@
       "mcp__chrome-devtools__*"
     ]
   },
+  "agentPushNotifEnabled": true,
   "attribution": {
     "commit": "",
     "pr": "",
