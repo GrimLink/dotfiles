@@ -49,5 +49,10 @@
       "WebFetch",
       "mcp__chrome-devtools__*"
     ]
+  },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
   }
 }
