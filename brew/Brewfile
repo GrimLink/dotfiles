@@ -1,5 +1,4 @@
 # Dev tools
-brew "apfel"
 brew "jq"
 brew "gh"
 brew "glab"
@@ -10,9 +9,11 @@ brew "bat"
 # Docker
 cask "orbstack"
 
+# AI
+brew "apfel"
+
 # Databases
-cask "tableplus"
-cask "sequel-ace"
+cask "tablepro"
 
 # Browsers
 cask "google-chrome"
@@ -27,12 +28,14 @@ cask "whatsapp"
 # Image editors and tools
 cask "imageoptim"
 cask "ray"
+brew "mole"
 
 # Utils
 cask "android-file-transfer"
 cask "appcleaner"
-cask "keka"
+cask "macpacker"
 cask "raycast"
+cask "handy"
 cask "vlc"
 
 # File sharing
