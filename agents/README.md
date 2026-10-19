@@ -36,6 +36,10 @@ the skill name, trigger description, and prompt body. They sync to
 
 Audits a web page against WCAG 2.2 Level AA using the Chrome DevTools MCP. Runs axe-core first, then the manual checks automation cannot make, including the WCAG 2.2 additions. Reports findings grouped by severity with element selectors and fixes.
 
+### a11y-score
+
+Scores a11y-audit findings on a weighted 0 to 10 scale (Critical -4, Serious -2, Moderate -1, Minor -0.3) and bands them into Good, Needs work, or Critical. Displays as plain terminal text by default, or as a circular-gauge Artifact scorecard when the request implies a visual deliverable (slides, image, multi-site comparison) and the Artifact tool is available.
+
 ### git-review
 
 Reviews code changes for bugs, code quality, security, performance, and correctness. Fetches GitHub PRs via `gh` if a URL or PR number is provided, or asks for the diff directly when the source is unavailable.

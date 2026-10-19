@@ -107,3 +107,5 @@ For each issue give the criterion and level, the selector or element, the measur
 List what was verified as passing too. A bare list of failures tells the reader nothing about coverage.
 
 Keep it to the findings. Audit process narration belongs in the conversation, not the report.
+
+To turn these findings into a weighted score and a display (terminal or scorecard Artifact), use the `a11y-score` skill.
