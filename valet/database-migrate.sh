@@ -48,11 +48,19 @@ function DumpAndRemoveMySQL() {
   echo "4. Install MariaDB through 'database.sh'"
   echo "5. Import the dumps into MariaDB"
   echo ""
-  echo -e "${RED}Steps 2 and 3 cannot be undone.${RESET}"
-  read -r -p "Type 'migrate' to continue: " CONFIRM
-  if [[ "$CONFIRM" != "migrate" ]]; then
-    echo "Aborted, nothing was changed."
-    exit 1
+  echo "Step 1 changes nothing. You are asked to confirm once the dumps are checked."
+
+  # The data directory is a rough upper bound for the size of the dumps
+  local DATA_KB FREE_KB
+  DATA_KB=$(du -sk "$DB_DATA" 2>/dev/null | cut -f1)
+  FREE_KB=$(df -k "$HOME" | awk 'NR==2 {print $4}')
+  if [[ -n "$DATA_KB" && -n "$FREE_KB" && "$FREE_KB" -lt "$DATA_KB" ]]; then
+    echo -e "${RED}Only $((FREE_KB / 1024)) MB is free, while '$DB_DATA' takes $((DATA_KB / 1024)) MB.${RESET}"
+    read -r -p "The dumps may not fit. Dump anyway? [y/N] " CONFIRM
+    if [[ "$CONFIRM" != [yY] ]]; then
+      echo "Aborted, nothing was changed."
+      exit 1
+    fi
   fi
 
   StepSection "Connecting to $MYSQL_FORMULA"
@@ -118,6 +126,30 @@ function DumpAndRemoveMySQL() {
       exit 1
     fi
   done
+
+  StepSection "Checking the dumps"
+
+  # A dump cut off by a full disk or a dropped connection still leaves a file
+  # behind, only a complete one ends with the line mysqldump writes last
+  local dump
+  for database in $DATABASES; do
+    dump="$BACKUP_DIR/$database.sql"
+    if ! tail -n 1 "$dump" | grep -q '^-- Dump completed'; then
+      echo -e "${RED}The dump of '$database' is incomplete, stopping before anything is removed.${RESET}"
+      echo "The dumps are in '$BACKUP_DIR'."
+      exit 1
+    fi
+    printf '  %-40s %s\n' "$database.sql" "$(du -h "$dump" | cut -f1 | tr -d ' ')"
+  done
+
+  echo ""
+  echo -e "${RED}Removing $MYSQL_FORMULA and deleting '$DB_DATA' cannot be undone.${RESET}"
+  read -r -p "Type 'migrate' to continue: " CONFIRM
+  if [[ "$CONFIRM" != "migrate" ]]; then
+    echo "Aborted, $MYSQL_FORMULA was left in place."
+    echo "The dumps are in '$BACKUP_DIR'."
+    exit 1
+  fi
 
   StepSection "Removing $MYSQL_FORMULA"
   brew services stop "$MYSQL_FORMULA"
@@ -205,6 +237,15 @@ BACKUP_DIR="$1"
 if [[ -n "$BACKUP_DIR" ]]; then
   if [[ ! -d "$BACKUP_DIR" ]]; then
     echo -e "${RED}'$BACKUP_DIR' does not exist${RESET}"
+    exit 1
+  fi
+
+  # A resume deletes the data directory without asking, which is only safe
+  # once MySQL is gone and the confirmation was given in the earlier run
+  LEFTOVER_MYSQL=$(brew list --formula 2>/dev/null | grep -E '^mysql(@|$)')
+  if [[ -n "$LEFTOVER_MYSQL" ]]; then
+    echo -e "${RED}$LEFTOVER_MYSQL is still installed, so there is nothing to resume.${RESET}"
+    echo "Run '$SCRIPT_DIR/database-migrate.sh' without a folder to start over."
     exit 1
   fi
   StepSection "Resuming with the dumps in $BACKUP_DIR"

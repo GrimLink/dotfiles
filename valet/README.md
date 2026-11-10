@@ -1,6 +1,6 @@
 ---
 Site: https://laravel.com/docs/valet
-Updated: 2026-08-16
+Updated: 2026-11-10
 Requires: [brew, php, composer]
 ---
 
@@ -34,7 +34,7 @@ Moves an existing MySQL install over to MariaDB, for machines that were set up b
 ./valet/database-migrate.sh
 ```
 
-It dumps every database to `~/valet-database-backup-<date>`, uninstalls MySQL, deletes the old data directory and the MySQL `my.cnf`, runs `database.sh` and imports the dumps again. The uninstall and the delete cannot be undone, so it asks for confirmation first. Port, user and password stay the same (`root`/`root`), which means `app/etc/env.php` does not need to change.
+It dumps every database to `~/valet-database-backup-<date>`, uninstalls MySQL, deletes the old data directory and the MySQL `my.cnf`, runs `database.sh` and imports the dumps again. The uninstall and the delete cannot be undone, so it first checks every dump is complete, lists them with their sizes and only then asks for confirmation. It also warns when the free disk space is smaller than the data directory. Port, user and password stay the same (`root`/`root`), which means `app/etc/env.php` does not need to change.
 
 When a run stops halfway, point it at the folder it already made to skip the dump and pick up at the install.
 
