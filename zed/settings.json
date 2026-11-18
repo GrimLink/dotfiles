@@ -161,7 +161,8 @@
     "lemminx": {
       "settings": {
         "xml": {
-          "catalogs": [".schemas/catalog.xml"],
+          // For Magento envs
+          "catalogs": [".vscode/catalog.xml"],
         },
       },
     },
