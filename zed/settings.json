@@ -166,7 +166,6 @@
       },
     },
   },
-  },
   "languages": {
     "PHP": {
       "language_servers": ["intelephense", "phpcs", "!phpactor"],
