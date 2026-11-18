@@ -158,6 +158,14 @@
         "standard": "PSR4",
       },
     },
+    "lemminx": {
+      "settings": {
+        "xml": {
+          "catalogs": [".schemas/catalog.xml"],
+        },
+      },
+    },
+  },
   },
   "languages": {
     "PHP": {
